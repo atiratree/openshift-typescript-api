@@ -366,11 +366,11 @@ export const Comgithubopenshiftapiappsv1DeploymentCondition: msRest.CompositeMap
   }
 };
 
-export const Iok8sapimachinerypkgapismetav1Initializer: msRest.CompositeMapper = {
+export const V1Initializer: msRest.CompositeMapper = {
   serializedName: "io.k8s.apimachinery.pkg.apis.meta.v1.Initializer",
   type: {
     name: "Composite",
-    className: "Iok8sapimachinerypkgapismetav1Initializer",
+    className: "V1Initializer",
     modelProperties: {
       name: {
         required: true,
@@ -383,11 +383,11 @@ export const Iok8sapimachinerypkgapismetav1Initializer: msRest.CompositeMapper =
   }
 };
 
-export const Iok8sapimachinerypkgapismetav1StatusCause: msRest.CompositeMapper = {
+export const V1StatusCause: msRest.CompositeMapper = {
   serializedName: "io.k8s.apimachinery.pkg.apis.meta.v1.StatusCause",
   type: {
     name: "Composite",
-    className: "Iok8sapimachinerypkgapismetav1StatusCause",
+    className: "V1StatusCause",
     modelProperties: {
       field: {
         serializedName: "field",
@@ -411,11 +411,11 @@ export const Iok8sapimachinerypkgapismetav1StatusCause: msRest.CompositeMapper =
   }
 };
 
-export const Iok8sapimachinerypkgapismetav1StatusDetails: msRest.CompositeMapper = {
+export const V1StatusDetails: msRest.CompositeMapper = {
   serializedName: "io.k8s.apimachinery.pkg.apis.meta.v1.StatusDetails",
   type: {
     name: "Composite",
-    className: "Iok8sapimachinerypkgapismetav1StatusDetails",
+    className: "V1StatusDetails",
     modelProperties: {
       causes: {
         serializedName: "causes",
@@ -424,7 +424,7 @@ export const Iok8sapimachinerypkgapismetav1StatusDetails: msRest.CompositeMapper
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapimachinerypkgapismetav1StatusCause"
+              className: "V1StatusCause"
             }
           }
         }
@@ -463,11 +463,11 @@ export const Iok8sapimachinerypkgapismetav1StatusDetails: msRest.CompositeMapper
   }
 };
 
-export const Iok8sapimachinerypkgapismetav1ListMeta: msRest.CompositeMapper = {
+export const V1ListMeta: msRest.CompositeMapper = {
   serializedName: "io.k8s.apimachinery.pkg.apis.meta.v1.ListMeta",
   type: {
     name: "Composite",
-    className: "Iok8sapimachinerypkgapismetav1ListMeta",
+    className: "V1ListMeta",
     modelProperties: {
       continueProperty: {
         serializedName: "continue",
@@ -491,11 +491,11 @@ export const Iok8sapimachinerypkgapismetav1ListMeta: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapimachinerypkgapismetav1Status: msRest.CompositeMapper = {
+export const V1Status: msRest.CompositeMapper = {
   serializedName: "io.k8s.apimachinery.pkg.apis.meta.v1.Status",
   type: {
     name: "Composite",
-    className: "Iok8sapimachinerypkgapismetav1Status",
+    className: "V1Status",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -513,7 +513,7 @@ export const Iok8sapimachinerypkgapismetav1Status: msRest.CompositeMapper = {
         serializedName: "details",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1StatusDetails"
+          className: "V1StatusDetails"
         }
       },
       kind: {
@@ -532,7 +532,7 @@ export const Iok8sapimachinerypkgapismetav1Status: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       },
       reason: {
@@ -551,11 +551,11 @@ export const Iok8sapimachinerypkgapismetav1Status: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapimachinerypkgapismetav1Initializers: msRest.CompositeMapper = {
+export const V1Initializers: msRest.CompositeMapper = {
   serializedName: "io.k8s.apimachinery.pkg.apis.meta.v1.Initializers",
   type: {
     name: "Composite",
-    className: "Iok8sapimachinerypkgapismetav1Initializers",
+    className: "V1Initializers",
     modelProperties: {
       pending: {
         required: true,
@@ -565,7 +565,7 @@ export const Iok8sapimachinerypkgapismetav1Initializers: msRest.CompositeMapper 
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapimachinerypkgapismetav1Initializer"
+              className: "V1Initializer"
             }
           }
         }
@@ -574,18 +574,18 @@ export const Iok8sapimachinerypkgapismetav1Initializers: msRest.CompositeMapper 
         serializedName: "result",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1Status"
+          className: "V1Status"
         }
       }
     }
   }
 };
 
-export const Iok8sapimachinerypkgapismetav1OwnerReference: msRest.CompositeMapper = {
+export const V1OwnerReference: msRest.CompositeMapper = {
   serializedName: "io.k8s.apimachinery.pkg.apis.meta.v1.OwnerReference",
   type: {
     name: "Composite",
-    className: "Iok8sapimachinerypkgapismetav1OwnerReference",
+    className: "V1OwnerReference",
     modelProperties: {
       apiVersion: {
         required: true,
@@ -631,11 +631,11 @@ export const Iok8sapimachinerypkgapismetav1OwnerReference: msRest.CompositeMappe
   }
 };
 
-export const Iok8sapimachinerypkgapismetav1ObjectMeta: msRest.CompositeMapper = {
+export const V1ObjectMeta: msRest.CompositeMapper = {
   serializedName: "io.k8s.apimachinery.pkg.apis.meta.v1.ObjectMeta",
   type: {
     name: "Composite",
-    className: "Iok8sapimachinerypkgapismetav1ObjectMeta",
+    className: "V1ObjectMeta",
     modelProperties: {
       annotations: {
         serializedName: "annotations",
@@ -699,7 +699,7 @@ export const Iok8sapimachinerypkgapismetav1ObjectMeta: msRest.CompositeMapper = 
         serializedName: "initializers",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1Initializers"
+          className: "V1Initializers"
         }
       },
       labels: {
@@ -732,7 +732,7 @@ export const Iok8sapimachinerypkgapismetav1ObjectMeta: msRest.CompositeMapper = 
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapimachinerypkgapismetav1OwnerReference"
+              className: "V1OwnerReference"
             }
           }
         }
@@ -1213,11 +1213,11 @@ export const V1NodeAffinity: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapimachinerypkgapismetav1LabelSelectorRequirement: msRest.CompositeMapper = {
+export const V1LabelSelectorRequirement: msRest.CompositeMapper = {
   serializedName: "io.k8s.apimachinery.pkg.apis.meta.v1.LabelSelectorRequirement",
   type: {
     name: "Composite",
-    className: "Iok8sapimachinerypkgapismetav1LabelSelectorRequirement",
+    className: "V1LabelSelectorRequirement",
     modelProperties: {
       key: {
         required: true,
@@ -1248,11 +1248,11 @@ export const Iok8sapimachinerypkgapismetav1LabelSelectorRequirement: msRest.Comp
   }
 };
 
-export const Iok8sapimachinerypkgapismetav1LabelSelector: msRest.CompositeMapper = {
+export const V1LabelSelector: msRest.CompositeMapper = {
   serializedName: "io.k8s.apimachinery.pkg.apis.meta.v1.LabelSelector",
   type: {
     name: "Composite",
-    className: "Iok8sapimachinerypkgapismetav1LabelSelector",
+    className: "V1LabelSelector",
     modelProperties: {
       matchExpressions: {
         serializedName: "matchExpressions",
@@ -1261,7 +1261,7 @@ export const Iok8sapimachinerypkgapismetav1LabelSelector: msRest.CompositeMapper
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapimachinerypkgapismetav1LabelSelectorRequirement"
+              className: "V1LabelSelectorRequirement"
             }
           }
         }
@@ -1291,7 +1291,7 @@ export const V1PodAffinityTerm: msRest.CompositeMapper = {
         serializedName: "labelSelector",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1LabelSelector"
+          className: "V1LabelSelector"
         }
       },
       namespaces: {
@@ -4128,7 +4128,7 @@ export const V1PodTemplateSpec: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       spec: {
@@ -4411,7 +4411,7 @@ export const Comgithubopenshiftapiappsv1DeploymentConfig: msRest.CompositeMapper
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       spec: {
@@ -4468,7 +4468,7 @@ export const Comgithubopenshiftapiappsv1DeploymentConfigList: msRest.CompositeMa
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
@@ -4651,11 +4651,11 @@ export const Comgithubopenshiftapiappsv1DeploymentRequest: msRest.CompositeMappe
   }
 };
 
-export const Iok8sapirbacv1AggregationRule: msRest.CompositeMapper = {
+export const V1AggregationRule: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.rbac.v1.AggregationRule",
   type: {
     name: "Composite",
-    className: "Iok8sapirbacv1AggregationRule",
+    className: "V1AggregationRule",
     modelProperties: {
       clusterRoleSelectors: {
         serializedName: "clusterRoleSelectors",
@@ -4664,7 +4664,7 @@ export const Iok8sapirbacv1AggregationRule: msRest.CompositeMapper = {
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapimachinerypkgapismetav1LabelSelector"
+              className: "V1LabelSelector"
             }
           }
         }
@@ -4775,7 +4775,7 @@ export const Comgithubopenshiftapiauthorizationv1ClusterRole: msRest.CompositeMa
         serializedName: "aggregationRule",
         type: {
           name: "Composite",
-          className: "Iok8sapirbacv1AggregationRule"
+          className: "V1AggregationRule"
         }
       },
       apiVersion: {
@@ -4794,7 +4794,7 @@ export const Comgithubopenshiftapiauthorizationv1ClusterRole: msRest.CompositeMa
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       rules: {
@@ -4848,7 +4848,7 @@ export const Comgithubopenshiftapiauthorizationv1ClusterRoleBinding: msRest.Comp
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       roleRef: {
@@ -4923,7 +4923,7 @@ export const Comgithubopenshiftapiauthorizationv1ClusterRoleBindingList: msRest.
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
@@ -4965,7 +4965,7 @@ export const Comgithubopenshiftapiauthorizationv1ClusterRoleList: msRest.Composi
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
@@ -4998,7 +4998,7 @@ export const Comgithubopenshiftapiauthorizationv1GroupRestriction: msRest.Compos
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapimachinerypkgapismetav1LabelSelector"
+              className: "V1LabelSelector"
             }
           }
         }
@@ -5315,7 +5315,7 @@ export const Comgithubopenshiftapiauthorizationv1Role: msRest.CompositeMapper = 
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       rules: {
@@ -5369,7 +5369,7 @@ export const Comgithubopenshiftapiauthorizationv1RoleBinding: msRest.CompositeMa
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       roleRef: {
@@ -5444,7 +5444,7 @@ export const Comgithubopenshiftapiauthorizationv1RoleBindingList: msRest.Composi
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
@@ -5536,7 +5536,7 @@ export const Comgithubopenshiftapiauthorizationv1UserRestriction: msRest.Composi
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapimachinerypkgapismetav1LabelSelector"
+              className: "V1LabelSelector"
             }
           }
         }
@@ -5614,7 +5614,7 @@ export const Comgithubopenshiftapiauthorizationv1RoleBindingRestriction: msRest.
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       spec: {
@@ -5664,7 +5664,7 @@ export const Comgithubopenshiftapiauthorizationv1RoleBindingRestrictionList: msR
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
@@ -5706,7 +5706,7 @@ export const Comgithubopenshiftapiauthorizationv1RoleList: msRest.CompositeMappe
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
@@ -7205,7 +7205,7 @@ export const Comgithubopenshiftapibuildv1Build: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       spec: {
@@ -7500,7 +7500,7 @@ export const Comgithubopenshiftapibuildv1BuildConfig: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       spec: {
@@ -7558,7 +7558,7 @@ export const Comgithubopenshiftapibuildv1BuildConfigList: msRest.CompositeMapper
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
@@ -7600,7 +7600,7 @@ export const Comgithubopenshiftapibuildv1BuildList: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
@@ -7734,7 +7734,7 @@ export const Comgithubopenshiftapibuildv1BuildRequest: msRest.CompositeMapper = 
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       revision: {
@@ -7972,7 +7972,7 @@ export const Comgithubopenshiftapiimagev1ImageSignature: msRest.CompositeMapper 
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       signedClaims: {
@@ -8080,7 +8080,7 @@ export const Comgithubopenshiftapiimagev1Image: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       signatures: {
@@ -8234,7 +8234,7 @@ export const Comgithubopenshiftapiimagev1ImageImportStatus: msRest.CompositeMapp
         serializedName: "status",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1Status"
+          className: "V1Status"
         }
       },
       tag: {
@@ -8306,7 +8306,7 @@ export const Comgithubopenshiftapiimagev1ImageList: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
@@ -8612,7 +8612,7 @@ export const Comgithubopenshiftapiimagev1ImageStream: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       spec: {
@@ -8664,7 +8664,7 @@ export const Comgithubopenshiftapiimagev1ImageStreamImage: msRest.CompositeMappe
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       }
     }
@@ -8778,7 +8778,7 @@ export const Comgithubopenshiftapiimagev1RepositoryImportStatus: msRest.Composit
         serializedName: "status",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1Status"
+          className: "V1Status"
         }
       }
     }
@@ -8843,7 +8843,7 @@ export const Comgithubopenshiftapiimagev1ImageStreamImport: msRest.CompositeMapp
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       spec: {
@@ -8914,7 +8914,7 @@ export const Comgithubopenshiftapiimagev1ImageStreamLayers: msRest.CompositeMapp
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       }
     }
@@ -8956,7 +8956,7 @@ export const Comgithubopenshiftapiimagev1ImageStreamList: msRest.CompositeMapper
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
@@ -8993,7 +8993,7 @@ export const Comgithubopenshiftapiimagev1ImageStreamMapping: msRest.CompositeMap
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       tag: {
@@ -9064,7 +9064,7 @@ export const Comgithubopenshiftapiimagev1ImageStreamTag: msRest.CompositeMapper 
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       tag: {
@@ -9114,7 +9114,7 @@ export const Comgithubopenshiftapiimagev1ImageStreamTagList: msRest.CompositeMap
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
@@ -9186,7 +9186,7 @@ export const Comgithubopenshiftapinetworkv1ClusterNetwork: msRest.CompositeMappe
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       network: {
@@ -9253,7 +9253,7 @@ export const Comgithubopenshiftapinetworkv1ClusterNetworkList: msRest.CompositeM
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
@@ -9352,7 +9352,7 @@ export const Comgithubopenshiftapinetworkv1EgressNetworkPolicy: msRest.Composite
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       spec: {
@@ -9402,7 +9402,7 @@ export const Comgithubopenshiftapinetworkv1EgressNetworkPolicyList: msRest.Compo
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
@@ -9467,7 +9467,7 @@ export const Comgithubopenshiftapinetworkv1HostSubnet: msRest.CompositeMapper = 
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       subnet: {
@@ -9516,7 +9516,7 @@ export const Comgithubopenshiftapinetworkv1HostSubnetList: msRest.CompositeMappe
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
@@ -9556,7 +9556,7 @@ export const Comgithubopenshiftapinetworkv1NetNamespace: msRest.CompositeMapper 
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       netid: {
@@ -9612,7 +9612,7 @@ export const Comgithubopenshiftapinetworkv1NetNamespaceList: msRest.CompositeMap
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
@@ -9706,7 +9706,7 @@ export const Comgithubopenshiftapioauthv1OAuthAccessToken: msRest.CompositeMappe
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       redirectURI: {
@@ -9783,7 +9783,7 @@ export const Comgithubopenshiftapioauthv1OAuthAccessTokenList: msRest.CompositeM
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
@@ -9836,7 +9836,7 @@ export const Comgithubopenshiftapioauthv1OAuthAuthorizeToken: msRest.CompositeMa
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       redirectURI: {
@@ -9913,7 +9913,7 @@ export const Comgithubopenshiftapioauthv1OAuthAuthorizeTokenList: msRest.Composi
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
@@ -9999,7 +9999,7 @@ export const Comgithubopenshiftapioauthv1OAuthClient: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       redirectURIs: {
@@ -10069,7 +10069,7 @@ export const Comgithubopenshiftapioauthv1OAuthClientAuthorization: msRest.Compos
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       scopes: {
@@ -10134,7 +10134,7 @@ export const Comgithubopenshiftapioauthv1OAuthClientAuthorizationList: msRest.Co
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
@@ -10176,7 +10176,7 @@ export const Comgithubopenshiftapioauthv1OAuthClientList: msRest.CompositeMapper
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
@@ -10242,7 +10242,7 @@ export const Comgithubopenshiftapiprojectv1Project: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       spec: {
@@ -10298,7 +10298,7 @@ export const Comgithubopenshiftapiprojectv1ProjectList: msRest.CompositeMapper =
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
@@ -10339,7 +10339,7 @@ export const Comgithubopenshiftapiprojectv1ProjectRequest: msRest.CompositeMappe
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       }
     }
@@ -10465,7 +10465,7 @@ export const Comgithubopenshiftapiquotav1ClusterResourceQuotaSelector: msRest.Co
         serializedName: "labels",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1LabelSelector"
+          className: "V1LabelSelector"
         }
       }
     }
@@ -10609,7 +10609,7 @@ export const Comgithubopenshiftapiquotav1AppliedClusterResourceQuota: msRest.Com
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       spec: {
@@ -10666,7 +10666,7 @@ export const Comgithubopenshiftapiquotav1AppliedClusterResourceQuotaList: msRest
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
@@ -10696,7 +10696,7 @@ export const Comgithubopenshiftapiquotav1ClusterResourceQuota: msRest.CompositeM
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       spec: {
@@ -10753,7 +10753,7 @@ export const Comgithubopenshiftapiquotav1ClusterResourceQuotaList: msRest.Compos
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
@@ -11051,7 +11051,7 @@ export const Comgithubopenshiftapiroutev1Route: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       spec: {
@@ -11109,7 +11109,7 @@ export const Comgithubopenshiftapiroutev1RouteList: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
@@ -11495,7 +11495,7 @@ export const Comgithubopenshiftapisecurityv1RangeAllocation: msRest.CompositeMap
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       range: {
@@ -11544,7 +11544,7 @@ export const Comgithubopenshiftapisecurityv1RangeAllocationList: msRest.Composit
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
@@ -11788,7 +11788,7 @@ export const Comgithubopenshiftapisecurityv1SecurityContextConstraints: msRest.C
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       priority: {
@@ -11911,7 +11911,7 @@ export const Comgithubopenshiftapisecurityv1SecurityContextConstraintsList: msRe
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
@@ -11977,7 +11977,7 @@ export const Comgithubopenshiftapitemplatev1BrokerTemplateInstance: msRest.Compo
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       spec: {
@@ -12027,7 +12027,7 @@ export const Comgithubopenshiftapitemplatev1BrokerTemplateInstanceList: msRest.C
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
@@ -12126,7 +12126,7 @@ export const Comgithubopenshiftapitemplatev1Template: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       objects: {
@@ -12358,7 +12358,7 @@ export const Comgithubopenshiftapitemplatev1TemplateInstance: msRest.CompositeMa
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       spec: {
@@ -12416,7 +12416,7 @@ export const Comgithubopenshiftapitemplatev1TemplateInstanceList: msRest.Composi
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
@@ -12458,7 +12458,7 @@ export const Comgithubopenshiftapitemplatev1TemplateList: msRest.CompositeMapper
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
@@ -12487,7 +12487,7 @@ export const Comgithubopenshiftapiuserv1Group: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       users: {
@@ -12541,7 +12541,7 @@ export const Comgithubopenshiftapiuserv1GroupList: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
@@ -12581,7 +12581,7 @@ export const Comgithubopenshiftapiuserv1Identity: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       providerName: {
@@ -12645,7 +12645,7 @@ export const Comgithubopenshiftapiuserv1IdentityList: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
@@ -12704,7 +12704,7 @@ export const Comgithubopenshiftapiuserv1User: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       }
     }
@@ -12740,7 +12740,7 @@ export const Comgithubopenshiftapiuserv1UserIdentityMapping: msRest.CompositeMap
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       user: {
@@ -12789,18 +12789,18 @@ export const Comgithubopenshiftapiuserv1UserList: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
   }
 };
 
-export const Iok8sapiadmissionregistrationv1beta1ServiceReference: msRest.CompositeMapper = {
+export const V1beta1ServiceReference: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.admissionregistration.v1beta1.ServiceReference",
   type: {
     name: "Composite",
-    className: "Iok8sapiadmissionregistrationv1beta1ServiceReference",
+    className: "V1beta1ServiceReference",
     modelProperties: {
       name: {
         required: true,
@@ -12826,11 +12826,11 @@ export const Iok8sapiadmissionregistrationv1beta1ServiceReference: msRest.Compos
   }
 };
 
-export const Iok8sapiadmissionregistrationv1beta1WebhookClientConfig: msRest.CompositeMapper = {
+export const V1beta1WebhookClientConfig: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.admissionregistration.v1beta1.WebhookClientConfig",
   type: {
     name: "Composite",
-    className: "Iok8sapiadmissionregistrationv1beta1WebhookClientConfig",
+    className: "V1beta1WebhookClientConfig",
     modelProperties: {
       caBundle: {
         required: true,
@@ -12843,7 +12843,7 @@ export const Iok8sapiadmissionregistrationv1beta1WebhookClientConfig: msRest.Com
         serializedName: "service",
         type: {
           name: "Composite",
-          className: "Iok8sapiadmissionregistrationv1beta1ServiceReference"
+          className: "V1beta1ServiceReference"
         }
       },
       url: {
@@ -12856,11 +12856,11 @@ export const Iok8sapiadmissionregistrationv1beta1WebhookClientConfig: msRest.Com
   }
 };
 
-export const Iok8sapiadmissionregistrationv1beta1RuleWithOperations: msRest.CompositeMapper = {
+export const V1beta1RuleWithOperations: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.admissionregistration.v1beta1.RuleWithOperations",
   type: {
     name: "Composite",
-    className: "Iok8sapiadmissionregistrationv1beta1RuleWithOperations",
+    className: "V1beta1RuleWithOperations",
     modelProperties: {
       apiGroups: {
         serializedName: "apiGroups",
@@ -12910,18 +12910,18 @@ export const Iok8sapiadmissionregistrationv1beta1RuleWithOperations: msRest.Comp
   }
 };
 
-export const Iok8sapiadmissionregistrationv1beta1Webhook: msRest.CompositeMapper = {
+export const V1beta1Webhook: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.admissionregistration.v1beta1.Webhook",
   type: {
     name: "Composite",
-    className: "Iok8sapiadmissionregistrationv1beta1Webhook",
+    className: "V1beta1Webhook",
     modelProperties: {
       clientConfig: {
         required: true,
         serializedName: "clientConfig",
         type: {
           name: "Composite",
-          className: "Iok8sapiadmissionregistrationv1beta1WebhookClientConfig"
+          className: "V1beta1WebhookClientConfig"
         }
       },
       failurePolicy: {
@@ -12941,7 +12941,7 @@ export const Iok8sapiadmissionregistrationv1beta1Webhook: msRest.CompositeMapper
         serializedName: "namespaceSelector",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1LabelSelector"
+          className: "V1LabelSelector"
         }
       },
       rules: {
@@ -12951,7 +12951,7 @@ export const Iok8sapiadmissionregistrationv1beta1Webhook: msRest.CompositeMapper
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapiadmissionregistrationv1beta1RuleWithOperations"
+              className: "V1beta1RuleWithOperations"
             }
           }
         }
@@ -12960,11 +12960,11 @@ export const Iok8sapiadmissionregistrationv1beta1Webhook: msRest.CompositeMapper
   }
 };
 
-export const Iok8sapiadmissionregistrationv1beta1MutatingWebhookConfiguration: msRest.CompositeMapper = {
+export const V1beta1MutatingWebhookConfiguration: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.admissionregistration.v1beta1.MutatingWebhookConfiguration",
   type: {
     name: "Composite",
-    className: "Iok8sapiadmissionregistrationv1beta1MutatingWebhookConfiguration",
+    className: "V1beta1MutatingWebhookConfiguration",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -12982,7 +12982,7 @@ export const Iok8sapiadmissionregistrationv1beta1MutatingWebhookConfiguration: m
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       webhooks: {
@@ -12992,7 +12992,7 @@ export const Iok8sapiadmissionregistrationv1beta1MutatingWebhookConfiguration: m
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapiadmissionregistrationv1beta1Webhook"
+              className: "V1beta1Webhook"
             }
           }
         }
@@ -13001,11 +13001,11 @@ export const Iok8sapiadmissionregistrationv1beta1MutatingWebhookConfiguration: m
   }
 };
 
-export const Iok8sapiadmissionregistrationv1beta1MutatingWebhookConfigurationList: msRest.CompositeMapper = {
+export const V1beta1MutatingWebhookConfigurationList: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.admissionregistration.v1beta1.MutatingWebhookConfigurationList",
   type: {
     name: "Composite",
-    className: "Iok8sapiadmissionregistrationv1beta1MutatingWebhookConfigurationList",
+    className: "V1beta1MutatingWebhookConfigurationList",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -13021,7 +13021,7 @@ export const Iok8sapiadmissionregistrationv1beta1MutatingWebhookConfigurationLis
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapiadmissionregistrationv1beta1MutatingWebhookConfiguration"
+              className: "V1beta1MutatingWebhookConfiguration"
             }
           }
         }
@@ -13036,18 +13036,18 @@ export const Iok8sapiadmissionregistrationv1beta1MutatingWebhookConfigurationLis
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
   }
 };
 
-export const Iok8sapiadmissionregistrationv1beta1ValidatingWebhookConfiguration: msRest.CompositeMapper = {
+export const V1beta1ValidatingWebhookConfiguration: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.admissionregistration.v1beta1.ValidatingWebhookConfiguration",
   type: {
     name: "Composite",
-    className: "Iok8sapiadmissionregistrationv1beta1ValidatingWebhookConfiguration",
+    className: "V1beta1ValidatingWebhookConfiguration",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -13065,7 +13065,7 @@ export const Iok8sapiadmissionregistrationv1beta1ValidatingWebhookConfiguration:
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       webhooks: {
@@ -13075,7 +13075,7 @@ export const Iok8sapiadmissionregistrationv1beta1ValidatingWebhookConfiguration:
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapiadmissionregistrationv1beta1Webhook"
+              className: "V1beta1Webhook"
             }
           }
         }
@@ -13084,11 +13084,11 @@ export const Iok8sapiadmissionregistrationv1beta1ValidatingWebhookConfiguration:
   }
 };
 
-export const Iok8sapiadmissionregistrationv1beta1ValidatingWebhookConfigurationList: msRest.CompositeMapper = {
+export const V1beta1ValidatingWebhookConfigurationList: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.admissionregistration.v1beta1.ValidatingWebhookConfigurationList",
   type: {
     name: "Composite",
-    className: "Iok8sapiadmissionregistrationv1beta1ValidatingWebhookConfigurationList",
+    className: "V1beta1ValidatingWebhookConfigurationList",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -13104,7 +13104,7 @@ export const Iok8sapiadmissionregistrationv1beta1ValidatingWebhookConfigurationL
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapiadmissionregistrationv1beta1ValidatingWebhookConfiguration"
+              className: "V1beta1ValidatingWebhookConfiguration"
             }
           }
         }
@@ -13119,18 +13119,18 @@ export const Iok8sapiadmissionregistrationv1beta1ValidatingWebhookConfigurationL
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
   }
 };
 
-export const Iok8sapiappsv1ControllerRevision: msRest.CompositeMapper = {
+export const V1ControllerRevision: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1.ControllerRevision",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1ControllerRevision",
+    className: "V1ControllerRevision",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -13155,7 +13155,7 @@ export const Iok8sapiappsv1ControllerRevision: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       revision: {
@@ -13169,11 +13169,11 @@ export const Iok8sapiappsv1ControllerRevision: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapiappsv1ControllerRevisionList: msRest.CompositeMapper = {
+export const V1ControllerRevisionList: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1.ControllerRevisionList",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1ControllerRevisionList",
+    className: "V1ControllerRevisionList",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -13189,7 +13189,7 @@ export const Iok8sapiappsv1ControllerRevisionList: msRest.CompositeMapper = {
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapiappsv1ControllerRevision"
+              className: "V1ControllerRevision"
             }
           }
         }
@@ -13204,18 +13204,18 @@ export const Iok8sapiappsv1ControllerRevisionList: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
   }
 };
 
-export const Iok8sapiappsv1RollingUpdateDaemonSet: msRest.CompositeMapper = {
+export const V1RollingUpdateDaemonSet: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1.RollingUpdateDaemonSet",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1RollingUpdateDaemonSet",
+    className: "V1RollingUpdateDaemonSet",
     modelProperties: {
       maxUnavailable: {
         serializedName: "maxUnavailable",
@@ -13227,17 +13227,17 @@ export const Iok8sapiappsv1RollingUpdateDaemonSet: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapiappsv1DaemonSetUpdateStrategy: msRest.CompositeMapper = {
+export const V1DaemonSetUpdateStrategy: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1.DaemonSetUpdateStrategy",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1DaemonSetUpdateStrategy",
+    className: "V1DaemonSetUpdateStrategy",
     modelProperties: {
       rollingUpdate: {
         serializedName: "rollingUpdate",
         type: {
           name: "Composite",
-          className: "Iok8sapiappsv1RollingUpdateDaemonSet"
+          className: "V1RollingUpdateDaemonSet"
         }
       },
       type: {
@@ -13250,11 +13250,11 @@ export const Iok8sapiappsv1DaemonSetUpdateStrategy: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapiappsv1DaemonSetSpec: msRest.CompositeMapper = {
+export const V1DaemonSetSpec: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1.DaemonSetSpec",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1DaemonSetSpec",
+    className: "V1DaemonSetSpec",
     modelProperties: {
       minReadySeconds: {
         serializedName: "minReadySeconds",
@@ -13273,7 +13273,7 @@ export const Iok8sapiappsv1DaemonSetSpec: msRest.CompositeMapper = {
         serializedName: "selector",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1LabelSelector"
+          className: "V1LabelSelector"
         }
       },
       template: {
@@ -13288,18 +13288,18 @@ export const Iok8sapiappsv1DaemonSetSpec: msRest.CompositeMapper = {
         serializedName: "updateStrategy",
         type: {
           name: "Composite",
-          className: "Iok8sapiappsv1DaemonSetUpdateStrategy"
+          className: "V1DaemonSetUpdateStrategy"
         }
       }
     }
   }
 };
 
-export const Iok8sapiappsv1DaemonSetCondition: msRest.CompositeMapper = {
+export const V1DaemonSetCondition: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1.DaemonSetCondition",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1DaemonSetCondition",
+    className: "V1DaemonSetCondition",
     modelProperties: {
       lastTransitionTime: {
         serializedName: "lastTransitionTime",
@@ -13337,11 +13337,11 @@ export const Iok8sapiappsv1DaemonSetCondition: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapiappsv1DaemonSetStatus: msRest.CompositeMapper = {
+export const V1DaemonSetStatus: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1.DaemonSetStatus",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1DaemonSetStatus",
+    className: "V1DaemonSetStatus",
     modelProperties: {
       collisionCount: {
         serializedName: "collisionCount",
@@ -13356,7 +13356,7 @@ export const Iok8sapiappsv1DaemonSetStatus: msRest.CompositeMapper = {
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapiappsv1DaemonSetCondition"
+              className: "V1DaemonSetCondition"
             }
           }
         }
@@ -13417,11 +13417,11 @@ export const Iok8sapiappsv1DaemonSetStatus: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapiappsv1DaemonSet: msRest.CompositeMapper = {
+export const V1DaemonSet: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1.DaemonSet",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1DaemonSet",
+    className: "V1DaemonSet",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -13439,32 +13439,32 @@ export const Iok8sapiappsv1DaemonSet: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       spec: {
         serializedName: "spec",
         type: {
           name: "Composite",
-          className: "Iok8sapiappsv1DaemonSetSpec"
+          className: "V1DaemonSetSpec"
         }
       },
       status: {
         serializedName: "status",
         type: {
           name: "Composite",
-          className: "Iok8sapiappsv1DaemonSetStatus"
+          className: "V1DaemonSetStatus"
         }
       }
     }
   }
 };
 
-export const Iok8sapiappsv1DaemonSetList: msRest.CompositeMapper = {
+export const V1DaemonSetList: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1.DaemonSetList",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1DaemonSetList",
+    className: "V1DaemonSetList",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -13480,7 +13480,7 @@ export const Iok8sapiappsv1DaemonSetList: msRest.CompositeMapper = {
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapiappsv1DaemonSet"
+              className: "V1DaemonSet"
             }
           }
         }
@@ -13495,18 +13495,18 @@ export const Iok8sapiappsv1DaemonSetList: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
   }
 };
 
-export const Iok8sapiappsv1RollingUpdateDeployment: msRest.CompositeMapper = {
+export const V1RollingUpdateDeployment: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1.RollingUpdateDeployment",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1RollingUpdateDeployment",
+    className: "V1RollingUpdateDeployment",
     modelProperties: {
       maxSurge: {
         serializedName: "maxSurge",
@@ -13524,17 +13524,17 @@ export const Iok8sapiappsv1RollingUpdateDeployment: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapiappsv1DeploymentStrategy: msRest.CompositeMapper = {
+export const V1DeploymentStrategy: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1.DeploymentStrategy",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1DeploymentStrategy",
+    className: "V1DeploymentStrategy",
     modelProperties: {
       rollingUpdate: {
         serializedName: "rollingUpdate",
         type: {
           name: "Composite",
-          className: "Iok8sapiappsv1RollingUpdateDeployment"
+          className: "V1RollingUpdateDeployment"
         }
       },
       type: {
@@ -13547,11 +13547,11 @@ export const Iok8sapiappsv1DeploymentStrategy: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapiappsv1DeploymentSpec: msRest.CompositeMapper = {
+export const V1DeploymentSpec: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1.DeploymentSpec",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1DeploymentSpec",
+    className: "V1DeploymentSpec",
     modelProperties: {
       minReadySeconds: {
         serializedName: "minReadySeconds",
@@ -13588,14 +13588,14 @@ export const Iok8sapiappsv1DeploymentSpec: msRest.CompositeMapper = {
         serializedName: "selector",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1LabelSelector"
+          className: "V1LabelSelector"
         }
       },
       strategy: {
         serializedName: "strategy",
         type: {
           name: "Composite",
-          className: "Iok8sapiappsv1DeploymentStrategy"
+          className: "V1DeploymentStrategy"
         }
       },
       template: {
@@ -13610,11 +13610,11 @@ export const Iok8sapiappsv1DeploymentSpec: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapiappsv1DeploymentCondition: msRest.CompositeMapper = {
+export const V1DeploymentCondition: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1.DeploymentCondition",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1DeploymentCondition",
+    className: "V1DeploymentCondition",
     modelProperties: {
       lastTransitionTime: {
         serializedName: "lastTransitionTime",
@@ -13658,11 +13658,11 @@ export const Iok8sapiappsv1DeploymentCondition: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapiappsv1DeploymentStatus: msRest.CompositeMapper = {
+export const V1DeploymentStatus: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1.DeploymentStatus",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1DeploymentStatus",
+    className: "V1DeploymentStatus",
     modelProperties: {
       availableReplicas: {
         serializedName: "availableReplicas",
@@ -13683,7 +13683,7 @@ export const Iok8sapiappsv1DeploymentStatus: msRest.CompositeMapper = {
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapiappsv1DeploymentCondition"
+              className: "V1DeploymentCondition"
             }
           }
         }
@@ -13722,11 +13722,11 @@ export const Iok8sapiappsv1DeploymentStatus: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapiappsv1Deployment: msRest.CompositeMapper = {
+export const V1Deployment: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1.Deployment",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1Deployment",
+    className: "V1Deployment",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -13744,32 +13744,32 @@ export const Iok8sapiappsv1Deployment: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       spec: {
         serializedName: "spec",
         type: {
           name: "Composite",
-          className: "Iok8sapiappsv1DeploymentSpec"
+          className: "V1DeploymentSpec"
         }
       },
       status: {
         serializedName: "status",
         type: {
           name: "Composite",
-          className: "Iok8sapiappsv1DeploymentStatus"
+          className: "V1DeploymentStatus"
         }
       }
     }
   }
 };
 
-export const Iok8sapiappsv1DeploymentList: msRest.CompositeMapper = {
+export const V1DeploymentList: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1.DeploymentList",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1DeploymentList",
+    className: "V1DeploymentList",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -13785,7 +13785,7 @@ export const Iok8sapiappsv1DeploymentList: msRest.CompositeMapper = {
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapiappsv1Deployment"
+              className: "V1Deployment"
             }
           }
         }
@@ -13800,18 +13800,18 @@ export const Iok8sapiappsv1DeploymentList: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
   }
 };
 
-export const Iok8sapiappsv1ReplicaSetSpec: msRest.CompositeMapper = {
+export const V1ReplicaSetSpec: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1.ReplicaSetSpec",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1ReplicaSetSpec",
+    className: "V1ReplicaSetSpec",
     modelProperties: {
       minReadySeconds: {
         serializedName: "minReadySeconds",
@@ -13830,7 +13830,7 @@ export const Iok8sapiappsv1ReplicaSetSpec: msRest.CompositeMapper = {
         serializedName: "selector",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1LabelSelector"
+          className: "V1LabelSelector"
         }
       },
       template: {
@@ -13844,11 +13844,11 @@ export const Iok8sapiappsv1ReplicaSetSpec: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapiappsv1ReplicaSetCondition: msRest.CompositeMapper = {
+export const V1ReplicaSetCondition: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1.ReplicaSetCondition",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1ReplicaSetCondition",
+    className: "V1ReplicaSetCondition",
     modelProperties: {
       lastTransitionTime: {
         serializedName: "lastTransitionTime",
@@ -13886,11 +13886,11 @@ export const Iok8sapiappsv1ReplicaSetCondition: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapiappsv1ReplicaSetStatus: msRest.CompositeMapper = {
+export const V1ReplicaSetStatus: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1.ReplicaSetStatus",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1ReplicaSetStatus",
+    className: "V1ReplicaSetStatus",
     modelProperties: {
       availableReplicas: {
         serializedName: "availableReplicas",
@@ -13905,7 +13905,7 @@ export const Iok8sapiappsv1ReplicaSetStatus: msRest.CompositeMapper = {
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapiappsv1ReplicaSetCondition"
+              className: "V1ReplicaSetCondition"
             }
           }
         }
@@ -13939,11 +13939,11 @@ export const Iok8sapiappsv1ReplicaSetStatus: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapiappsv1ReplicaSet: msRest.CompositeMapper = {
+export const V1ReplicaSet: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1.ReplicaSet",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1ReplicaSet",
+    className: "V1ReplicaSet",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -13961,32 +13961,32 @@ export const Iok8sapiappsv1ReplicaSet: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       spec: {
         serializedName: "spec",
         type: {
           name: "Composite",
-          className: "Iok8sapiappsv1ReplicaSetSpec"
+          className: "V1ReplicaSetSpec"
         }
       },
       status: {
         serializedName: "status",
         type: {
           name: "Composite",
-          className: "Iok8sapiappsv1ReplicaSetStatus"
+          className: "V1ReplicaSetStatus"
         }
       }
     }
   }
 };
 
-export const Iok8sapiappsv1ReplicaSetList: msRest.CompositeMapper = {
+export const V1ReplicaSetList: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1.ReplicaSetList",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1ReplicaSetList",
+    className: "V1ReplicaSetList",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -14002,7 +14002,7 @@ export const Iok8sapiappsv1ReplicaSetList: msRest.CompositeMapper = {
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapiappsv1ReplicaSet"
+              className: "V1ReplicaSet"
             }
           }
         }
@@ -14017,18 +14017,18 @@ export const Iok8sapiappsv1ReplicaSetList: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
   }
 };
 
-export const Iok8sapiappsv1RollingUpdateStatefulSetStrategy: msRest.CompositeMapper = {
+export const V1RollingUpdateStatefulSetStrategy: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1.RollingUpdateStatefulSetStrategy",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1RollingUpdateStatefulSetStrategy",
+    className: "V1RollingUpdateStatefulSetStrategy",
     modelProperties: {
       partition: {
         serializedName: "partition",
@@ -14040,17 +14040,17 @@ export const Iok8sapiappsv1RollingUpdateStatefulSetStrategy: msRest.CompositeMap
   }
 };
 
-export const Iok8sapiappsv1StatefulSetUpdateStrategy: msRest.CompositeMapper = {
+export const V1StatefulSetUpdateStrategy: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1.StatefulSetUpdateStrategy",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1StatefulSetUpdateStrategy",
+    className: "V1StatefulSetUpdateStrategy",
     modelProperties: {
       rollingUpdate: {
         serializedName: "rollingUpdate",
         type: {
           name: "Composite",
-          className: "Iok8sapiappsv1RollingUpdateStatefulSetStrategy"
+          className: "V1RollingUpdateStatefulSetStrategy"
         }
       },
       type: {
@@ -14091,7 +14091,7 @@ export const V1PersistentVolumeClaimSpec: msRest.CompositeMapper = {
         serializedName: "selector",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1LabelSelector"
+          className: "V1LabelSelector"
         }
       },
       storageClassName: {
@@ -14236,7 +14236,7 @@ export const V1PersistentVolumeClaim: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       spec: {
@@ -14257,11 +14257,11 @@ export const V1PersistentVolumeClaim: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapiappsv1StatefulSetSpec: msRest.CompositeMapper = {
+export const V1StatefulSetSpec: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1.StatefulSetSpec",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1StatefulSetSpec",
+    className: "V1StatefulSetSpec",
     modelProperties: {
       podManagementPolicy: {
         serializedName: "podManagementPolicy",
@@ -14286,7 +14286,7 @@ export const Iok8sapiappsv1StatefulSetSpec: msRest.CompositeMapper = {
         serializedName: "selector",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1LabelSelector"
+          className: "V1LabelSelector"
         }
       },
       serviceName: {
@@ -14308,7 +14308,7 @@ export const Iok8sapiappsv1StatefulSetSpec: msRest.CompositeMapper = {
         serializedName: "updateStrategy",
         type: {
           name: "Composite",
-          className: "Iok8sapiappsv1StatefulSetUpdateStrategy"
+          className: "V1StatefulSetUpdateStrategy"
         }
       },
       volumeClaimTemplates: {
@@ -14327,11 +14327,11 @@ export const Iok8sapiappsv1StatefulSetSpec: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapiappsv1StatefulSetCondition: msRest.CompositeMapper = {
+export const V1StatefulSetCondition: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1.StatefulSetCondition",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1StatefulSetCondition",
+    className: "V1StatefulSetCondition",
     modelProperties: {
       lastTransitionTime: {
         serializedName: "lastTransitionTime",
@@ -14369,11 +14369,11 @@ export const Iok8sapiappsv1StatefulSetCondition: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapiappsv1StatefulSetStatus: msRest.CompositeMapper = {
+export const V1StatefulSetStatus: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1.StatefulSetStatus",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1StatefulSetStatus",
+    className: "V1StatefulSetStatus",
     modelProperties: {
       collisionCount: {
         serializedName: "collisionCount",
@@ -14388,7 +14388,7 @@ export const Iok8sapiappsv1StatefulSetStatus: msRest.CompositeMapper = {
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapiappsv1StatefulSetCondition"
+              className: "V1StatefulSetCondition"
             }
           }
         }
@@ -14440,11 +14440,11 @@ export const Iok8sapiappsv1StatefulSetStatus: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapiappsv1StatefulSet: msRest.CompositeMapper = {
+export const V1StatefulSet: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1.StatefulSet",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1StatefulSet",
+    className: "V1StatefulSet",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -14462,32 +14462,32 @@ export const Iok8sapiappsv1StatefulSet: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       spec: {
         serializedName: "spec",
         type: {
           name: "Composite",
-          className: "Iok8sapiappsv1StatefulSetSpec"
+          className: "V1StatefulSetSpec"
         }
       },
       status: {
         serializedName: "status",
         type: {
           name: "Composite",
-          className: "Iok8sapiappsv1StatefulSetStatus"
+          className: "V1StatefulSetStatus"
         }
       }
     }
   }
 };
 
-export const Iok8sapiappsv1StatefulSetList: msRest.CompositeMapper = {
+export const V1StatefulSetList: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1.StatefulSetList",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1StatefulSetList",
+    className: "V1StatefulSetList",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -14503,7 +14503,7 @@ export const Iok8sapiappsv1StatefulSetList: msRest.CompositeMapper = {
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapiappsv1StatefulSet"
+              className: "V1StatefulSet"
             }
           }
         }
@@ -14518,18 +14518,18 @@ export const Iok8sapiappsv1StatefulSetList: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
   }
 };
 
-export const Iok8sapiappsv1beta1ControllerRevision: msRest.CompositeMapper = {
+export const V1beta1ControllerRevision: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1beta1.ControllerRevision",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1beta1ControllerRevision",
+    className: "V1beta1ControllerRevision",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -14554,7 +14554,7 @@ export const Iok8sapiappsv1beta1ControllerRevision: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       revision: {
@@ -14568,11 +14568,11 @@ export const Iok8sapiappsv1beta1ControllerRevision: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapiappsv1beta1ControllerRevisionList: msRest.CompositeMapper = {
+export const V1beta1ControllerRevisionList: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1beta1.ControllerRevisionList",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1beta1ControllerRevisionList",
+    className: "V1beta1ControllerRevisionList",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -14588,7 +14588,7 @@ export const Iok8sapiappsv1beta1ControllerRevisionList: msRest.CompositeMapper =
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapiappsv1beta1ControllerRevision"
+              className: "V1beta1ControllerRevision"
             }
           }
         }
@@ -14603,18 +14603,18 @@ export const Iok8sapiappsv1beta1ControllerRevisionList: msRest.CompositeMapper =
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
   }
 };
 
-export const Iok8sapiappsv1beta1RollbackConfig: msRest.CompositeMapper = {
+export const V1beta1RollbackConfig: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1beta1.RollbackConfig",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1beta1RollbackConfig",
+    className: "V1beta1RollbackConfig",
     modelProperties: {
       revision: {
         serializedName: "revision",
@@ -14626,11 +14626,11 @@ export const Iok8sapiappsv1beta1RollbackConfig: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapiappsv1beta1RollingUpdateDeployment: msRest.CompositeMapper = {
+export const V1beta1RollingUpdateDeployment: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1beta1.RollingUpdateDeployment",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1beta1RollingUpdateDeployment",
+    className: "V1beta1RollingUpdateDeployment",
     modelProperties: {
       maxSurge: {
         serializedName: "maxSurge",
@@ -14648,17 +14648,17 @@ export const Iok8sapiappsv1beta1RollingUpdateDeployment: msRest.CompositeMapper 
   }
 };
 
-export const Iok8sapiappsv1beta1DeploymentStrategy: msRest.CompositeMapper = {
+export const V1beta1DeploymentStrategy: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1beta1.DeploymentStrategy",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1beta1DeploymentStrategy",
+    className: "V1beta1DeploymentStrategy",
     modelProperties: {
       rollingUpdate: {
         serializedName: "rollingUpdate",
         type: {
           name: "Composite",
-          className: "Iok8sapiappsv1beta1RollingUpdateDeployment"
+          className: "V1beta1RollingUpdateDeployment"
         }
       },
       type: {
@@ -14671,11 +14671,11 @@ export const Iok8sapiappsv1beta1DeploymentStrategy: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapiappsv1beta1DeploymentSpec: msRest.CompositeMapper = {
+export const V1beta1DeploymentSpec: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1beta1.DeploymentSpec",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1beta1DeploymentSpec",
+    className: "V1beta1DeploymentSpec",
     modelProperties: {
       minReadySeconds: {
         serializedName: "minReadySeconds",
@@ -14711,21 +14711,21 @@ export const Iok8sapiappsv1beta1DeploymentSpec: msRest.CompositeMapper = {
         serializedName: "rollbackTo",
         type: {
           name: "Composite",
-          className: "Iok8sapiappsv1beta1RollbackConfig"
+          className: "V1beta1RollbackConfig"
         }
       },
       selector: {
         serializedName: "selector",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1LabelSelector"
+          className: "V1LabelSelector"
         }
       },
       strategy: {
         serializedName: "strategy",
         type: {
           name: "Composite",
-          className: "Iok8sapiappsv1beta1DeploymentStrategy"
+          className: "V1beta1DeploymentStrategy"
         }
       },
       template: {
@@ -14740,11 +14740,11 @@ export const Iok8sapiappsv1beta1DeploymentSpec: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapiappsv1beta1DeploymentCondition: msRest.CompositeMapper = {
+export const V1beta1DeploymentCondition: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1beta1.DeploymentCondition",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1beta1DeploymentCondition",
+    className: "V1beta1DeploymentCondition",
     modelProperties: {
       lastTransitionTime: {
         serializedName: "lastTransitionTime",
@@ -14788,11 +14788,11 @@ export const Iok8sapiappsv1beta1DeploymentCondition: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapiappsv1beta1DeploymentStatus: msRest.CompositeMapper = {
+export const V1beta1DeploymentStatus: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1beta1.DeploymentStatus",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1beta1DeploymentStatus",
+    className: "V1beta1DeploymentStatus",
     modelProperties: {
       availableReplicas: {
         serializedName: "availableReplicas",
@@ -14813,7 +14813,7 @@ export const Iok8sapiappsv1beta1DeploymentStatus: msRest.CompositeMapper = {
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapiappsv1beta1DeploymentCondition"
+              className: "V1beta1DeploymentCondition"
             }
           }
         }
@@ -14852,11 +14852,11 @@ export const Iok8sapiappsv1beta1DeploymentStatus: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapiappsv1beta1Deployment: msRest.CompositeMapper = {
+export const V1beta1Deployment: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1beta1.Deployment",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1beta1Deployment",
+    className: "V1beta1Deployment",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -14874,32 +14874,32 @@ export const Iok8sapiappsv1beta1Deployment: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       spec: {
         serializedName: "spec",
         type: {
           name: "Composite",
-          className: "Iok8sapiappsv1beta1DeploymentSpec"
+          className: "V1beta1DeploymentSpec"
         }
       },
       status: {
         serializedName: "status",
         type: {
           name: "Composite",
-          className: "Iok8sapiappsv1beta1DeploymentStatus"
+          className: "V1beta1DeploymentStatus"
         }
       }
     }
   }
 };
 
-export const Iok8sapiappsv1beta1DeploymentList: msRest.CompositeMapper = {
+export const V1beta1DeploymentList: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1beta1.DeploymentList",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1beta1DeploymentList",
+    className: "V1beta1DeploymentList",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -14915,7 +14915,7 @@ export const Iok8sapiappsv1beta1DeploymentList: msRest.CompositeMapper = {
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapiappsv1beta1Deployment"
+              className: "V1beta1Deployment"
             }
           }
         }
@@ -14930,18 +14930,18 @@ export const Iok8sapiappsv1beta1DeploymentList: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
   }
 };
 
-export const Iok8sapiappsv1beta1DeploymentRollback: msRest.CompositeMapper = {
+export const V1beta1DeploymentRollback: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1beta1.DeploymentRollback",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1beta1DeploymentRollback",
+    className: "V1beta1DeploymentRollback",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -14967,7 +14967,7 @@ export const Iok8sapiappsv1beta1DeploymentRollback: msRest.CompositeMapper = {
         serializedName: "rollbackTo",
         type: {
           name: "Composite",
-          className: "Iok8sapiappsv1beta1RollbackConfig"
+          className: "V1beta1RollbackConfig"
         }
       },
       updatedAnnotations: {
@@ -14985,11 +14985,11 @@ export const Iok8sapiappsv1beta1DeploymentRollback: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapiappsv1beta1RollingUpdateStatefulSetStrategy: msRest.CompositeMapper = {
+export const V1beta1RollingUpdateStatefulSetStrategy: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1beta1.RollingUpdateStatefulSetStrategy",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1beta1RollingUpdateStatefulSetStrategy",
+    className: "V1beta1RollingUpdateStatefulSetStrategy",
     modelProperties: {
       partition: {
         serializedName: "partition",
@@ -15001,11 +15001,11 @@ export const Iok8sapiappsv1beta1RollingUpdateStatefulSetStrategy: msRest.Composi
   }
 };
 
-export const Iok8sapiappsv1beta1ScaleSpec: msRest.CompositeMapper = {
+export const V1beta1ScaleSpec: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1beta1.ScaleSpec",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1beta1ScaleSpec",
+    className: "V1beta1ScaleSpec",
     modelProperties: {
       replicas: {
         serializedName: "replicas",
@@ -15017,11 +15017,11 @@ export const Iok8sapiappsv1beta1ScaleSpec: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapiappsv1beta1ScaleStatus: msRest.CompositeMapper = {
+export const V1beta1ScaleStatus: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1beta1.ScaleStatus",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1beta1ScaleStatus",
+    className: "V1beta1ScaleStatus",
     modelProperties: {
       replicas: {
         required: true,
@@ -15051,11 +15051,11 @@ export const Iok8sapiappsv1beta1ScaleStatus: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapiappsv1beta1Scale: msRest.CompositeMapper = {
+export const V1beta1Scale: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1beta1.Scale",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1beta1Scale",
+    className: "V1beta1Scale",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -15073,38 +15073,38 @@ export const Iok8sapiappsv1beta1Scale: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       spec: {
         serializedName: "spec",
         type: {
           name: "Composite",
-          className: "Iok8sapiappsv1beta1ScaleSpec"
+          className: "V1beta1ScaleSpec"
         }
       },
       status: {
         serializedName: "status",
         type: {
           name: "Composite",
-          className: "Iok8sapiappsv1beta1ScaleStatus"
+          className: "V1beta1ScaleStatus"
         }
       }
     }
   }
 };
 
-export const Iok8sapiappsv1beta1StatefulSetUpdateStrategy: msRest.CompositeMapper = {
+export const V1beta1StatefulSetUpdateStrategy: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1beta1.StatefulSetUpdateStrategy",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1beta1StatefulSetUpdateStrategy",
+    className: "V1beta1StatefulSetUpdateStrategy",
     modelProperties: {
       rollingUpdate: {
         serializedName: "rollingUpdate",
         type: {
           name: "Composite",
-          className: "Iok8sapiappsv1beta1RollingUpdateStatefulSetStrategy"
+          className: "V1beta1RollingUpdateStatefulSetStrategy"
         }
       },
       type: {
@@ -15117,11 +15117,11 @@ export const Iok8sapiappsv1beta1StatefulSetUpdateStrategy: msRest.CompositeMappe
   }
 };
 
-export const Iok8sapiappsv1beta1StatefulSetSpec: msRest.CompositeMapper = {
+export const V1beta1StatefulSetSpec: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1beta1.StatefulSetSpec",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1beta1StatefulSetSpec",
+    className: "V1beta1StatefulSetSpec",
     modelProperties: {
       podManagementPolicy: {
         serializedName: "podManagementPolicy",
@@ -15145,7 +15145,7 @@ export const Iok8sapiappsv1beta1StatefulSetSpec: msRest.CompositeMapper = {
         serializedName: "selector",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1LabelSelector"
+          className: "V1LabelSelector"
         }
       },
       serviceName: {
@@ -15167,7 +15167,7 @@ export const Iok8sapiappsv1beta1StatefulSetSpec: msRest.CompositeMapper = {
         serializedName: "updateStrategy",
         type: {
           name: "Composite",
-          className: "Iok8sapiappsv1beta1StatefulSetUpdateStrategy"
+          className: "V1beta1StatefulSetUpdateStrategy"
         }
       },
       volumeClaimTemplates: {
@@ -15186,11 +15186,11 @@ export const Iok8sapiappsv1beta1StatefulSetSpec: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapiappsv1beta1StatefulSetCondition: msRest.CompositeMapper = {
+export const V1beta1StatefulSetCondition: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1beta1.StatefulSetCondition",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1beta1StatefulSetCondition",
+    className: "V1beta1StatefulSetCondition",
     modelProperties: {
       lastTransitionTime: {
         serializedName: "lastTransitionTime",
@@ -15228,11 +15228,11 @@ export const Iok8sapiappsv1beta1StatefulSetCondition: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapiappsv1beta1StatefulSetStatus: msRest.CompositeMapper = {
+export const V1beta1StatefulSetStatus: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1beta1.StatefulSetStatus",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1beta1StatefulSetStatus",
+    className: "V1beta1StatefulSetStatus",
     modelProperties: {
       collisionCount: {
         serializedName: "collisionCount",
@@ -15247,7 +15247,7 @@ export const Iok8sapiappsv1beta1StatefulSetStatus: msRest.CompositeMapper = {
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapiappsv1beta1StatefulSetCondition"
+              className: "V1beta1StatefulSetCondition"
             }
           }
         }
@@ -15299,11 +15299,11 @@ export const Iok8sapiappsv1beta1StatefulSetStatus: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapiappsv1beta1StatefulSet: msRest.CompositeMapper = {
+export const V1beta1StatefulSet: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1beta1.StatefulSet",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1beta1StatefulSet",
+    className: "V1beta1StatefulSet",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -15321,32 +15321,32 @@ export const Iok8sapiappsv1beta1StatefulSet: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       spec: {
         serializedName: "spec",
         type: {
           name: "Composite",
-          className: "Iok8sapiappsv1beta1StatefulSetSpec"
+          className: "V1beta1StatefulSetSpec"
         }
       },
       status: {
         serializedName: "status",
         type: {
           name: "Composite",
-          className: "Iok8sapiappsv1beta1StatefulSetStatus"
+          className: "V1beta1StatefulSetStatus"
         }
       }
     }
   }
 };
 
-export const Iok8sapiappsv1beta1StatefulSetList: msRest.CompositeMapper = {
+export const V1beta1StatefulSetList: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1beta1.StatefulSetList",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1beta1StatefulSetList",
+    className: "V1beta1StatefulSetList",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -15362,7 +15362,7 @@ export const Iok8sapiappsv1beta1StatefulSetList: msRest.CompositeMapper = {
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapiappsv1beta1StatefulSet"
+              className: "V1beta1StatefulSet"
             }
           }
         }
@@ -15377,18 +15377,18 @@ export const Iok8sapiappsv1beta1StatefulSetList: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
   }
 };
 
-export const Iok8sapiappsv1beta2ControllerRevision: msRest.CompositeMapper = {
+export const V1beta2ControllerRevision: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1beta2.ControllerRevision",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1beta2ControllerRevision",
+    className: "V1beta2ControllerRevision",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -15413,7 +15413,7 @@ export const Iok8sapiappsv1beta2ControllerRevision: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       revision: {
@@ -15427,11 +15427,11 @@ export const Iok8sapiappsv1beta2ControllerRevision: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapiappsv1beta2ControllerRevisionList: msRest.CompositeMapper = {
+export const V1beta2ControllerRevisionList: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1beta2.ControllerRevisionList",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1beta2ControllerRevisionList",
+    className: "V1beta2ControllerRevisionList",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -15447,7 +15447,7 @@ export const Iok8sapiappsv1beta2ControllerRevisionList: msRest.CompositeMapper =
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapiappsv1beta2ControllerRevision"
+              className: "V1beta2ControllerRevision"
             }
           }
         }
@@ -15462,18 +15462,18 @@ export const Iok8sapiappsv1beta2ControllerRevisionList: msRest.CompositeMapper =
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
   }
 };
 
-export const Iok8sapiappsv1beta2RollingUpdateDaemonSet: msRest.CompositeMapper = {
+export const V1beta2RollingUpdateDaemonSet: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1beta2.RollingUpdateDaemonSet",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1beta2RollingUpdateDaemonSet",
+    className: "V1beta2RollingUpdateDaemonSet",
     modelProperties: {
       maxUnavailable: {
         serializedName: "maxUnavailable",
@@ -15485,17 +15485,17 @@ export const Iok8sapiappsv1beta2RollingUpdateDaemonSet: msRest.CompositeMapper =
   }
 };
 
-export const Iok8sapiappsv1beta2DaemonSetUpdateStrategy: msRest.CompositeMapper = {
+export const V1beta2DaemonSetUpdateStrategy: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1beta2.DaemonSetUpdateStrategy",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1beta2DaemonSetUpdateStrategy",
+    className: "V1beta2DaemonSetUpdateStrategy",
     modelProperties: {
       rollingUpdate: {
         serializedName: "rollingUpdate",
         type: {
           name: "Composite",
-          className: "Iok8sapiappsv1beta2RollingUpdateDaemonSet"
+          className: "V1beta2RollingUpdateDaemonSet"
         }
       },
       type: {
@@ -15508,11 +15508,11 @@ export const Iok8sapiappsv1beta2DaemonSetUpdateStrategy: msRest.CompositeMapper 
   }
 };
 
-export const Iok8sapiappsv1beta2DaemonSetSpec: msRest.CompositeMapper = {
+export const V1beta2DaemonSetSpec: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1beta2.DaemonSetSpec",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1beta2DaemonSetSpec",
+    className: "V1beta2DaemonSetSpec",
     modelProperties: {
       minReadySeconds: {
         serializedName: "minReadySeconds",
@@ -15531,7 +15531,7 @@ export const Iok8sapiappsv1beta2DaemonSetSpec: msRest.CompositeMapper = {
         serializedName: "selector",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1LabelSelector"
+          className: "V1LabelSelector"
         }
       },
       template: {
@@ -15546,18 +15546,18 @@ export const Iok8sapiappsv1beta2DaemonSetSpec: msRest.CompositeMapper = {
         serializedName: "updateStrategy",
         type: {
           name: "Composite",
-          className: "Iok8sapiappsv1beta2DaemonSetUpdateStrategy"
+          className: "V1beta2DaemonSetUpdateStrategy"
         }
       }
     }
   }
 };
 
-export const Iok8sapiappsv1beta2DaemonSetCondition: msRest.CompositeMapper = {
+export const V1beta2DaemonSetCondition: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1beta2.DaemonSetCondition",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1beta2DaemonSetCondition",
+    className: "V1beta2DaemonSetCondition",
     modelProperties: {
       lastTransitionTime: {
         serializedName: "lastTransitionTime",
@@ -15595,11 +15595,11 @@ export const Iok8sapiappsv1beta2DaemonSetCondition: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapiappsv1beta2DaemonSetStatus: msRest.CompositeMapper = {
+export const V1beta2DaemonSetStatus: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1beta2.DaemonSetStatus",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1beta2DaemonSetStatus",
+    className: "V1beta2DaemonSetStatus",
     modelProperties: {
       collisionCount: {
         serializedName: "collisionCount",
@@ -15614,7 +15614,7 @@ export const Iok8sapiappsv1beta2DaemonSetStatus: msRest.CompositeMapper = {
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapiappsv1beta2DaemonSetCondition"
+              className: "V1beta2DaemonSetCondition"
             }
           }
         }
@@ -15675,11 +15675,11 @@ export const Iok8sapiappsv1beta2DaemonSetStatus: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapiappsv1beta2DaemonSet: msRest.CompositeMapper = {
+export const V1beta2DaemonSet: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1beta2.DaemonSet",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1beta2DaemonSet",
+    className: "V1beta2DaemonSet",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -15697,32 +15697,32 @@ export const Iok8sapiappsv1beta2DaemonSet: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       spec: {
         serializedName: "spec",
         type: {
           name: "Composite",
-          className: "Iok8sapiappsv1beta2DaemonSetSpec"
+          className: "V1beta2DaemonSetSpec"
         }
       },
       status: {
         serializedName: "status",
         type: {
           name: "Composite",
-          className: "Iok8sapiappsv1beta2DaemonSetStatus"
+          className: "V1beta2DaemonSetStatus"
         }
       }
     }
   }
 };
 
-export const Iok8sapiappsv1beta2DaemonSetList: msRest.CompositeMapper = {
+export const V1beta2DaemonSetList: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1beta2.DaemonSetList",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1beta2DaemonSetList",
+    className: "V1beta2DaemonSetList",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -15738,7 +15738,7 @@ export const Iok8sapiappsv1beta2DaemonSetList: msRest.CompositeMapper = {
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapiappsv1beta2DaemonSet"
+              className: "V1beta2DaemonSet"
             }
           }
         }
@@ -15753,18 +15753,18 @@ export const Iok8sapiappsv1beta2DaemonSetList: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
   }
 };
 
-export const Iok8sapiappsv1beta2RollingUpdateDeployment: msRest.CompositeMapper = {
+export const V1beta2RollingUpdateDeployment: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1beta2.RollingUpdateDeployment",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1beta2RollingUpdateDeployment",
+    className: "V1beta2RollingUpdateDeployment",
     modelProperties: {
       maxSurge: {
         serializedName: "maxSurge",
@@ -15782,17 +15782,17 @@ export const Iok8sapiappsv1beta2RollingUpdateDeployment: msRest.CompositeMapper 
   }
 };
 
-export const Iok8sapiappsv1beta2DeploymentStrategy: msRest.CompositeMapper = {
+export const V1beta2DeploymentStrategy: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1beta2.DeploymentStrategy",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1beta2DeploymentStrategy",
+    className: "V1beta2DeploymentStrategy",
     modelProperties: {
       rollingUpdate: {
         serializedName: "rollingUpdate",
         type: {
           name: "Composite",
-          className: "Iok8sapiappsv1beta2RollingUpdateDeployment"
+          className: "V1beta2RollingUpdateDeployment"
         }
       },
       type: {
@@ -15805,11 +15805,11 @@ export const Iok8sapiappsv1beta2DeploymentStrategy: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapiappsv1beta2DeploymentSpec: msRest.CompositeMapper = {
+export const V1beta2DeploymentSpec: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1beta2.DeploymentSpec",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1beta2DeploymentSpec",
+    className: "V1beta2DeploymentSpec",
     modelProperties: {
       minReadySeconds: {
         serializedName: "minReadySeconds",
@@ -15846,14 +15846,14 @@ export const Iok8sapiappsv1beta2DeploymentSpec: msRest.CompositeMapper = {
         serializedName: "selector",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1LabelSelector"
+          className: "V1LabelSelector"
         }
       },
       strategy: {
         serializedName: "strategy",
         type: {
           name: "Composite",
-          className: "Iok8sapiappsv1beta2DeploymentStrategy"
+          className: "V1beta2DeploymentStrategy"
         }
       },
       template: {
@@ -15868,11 +15868,11 @@ export const Iok8sapiappsv1beta2DeploymentSpec: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapiappsv1beta2DeploymentCondition: msRest.CompositeMapper = {
+export const V1beta2DeploymentCondition: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1beta2.DeploymentCondition",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1beta2DeploymentCondition",
+    className: "V1beta2DeploymentCondition",
     modelProperties: {
       lastTransitionTime: {
         serializedName: "lastTransitionTime",
@@ -15916,11 +15916,11 @@ export const Iok8sapiappsv1beta2DeploymentCondition: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapiappsv1beta2DeploymentStatus: msRest.CompositeMapper = {
+export const V1beta2DeploymentStatus: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1beta2.DeploymentStatus",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1beta2DeploymentStatus",
+    className: "V1beta2DeploymentStatus",
     modelProperties: {
       availableReplicas: {
         serializedName: "availableReplicas",
@@ -15941,7 +15941,7 @@ export const Iok8sapiappsv1beta2DeploymentStatus: msRest.CompositeMapper = {
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapiappsv1beta2DeploymentCondition"
+              className: "V1beta2DeploymentCondition"
             }
           }
         }
@@ -15980,11 +15980,11 @@ export const Iok8sapiappsv1beta2DeploymentStatus: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapiappsv1beta2Deployment: msRest.CompositeMapper = {
+export const V1beta2Deployment: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1beta2.Deployment",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1beta2Deployment",
+    className: "V1beta2Deployment",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -16002,32 +16002,32 @@ export const Iok8sapiappsv1beta2Deployment: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       spec: {
         serializedName: "spec",
         type: {
           name: "Composite",
-          className: "Iok8sapiappsv1beta2DeploymentSpec"
+          className: "V1beta2DeploymentSpec"
         }
       },
       status: {
         serializedName: "status",
         type: {
           name: "Composite",
-          className: "Iok8sapiappsv1beta2DeploymentStatus"
+          className: "V1beta2DeploymentStatus"
         }
       }
     }
   }
 };
 
-export const Iok8sapiappsv1beta2DeploymentList: msRest.CompositeMapper = {
+export const V1beta2DeploymentList: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1beta2.DeploymentList",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1beta2DeploymentList",
+    className: "V1beta2DeploymentList",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -16043,7 +16043,7 @@ export const Iok8sapiappsv1beta2DeploymentList: msRest.CompositeMapper = {
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapiappsv1beta2Deployment"
+              className: "V1beta2Deployment"
             }
           }
         }
@@ -16058,18 +16058,18 @@ export const Iok8sapiappsv1beta2DeploymentList: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
   }
 };
 
-export const Iok8sapiappsv1beta2ReplicaSetSpec: msRest.CompositeMapper = {
+export const V1beta2ReplicaSetSpec: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1beta2.ReplicaSetSpec",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1beta2ReplicaSetSpec",
+    className: "V1beta2ReplicaSetSpec",
     modelProperties: {
       minReadySeconds: {
         serializedName: "minReadySeconds",
@@ -16088,7 +16088,7 @@ export const Iok8sapiappsv1beta2ReplicaSetSpec: msRest.CompositeMapper = {
         serializedName: "selector",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1LabelSelector"
+          className: "V1LabelSelector"
         }
       },
       template: {
@@ -16102,11 +16102,11 @@ export const Iok8sapiappsv1beta2ReplicaSetSpec: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapiappsv1beta2ReplicaSetCondition: msRest.CompositeMapper = {
+export const V1beta2ReplicaSetCondition: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1beta2.ReplicaSetCondition",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1beta2ReplicaSetCondition",
+    className: "V1beta2ReplicaSetCondition",
     modelProperties: {
       lastTransitionTime: {
         serializedName: "lastTransitionTime",
@@ -16144,11 +16144,11 @@ export const Iok8sapiappsv1beta2ReplicaSetCondition: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapiappsv1beta2ReplicaSetStatus: msRest.CompositeMapper = {
+export const V1beta2ReplicaSetStatus: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1beta2.ReplicaSetStatus",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1beta2ReplicaSetStatus",
+    className: "V1beta2ReplicaSetStatus",
     modelProperties: {
       availableReplicas: {
         serializedName: "availableReplicas",
@@ -16163,7 +16163,7 @@ export const Iok8sapiappsv1beta2ReplicaSetStatus: msRest.CompositeMapper = {
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapiappsv1beta2ReplicaSetCondition"
+              className: "V1beta2ReplicaSetCondition"
             }
           }
         }
@@ -16197,11 +16197,11 @@ export const Iok8sapiappsv1beta2ReplicaSetStatus: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapiappsv1beta2ReplicaSet: msRest.CompositeMapper = {
+export const V1beta2ReplicaSet: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1beta2.ReplicaSet",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1beta2ReplicaSet",
+    className: "V1beta2ReplicaSet",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -16219,32 +16219,32 @@ export const Iok8sapiappsv1beta2ReplicaSet: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       spec: {
         serializedName: "spec",
         type: {
           name: "Composite",
-          className: "Iok8sapiappsv1beta2ReplicaSetSpec"
+          className: "V1beta2ReplicaSetSpec"
         }
       },
       status: {
         serializedName: "status",
         type: {
           name: "Composite",
-          className: "Iok8sapiappsv1beta2ReplicaSetStatus"
+          className: "V1beta2ReplicaSetStatus"
         }
       }
     }
   }
 };
 
-export const Iok8sapiappsv1beta2ReplicaSetList: msRest.CompositeMapper = {
+export const V1beta2ReplicaSetList: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1beta2.ReplicaSetList",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1beta2ReplicaSetList",
+    className: "V1beta2ReplicaSetList",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -16260,7 +16260,7 @@ export const Iok8sapiappsv1beta2ReplicaSetList: msRest.CompositeMapper = {
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapiappsv1beta2ReplicaSet"
+              className: "V1beta2ReplicaSet"
             }
           }
         }
@@ -16275,18 +16275,18 @@ export const Iok8sapiappsv1beta2ReplicaSetList: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
   }
 };
 
-export const Iok8sapiappsv1beta2RollingUpdateStatefulSetStrategy: msRest.CompositeMapper = {
+export const V1beta2RollingUpdateStatefulSetStrategy: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1beta2.RollingUpdateStatefulSetStrategy",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1beta2RollingUpdateStatefulSetStrategy",
+    className: "V1beta2RollingUpdateStatefulSetStrategy",
     modelProperties: {
       partition: {
         serializedName: "partition",
@@ -16298,11 +16298,11 @@ export const Iok8sapiappsv1beta2RollingUpdateStatefulSetStrategy: msRest.Composi
   }
 };
 
-export const Iok8sapiappsv1beta2ScaleSpec: msRest.CompositeMapper = {
+export const V1beta2ScaleSpec: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1beta2.ScaleSpec",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1beta2ScaleSpec",
+    className: "V1beta2ScaleSpec",
     modelProperties: {
       replicas: {
         serializedName: "replicas",
@@ -16314,11 +16314,11 @@ export const Iok8sapiappsv1beta2ScaleSpec: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapiappsv1beta2ScaleStatus: msRest.CompositeMapper = {
+export const V1beta2ScaleStatus: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1beta2.ScaleStatus",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1beta2ScaleStatus",
+    className: "V1beta2ScaleStatus",
     modelProperties: {
       replicas: {
         required: true,
@@ -16348,11 +16348,11 @@ export const Iok8sapiappsv1beta2ScaleStatus: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapiappsv1beta2Scale: msRest.CompositeMapper = {
+export const V1beta2Scale: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1beta2.Scale",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1beta2Scale",
+    className: "V1beta2Scale",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -16370,38 +16370,38 @@ export const Iok8sapiappsv1beta2Scale: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       spec: {
         serializedName: "spec",
         type: {
           name: "Composite",
-          className: "Iok8sapiappsv1beta2ScaleSpec"
+          className: "V1beta2ScaleSpec"
         }
       },
       status: {
         serializedName: "status",
         type: {
           name: "Composite",
-          className: "Iok8sapiappsv1beta2ScaleStatus"
+          className: "V1beta2ScaleStatus"
         }
       }
     }
   }
 };
 
-export const Iok8sapiappsv1beta2StatefulSetUpdateStrategy: msRest.CompositeMapper = {
+export const V1beta2StatefulSetUpdateStrategy: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1beta2.StatefulSetUpdateStrategy",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1beta2StatefulSetUpdateStrategy",
+    className: "V1beta2StatefulSetUpdateStrategy",
     modelProperties: {
       rollingUpdate: {
         serializedName: "rollingUpdate",
         type: {
           name: "Composite",
-          className: "Iok8sapiappsv1beta2RollingUpdateStatefulSetStrategy"
+          className: "V1beta2RollingUpdateStatefulSetStrategy"
         }
       },
       type: {
@@ -16414,11 +16414,11 @@ export const Iok8sapiappsv1beta2StatefulSetUpdateStrategy: msRest.CompositeMappe
   }
 };
 
-export const Iok8sapiappsv1beta2StatefulSetSpec: msRest.CompositeMapper = {
+export const V1beta2StatefulSetSpec: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1beta2.StatefulSetSpec",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1beta2StatefulSetSpec",
+    className: "V1beta2StatefulSetSpec",
     modelProperties: {
       podManagementPolicy: {
         serializedName: "podManagementPolicy",
@@ -16443,7 +16443,7 @@ export const Iok8sapiappsv1beta2StatefulSetSpec: msRest.CompositeMapper = {
         serializedName: "selector",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1LabelSelector"
+          className: "V1LabelSelector"
         }
       },
       serviceName: {
@@ -16465,7 +16465,7 @@ export const Iok8sapiappsv1beta2StatefulSetSpec: msRest.CompositeMapper = {
         serializedName: "updateStrategy",
         type: {
           name: "Composite",
-          className: "Iok8sapiappsv1beta2StatefulSetUpdateStrategy"
+          className: "V1beta2StatefulSetUpdateStrategy"
         }
       },
       volumeClaimTemplates: {
@@ -16484,11 +16484,11 @@ export const Iok8sapiappsv1beta2StatefulSetSpec: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapiappsv1beta2StatefulSetCondition: msRest.CompositeMapper = {
+export const V1beta2StatefulSetCondition: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1beta2.StatefulSetCondition",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1beta2StatefulSetCondition",
+    className: "V1beta2StatefulSetCondition",
     modelProperties: {
       lastTransitionTime: {
         serializedName: "lastTransitionTime",
@@ -16526,11 +16526,11 @@ export const Iok8sapiappsv1beta2StatefulSetCondition: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapiappsv1beta2StatefulSetStatus: msRest.CompositeMapper = {
+export const V1beta2StatefulSetStatus: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1beta2.StatefulSetStatus",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1beta2StatefulSetStatus",
+    className: "V1beta2StatefulSetStatus",
     modelProperties: {
       collisionCount: {
         serializedName: "collisionCount",
@@ -16545,7 +16545,7 @@ export const Iok8sapiappsv1beta2StatefulSetStatus: msRest.CompositeMapper = {
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapiappsv1beta2StatefulSetCondition"
+              className: "V1beta2StatefulSetCondition"
             }
           }
         }
@@ -16597,11 +16597,11 @@ export const Iok8sapiappsv1beta2StatefulSetStatus: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapiappsv1beta2StatefulSet: msRest.CompositeMapper = {
+export const V1beta2StatefulSet: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1beta2.StatefulSet",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1beta2StatefulSet",
+    className: "V1beta2StatefulSet",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -16619,32 +16619,32 @@ export const Iok8sapiappsv1beta2StatefulSet: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       spec: {
         serializedName: "spec",
         type: {
           name: "Composite",
-          className: "Iok8sapiappsv1beta2StatefulSetSpec"
+          className: "V1beta2StatefulSetSpec"
         }
       },
       status: {
         serializedName: "status",
         type: {
           name: "Composite",
-          className: "Iok8sapiappsv1beta2StatefulSetStatus"
+          className: "V1beta2StatefulSetStatus"
         }
       }
     }
   }
 };
 
-export const Iok8sapiappsv1beta2StatefulSetList: msRest.CompositeMapper = {
+export const V1beta2StatefulSetList: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.apps.v1beta2.StatefulSetList",
   type: {
     name: "Composite",
-    className: "Iok8sapiappsv1beta2StatefulSetList",
+    className: "V1beta2StatefulSetList",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -16660,7 +16660,7 @@ export const Iok8sapiappsv1beta2StatefulSetList: msRest.CompositeMapper = {
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapiappsv1beta2StatefulSet"
+              className: "V1beta2StatefulSet"
             }
           }
         }
@@ -16675,18 +16675,18 @@ export const Iok8sapiappsv1beta2StatefulSetList: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
   }
 };
 
-export const Iok8sapiauthenticationv1TokenReviewSpec: msRest.CompositeMapper = {
+export const V1TokenReviewSpec: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.authentication.v1.TokenReviewSpec",
   type: {
     name: "Composite",
-    className: "Iok8sapiauthenticationv1TokenReviewSpec",
+    className: "V1TokenReviewSpec",
     modelProperties: {
       token: {
         serializedName: "token",
@@ -16698,11 +16698,11 @@ export const Iok8sapiauthenticationv1TokenReviewSpec: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapiauthenticationv1UserInfo: msRest.CompositeMapper = {
+export const V1UserInfo: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.authentication.v1.UserInfo",
   type: {
     name: "Composite",
-    className: "Iok8sapiauthenticationv1UserInfo",
+    className: "V1UserInfo",
     modelProperties: {
       extra: {
         serializedName: "extra",
@@ -16747,11 +16747,11 @@ export const Iok8sapiauthenticationv1UserInfo: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapiauthenticationv1TokenReviewStatus: msRest.CompositeMapper = {
+export const V1TokenReviewStatus: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.authentication.v1.TokenReviewStatus",
   type: {
     name: "Composite",
-    className: "Iok8sapiauthenticationv1TokenReviewStatus",
+    className: "V1TokenReviewStatus",
     modelProperties: {
       authenticated: {
         serializedName: "authenticated",
@@ -16769,18 +16769,18 @@ export const Iok8sapiauthenticationv1TokenReviewStatus: msRest.CompositeMapper =
         serializedName: "user",
         type: {
           name: "Composite",
-          className: "Iok8sapiauthenticationv1UserInfo"
+          className: "V1UserInfo"
         }
       }
     }
   }
 };
 
-export const Iok8sapiauthenticationv1TokenReview: msRest.CompositeMapper = {
+export const V1TokenReview: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.authentication.v1.TokenReview",
   type: {
     name: "Composite",
-    className: "Iok8sapiauthenticationv1TokenReview",
+    className: "V1TokenReview",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -16798,7 +16798,7 @@ export const Iok8sapiauthenticationv1TokenReview: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       spec: {
@@ -16806,25 +16806,25 @@ export const Iok8sapiauthenticationv1TokenReview: msRest.CompositeMapper = {
         serializedName: "spec",
         type: {
           name: "Composite",
-          className: "Iok8sapiauthenticationv1TokenReviewSpec"
+          className: "V1TokenReviewSpec"
         }
       },
       status: {
         serializedName: "status",
         type: {
           name: "Composite",
-          className: "Iok8sapiauthenticationv1TokenReviewStatus"
+          className: "V1TokenReviewStatus"
         }
       }
     }
   }
 };
 
-export const Iok8sapiauthenticationv1beta1TokenReviewSpec: msRest.CompositeMapper = {
+export const V1beta1TokenReviewSpec: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.authentication.v1beta1.TokenReviewSpec",
   type: {
     name: "Composite",
-    className: "Iok8sapiauthenticationv1beta1TokenReviewSpec",
+    className: "V1beta1TokenReviewSpec",
     modelProperties: {
       token: {
         serializedName: "token",
@@ -16836,11 +16836,11 @@ export const Iok8sapiauthenticationv1beta1TokenReviewSpec: msRest.CompositeMappe
   }
 };
 
-export const Iok8sapiauthenticationv1beta1UserInfo: msRest.CompositeMapper = {
+export const V1beta1UserInfo: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.authentication.v1beta1.UserInfo",
   type: {
     name: "Composite",
-    className: "Iok8sapiauthenticationv1beta1UserInfo",
+    className: "V1beta1UserInfo",
     modelProperties: {
       extra: {
         serializedName: "extra",
@@ -16885,11 +16885,11 @@ export const Iok8sapiauthenticationv1beta1UserInfo: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapiauthenticationv1beta1TokenReviewStatus: msRest.CompositeMapper = {
+export const V1beta1TokenReviewStatus: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.authentication.v1beta1.TokenReviewStatus",
   type: {
     name: "Composite",
-    className: "Iok8sapiauthenticationv1beta1TokenReviewStatus",
+    className: "V1beta1TokenReviewStatus",
     modelProperties: {
       authenticated: {
         serializedName: "authenticated",
@@ -16907,18 +16907,18 @@ export const Iok8sapiauthenticationv1beta1TokenReviewStatus: msRest.CompositeMap
         serializedName: "user",
         type: {
           name: "Composite",
-          className: "Iok8sapiauthenticationv1beta1UserInfo"
+          className: "V1beta1UserInfo"
         }
       }
     }
   }
 };
 
-export const Iok8sapiauthenticationv1beta1TokenReview: msRest.CompositeMapper = {
+export const V1beta1TokenReview: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.authentication.v1beta1.TokenReview",
   type: {
     name: "Composite",
-    className: "Iok8sapiauthenticationv1beta1TokenReview",
+    className: "V1beta1TokenReview",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -16936,7 +16936,7 @@ export const Iok8sapiauthenticationv1beta1TokenReview: msRest.CompositeMapper = 
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       spec: {
@@ -16944,25 +16944,25 @@ export const Iok8sapiauthenticationv1beta1TokenReview: msRest.CompositeMapper = 
         serializedName: "spec",
         type: {
           name: "Composite",
-          className: "Iok8sapiauthenticationv1beta1TokenReviewSpec"
+          className: "V1beta1TokenReviewSpec"
         }
       },
       status: {
         serializedName: "status",
         type: {
           name: "Composite",
-          className: "Iok8sapiauthenticationv1beta1TokenReviewStatus"
+          className: "V1beta1TokenReviewStatus"
         }
       }
     }
   }
 };
 
-export const Iok8sapiauthorizationv1NonResourceAttributes: msRest.CompositeMapper = {
+export const V1NonResourceAttributes: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.authorization.v1.NonResourceAttributes",
   type: {
     name: "Composite",
-    className: "Iok8sapiauthorizationv1NonResourceAttributes",
+    className: "V1NonResourceAttributes",
     modelProperties: {
       path: {
         serializedName: "path",
@@ -16980,11 +16980,11 @@ export const Iok8sapiauthorizationv1NonResourceAttributes: msRest.CompositeMappe
   }
 };
 
-export const Iok8sapiauthorizationv1ResourceAttributes: msRest.CompositeMapper = {
+export const V1ResourceAttributes: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.authorization.v1.ResourceAttributes",
   type: {
     name: "Composite",
-    className: "Iok8sapiauthorizationv1ResourceAttributes",
+    className: "V1ResourceAttributes",
     modelProperties: {
       group: {
         serializedName: "group",
@@ -17032,11 +17032,11 @@ export const Iok8sapiauthorizationv1ResourceAttributes: msRest.CompositeMapper =
   }
 };
 
-export const Iok8sapiauthorizationv1SubjectAccessReviewSpec: msRest.CompositeMapper = {
+export const V1SubjectAccessReviewSpec: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.authorization.v1.SubjectAccessReviewSpec",
   type: {
     name: "Composite",
-    className: "Iok8sapiauthorizationv1SubjectAccessReviewSpec",
+    className: "V1SubjectAccessReviewSpec",
     modelProperties: {
       extra: {
         serializedName: "extra",
@@ -17069,14 +17069,14 @@ export const Iok8sapiauthorizationv1SubjectAccessReviewSpec: msRest.CompositeMap
         serializedName: "nonResourceAttributes",
         type: {
           name: "Composite",
-          className: "Iok8sapiauthorizationv1NonResourceAttributes"
+          className: "V1NonResourceAttributes"
         }
       },
       resourceAttributes: {
         serializedName: "resourceAttributes",
         type: {
           name: "Composite",
-          className: "Iok8sapiauthorizationv1ResourceAttributes"
+          className: "V1ResourceAttributes"
         }
       },
       uid: {
@@ -17095,11 +17095,11 @@ export const Iok8sapiauthorizationv1SubjectAccessReviewSpec: msRest.CompositeMap
   }
 };
 
-export const Iok8sapiauthorizationv1SubjectAccessReviewStatus: msRest.CompositeMapper = {
+export const V1SubjectAccessReviewStatus: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.authorization.v1.SubjectAccessReviewStatus",
   type: {
     name: "Composite",
-    className: "Iok8sapiauthorizationv1SubjectAccessReviewStatus",
+    className: "V1SubjectAccessReviewStatus",
     modelProperties: {
       allowed: {
         required: true,
@@ -17130,11 +17130,11 @@ export const Iok8sapiauthorizationv1SubjectAccessReviewStatus: msRest.CompositeM
   }
 };
 
-export const Iok8sapiauthorizationv1LocalSubjectAccessReview: msRest.CompositeMapper = {
+export const V1LocalSubjectAccessReview: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.authorization.v1.LocalSubjectAccessReview",
   type: {
     name: "Composite",
-    className: "Iok8sapiauthorizationv1LocalSubjectAccessReview",
+    className: "V1LocalSubjectAccessReview",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -17152,7 +17152,7 @@ export const Iok8sapiauthorizationv1LocalSubjectAccessReview: msRest.CompositeMa
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       spec: {
@@ -17160,25 +17160,25 @@ export const Iok8sapiauthorizationv1LocalSubjectAccessReview: msRest.CompositeMa
         serializedName: "spec",
         type: {
           name: "Composite",
-          className: "Iok8sapiauthorizationv1SubjectAccessReviewSpec"
+          className: "V1SubjectAccessReviewSpec"
         }
       },
       status: {
         serializedName: "status",
         type: {
           name: "Composite",
-          className: "Iok8sapiauthorizationv1SubjectAccessReviewStatus"
+          className: "V1SubjectAccessReviewStatus"
         }
       }
     }
   }
 };
 
-export const Iok8sapiauthorizationv1NonResourceRule: msRest.CompositeMapper = {
+export const V1NonResourceRule: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.authorization.v1.NonResourceRule",
   type: {
     name: "Composite",
-    className: "Iok8sapiauthorizationv1NonResourceRule",
+    className: "V1NonResourceRule",
     modelProperties: {
       nonResourceURLs: {
         serializedName: "nonResourceURLs",
@@ -17207,11 +17207,11 @@ export const Iok8sapiauthorizationv1NonResourceRule: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapiauthorizationv1ResourceRule: msRest.CompositeMapper = {
+export const V1ResourceRule: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.authorization.v1.ResourceRule",
   type: {
     name: "Composite",
-    className: "Iok8sapiauthorizationv1ResourceRule",
+    className: "V1ResourceRule",
     modelProperties: {
       apiGroups: {
         serializedName: "apiGroups",
@@ -17262,35 +17262,35 @@ export const Iok8sapiauthorizationv1ResourceRule: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapiauthorizationv1SelfSubjectAccessReviewSpec: msRest.CompositeMapper = {
+export const V1SelfSubjectAccessReviewSpec: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.authorization.v1.SelfSubjectAccessReviewSpec",
   type: {
     name: "Composite",
-    className: "Iok8sapiauthorizationv1SelfSubjectAccessReviewSpec",
+    className: "V1SelfSubjectAccessReviewSpec",
     modelProperties: {
       nonResourceAttributes: {
         serializedName: "nonResourceAttributes",
         type: {
           name: "Composite",
-          className: "Iok8sapiauthorizationv1NonResourceAttributes"
+          className: "V1NonResourceAttributes"
         }
       },
       resourceAttributes: {
         serializedName: "resourceAttributes",
         type: {
           name: "Composite",
-          className: "Iok8sapiauthorizationv1ResourceAttributes"
+          className: "V1ResourceAttributes"
         }
       }
     }
   }
 };
 
-export const Iok8sapiauthorizationv1SelfSubjectAccessReview: msRest.CompositeMapper = {
+export const V1SelfSubjectAccessReview: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.authorization.v1.SelfSubjectAccessReview",
   type: {
     name: "Composite",
-    className: "Iok8sapiauthorizationv1SelfSubjectAccessReview",
+    className: "V1SelfSubjectAccessReview",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -17308,7 +17308,7 @@ export const Iok8sapiauthorizationv1SelfSubjectAccessReview: msRest.CompositeMap
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       spec: {
@@ -17316,25 +17316,25 @@ export const Iok8sapiauthorizationv1SelfSubjectAccessReview: msRest.CompositeMap
         serializedName: "spec",
         type: {
           name: "Composite",
-          className: "Iok8sapiauthorizationv1SelfSubjectAccessReviewSpec"
+          className: "V1SelfSubjectAccessReviewSpec"
         }
       },
       status: {
         serializedName: "status",
         type: {
           name: "Composite",
-          className: "Iok8sapiauthorizationv1SubjectAccessReviewStatus"
+          className: "V1SubjectAccessReviewStatus"
         }
       }
     }
   }
 };
 
-export const Iok8sapiauthorizationv1SelfSubjectRulesReviewSpec: msRest.CompositeMapper = {
+export const V1SelfSubjectRulesReviewSpec: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.authorization.v1.SelfSubjectRulesReviewSpec",
   type: {
     name: "Composite",
-    className: "Iok8sapiauthorizationv1SelfSubjectRulesReviewSpec",
+    className: "V1SelfSubjectRulesReviewSpec",
     modelProperties: {
       namespace: {
         serializedName: "namespace",
@@ -17346,11 +17346,11 @@ export const Iok8sapiauthorizationv1SelfSubjectRulesReviewSpec: msRest.Composite
   }
 };
 
-export const Iok8sapiauthorizationv1SubjectRulesReviewStatus: msRest.CompositeMapper = {
+export const V1SubjectRulesReviewStatus: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.authorization.v1.SubjectRulesReviewStatus",
   type: {
     name: "Composite",
-    className: "Iok8sapiauthorizationv1SubjectRulesReviewStatus",
+    className: "V1SubjectRulesReviewStatus",
     modelProperties: {
       evaluationError: {
         serializedName: "evaluationError",
@@ -17373,7 +17373,7 @@ export const Iok8sapiauthorizationv1SubjectRulesReviewStatus: msRest.CompositeMa
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapiauthorizationv1NonResourceRule"
+              className: "V1NonResourceRule"
             }
           }
         }
@@ -17386,7 +17386,7 @@ export const Iok8sapiauthorizationv1SubjectRulesReviewStatus: msRest.CompositeMa
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapiauthorizationv1ResourceRule"
+              className: "V1ResourceRule"
             }
           }
         }
@@ -17395,11 +17395,11 @@ export const Iok8sapiauthorizationv1SubjectRulesReviewStatus: msRest.CompositeMa
   }
 };
 
-export const Iok8sapiauthorizationv1SelfSubjectRulesReview: msRest.CompositeMapper = {
+export const V1SelfSubjectRulesReview: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.authorization.v1.SelfSubjectRulesReview",
   type: {
     name: "Composite",
-    className: "Iok8sapiauthorizationv1SelfSubjectRulesReview",
+    className: "V1SelfSubjectRulesReview",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -17417,7 +17417,7 @@ export const Iok8sapiauthorizationv1SelfSubjectRulesReview: msRest.CompositeMapp
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       spec: {
@@ -17425,25 +17425,25 @@ export const Iok8sapiauthorizationv1SelfSubjectRulesReview: msRest.CompositeMapp
         serializedName: "spec",
         type: {
           name: "Composite",
-          className: "Iok8sapiauthorizationv1SelfSubjectRulesReviewSpec"
+          className: "V1SelfSubjectRulesReviewSpec"
         }
       },
       status: {
         serializedName: "status",
         type: {
           name: "Composite",
-          className: "Iok8sapiauthorizationv1SubjectRulesReviewStatus"
+          className: "V1SubjectRulesReviewStatus"
         }
       }
     }
   }
 };
 
-export const Iok8sapiauthorizationv1SubjectAccessReview: msRest.CompositeMapper = {
+export const V1SubjectAccessReview: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.authorization.v1.SubjectAccessReview",
   type: {
     name: "Composite",
-    className: "Iok8sapiauthorizationv1SubjectAccessReview",
+    className: "V1SubjectAccessReview",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -17461,7 +17461,7 @@ export const Iok8sapiauthorizationv1SubjectAccessReview: msRest.CompositeMapper 
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       spec: {
@@ -17469,25 +17469,25 @@ export const Iok8sapiauthorizationv1SubjectAccessReview: msRest.CompositeMapper 
         serializedName: "spec",
         type: {
           name: "Composite",
-          className: "Iok8sapiauthorizationv1SubjectAccessReviewSpec"
+          className: "V1SubjectAccessReviewSpec"
         }
       },
       status: {
         serializedName: "status",
         type: {
           name: "Composite",
-          className: "Iok8sapiauthorizationv1SubjectAccessReviewStatus"
+          className: "V1SubjectAccessReviewStatus"
         }
       }
     }
   }
 };
 
-export const Iok8sapiauthorizationv1beta1NonResourceAttributes: msRest.CompositeMapper = {
+export const V1beta1NonResourceAttributes: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.authorization.v1beta1.NonResourceAttributes",
   type: {
     name: "Composite",
-    className: "Iok8sapiauthorizationv1beta1NonResourceAttributes",
+    className: "V1beta1NonResourceAttributes",
     modelProperties: {
       path: {
         serializedName: "path",
@@ -17505,11 +17505,11 @@ export const Iok8sapiauthorizationv1beta1NonResourceAttributes: msRest.Composite
   }
 };
 
-export const Iok8sapiauthorizationv1beta1ResourceAttributes: msRest.CompositeMapper = {
+export const V1beta1ResourceAttributes: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.authorization.v1beta1.ResourceAttributes",
   type: {
     name: "Composite",
-    className: "Iok8sapiauthorizationv1beta1ResourceAttributes",
+    className: "V1beta1ResourceAttributes",
     modelProperties: {
       group: {
         serializedName: "group",
@@ -17557,11 +17557,11 @@ export const Iok8sapiauthorizationv1beta1ResourceAttributes: msRest.CompositeMap
   }
 };
 
-export const Iok8sapiauthorizationv1beta1SubjectAccessReviewSpec: msRest.CompositeMapper = {
+export const V1beta1SubjectAccessReviewSpec: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.authorization.v1beta1.SubjectAccessReviewSpec",
   type: {
     name: "Composite",
-    className: "Iok8sapiauthorizationv1beta1SubjectAccessReviewSpec",
+    className: "V1beta1SubjectAccessReviewSpec",
     modelProperties: {
       extra: {
         serializedName: "extra",
@@ -17594,14 +17594,14 @@ export const Iok8sapiauthorizationv1beta1SubjectAccessReviewSpec: msRest.Composi
         serializedName: "nonResourceAttributes",
         type: {
           name: "Composite",
-          className: "Iok8sapiauthorizationv1beta1NonResourceAttributes"
+          className: "V1beta1NonResourceAttributes"
         }
       },
       resourceAttributes: {
         serializedName: "resourceAttributes",
         type: {
           name: "Composite",
-          className: "Iok8sapiauthorizationv1beta1ResourceAttributes"
+          className: "V1beta1ResourceAttributes"
         }
       },
       uid: {
@@ -17620,11 +17620,11 @@ export const Iok8sapiauthorizationv1beta1SubjectAccessReviewSpec: msRest.Composi
   }
 };
 
-export const Iok8sapiauthorizationv1beta1SubjectAccessReviewStatus: msRest.CompositeMapper = {
+export const V1beta1SubjectAccessReviewStatus: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.authorization.v1beta1.SubjectAccessReviewStatus",
   type: {
     name: "Composite",
-    className: "Iok8sapiauthorizationv1beta1SubjectAccessReviewStatus",
+    className: "V1beta1SubjectAccessReviewStatus",
     modelProperties: {
       allowed: {
         required: true,
@@ -17655,11 +17655,11 @@ export const Iok8sapiauthorizationv1beta1SubjectAccessReviewStatus: msRest.Compo
   }
 };
 
-export const Iok8sapiauthorizationv1beta1LocalSubjectAccessReview: msRest.CompositeMapper = {
+export const V1beta1LocalSubjectAccessReview: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.authorization.v1beta1.LocalSubjectAccessReview",
   type: {
     name: "Composite",
-    className: "Iok8sapiauthorizationv1beta1LocalSubjectAccessReview",
+    className: "V1beta1LocalSubjectAccessReview",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -17677,7 +17677,7 @@ export const Iok8sapiauthorizationv1beta1LocalSubjectAccessReview: msRest.Compos
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       spec: {
@@ -17685,25 +17685,25 @@ export const Iok8sapiauthorizationv1beta1LocalSubjectAccessReview: msRest.Compos
         serializedName: "spec",
         type: {
           name: "Composite",
-          className: "Iok8sapiauthorizationv1beta1SubjectAccessReviewSpec"
+          className: "V1beta1SubjectAccessReviewSpec"
         }
       },
       status: {
         serializedName: "status",
         type: {
           name: "Composite",
-          className: "Iok8sapiauthorizationv1beta1SubjectAccessReviewStatus"
+          className: "V1beta1SubjectAccessReviewStatus"
         }
       }
     }
   }
 };
 
-export const Iok8sapiauthorizationv1beta1NonResourceRule: msRest.CompositeMapper = {
+export const V1beta1NonResourceRule: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.authorization.v1beta1.NonResourceRule",
   type: {
     name: "Composite",
-    className: "Iok8sapiauthorizationv1beta1NonResourceRule",
+    className: "V1beta1NonResourceRule",
     modelProperties: {
       nonResourceURLs: {
         serializedName: "nonResourceURLs",
@@ -17732,11 +17732,11 @@ export const Iok8sapiauthorizationv1beta1NonResourceRule: msRest.CompositeMapper
   }
 };
 
-export const Iok8sapiauthorizationv1beta1ResourceRule: msRest.CompositeMapper = {
+export const V1beta1ResourceRule: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.authorization.v1beta1.ResourceRule",
   type: {
     name: "Composite",
-    className: "Iok8sapiauthorizationv1beta1ResourceRule",
+    className: "V1beta1ResourceRule",
     modelProperties: {
       apiGroups: {
         serializedName: "apiGroups",
@@ -17787,35 +17787,35 @@ export const Iok8sapiauthorizationv1beta1ResourceRule: msRest.CompositeMapper = 
   }
 };
 
-export const Iok8sapiauthorizationv1beta1SelfSubjectAccessReviewSpec: msRest.CompositeMapper = {
+export const V1beta1SelfSubjectAccessReviewSpec: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.authorization.v1beta1.SelfSubjectAccessReviewSpec",
   type: {
     name: "Composite",
-    className: "Iok8sapiauthorizationv1beta1SelfSubjectAccessReviewSpec",
+    className: "V1beta1SelfSubjectAccessReviewSpec",
     modelProperties: {
       nonResourceAttributes: {
         serializedName: "nonResourceAttributes",
         type: {
           name: "Composite",
-          className: "Iok8sapiauthorizationv1beta1NonResourceAttributes"
+          className: "V1beta1NonResourceAttributes"
         }
       },
       resourceAttributes: {
         serializedName: "resourceAttributes",
         type: {
           name: "Composite",
-          className: "Iok8sapiauthorizationv1beta1ResourceAttributes"
+          className: "V1beta1ResourceAttributes"
         }
       }
     }
   }
 };
 
-export const Iok8sapiauthorizationv1beta1SelfSubjectAccessReview: msRest.CompositeMapper = {
+export const V1beta1SelfSubjectAccessReview: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.authorization.v1beta1.SelfSubjectAccessReview",
   type: {
     name: "Composite",
-    className: "Iok8sapiauthorizationv1beta1SelfSubjectAccessReview",
+    className: "V1beta1SelfSubjectAccessReview",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -17833,7 +17833,7 @@ export const Iok8sapiauthorizationv1beta1SelfSubjectAccessReview: msRest.Composi
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       spec: {
@@ -17841,25 +17841,25 @@ export const Iok8sapiauthorizationv1beta1SelfSubjectAccessReview: msRest.Composi
         serializedName: "spec",
         type: {
           name: "Composite",
-          className: "Iok8sapiauthorizationv1beta1SelfSubjectAccessReviewSpec"
+          className: "V1beta1SelfSubjectAccessReviewSpec"
         }
       },
       status: {
         serializedName: "status",
         type: {
           name: "Composite",
-          className: "Iok8sapiauthorizationv1beta1SubjectAccessReviewStatus"
+          className: "V1beta1SubjectAccessReviewStatus"
         }
       }
     }
   }
 };
 
-export const Iok8sapiauthorizationv1beta1SelfSubjectRulesReviewSpec: msRest.CompositeMapper = {
+export const V1beta1SelfSubjectRulesReviewSpec: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.authorization.v1beta1.SelfSubjectRulesReviewSpec",
   type: {
     name: "Composite",
-    className: "Iok8sapiauthorizationv1beta1SelfSubjectRulesReviewSpec",
+    className: "V1beta1SelfSubjectRulesReviewSpec",
     modelProperties: {
       namespace: {
         serializedName: "namespace",
@@ -17871,11 +17871,11 @@ export const Iok8sapiauthorizationv1beta1SelfSubjectRulesReviewSpec: msRest.Comp
   }
 };
 
-export const Iok8sapiauthorizationv1beta1SubjectRulesReviewStatus: msRest.CompositeMapper = {
+export const V1beta1SubjectRulesReviewStatus: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.authorization.v1beta1.SubjectRulesReviewStatus",
   type: {
     name: "Composite",
-    className: "Iok8sapiauthorizationv1beta1SubjectRulesReviewStatus",
+    className: "V1beta1SubjectRulesReviewStatus",
     modelProperties: {
       evaluationError: {
         serializedName: "evaluationError",
@@ -17898,7 +17898,7 @@ export const Iok8sapiauthorizationv1beta1SubjectRulesReviewStatus: msRest.Compos
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapiauthorizationv1beta1NonResourceRule"
+              className: "V1beta1NonResourceRule"
             }
           }
         }
@@ -17911,7 +17911,7 @@ export const Iok8sapiauthorizationv1beta1SubjectRulesReviewStatus: msRest.Compos
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapiauthorizationv1beta1ResourceRule"
+              className: "V1beta1ResourceRule"
             }
           }
         }
@@ -17920,11 +17920,11 @@ export const Iok8sapiauthorizationv1beta1SubjectRulesReviewStatus: msRest.Compos
   }
 };
 
-export const Iok8sapiauthorizationv1beta1SelfSubjectRulesReview: msRest.CompositeMapper = {
+export const V1beta1SelfSubjectRulesReview: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.authorization.v1beta1.SelfSubjectRulesReview",
   type: {
     name: "Composite",
-    className: "Iok8sapiauthorizationv1beta1SelfSubjectRulesReview",
+    className: "V1beta1SelfSubjectRulesReview",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -17942,7 +17942,7 @@ export const Iok8sapiauthorizationv1beta1SelfSubjectRulesReview: msRest.Composit
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       spec: {
@@ -17950,25 +17950,25 @@ export const Iok8sapiauthorizationv1beta1SelfSubjectRulesReview: msRest.Composit
         serializedName: "spec",
         type: {
           name: "Composite",
-          className: "Iok8sapiauthorizationv1beta1SelfSubjectRulesReviewSpec"
+          className: "V1beta1SelfSubjectRulesReviewSpec"
         }
       },
       status: {
         serializedName: "status",
         type: {
           name: "Composite",
-          className: "Iok8sapiauthorizationv1beta1SubjectRulesReviewStatus"
+          className: "V1beta1SubjectRulesReviewStatus"
         }
       }
     }
   }
 };
 
-export const Iok8sapiauthorizationv1beta1SubjectAccessReview: msRest.CompositeMapper = {
+export const V1beta1SubjectAccessReview: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.authorization.v1beta1.SubjectAccessReview",
   type: {
     name: "Composite",
-    className: "Iok8sapiauthorizationv1beta1SubjectAccessReview",
+    className: "V1beta1SubjectAccessReview",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -17986,7 +17986,7 @@ export const Iok8sapiauthorizationv1beta1SubjectAccessReview: msRest.CompositeMa
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       spec: {
@@ -17994,25 +17994,25 @@ export const Iok8sapiauthorizationv1beta1SubjectAccessReview: msRest.CompositeMa
         serializedName: "spec",
         type: {
           name: "Composite",
-          className: "Iok8sapiauthorizationv1beta1SubjectAccessReviewSpec"
+          className: "V1beta1SubjectAccessReviewSpec"
         }
       },
       status: {
         serializedName: "status",
         type: {
           name: "Composite",
-          className: "Iok8sapiauthorizationv1beta1SubjectAccessReviewStatus"
+          className: "V1beta1SubjectAccessReviewStatus"
         }
       }
     }
   }
 };
 
-export const Iok8sapiautoscalingv1CrossVersionObjectReference: msRest.CompositeMapper = {
+export const V1CrossVersionObjectReference: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.autoscaling.v1.CrossVersionObjectReference",
   type: {
     name: "Composite",
-    className: "Iok8sapiautoscalingv1CrossVersionObjectReference",
+    className: "V1CrossVersionObjectReference",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -18038,11 +18038,11 @@ export const Iok8sapiautoscalingv1CrossVersionObjectReference: msRest.CompositeM
   }
 };
 
-export const Iok8sapiautoscalingv1HorizontalPodAutoscalerSpec: msRest.CompositeMapper = {
+export const V1HorizontalPodAutoscalerSpec: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.autoscaling.v1.HorizontalPodAutoscalerSpec",
   type: {
     name: "Composite",
-    className: "Iok8sapiautoscalingv1HorizontalPodAutoscalerSpec",
+    className: "V1HorizontalPodAutoscalerSpec",
     modelProperties: {
       maxReplicas: {
         required: true,
@@ -18062,7 +18062,7 @@ export const Iok8sapiautoscalingv1HorizontalPodAutoscalerSpec: msRest.CompositeM
         serializedName: "scaleTargetRef",
         type: {
           name: "Composite",
-          className: "Iok8sapiautoscalingv1CrossVersionObjectReference"
+          className: "V1CrossVersionObjectReference"
         }
       },
       targetCPUUtilizationPercentage: {
@@ -18075,11 +18075,11 @@ export const Iok8sapiautoscalingv1HorizontalPodAutoscalerSpec: msRest.CompositeM
   }
 };
 
-export const Iok8sapiautoscalingv1HorizontalPodAutoscalerStatus: msRest.CompositeMapper = {
+export const V1HorizontalPodAutoscalerStatus: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.autoscaling.v1.HorizontalPodAutoscalerStatus",
   type: {
     name: "Composite",
-    className: "Iok8sapiautoscalingv1HorizontalPodAutoscalerStatus",
+    className: "V1HorizontalPodAutoscalerStatus",
     modelProperties: {
       currentCPUUtilizationPercentage: {
         serializedName: "currentCPUUtilizationPercentage",
@@ -18117,11 +18117,11 @@ export const Iok8sapiautoscalingv1HorizontalPodAutoscalerStatus: msRest.Composit
   }
 };
 
-export const Iok8sapiautoscalingv1HorizontalPodAutoscaler: msRest.CompositeMapper = {
+export const V1HorizontalPodAutoscaler: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.autoscaling.v1.HorizontalPodAutoscaler",
   type: {
     name: "Composite",
-    className: "Iok8sapiautoscalingv1HorizontalPodAutoscaler",
+    className: "V1HorizontalPodAutoscaler",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -18139,32 +18139,32 @@ export const Iok8sapiautoscalingv1HorizontalPodAutoscaler: msRest.CompositeMappe
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       spec: {
         serializedName: "spec",
         type: {
           name: "Composite",
-          className: "Iok8sapiautoscalingv1HorizontalPodAutoscalerSpec"
+          className: "V1HorizontalPodAutoscalerSpec"
         }
       },
       status: {
         serializedName: "status",
         type: {
           name: "Composite",
-          className: "Iok8sapiautoscalingv1HorizontalPodAutoscalerStatus"
+          className: "V1HorizontalPodAutoscalerStatus"
         }
       }
     }
   }
 };
 
-export const Iok8sapiautoscalingv1HorizontalPodAutoscalerList: msRest.CompositeMapper = {
+export const V1HorizontalPodAutoscalerList: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.autoscaling.v1.HorizontalPodAutoscalerList",
   type: {
     name: "Composite",
-    className: "Iok8sapiautoscalingv1HorizontalPodAutoscalerList",
+    className: "V1HorizontalPodAutoscalerList",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -18180,7 +18180,7 @@ export const Iok8sapiautoscalingv1HorizontalPodAutoscalerList: msRest.CompositeM
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapiautoscalingv1HorizontalPodAutoscaler"
+              className: "V1HorizontalPodAutoscaler"
             }
           }
         }
@@ -18195,18 +18195,18 @@ export const Iok8sapiautoscalingv1HorizontalPodAutoscalerList: msRest.CompositeM
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
   }
 };
 
-export const Iok8sapiautoscalingv1ScaleSpec: msRest.CompositeMapper = {
+export const V1ScaleSpec: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.autoscaling.v1.ScaleSpec",
   type: {
     name: "Composite",
-    className: "Iok8sapiautoscalingv1ScaleSpec",
+    className: "V1ScaleSpec",
     modelProperties: {
       replicas: {
         serializedName: "replicas",
@@ -18218,11 +18218,11 @@ export const Iok8sapiautoscalingv1ScaleSpec: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapiautoscalingv1ScaleStatus: msRest.CompositeMapper = {
+export const V1ScaleStatus: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.autoscaling.v1.ScaleStatus",
   type: {
     name: "Composite",
-    className: "Iok8sapiautoscalingv1ScaleStatus",
+    className: "V1ScaleStatus",
     modelProperties: {
       replicas: {
         required: true,
@@ -18241,11 +18241,11 @@ export const Iok8sapiautoscalingv1ScaleStatus: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapiautoscalingv1Scale: msRest.CompositeMapper = {
+export const V1Scale: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.autoscaling.v1.Scale",
   type: {
     name: "Composite",
-    className: "Iok8sapiautoscalingv1Scale",
+    className: "V1Scale",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -18263,32 +18263,32 @@ export const Iok8sapiautoscalingv1Scale: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       spec: {
         serializedName: "spec",
         type: {
           name: "Composite",
-          className: "Iok8sapiautoscalingv1ScaleSpec"
+          className: "V1ScaleSpec"
         }
       },
       status: {
         serializedName: "status",
         type: {
           name: "Composite",
-          className: "Iok8sapiautoscalingv1ScaleStatus"
+          className: "V1ScaleStatus"
         }
       }
     }
   }
 };
 
-export const Iok8sapiautoscalingv2beta1CrossVersionObjectReference: msRest.CompositeMapper = {
+export const V2beta1CrossVersionObjectReference: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.autoscaling.v2beta1.CrossVersionObjectReference",
   type: {
     name: "Composite",
-    className: "Iok8sapiautoscalingv2beta1CrossVersionObjectReference",
+    className: "V2beta1CrossVersionObjectReference",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -18314,11 +18314,11 @@ export const Iok8sapiautoscalingv2beta1CrossVersionObjectReference: msRest.Compo
   }
 };
 
-export const Iok8sapiautoscalingv2beta1ExternalMetricSource: msRest.CompositeMapper = {
+export const V2beta1ExternalMetricSource: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.autoscaling.v2beta1.ExternalMetricSource",
   type: {
     name: "Composite",
-    className: "Iok8sapiautoscalingv2beta1ExternalMetricSource",
+    className: "V2beta1ExternalMetricSource",
     modelProperties: {
       metricName: {
         required: true,
@@ -18331,7 +18331,7 @@ export const Iok8sapiautoscalingv2beta1ExternalMetricSource: msRest.CompositeMap
         serializedName: "metricSelector",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1LabelSelector"
+          className: "V1LabelSelector"
         }
       },
       targetAverageValue: {
@@ -18350,11 +18350,11 @@ export const Iok8sapiautoscalingv2beta1ExternalMetricSource: msRest.CompositeMap
   }
 };
 
-export const Iok8sapiautoscalingv2beta1ExternalMetricStatus: msRest.CompositeMapper = {
+export const V2beta1ExternalMetricStatus: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.autoscaling.v2beta1.ExternalMetricStatus",
   type: {
     name: "Composite",
-    className: "Iok8sapiautoscalingv2beta1ExternalMetricStatus",
+    className: "V2beta1ExternalMetricStatus",
     modelProperties: {
       currentAverageValue: {
         serializedName: "currentAverageValue",
@@ -18380,18 +18380,18 @@ export const Iok8sapiautoscalingv2beta1ExternalMetricStatus: msRest.CompositeMap
         serializedName: "metricSelector",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1LabelSelector"
+          className: "V1LabelSelector"
         }
       }
     }
   }
 };
 
-export const Iok8sapiautoscalingv2beta1ObjectMetricSource: msRest.CompositeMapper = {
+export const V2beta1ObjectMetricSource: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.autoscaling.v2beta1.ObjectMetricSource",
   type: {
     name: "Composite",
-    className: "Iok8sapiautoscalingv2beta1ObjectMetricSource",
+    className: "V2beta1ObjectMetricSource",
     modelProperties: {
       metricName: {
         required: true,
@@ -18405,7 +18405,7 @@ export const Iok8sapiautoscalingv2beta1ObjectMetricSource: msRest.CompositeMappe
         serializedName: "target",
         type: {
           name: "Composite",
-          className: "Iok8sapiautoscalingv2beta1CrossVersionObjectReference"
+          className: "V2beta1CrossVersionObjectReference"
         }
       },
       targetValue: {
@@ -18419,11 +18419,11 @@ export const Iok8sapiautoscalingv2beta1ObjectMetricSource: msRest.CompositeMappe
   }
 };
 
-export const Iok8sapiautoscalingv2beta1PodsMetricSource: msRest.CompositeMapper = {
+export const V2beta1PodsMetricSource: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.autoscaling.v2beta1.PodsMetricSource",
   type: {
     name: "Composite",
-    className: "Iok8sapiautoscalingv2beta1PodsMetricSource",
+    className: "V2beta1PodsMetricSource",
     modelProperties: {
       metricName: {
         required: true,
@@ -18443,11 +18443,11 @@ export const Iok8sapiautoscalingv2beta1PodsMetricSource: msRest.CompositeMapper 
   }
 };
 
-export const Iok8sapiautoscalingv2beta1ResourceMetricSource: msRest.CompositeMapper = {
+export const V2beta1ResourceMetricSource: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.autoscaling.v2beta1.ResourceMetricSource",
   type: {
     name: "Composite",
-    className: "Iok8sapiautoscalingv2beta1ResourceMetricSource",
+    className: "V2beta1ResourceMetricSource",
     modelProperties: {
       name: {
         required: true,
@@ -18472,38 +18472,38 @@ export const Iok8sapiautoscalingv2beta1ResourceMetricSource: msRest.CompositeMap
   }
 };
 
-export const Iok8sapiautoscalingv2beta1MetricSpec: msRest.CompositeMapper = {
+export const V2beta1MetricSpec: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.autoscaling.v2beta1.MetricSpec",
   type: {
     name: "Composite",
-    className: "Iok8sapiautoscalingv2beta1MetricSpec",
+    className: "V2beta1MetricSpec",
     modelProperties: {
       external: {
         serializedName: "external",
         type: {
           name: "Composite",
-          className: "Iok8sapiautoscalingv2beta1ExternalMetricSource"
+          className: "V2beta1ExternalMetricSource"
         }
       },
       object: {
         serializedName: "object",
         type: {
           name: "Composite",
-          className: "Iok8sapiautoscalingv2beta1ObjectMetricSource"
+          className: "V2beta1ObjectMetricSource"
         }
       },
       pods: {
         serializedName: "pods",
         type: {
           name: "Composite",
-          className: "Iok8sapiautoscalingv2beta1PodsMetricSource"
+          className: "V2beta1PodsMetricSource"
         }
       },
       resource: {
         serializedName: "resource",
         type: {
           name: "Composite",
-          className: "Iok8sapiautoscalingv2beta1ResourceMetricSource"
+          className: "V2beta1ResourceMetricSource"
         }
       },
       type: {
@@ -18517,11 +18517,11 @@ export const Iok8sapiautoscalingv2beta1MetricSpec: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapiautoscalingv2beta1HorizontalPodAutoscalerSpec: msRest.CompositeMapper = {
+export const V2beta1HorizontalPodAutoscalerSpec: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.autoscaling.v2beta1.HorizontalPodAutoscalerSpec",
   type: {
     name: "Composite",
-    className: "Iok8sapiautoscalingv2beta1HorizontalPodAutoscalerSpec",
+    className: "V2beta1HorizontalPodAutoscalerSpec",
     modelProperties: {
       maxReplicas: {
         required: true,
@@ -18537,7 +18537,7 @@ export const Iok8sapiautoscalingv2beta1HorizontalPodAutoscalerSpec: msRest.Compo
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapiautoscalingv2beta1MetricSpec"
+              className: "V2beta1MetricSpec"
             }
           }
         }
@@ -18553,18 +18553,18 @@ export const Iok8sapiautoscalingv2beta1HorizontalPodAutoscalerSpec: msRest.Compo
         serializedName: "scaleTargetRef",
         type: {
           name: "Composite",
-          className: "Iok8sapiautoscalingv2beta1CrossVersionObjectReference"
+          className: "V2beta1CrossVersionObjectReference"
         }
       }
     }
   }
 };
 
-export const Iok8sapiautoscalingv2beta1HorizontalPodAutoscalerCondition: msRest.CompositeMapper = {
+export const V2beta1HorizontalPodAutoscalerCondition: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.autoscaling.v2beta1.HorizontalPodAutoscalerCondition",
   type: {
     name: "Composite",
-    className: "Iok8sapiautoscalingv2beta1HorizontalPodAutoscalerCondition",
+    className: "V2beta1HorizontalPodAutoscalerCondition",
     modelProperties: {
       lastTransitionTime: {
         serializedName: "lastTransitionTime",
@@ -18602,11 +18602,11 @@ export const Iok8sapiautoscalingv2beta1HorizontalPodAutoscalerCondition: msRest.
   }
 };
 
-export const Iok8sapiautoscalingv2beta1ObjectMetricStatus: msRest.CompositeMapper = {
+export const V2beta1ObjectMetricStatus: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.autoscaling.v2beta1.ObjectMetricStatus",
   type: {
     name: "Composite",
-    className: "Iok8sapiautoscalingv2beta1ObjectMetricStatus",
+    className: "V2beta1ObjectMetricStatus",
     modelProperties: {
       currentValue: {
         required: true,
@@ -18627,18 +18627,18 @@ export const Iok8sapiautoscalingv2beta1ObjectMetricStatus: msRest.CompositeMappe
         serializedName: "target",
         type: {
           name: "Composite",
-          className: "Iok8sapiautoscalingv2beta1CrossVersionObjectReference"
+          className: "V2beta1CrossVersionObjectReference"
         }
       }
     }
   }
 };
 
-export const Iok8sapiautoscalingv2beta1PodsMetricStatus: msRest.CompositeMapper = {
+export const V2beta1PodsMetricStatus: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.autoscaling.v2beta1.PodsMetricStatus",
   type: {
     name: "Composite",
-    className: "Iok8sapiautoscalingv2beta1PodsMetricStatus",
+    className: "V2beta1PodsMetricStatus",
     modelProperties: {
       currentAverageValue: {
         required: true,
@@ -18658,11 +18658,11 @@ export const Iok8sapiautoscalingv2beta1PodsMetricStatus: msRest.CompositeMapper 
   }
 };
 
-export const Iok8sapiautoscalingv2beta1ResourceMetricStatus: msRest.CompositeMapper = {
+export const V2beta1ResourceMetricStatus: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.autoscaling.v2beta1.ResourceMetricStatus",
   type: {
     name: "Composite",
-    className: "Iok8sapiautoscalingv2beta1ResourceMetricStatus",
+    className: "V2beta1ResourceMetricStatus",
     modelProperties: {
       currentAverageUtilization: {
         serializedName: "currentAverageUtilization",
@@ -18688,38 +18688,38 @@ export const Iok8sapiautoscalingv2beta1ResourceMetricStatus: msRest.CompositeMap
   }
 };
 
-export const Iok8sapiautoscalingv2beta1MetricStatus: msRest.CompositeMapper = {
+export const V2beta1MetricStatus: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.autoscaling.v2beta1.MetricStatus",
   type: {
     name: "Composite",
-    className: "Iok8sapiautoscalingv2beta1MetricStatus",
+    className: "V2beta1MetricStatus",
     modelProperties: {
       external: {
         serializedName: "external",
         type: {
           name: "Composite",
-          className: "Iok8sapiautoscalingv2beta1ExternalMetricStatus"
+          className: "V2beta1ExternalMetricStatus"
         }
       },
       object: {
         serializedName: "object",
         type: {
           name: "Composite",
-          className: "Iok8sapiautoscalingv2beta1ObjectMetricStatus"
+          className: "V2beta1ObjectMetricStatus"
         }
       },
       pods: {
         serializedName: "pods",
         type: {
           name: "Composite",
-          className: "Iok8sapiautoscalingv2beta1PodsMetricStatus"
+          className: "V2beta1PodsMetricStatus"
         }
       },
       resource: {
         serializedName: "resource",
         type: {
           name: "Composite",
-          className: "Iok8sapiautoscalingv2beta1ResourceMetricStatus"
+          className: "V2beta1ResourceMetricStatus"
         }
       },
       type: {
@@ -18733,11 +18733,11 @@ export const Iok8sapiautoscalingv2beta1MetricStatus: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapiautoscalingv2beta1HorizontalPodAutoscalerStatus: msRest.CompositeMapper = {
+export const V2beta1HorizontalPodAutoscalerStatus: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.autoscaling.v2beta1.HorizontalPodAutoscalerStatus",
   type: {
     name: "Composite",
-    className: "Iok8sapiautoscalingv2beta1HorizontalPodAutoscalerStatus",
+    className: "V2beta1HorizontalPodAutoscalerStatus",
     modelProperties: {
       conditions: {
         required: true,
@@ -18747,7 +18747,7 @@ export const Iok8sapiautoscalingv2beta1HorizontalPodAutoscalerStatus: msRest.Com
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapiautoscalingv2beta1HorizontalPodAutoscalerCondition"
+              className: "V2beta1HorizontalPodAutoscalerCondition"
             }
           }
         }
@@ -18760,7 +18760,7 @@ export const Iok8sapiautoscalingv2beta1HorizontalPodAutoscalerStatus: msRest.Com
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapiautoscalingv2beta1MetricStatus"
+              className: "V2beta1MetricStatus"
             }
           }
         }
@@ -18795,11 +18795,11 @@ export const Iok8sapiautoscalingv2beta1HorizontalPodAutoscalerStatus: msRest.Com
   }
 };
 
-export const Iok8sapiautoscalingv2beta1HorizontalPodAutoscaler: msRest.CompositeMapper = {
+export const V2beta1HorizontalPodAutoscaler: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.autoscaling.v2beta1.HorizontalPodAutoscaler",
   type: {
     name: "Composite",
-    className: "Iok8sapiautoscalingv2beta1HorizontalPodAutoscaler",
+    className: "V2beta1HorizontalPodAutoscaler",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -18817,32 +18817,32 @@ export const Iok8sapiautoscalingv2beta1HorizontalPodAutoscaler: msRest.Composite
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       spec: {
         serializedName: "spec",
         type: {
           name: "Composite",
-          className: "Iok8sapiautoscalingv2beta1HorizontalPodAutoscalerSpec"
+          className: "V2beta1HorizontalPodAutoscalerSpec"
         }
       },
       status: {
         serializedName: "status",
         type: {
           name: "Composite",
-          className: "Iok8sapiautoscalingv2beta1HorizontalPodAutoscalerStatus"
+          className: "V2beta1HorizontalPodAutoscalerStatus"
         }
       }
     }
   }
 };
 
-export const Iok8sapiautoscalingv2beta1HorizontalPodAutoscalerList: msRest.CompositeMapper = {
+export const V2beta1HorizontalPodAutoscalerList: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.autoscaling.v2beta1.HorizontalPodAutoscalerList",
   type: {
     name: "Composite",
-    className: "Iok8sapiautoscalingv2beta1HorizontalPodAutoscalerList",
+    className: "V2beta1HorizontalPodAutoscalerList",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -18858,7 +18858,7 @@ export const Iok8sapiautoscalingv2beta1HorizontalPodAutoscalerList: msRest.Compo
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapiautoscalingv2beta1HorizontalPodAutoscaler"
+              className: "V2beta1HorizontalPodAutoscaler"
             }
           }
         }
@@ -18873,18 +18873,18 @@ export const Iok8sapiautoscalingv2beta1HorizontalPodAutoscalerList: msRest.Compo
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
   }
 };
 
-export const Iok8sapibatchv1JobSpec: msRest.CompositeMapper = {
+export const V1JobSpec: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.batch.v1.JobSpec",
   type: {
     name: "Composite",
-    className: "Iok8sapibatchv1JobSpec",
+    className: "V1JobSpec",
     modelProperties: {
       activeDeadlineSeconds: {
         serializedName: "activeDeadlineSeconds",
@@ -18920,7 +18920,7 @@ export const Iok8sapibatchv1JobSpec: msRest.CompositeMapper = {
         serializedName: "selector",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1LabelSelector"
+          className: "V1LabelSelector"
         }
       },
       template: {
@@ -18935,11 +18935,11 @@ export const Iok8sapibatchv1JobSpec: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapibatchv1JobCondition: msRest.CompositeMapper = {
+export const V1JobCondition: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.batch.v1.JobCondition",
   type: {
     name: "Composite",
-    className: "Iok8sapibatchv1JobCondition",
+    className: "V1JobCondition",
     modelProperties: {
       lastProbeTime: {
         serializedName: "lastProbeTime",
@@ -18983,11 +18983,11 @@ export const Iok8sapibatchv1JobCondition: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapibatchv1JobStatus: msRest.CompositeMapper = {
+export const V1JobStatus: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.batch.v1.JobStatus",
   type: {
     name: "Composite",
-    className: "Iok8sapibatchv1JobStatus",
+    className: "V1JobStatus",
     modelProperties: {
       active: {
         serializedName: "active",
@@ -19008,7 +19008,7 @@ export const Iok8sapibatchv1JobStatus: msRest.CompositeMapper = {
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapibatchv1JobCondition"
+              className: "V1JobCondition"
             }
           }
         }
@@ -19035,11 +19035,11 @@ export const Iok8sapibatchv1JobStatus: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapibatchv1Job: msRest.CompositeMapper = {
+export const V1Job: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.batch.v1.Job",
   type: {
     name: "Composite",
-    className: "Iok8sapibatchv1Job",
+    className: "V1Job",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -19057,32 +19057,32 @@ export const Iok8sapibatchv1Job: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       spec: {
         serializedName: "spec",
         type: {
           name: "Composite",
-          className: "Iok8sapibatchv1JobSpec"
+          className: "V1JobSpec"
         }
       },
       status: {
         serializedName: "status",
         type: {
           name: "Composite",
-          className: "Iok8sapibatchv1JobStatus"
+          className: "V1JobStatus"
         }
       }
     }
   }
 };
 
-export const Iok8sapibatchv1JobList: msRest.CompositeMapper = {
+export const V1JobList: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.batch.v1.JobList",
   type: {
     name: "Composite",
-    className: "Iok8sapibatchv1JobList",
+    className: "V1JobList",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -19098,7 +19098,7 @@ export const Iok8sapibatchv1JobList: msRest.CompositeMapper = {
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapibatchv1Job"
+              className: "V1Job"
             }
           }
         }
@@ -19113,42 +19113,42 @@ export const Iok8sapibatchv1JobList: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
   }
 };
 
-export const Iok8sapibatchv1beta1JobTemplateSpec: msRest.CompositeMapper = {
+export const V1beta1JobTemplateSpec: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.batch.v1beta1.JobTemplateSpec",
   type: {
     name: "Composite",
-    className: "Iok8sapibatchv1beta1JobTemplateSpec",
+    className: "V1beta1JobTemplateSpec",
     modelProperties: {
       metadata: {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       spec: {
         serializedName: "spec",
         type: {
           name: "Composite",
-          className: "Iok8sapibatchv1JobSpec"
+          className: "V1JobSpec"
         }
       }
     }
   }
 };
 
-export const Iok8sapibatchv1beta1CronJobSpec: msRest.CompositeMapper = {
+export const V1beta1CronJobSpec: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.batch.v1beta1.CronJobSpec",
   type: {
     name: "Composite",
-    className: "Iok8sapibatchv1beta1CronJobSpec",
+    className: "V1beta1CronJobSpec",
     modelProperties: {
       concurrencyPolicy: {
         serializedName: "concurrencyPolicy",
@@ -19167,7 +19167,7 @@ export const Iok8sapibatchv1beta1CronJobSpec: msRest.CompositeMapper = {
         serializedName: "jobTemplate",
         type: {
           name: "Composite",
-          className: "Iok8sapibatchv1beta1JobTemplateSpec"
+          className: "V1beta1JobTemplateSpec"
         }
       },
       schedule: {
@@ -19199,11 +19199,11 @@ export const Iok8sapibatchv1beta1CronJobSpec: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapibatchv1beta1CronJobStatus: msRest.CompositeMapper = {
+export const V1beta1CronJobStatus: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.batch.v1beta1.CronJobStatus",
   type: {
     name: "Composite",
-    className: "Iok8sapibatchv1beta1CronJobStatus",
+    className: "V1beta1CronJobStatus",
     modelProperties: {
       active: {
         serializedName: "active",
@@ -19227,11 +19227,11 @@ export const Iok8sapibatchv1beta1CronJobStatus: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapibatchv1beta1CronJob: msRest.CompositeMapper = {
+export const V1beta1CronJob: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.batch.v1beta1.CronJob",
   type: {
     name: "Composite",
-    className: "Iok8sapibatchv1beta1CronJob",
+    className: "V1beta1CronJob",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -19249,32 +19249,32 @@ export const Iok8sapibatchv1beta1CronJob: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       spec: {
         serializedName: "spec",
         type: {
           name: "Composite",
-          className: "Iok8sapibatchv1beta1CronJobSpec"
+          className: "V1beta1CronJobSpec"
         }
       },
       status: {
         serializedName: "status",
         type: {
           name: "Composite",
-          className: "Iok8sapibatchv1beta1CronJobStatus"
+          className: "V1beta1CronJobStatus"
         }
       }
     }
   }
 };
 
-export const Iok8sapibatchv1beta1CronJobList: msRest.CompositeMapper = {
+export const V1beta1CronJobList: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.batch.v1beta1.CronJobList",
   type: {
     name: "Composite",
-    className: "Iok8sapibatchv1beta1CronJobList",
+    className: "V1beta1CronJobList",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -19290,7 +19290,7 @@ export const Iok8sapibatchv1beta1CronJobList: msRest.CompositeMapper = {
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapibatchv1beta1CronJob"
+              className: "V1beta1CronJob"
             }
           }
         }
@@ -19305,18 +19305,18 @@ export const Iok8sapibatchv1beta1CronJobList: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
   }
 };
 
-export const Iok8sapicertificatesv1beta1CertificateSigningRequestSpec: msRest.CompositeMapper = {
+export const V1beta1CertificateSigningRequestSpec: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.certificates.v1beta1.CertificateSigningRequestSpec",
   type: {
     name: "Composite",
-    className: "Iok8sapicertificatesv1beta1CertificateSigningRequestSpec",
+    className: "V1beta1CertificateSigningRequestSpec",
     modelProperties: {
       extra: {
         serializedName: "extra",
@@ -19379,11 +19379,11 @@ export const Iok8sapicertificatesv1beta1CertificateSigningRequestSpec: msRest.Co
   }
 };
 
-export const Iok8sapicertificatesv1beta1CertificateSigningRequestCondition: msRest.CompositeMapper = {
+export const V1beta1CertificateSigningRequestCondition: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.certificates.v1beta1.CertificateSigningRequestCondition",
   type: {
     name: "Composite",
-    className: "Iok8sapicertificatesv1beta1CertificateSigningRequestCondition",
+    className: "V1beta1CertificateSigningRequestCondition",
     modelProperties: {
       lastUpdateTime: {
         serializedName: "lastUpdateTime",
@@ -19414,11 +19414,11 @@ export const Iok8sapicertificatesv1beta1CertificateSigningRequestCondition: msRe
   }
 };
 
-export const Iok8sapicertificatesv1beta1CertificateSigningRequestStatus: msRest.CompositeMapper = {
+export const V1beta1CertificateSigningRequestStatus: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.certificates.v1beta1.CertificateSigningRequestStatus",
   type: {
     name: "Composite",
-    className: "Iok8sapicertificatesv1beta1CertificateSigningRequestStatus",
+    className: "V1beta1CertificateSigningRequestStatus",
     modelProperties: {
       certificate: {
         serializedName: "certificate",
@@ -19433,7 +19433,7 @@ export const Iok8sapicertificatesv1beta1CertificateSigningRequestStatus: msRest.
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapicertificatesv1beta1CertificateSigningRequestCondition"
+              className: "V1beta1CertificateSigningRequestCondition"
             }
           }
         }
@@ -19442,11 +19442,11 @@ export const Iok8sapicertificatesv1beta1CertificateSigningRequestStatus: msRest.
   }
 };
 
-export const Iok8sapicertificatesv1beta1CertificateSigningRequest: msRest.CompositeMapper = {
+export const V1beta1CertificateSigningRequest: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.certificates.v1beta1.CertificateSigningRequest",
   type: {
     name: "Composite",
-    className: "Iok8sapicertificatesv1beta1CertificateSigningRequest",
+    className: "V1beta1CertificateSigningRequest",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -19464,32 +19464,32 @@ export const Iok8sapicertificatesv1beta1CertificateSigningRequest: msRest.Compos
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       spec: {
         serializedName: "spec",
         type: {
           name: "Composite",
-          className: "Iok8sapicertificatesv1beta1CertificateSigningRequestSpec"
+          className: "V1beta1CertificateSigningRequestSpec"
         }
       },
       status: {
         serializedName: "status",
         type: {
           name: "Composite",
-          className: "Iok8sapicertificatesv1beta1CertificateSigningRequestStatus"
+          className: "V1beta1CertificateSigningRequestStatus"
         }
       }
     }
   }
 };
 
-export const Iok8sapicertificatesv1beta1CertificateSigningRequestList: msRest.CompositeMapper = {
+export const V1beta1CertificateSigningRequestList: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.certificates.v1beta1.CertificateSigningRequestList",
   type: {
     name: "Composite",
-    className: "Iok8sapicertificatesv1beta1CertificateSigningRequestList",
+    className: "V1beta1CertificateSigningRequestList",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -19505,7 +19505,7 @@ export const Iok8sapicertificatesv1beta1CertificateSigningRequestList: msRest.Co
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapicertificatesv1beta1CertificateSigningRequest"
+              className: "V1beta1CertificateSigningRequest"
             }
           }
         }
@@ -19520,7 +19520,7 @@ export const Iok8sapicertificatesv1beta1CertificateSigningRequestList: msRest.Co
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
@@ -19609,7 +19609,7 @@ export const V1Binding: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       target: {
@@ -19889,7 +19889,7 @@ export const V1ComponentStatus: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       }
     }
@@ -19931,7 +19931,7 @@ export const V1ComponentStatusList: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
@@ -19982,7 +19982,7 @@ export const V1ConfigMap: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       }
     }
@@ -20024,7 +20024,7 @@ export const V1ConfigMapList: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
@@ -20439,7 +20439,7 @@ export const V1Endpoints: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       subsets: {
@@ -20493,7 +20493,7 @@ export const V1EndpointsList: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
@@ -20617,7 +20617,7 @@ export const V1Event: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       reason: {
@@ -20704,7 +20704,7 @@ export const V1EventList: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
@@ -20959,7 +20959,7 @@ export const V1LimitRange: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       spec: {
@@ -21008,7 +21008,7 @@ export const V1LimitRangeList: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
@@ -21135,7 +21135,7 @@ export const V1Namespace: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       spec: {
@@ -21191,7 +21191,7 @@ export const V1NamespaceList: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
@@ -21650,7 +21650,7 @@ export const V1Node: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       spec: {
@@ -21706,7 +21706,7 @@ export const V1NodeList: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
@@ -22190,7 +22190,7 @@ export const V1PersistentVolume: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       spec: {
@@ -22246,7 +22246,7 @@ export const V1PersistentVolumeClaimList: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
@@ -22288,7 +22288,7 @@ export const V1PersistentVolumeList: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
@@ -22459,7 +22459,7 @@ export const V1Pod: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       spec: {
@@ -22515,7 +22515,7 @@ export const V1PodList: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
@@ -22544,7 +22544,7 @@ export const V1PodTemplate: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       template: {
@@ -22593,7 +22593,7 @@ export const V1PodTemplateList: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
@@ -22757,7 +22757,7 @@ export const V1ReplicationController: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       spec: {
@@ -22813,7 +22813,7 @@ export const V1ReplicationControllerList: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
@@ -22842,7 +22842,7 @@ export const V1ResourceQuota: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       spec: {
@@ -22898,7 +22898,7 @@ export const V1ResourceQuotaList: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
@@ -22938,7 +22938,7 @@ export const V1Secret: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       stringData: {
@@ -22997,7 +22997,7 @@ export const V1SecretList: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
@@ -23211,7 +23211,7 @@ export const V1Service: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       spec: {
@@ -23272,7 +23272,7 @@ export const V1ServiceAccount: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       secrets: {
@@ -23326,7 +23326,7 @@ export const V1ServiceAccountList: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
@@ -23368,7 +23368,7 @@ export const V1ServiceList: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
@@ -23426,11 +23426,11 @@ export const V1TopologySelectorTerm: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapieventsv1beta1EventSeries: msRest.CompositeMapper = {
+export const V1beta1EventSeries: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.events.v1beta1.EventSeries",
   type: {
     name: "Composite",
-    className: "Iok8sapieventsv1beta1EventSeries",
+    className: "V1beta1EventSeries",
     modelProperties: {
       count: {
         required: true,
@@ -23457,11 +23457,11 @@ export const Iok8sapieventsv1beta1EventSeries: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapieventsv1beta1Event: msRest.CompositeMapper = {
+export const V1beta1Event: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.events.v1beta1.Event",
   type: {
     name: "Composite",
-    className: "Iok8sapieventsv1beta1Event",
+    className: "V1beta1Event",
     modelProperties: {
       action: {
         serializedName: "action",
@@ -23517,7 +23517,7 @@ export const Iok8sapieventsv1beta1Event: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       note: {
@@ -23562,7 +23562,7 @@ export const Iok8sapieventsv1beta1Event: msRest.CompositeMapper = {
         serializedName: "series",
         type: {
           name: "Composite",
-          className: "Iok8sapieventsv1beta1EventSeries"
+          className: "V1beta1EventSeries"
         }
       },
       type: {
@@ -23575,11 +23575,11 @@ export const Iok8sapieventsv1beta1Event: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapieventsv1beta1EventList: msRest.CompositeMapper = {
+export const V1beta1EventList: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.events.v1beta1.EventList",
   type: {
     name: "Composite",
-    className: "Iok8sapieventsv1beta1EventList",
+    className: "V1beta1EventList",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -23595,7 +23595,7 @@ export const Iok8sapieventsv1beta1EventList: msRest.CompositeMapper = {
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapieventsv1beta1Event"
+              className: "V1beta1Event"
             }
           }
         }
@@ -23610,7 +23610,7 @@ export const Iok8sapieventsv1beta1EventList: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
@@ -23717,7 +23717,7 @@ export const Iok8sapiextensionsv1beta1DaemonSetSpec: msRest.CompositeMapper = {
         serializedName: "selector",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1LabelSelector"
+          className: "V1LabelSelector"
         }
       },
       template: {
@@ -23889,7 +23889,7 @@ export const Iok8sapiextensionsv1beta1DaemonSet: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       spec: {
@@ -23945,7 +23945,7 @@ export const Iok8sapiextensionsv1beta1DaemonSetList: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
@@ -24060,7 +24060,7 @@ export const Iok8sapiextensionsv1beta1DeploymentSpec: msRest.CompositeMapper = {
         serializedName: "selector",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1LabelSelector"
+          className: "V1LabelSelector"
         }
       },
       strategy: {
@@ -24216,7 +24216,7 @@ export const Iok8sapiextensionsv1beta1Deployment: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       spec: {
@@ -24272,7 +24272,7 @@ export const Iok8sapiextensionsv1beta1DeploymentList: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
@@ -24632,7 +24632,7 @@ export const Iok8sapiextensionsv1beta1Ingress: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       spec: {
@@ -24688,7 +24688,7 @@ export const Iok8sapiextensionsv1beta1IngressList: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
@@ -24734,14 +24734,14 @@ export const Iok8sapiextensionsv1beta1NetworkPolicyPeer: msRest.CompositeMapper 
         serializedName: "namespaceSelector",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1LabelSelector"
+          className: "V1LabelSelector"
         }
       },
       podSelector: {
         serializedName: "podSelector",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1LabelSelector"
+          className: "V1LabelSelector"
         }
       }
     }
@@ -24851,7 +24851,7 @@ export const Iok8sapiextensionsv1beta1NetworkPolicySpec: msRest.CompositeMapper 
         serializedName: "podSelector",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1LabelSelector"
+          className: "V1LabelSelector"
         }
       },
       policyTypes: {
@@ -24891,7 +24891,7 @@ export const Iok8sapiextensionsv1beta1NetworkPolicy: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       spec: {
@@ -24940,7 +24940,7 @@ export const Iok8sapiextensionsv1beta1NetworkPolicyList: msRest.CompositeMapper 
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
@@ -25236,7 +25236,7 @@ export const Iok8sapiextensionsv1beta1PodSecurityPolicy: msRest.CompositeMapper 
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       spec: {
@@ -25285,7 +25285,7 @@ export const Iok8sapiextensionsv1beta1PodSecurityPolicyList: msRest.CompositeMap
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
@@ -25314,7 +25314,7 @@ export const Iok8sapiextensionsv1beta1ReplicaSetSpec: msRest.CompositeMapper = {
         serializedName: "selector",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1LabelSelector"
+          className: "V1LabelSelector"
         }
       },
       template: {
@@ -25445,7 +25445,7 @@ export const Iok8sapiextensionsv1beta1ReplicaSet: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       spec: {
@@ -25501,7 +25501,7 @@ export const Iok8sapiextensionsv1beta1ReplicaSetList: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
@@ -25580,7 +25580,7 @@ export const Iok8sapiextensionsv1beta1Scale: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       spec: {
@@ -25601,11 +25601,11 @@ export const Iok8sapiextensionsv1beta1Scale: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapinetworkingv1IPBlock: msRest.CompositeMapper = {
+export const V1IPBlock: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.networking.v1.IPBlock",
   type: {
     name: "Composite",
-    className: "Iok8sapinetworkingv1IPBlock",
+    className: "V1IPBlock",
     modelProperties: {
       cidr: {
         required: true,
@@ -25629,11 +25629,11 @@ export const Iok8sapinetworkingv1IPBlock: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapinetworkingv1NetworkPolicyPort: msRest.CompositeMapper = {
+export const V1NetworkPolicyPort: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.networking.v1.NetworkPolicyPort",
   type: {
     name: "Composite",
-    className: "Iok8sapinetworkingv1NetworkPolicyPort",
+    className: "V1NetworkPolicyPort",
     modelProperties: {
       port: {
         serializedName: "port",
@@ -25651,42 +25651,42 @@ export const Iok8sapinetworkingv1NetworkPolicyPort: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapinetworkingv1NetworkPolicyPeer: msRest.CompositeMapper = {
+export const V1NetworkPolicyPeer: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.networking.v1.NetworkPolicyPeer",
   type: {
     name: "Composite",
-    className: "Iok8sapinetworkingv1NetworkPolicyPeer",
+    className: "V1NetworkPolicyPeer",
     modelProperties: {
       ipBlock: {
         serializedName: "ipBlock",
         type: {
           name: "Composite",
-          className: "Iok8sapinetworkingv1IPBlock"
+          className: "V1IPBlock"
         }
       },
       namespaceSelector: {
         serializedName: "namespaceSelector",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1LabelSelector"
+          className: "V1LabelSelector"
         }
       },
       podSelector: {
         serializedName: "podSelector",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1LabelSelector"
+          className: "V1LabelSelector"
         }
       }
     }
   }
 };
 
-export const Iok8sapinetworkingv1NetworkPolicyEgressRule: msRest.CompositeMapper = {
+export const V1NetworkPolicyEgressRule: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.networking.v1.NetworkPolicyEgressRule",
   type: {
     name: "Composite",
-    className: "Iok8sapinetworkingv1NetworkPolicyEgressRule",
+    className: "V1NetworkPolicyEgressRule",
     modelProperties: {
       ports: {
         serializedName: "ports",
@@ -25695,7 +25695,7 @@ export const Iok8sapinetworkingv1NetworkPolicyEgressRule: msRest.CompositeMapper
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapinetworkingv1NetworkPolicyPort"
+              className: "V1NetworkPolicyPort"
             }
           }
         }
@@ -25707,7 +25707,7 @@ export const Iok8sapinetworkingv1NetworkPolicyEgressRule: msRest.CompositeMapper
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapinetworkingv1NetworkPolicyPeer"
+              className: "V1NetworkPolicyPeer"
             }
           }
         }
@@ -25716,11 +25716,11 @@ export const Iok8sapinetworkingv1NetworkPolicyEgressRule: msRest.CompositeMapper
   }
 };
 
-export const Iok8sapinetworkingv1NetworkPolicyIngressRule: msRest.CompositeMapper = {
+export const V1NetworkPolicyIngressRule: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.networking.v1.NetworkPolicyIngressRule",
   type: {
     name: "Composite",
-    className: "Iok8sapinetworkingv1NetworkPolicyIngressRule",
+    className: "V1NetworkPolicyIngressRule",
     modelProperties: {
       from: {
         serializedName: "from",
@@ -25729,7 +25729,7 @@ export const Iok8sapinetworkingv1NetworkPolicyIngressRule: msRest.CompositeMappe
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapinetworkingv1NetworkPolicyPeer"
+              className: "V1NetworkPolicyPeer"
             }
           }
         }
@@ -25741,7 +25741,7 @@ export const Iok8sapinetworkingv1NetworkPolicyIngressRule: msRest.CompositeMappe
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapinetworkingv1NetworkPolicyPort"
+              className: "V1NetworkPolicyPort"
             }
           }
         }
@@ -25750,11 +25750,11 @@ export const Iok8sapinetworkingv1NetworkPolicyIngressRule: msRest.CompositeMappe
   }
 };
 
-export const Iok8sapinetworkingv1NetworkPolicySpec: msRest.CompositeMapper = {
+export const V1NetworkPolicySpec: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.networking.v1.NetworkPolicySpec",
   type: {
     name: "Composite",
-    className: "Iok8sapinetworkingv1NetworkPolicySpec",
+    className: "V1NetworkPolicySpec",
     modelProperties: {
       egress: {
         serializedName: "egress",
@@ -25763,7 +25763,7 @@ export const Iok8sapinetworkingv1NetworkPolicySpec: msRest.CompositeMapper = {
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapinetworkingv1NetworkPolicyEgressRule"
+              className: "V1NetworkPolicyEgressRule"
             }
           }
         }
@@ -25775,7 +25775,7 @@ export const Iok8sapinetworkingv1NetworkPolicySpec: msRest.CompositeMapper = {
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapinetworkingv1NetworkPolicyIngressRule"
+              className: "V1NetworkPolicyIngressRule"
             }
           }
         }
@@ -25785,7 +25785,7 @@ export const Iok8sapinetworkingv1NetworkPolicySpec: msRest.CompositeMapper = {
         serializedName: "podSelector",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1LabelSelector"
+          className: "V1LabelSelector"
         }
       },
       policyTypes: {
@@ -25803,11 +25803,11 @@ export const Iok8sapinetworkingv1NetworkPolicySpec: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapinetworkingv1NetworkPolicy: msRest.CompositeMapper = {
+export const V1NetworkPolicy: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.networking.v1.NetworkPolicy",
   type: {
     name: "Composite",
-    className: "Iok8sapinetworkingv1NetworkPolicy",
+    className: "V1NetworkPolicy",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -25825,25 +25825,25 @@ export const Iok8sapinetworkingv1NetworkPolicy: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       spec: {
         serializedName: "spec",
         type: {
           name: "Composite",
-          className: "Iok8sapinetworkingv1NetworkPolicySpec"
+          className: "V1NetworkPolicySpec"
         }
       }
     }
   }
 };
 
-export const Iok8sapinetworkingv1NetworkPolicyList: msRest.CompositeMapper = {
+export const V1NetworkPolicyList: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.networking.v1.NetworkPolicyList",
   type: {
     name: "Composite",
-    className: "Iok8sapinetworkingv1NetworkPolicyList",
+    className: "V1NetworkPolicyList",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -25859,7 +25859,7 @@ export const Iok8sapinetworkingv1NetworkPolicyList: msRest.CompositeMapper = {
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapinetworkingv1NetworkPolicy"
+              className: "V1NetworkPolicy"
             }
           }
         }
@@ -25874,18 +25874,18 @@ export const Iok8sapinetworkingv1NetworkPolicyList: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
   }
 };
 
-export const Iok8sapipolicyv1beta1AllowedFlexVolume: msRest.CompositeMapper = {
+export const V1beta1AllowedFlexVolume: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.policy.v1beta1.AllowedFlexVolume",
   type: {
     name: "Composite",
-    className: "Iok8sapipolicyv1beta1AllowedFlexVolume",
+    className: "V1beta1AllowedFlexVolume",
     modelProperties: {
       driver: {
         required: true,
@@ -25898,11 +25898,11 @@ export const Iok8sapipolicyv1beta1AllowedFlexVolume: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapipolicyv1beta1AllowedHostPath: msRest.CompositeMapper = {
+export const V1beta1AllowedHostPath: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.policy.v1beta1.AllowedHostPath",
   type: {
     name: "Composite",
-    className: "Iok8sapipolicyv1beta1AllowedHostPath",
+    className: "V1beta1AllowedHostPath",
     modelProperties: {
       pathPrefix: {
         serializedName: "pathPrefix",
@@ -25920,11 +25920,11 @@ export const Iok8sapipolicyv1beta1AllowedHostPath: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapimachinerypkgapismetav1Preconditions: msRest.CompositeMapper = {
+export const V1Preconditions: msRest.CompositeMapper = {
   serializedName: "io.k8s.apimachinery.pkg.apis.meta.v1.Preconditions",
   type: {
     name: "Composite",
-    className: "Iok8sapimachinerypkgapismetav1Preconditions",
+    className: "V1Preconditions",
     modelProperties: {
       uid: {
         serializedName: "uid",
@@ -25936,11 +25936,11 @@ export const Iok8sapimachinerypkgapismetav1Preconditions: msRest.CompositeMapper
   }
 };
 
-export const Iok8sapimachinerypkgapismetav1DeleteOptions: msRest.CompositeMapper = {
+export const V1DeleteOptions: msRest.CompositeMapper = {
   serializedName: "io.k8s.apimachinery.pkg.apis.meta.v1.DeleteOptions",
   type: {
     name: "Composite",
-    className: "Iok8sapimachinerypkgapismetav1DeleteOptions",
+    className: "V1DeleteOptions",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -25970,7 +25970,7 @@ export const Iok8sapimachinerypkgapismetav1DeleteOptions: msRest.CompositeMapper
         serializedName: "preconditions",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1Preconditions"
+          className: "V1Preconditions"
         }
       },
       propagationPolicy: {
@@ -25983,11 +25983,11 @@ export const Iok8sapimachinerypkgapismetav1DeleteOptions: msRest.CompositeMapper
   }
 };
 
-export const Iok8sapipolicyv1beta1Eviction: msRest.CompositeMapper = {
+export const V1beta1Eviction: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.policy.v1beta1.Eviction",
   type: {
     name: "Composite",
-    className: "Iok8sapipolicyv1beta1Eviction",
+    className: "V1beta1Eviction",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -25999,7 +25999,7 @@ export const Iok8sapipolicyv1beta1Eviction: msRest.CompositeMapper = {
         serializedName: "deleteOptions",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1DeleteOptions"
+          className: "V1DeleteOptions"
         }
       },
       kind: {
@@ -26012,18 +26012,18 @@ export const Iok8sapipolicyv1beta1Eviction: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       }
     }
   }
 };
 
-export const Iok8sapipolicyv1beta1IDRange: msRest.CompositeMapper = {
+export const V1beta1IDRange: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.policy.v1beta1.IDRange",
   type: {
     name: "Composite",
-    className: "Iok8sapipolicyv1beta1IDRange",
+    className: "V1beta1IDRange",
     modelProperties: {
       max: {
         required: true,
@@ -26043,11 +26043,11 @@ export const Iok8sapipolicyv1beta1IDRange: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapipolicyv1beta1FSGroupStrategyOptions: msRest.CompositeMapper = {
+export const V1beta1FSGroupStrategyOptions: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.policy.v1beta1.FSGroupStrategyOptions",
   type: {
     name: "Composite",
-    className: "Iok8sapipolicyv1beta1FSGroupStrategyOptions",
+    className: "V1beta1FSGroupStrategyOptions",
     modelProperties: {
       ranges: {
         serializedName: "ranges",
@@ -26056,7 +26056,7 @@ export const Iok8sapipolicyv1beta1FSGroupStrategyOptions: msRest.CompositeMapper
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapipolicyv1beta1IDRange"
+              className: "V1beta1IDRange"
             }
           }
         }
@@ -26071,11 +26071,11 @@ export const Iok8sapipolicyv1beta1FSGroupStrategyOptions: msRest.CompositeMapper
   }
 };
 
-export const Iok8sapipolicyv1beta1HostPortRange: msRest.CompositeMapper = {
+export const V1beta1HostPortRange: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.policy.v1beta1.HostPortRange",
   type: {
     name: "Composite",
-    className: "Iok8sapipolicyv1beta1HostPortRange",
+    className: "V1beta1HostPortRange",
     modelProperties: {
       max: {
         required: true,
@@ -26095,11 +26095,11 @@ export const Iok8sapipolicyv1beta1HostPortRange: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapipolicyv1beta1PodDisruptionBudgetSpec: msRest.CompositeMapper = {
+export const V1beta1PodDisruptionBudgetSpec: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.policy.v1beta1.PodDisruptionBudgetSpec",
   type: {
     name: "Composite",
-    className: "Iok8sapipolicyv1beta1PodDisruptionBudgetSpec",
+    className: "V1beta1PodDisruptionBudgetSpec",
     modelProperties: {
       maxUnavailable: {
         serializedName: "maxUnavailable",
@@ -26117,18 +26117,18 @@ export const Iok8sapipolicyv1beta1PodDisruptionBudgetSpec: msRest.CompositeMappe
         serializedName: "selector",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1LabelSelector"
+          className: "V1LabelSelector"
         }
       }
     }
   }
 };
 
-export const Iok8sapipolicyv1beta1PodDisruptionBudgetStatus: msRest.CompositeMapper = {
+export const V1beta1PodDisruptionBudgetStatus: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.policy.v1beta1.PodDisruptionBudgetStatus",
   type: {
     name: "Composite",
-    className: "Iok8sapipolicyv1beta1PodDisruptionBudgetStatus",
+    className: "V1beta1PodDisruptionBudgetStatus",
     modelProperties: {
       currentHealthy: {
         required: true,
@@ -26180,11 +26180,11 @@ export const Iok8sapipolicyv1beta1PodDisruptionBudgetStatus: msRest.CompositeMap
   }
 };
 
-export const Iok8sapipolicyv1beta1PodDisruptionBudget: msRest.CompositeMapper = {
+export const V1beta1PodDisruptionBudget: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.policy.v1beta1.PodDisruptionBudget",
   type: {
     name: "Composite",
-    className: "Iok8sapipolicyv1beta1PodDisruptionBudget",
+    className: "V1beta1PodDisruptionBudget",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -26202,32 +26202,32 @@ export const Iok8sapipolicyv1beta1PodDisruptionBudget: msRest.CompositeMapper = 
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       spec: {
         serializedName: "spec",
         type: {
           name: "Composite",
-          className: "Iok8sapipolicyv1beta1PodDisruptionBudgetSpec"
+          className: "V1beta1PodDisruptionBudgetSpec"
         }
       },
       status: {
         serializedName: "status",
         type: {
           name: "Composite",
-          className: "Iok8sapipolicyv1beta1PodDisruptionBudgetStatus"
+          className: "V1beta1PodDisruptionBudgetStatus"
         }
       }
     }
   }
 };
 
-export const Iok8sapipolicyv1beta1PodDisruptionBudgetList: msRest.CompositeMapper = {
+export const V1beta1PodDisruptionBudgetList: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.policy.v1beta1.PodDisruptionBudgetList",
   type: {
     name: "Composite",
-    className: "Iok8sapipolicyv1beta1PodDisruptionBudgetList",
+    className: "V1beta1PodDisruptionBudgetList",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -26243,7 +26243,7 @@ export const Iok8sapipolicyv1beta1PodDisruptionBudgetList: msRest.CompositeMappe
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapipolicyv1beta1PodDisruptionBudget"
+              className: "V1beta1PodDisruptionBudget"
             }
           }
         }
@@ -26258,18 +26258,18 @@ export const Iok8sapipolicyv1beta1PodDisruptionBudgetList: msRest.CompositeMappe
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
   }
 };
 
-export const Iok8sapipolicyv1beta1RunAsUserStrategyOptions: msRest.CompositeMapper = {
+export const V1beta1RunAsUserStrategyOptions: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.policy.v1beta1.RunAsUserStrategyOptions",
   type: {
     name: "Composite",
-    className: "Iok8sapipolicyv1beta1RunAsUserStrategyOptions",
+    className: "V1beta1RunAsUserStrategyOptions",
     modelProperties: {
       ranges: {
         serializedName: "ranges",
@@ -26278,7 +26278,7 @@ export const Iok8sapipolicyv1beta1RunAsUserStrategyOptions: msRest.CompositeMapp
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapipolicyv1beta1IDRange"
+              className: "V1beta1IDRange"
             }
           }
         }
@@ -26294,11 +26294,11 @@ export const Iok8sapipolicyv1beta1RunAsUserStrategyOptions: msRest.CompositeMapp
   }
 };
 
-export const Iok8sapipolicyv1beta1SELinuxStrategyOptions: msRest.CompositeMapper = {
+export const V1beta1SELinuxStrategyOptions: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.policy.v1beta1.SELinuxStrategyOptions",
   type: {
     name: "Composite",
-    className: "Iok8sapipolicyv1beta1SELinuxStrategyOptions",
+    className: "V1beta1SELinuxStrategyOptions",
     modelProperties: {
       rule: {
         required: true,
@@ -26318,11 +26318,11 @@ export const Iok8sapipolicyv1beta1SELinuxStrategyOptions: msRest.CompositeMapper
   }
 };
 
-export const Iok8sapipolicyv1beta1SupplementalGroupsStrategyOptions: msRest.CompositeMapper = {
+export const V1beta1SupplementalGroupsStrategyOptions: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.policy.v1beta1.SupplementalGroupsStrategyOptions",
   type: {
     name: "Composite",
-    className: "Iok8sapipolicyv1beta1SupplementalGroupsStrategyOptions",
+    className: "V1beta1SupplementalGroupsStrategyOptions",
     modelProperties: {
       ranges: {
         serializedName: "ranges",
@@ -26331,7 +26331,7 @@ export const Iok8sapipolicyv1beta1SupplementalGroupsStrategyOptions: msRest.Comp
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapipolicyv1beta1IDRange"
+              className: "V1beta1IDRange"
             }
           }
         }
@@ -26346,11 +26346,11 @@ export const Iok8sapipolicyv1beta1SupplementalGroupsStrategyOptions: msRest.Comp
   }
 };
 
-export const Iok8sapipolicyv1beta1PodSecurityPolicySpec: msRest.CompositeMapper = {
+export const V1beta1PodSecurityPolicySpec: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.policy.v1beta1.PodSecurityPolicySpec",
   type: {
     name: "Composite",
-    className: "Iok8sapipolicyv1beta1PodSecurityPolicySpec",
+    className: "V1beta1PodSecurityPolicySpec",
     modelProperties: {
       allowPrivilegeEscalation: {
         serializedName: "allowPrivilegeEscalation",
@@ -26376,7 +26376,7 @@ export const Iok8sapipolicyv1beta1PodSecurityPolicySpec: msRest.CompositeMapper 
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapipolicyv1beta1AllowedFlexVolume"
+              className: "V1beta1AllowedFlexVolume"
             }
           }
         }
@@ -26388,7 +26388,7 @@ export const Iok8sapipolicyv1beta1PodSecurityPolicySpec: msRest.CompositeMapper 
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapipolicyv1beta1AllowedHostPath"
+              className: "V1beta1AllowedHostPath"
             }
           }
         }
@@ -26437,7 +26437,7 @@ export const Iok8sapipolicyv1beta1PodSecurityPolicySpec: msRest.CompositeMapper 
         serializedName: "fsGroup",
         type: {
           name: "Composite",
-          className: "Iok8sapipolicyv1beta1FSGroupStrategyOptions"
+          className: "V1beta1FSGroupStrategyOptions"
         }
       },
       hostIPC: {
@@ -26465,7 +26465,7 @@ export const Iok8sapipolicyv1beta1PodSecurityPolicySpec: msRest.CompositeMapper 
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapipolicyv1beta1HostPortRange"
+              className: "V1beta1HostPortRange"
             }
           }
         }
@@ -26498,7 +26498,7 @@ export const Iok8sapipolicyv1beta1PodSecurityPolicySpec: msRest.CompositeMapper 
         serializedName: "runAsUser",
         type: {
           name: "Composite",
-          className: "Iok8sapipolicyv1beta1RunAsUserStrategyOptions"
+          className: "V1beta1RunAsUserStrategyOptions"
         }
       },
       seLinux: {
@@ -26506,7 +26506,7 @@ export const Iok8sapipolicyv1beta1PodSecurityPolicySpec: msRest.CompositeMapper 
         serializedName: "seLinux",
         type: {
           name: "Composite",
-          className: "Iok8sapipolicyv1beta1SELinuxStrategyOptions"
+          className: "V1beta1SELinuxStrategyOptions"
         }
       },
       supplementalGroups: {
@@ -26514,7 +26514,7 @@ export const Iok8sapipolicyv1beta1PodSecurityPolicySpec: msRest.CompositeMapper 
         serializedName: "supplementalGroups",
         type: {
           name: "Composite",
-          className: "Iok8sapipolicyv1beta1SupplementalGroupsStrategyOptions"
+          className: "V1beta1SupplementalGroupsStrategyOptions"
         }
       },
       volumes: {
@@ -26532,11 +26532,11 @@ export const Iok8sapipolicyv1beta1PodSecurityPolicySpec: msRest.CompositeMapper 
   }
 };
 
-export const Iok8sapipolicyv1beta1PodSecurityPolicy: msRest.CompositeMapper = {
+export const V1beta1PodSecurityPolicy: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.policy.v1beta1.PodSecurityPolicy",
   type: {
     name: "Composite",
-    className: "Iok8sapipolicyv1beta1PodSecurityPolicy",
+    className: "V1beta1PodSecurityPolicy",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -26554,25 +26554,25 @@ export const Iok8sapipolicyv1beta1PodSecurityPolicy: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       spec: {
         serializedName: "spec",
         type: {
           name: "Composite",
-          className: "Iok8sapipolicyv1beta1PodSecurityPolicySpec"
+          className: "V1beta1PodSecurityPolicySpec"
         }
       }
     }
   }
 };
 
-export const Iok8sapipolicyv1beta1PodSecurityPolicyList: msRest.CompositeMapper = {
+export const V1beta1PodSecurityPolicyList: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.policy.v1beta1.PodSecurityPolicyList",
   type: {
     name: "Composite",
-    className: "Iok8sapipolicyv1beta1PodSecurityPolicyList",
+    className: "V1beta1PodSecurityPolicyList",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -26588,7 +26588,7 @@ export const Iok8sapipolicyv1beta1PodSecurityPolicyList: msRest.CompositeMapper 
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapipolicyv1beta1PodSecurityPolicy"
+              className: "V1beta1PodSecurityPolicy"
             }
           }
         }
@@ -26603,18 +26603,18 @@ export const Iok8sapipolicyv1beta1PodSecurityPolicyList: msRest.CompositeMapper 
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
   }
 };
 
-export const Iok8sapirbacv1PolicyRule: msRest.CompositeMapper = {
+export const V1PolicyRule: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.rbac.v1.PolicyRule",
   type: {
     name: "Composite",
-    className: "Iok8sapirbacv1PolicyRule",
+    className: "V1PolicyRule",
     modelProperties: {
       apiGroups: {
         serializedName: "apiGroups",
@@ -26676,17 +26676,17 @@ export const Iok8sapirbacv1PolicyRule: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapirbacv1ClusterRole: msRest.CompositeMapper = {
+export const V1ClusterRole: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.rbac.v1.ClusterRole",
   type: {
     name: "Composite",
-    className: "Iok8sapirbacv1ClusterRole",
+    className: "V1ClusterRole",
     modelProperties: {
       aggregationRule: {
         serializedName: "aggregationRule",
         type: {
           name: "Composite",
-          className: "Iok8sapirbacv1AggregationRule"
+          className: "V1AggregationRule"
         }
       },
       apiVersion: {
@@ -26705,7 +26705,7 @@ export const Iok8sapirbacv1ClusterRole: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       rules: {
@@ -26716,7 +26716,7 @@ export const Iok8sapirbacv1ClusterRole: msRest.CompositeMapper = {
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapirbacv1PolicyRule"
+              className: "V1PolicyRule"
             }
           }
         }
@@ -26725,11 +26725,11 @@ export const Iok8sapirbacv1ClusterRole: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapirbacv1RoleRef: msRest.CompositeMapper = {
+export const V1RoleRef: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.rbac.v1.RoleRef",
   type: {
     name: "Composite",
-    className: "Iok8sapirbacv1RoleRef",
+    className: "V1RoleRef",
     modelProperties: {
       apiGroup: {
         required: true,
@@ -26756,11 +26756,11 @@ export const Iok8sapirbacv1RoleRef: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapirbacv1Subject: msRest.CompositeMapper = {
+export const V1Subject: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.rbac.v1.Subject",
   type: {
     name: "Composite",
-    className: "Iok8sapirbacv1Subject",
+    className: "V1Subject",
     modelProperties: {
       apiGroup: {
         serializedName: "apiGroup",
@@ -26792,11 +26792,11 @@ export const Iok8sapirbacv1Subject: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapirbacv1ClusterRoleBinding: msRest.CompositeMapper = {
+export const V1ClusterRoleBinding: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.rbac.v1.ClusterRoleBinding",
   type: {
     name: "Composite",
-    className: "Iok8sapirbacv1ClusterRoleBinding",
+    className: "V1ClusterRoleBinding",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -26814,7 +26814,7 @@ export const Iok8sapirbacv1ClusterRoleBinding: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       roleRef: {
@@ -26822,7 +26822,7 @@ export const Iok8sapirbacv1ClusterRoleBinding: msRest.CompositeMapper = {
         serializedName: "roleRef",
         type: {
           name: "Composite",
-          className: "Iok8sapirbacv1RoleRef"
+          className: "V1RoleRef"
         }
       },
       subjects: {
@@ -26832,7 +26832,7 @@ export const Iok8sapirbacv1ClusterRoleBinding: msRest.CompositeMapper = {
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapirbacv1Subject"
+              className: "V1Subject"
             }
           }
         }
@@ -26841,11 +26841,11 @@ export const Iok8sapirbacv1ClusterRoleBinding: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapirbacv1ClusterRoleBindingList: msRest.CompositeMapper = {
+export const V1ClusterRoleBindingList: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.rbac.v1.ClusterRoleBindingList",
   type: {
     name: "Composite",
-    className: "Iok8sapirbacv1ClusterRoleBindingList",
+    className: "V1ClusterRoleBindingList",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -26861,7 +26861,7 @@ export const Iok8sapirbacv1ClusterRoleBindingList: msRest.CompositeMapper = {
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapirbacv1ClusterRoleBinding"
+              className: "V1ClusterRoleBinding"
             }
           }
         }
@@ -26876,18 +26876,18 @@ export const Iok8sapirbacv1ClusterRoleBindingList: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
   }
 };
 
-export const Iok8sapirbacv1ClusterRoleList: msRest.CompositeMapper = {
+export const V1ClusterRoleList: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.rbac.v1.ClusterRoleList",
   type: {
     name: "Composite",
-    className: "Iok8sapirbacv1ClusterRoleList",
+    className: "V1ClusterRoleList",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -26903,7 +26903,7 @@ export const Iok8sapirbacv1ClusterRoleList: msRest.CompositeMapper = {
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapirbacv1ClusterRole"
+              className: "V1ClusterRole"
             }
           }
         }
@@ -26918,18 +26918,18 @@ export const Iok8sapirbacv1ClusterRoleList: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
   }
 };
 
-export const Iok8sapirbacv1Role: msRest.CompositeMapper = {
+export const V1Role: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.rbac.v1.Role",
   type: {
     name: "Composite",
-    className: "Iok8sapirbacv1Role",
+    className: "V1Role",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -26947,7 +26947,7 @@ export const Iok8sapirbacv1Role: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       rules: {
@@ -26958,7 +26958,7 @@ export const Iok8sapirbacv1Role: msRest.CompositeMapper = {
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapirbacv1PolicyRule"
+              className: "V1PolicyRule"
             }
           }
         }
@@ -26967,11 +26967,11 @@ export const Iok8sapirbacv1Role: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapirbacv1RoleBinding: msRest.CompositeMapper = {
+export const V1RoleBinding: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.rbac.v1.RoleBinding",
   type: {
     name: "Composite",
-    className: "Iok8sapirbacv1RoleBinding",
+    className: "V1RoleBinding",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -26989,7 +26989,7 @@ export const Iok8sapirbacv1RoleBinding: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       roleRef: {
@@ -26997,7 +26997,7 @@ export const Iok8sapirbacv1RoleBinding: msRest.CompositeMapper = {
         serializedName: "roleRef",
         type: {
           name: "Composite",
-          className: "Iok8sapirbacv1RoleRef"
+          className: "V1RoleRef"
         }
       },
       subjects: {
@@ -27007,7 +27007,7 @@ export const Iok8sapirbacv1RoleBinding: msRest.CompositeMapper = {
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapirbacv1Subject"
+              className: "V1Subject"
             }
           }
         }
@@ -27016,11 +27016,11 @@ export const Iok8sapirbacv1RoleBinding: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapirbacv1RoleBindingList: msRest.CompositeMapper = {
+export const V1RoleBindingList: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.rbac.v1.RoleBindingList",
   type: {
     name: "Composite",
-    className: "Iok8sapirbacv1RoleBindingList",
+    className: "V1RoleBindingList",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -27036,7 +27036,7 @@ export const Iok8sapirbacv1RoleBindingList: msRest.CompositeMapper = {
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapirbacv1RoleBinding"
+              className: "V1RoleBinding"
             }
           }
         }
@@ -27051,18 +27051,18 @@ export const Iok8sapirbacv1RoleBindingList: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
   }
 };
 
-export const Iok8sapirbacv1RoleList: msRest.CompositeMapper = {
+export const V1RoleList: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.rbac.v1.RoleList",
   type: {
     name: "Composite",
-    className: "Iok8sapirbacv1RoleList",
+    className: "V1RoleList",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -27078,7 +27078,7 @@ export const Iok8sapirbacv1RoleList: msRest.CompositeMapper = {
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapirbacv1Role"
+              className: "V1Role"
             }
           }
         }
@@ -27093,18 +27093,18 @@ export const Iok8sapirbacv1RoleList: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
   }
 };
 
-export const Iok8sapirbacv1beta1AggregationRule: msRest.CompositeMapper = {
+export const V1beta1AggregationRule: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.rbac.v1beta1.AggregationRule",
   type: {
     name: "Composite",
-    className: "Iok8sapirbacv1beta1AggregationRule",
+    className: "V1beta1AggregationRule",
     modelProperties: {
       clusterRoleSelectors: {
         serializedName: "clusterRoleSelectors",
@@ -27113,7 +27113,7 @@ export const Iok8sapirbacv1beta1AggregationRule: msRest.CompositeMapper = {
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapimachinerypkgapismetav1LabelSelector"
+              className: "V1LabelSelector"
             }
           }
         }
@@ -27122,11 +27122,11 @@ export const Iok8sapirbacv1beta1AggregationRule: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapirbacv1beta1PolicyRule: msRest.CompositeMapper = {
+export const V1beta1PolicyRule: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.rbac.v1beta1.PolicyRule",
   type: {
     name: "Composite",
-    className: "Iok8sapirbacv1beta1PolicyRule",
+    className: "V1beta1PolicyRule",
     modelProperties: {
       apiGroups: {
         serializedName: "apiGroups",
@@ -27188,17 +27188,17 @@ export const Iok8sapirbacv1beta1PolicyRule: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapirbacv1beta1ClusterRole: msRest.CompositeMapper = {
+export const V1beta1ClusterRole: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.rbac.v1beta1.ClusterRole",
   type: {
     name: "Composite",
-    className: "Iok8sapirbacv1beta1ClusterRole",
+    className: "V1beta1ClusterRole",
     modelProperties: {
       aggregationRule: {
         serializedName: "aggregationRule",
         type: {
           name: "Composite",
-          className: "Iok8sapirbacv1beta1AggregationRule"
+          className: "V1beta1AggregationRule"
         }
       },
       apiVersion: {
@@ -27217,7 +27217,7 @@ export const Iok8sapirbacv1beta1ClusterRole: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       rules: {
@@ -27228,7 +27228,7 @@ export const Iok8sapirbacv1beta1ClusterRole: msRest.CompositeMapper = {
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapirbacv1beta1PolicyRule"
+              className: "V1beta1PolicyRule"
             }
           }
         }
@@ -27237,11 +27237,11 @@ export const Iok8sapirbacv1beta1ClusterRole: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapirbacv1beta1RoleRef: msRest.CompositeMapper = {
+export const V1beta1RoleRef: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.rbac.v1beta1.RoleRef",
   type: {
     name: "Composite",
-    className: "Iok8sapirbacv1beta1RoleRef",
+    className: "V1beta1RoleRef",
     modelProperties: {
       apiGroup: {
         required: true,
@@ -27268,11 +27268,11 @@ export const Iok8sapirbacv1beta1RoleRef: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapirbacv1beta1Subject: msRest.CompositeMapper = {
+export const V1beta1Subject: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.rbac.v1beta1.Subject",
   type: {
     name: "Composite",
-    className: "Iok8sapirbacv1beta1Subject",
+    className: "V1beta1Subject",
     modelProperties: {
       apiGroup: {
         serializedName: "apiGroup",
@@ -27304,11 +27304,11 @@ export const Iok8sapirbacv1beta1Subject: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapirbacv1beta1ClusterRoleBinding: msRest.CompositeMapper = {
+export const V1beta1ClusterRoleBinding: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.rbac.v1beta1.ClusterRoleBinding",
   type: {
     name: "Composite",
-    className: "Iok8sapirbacv1beta1ClusterRoleBinding",
+    className: "V1beta1ClusterRoleBinding",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -27326,7 +27326,7 @@ export const Iok8sapirbacv1beta1ClusterRoleBinding: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       roleRef: {
@@ -27334,7 +27334,7 @@ export const Iok8sapirbacv1beta1ClusterRoleBinding: msRest.CompositeMapper = {
         serializedName: "roleRef",
         type: {
           name: "Composite",
-          className: "Iok8sapirbacv1beta1RoleRef"
+          className: "V1beta1RoleRef"
         }
       },
       subjects: {
@@ -27344,7 +27344,7 @@ export const Iok8sapirbacv1beta1ClusterRoleBinding: msRest.CompositeMapper = {
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapirbacv1beta1Subject"
+              className: "V1beta1Subject"
             }
           }
         }
@@ -27353,11 +27353,11 @@ export const Iok8sapirbacv1beta1ClusterRoleBinding: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapirbacv1beta1ClusterRoleBindingList: msRest.CompositeMapper = {
+export const V1beta1ClusterRoleBindingList: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.rbac.v1beta1.ClusterRoleBindingList",
   type: {
     name: "Composite",
-    className: "Iok8sapirbacv1beta1ClusterRoleBindingList",
+    className: "V1beta1ClusterRoleBindingList",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -27373,7 +27373,7 @@ export const Iok8sapirbacv1beta1ClusterRoleBindingList: msRest.CompositeMapper =
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapirbacv1beta1ClusterRoleBinding"
+              className: "V1beta1ClusterRoleBinding"
             }
           }
         }
@@ -27388,18 +27388,18 @@ export const Iok8sapirbacv1beta1ClusterRoleBindingList: msRest.CompositeMapper =
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
   }
 };
 
-export const Iok8sapirbacv1beta1ClusterRoleList: msRest.CompositeMapper = {
+export const V1beta1ClusterRoleList: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.rbac.v1beta1.ClusterRoleList",
   type: {
     name: "Composite",
-    className: "Iok8sapirbacv1beta1ClusterRoleList",
+    className: "V1beta1ClusterRoleList",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -27415,7 +27415,7 @@ export const Iok8sapirbacv1beta1ClusterRoleList: msRest.CompositeMapper = {
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapirbacv1beta1ClusterRole"
+              className: "V1beta1ClusterRole"
             }
           }
         }
@@ -27430,18 +27430,18 @@ export const Iok8sapirbacv1beta1ClusterRoleList: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
   }
 };
 
-export const Iok8sapirbacv1beta1Role: msRest.CompositeMapper = {
+export const V1beta1Role: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.rbac.v1beta1.Role",
   type: {
     name: "Composite",
-    className: "Iok8sapirbacv1beta1Role",
+    className: "V1beta1Role",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -27459,7 +27459,7 @@ export const Iok8sapirbacv1beta1Role: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       rules: {
@@ -27470,7 +27470,7 @@ export const Iok8sapirbacv1beta1Role: msRest.CompositeMapper = {
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapirbacv1beta1PolicyRule"
+              className: "V1beta1PolicyRule"
             }
           }
         }
@@ -27479,11 +27479,11 @@ export const Iok8sapirbacv1beta1Role: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapirbacv1beta1RoleBinding: msRest.CompositeMapper = {
+export const V1beta1RoleBinding: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.rbac.v1beta1.RoleBinding",
   type: {
     name: "Composite",
-    className: "Iok8sapirbacv1beta1RoleBinding",
+    className: "V1beta1RoleBinding",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -27501,7 +27501,7 @@ export const Iok8sapirbacv1beta1RoleBinding: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       roleRef: {
@@ -27509,7 +27509,7 @@ export const Iok8sapirbacv1beta1RoleBinding: msRest.CompositeMapper = {
         serializedName: "roleRef",
         type: {
           name: "Composite",
-          className: "Iok8sapirbacv1beta1RoleRef"
+          className: "V1beta1RoleRef"
         }
       },
       subjects: {
@@ -27519,7 +27519,7 @@ export const Iok8sapirbacv1beta1RoleBinding: msRest.CompositeMapper = {
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapirbacv1beta1Subject"
+              className: "V1beta1Subject"
             }
           }
         }
@@ -27528,11 +27528,11 @@ export const Iok8sapirbacv1beta1RoleBinding: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapirbacv1beta1RoleBindingList: msRest.CompositeMapper = {
+export const V1beta1RoleBindingList: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.rbac.v1beta1.RoleBindingList",
   type: {
     name: "Composite",
-    className: "Iok8sapirbacv1beta1RoleBindingList",
+    className: "V1beta1RoleBindingList",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -27548,7 +27548,7 @@ export const Iok8sapirbacv1beta1RoleBindingList: msRest.CompositeMapper = {
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapirbacv1beta1RoleBinding"
+              className: "V1beta1RoleBinding"
             }
           }
         }
@@ -27563,18 +27563,18 @@ export const Iok8sapirbacv1beta1RoleBindingList: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
   }
 };
 
-export const Iok8sapirbacv1beta1RoleList: msRest.CompositeMapper = {
+export const V1beta1RoleList: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.rbac.v1beta1.RoleList",
   type: {
     name: "Composite",
-    className: "Iok8sapirbacv1beta1RoleList",
+    className: "V1beta1RoleList",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -27590,7 +27590,7 @@ export const Iok8sapirbacv1beta1RoleList: msRest.CompositeMapper = {
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapirbacv1beta1Role"
+              className: "V1beta1Role"
             }
           }
         }
@@ -27605,18 +27605,18 @@ export const Iok8sapirbacv1beta1RoleList: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
   }
 };
 
-export const Iok8sapischedulingv1beta1PriorityClass: msRest.CompositeMapper = {
+export const V1beta1PriorityClass: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.scheduling.v1beta1.PriorityClass",
   type: {
     name: "Composite",
-    className: "Iok8sapischedulingv1beta1PriorityClass",
+    className: "V1beta1PriorityClass",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -27646,7 +27646,7 @@ export const Iok8sapischedulingv1beta1PriorityClass: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       value: {
@@ -27660,11 +27660,11 @@ export const Iok8sapischedulingv1beta1PriorityClass: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapischedulingv1beta1PriorityClassList: msRest.CompositeMapper = {
+export const V1beta1PriorityClassList: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.scheduling.v1beta1.PriorityClassList",
   type: {
     name: "Composite",
-    className: "Iok8sapischedulingv1beta1PriorityClassList",
+    className: "V1beta1PriorityClassList",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -27680,7 +27680,7 @@ export const Iok8sapischedulingv1beta1PriorityClassList: msRest.CompositeMapper 
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapischedulingv1beta1PriorityClass"
+              className: "V1beta1PriorityClass"
             }
           }
         }
@@ -27695,18 +27695,18 @@ export const Iok8sapischedulingv1beta1PriorityClassList: msRest.CompositeMapper 
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
   }
 };
 
-export const Iok8sapistoragev1StorageClass: msRest.CompositeMapper = {
+export const V1StorageClass: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.storage.v1.StorageClass",
   type: {
     name: "Composite",
-    className: "Iok8sapistoragev1StorageClass",
+    className: "V1StorageClass",
     modelProperties: {
       allowVolumeExpansion: {
         serializedName: "allowVolumeExpansion",
@@ -27742,7 +27742,7 @@ export const Iok8sapistoragev1StorageClass: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       mountOptions: {
@@ -27790,11 +27790,11 @@ export const Iok8sapistoragev1StorageClass: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapistoragev1StorageClassList: msRest.CompositeMapper = {
+export const V1StorageClassList: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.storage.v1.StorageClassList",
   type: {
     name: "Composite",
-    className: "Iok8sapistoragev1StorageClassList",
+    className: "V1StorageClassList",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -27810,7 +27810,7 @@ export const Iok8sapistoragev1StorageClassList: msRest.CompositeMapper = {
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapistoragev1StorageClass"
+              className: "V1StorageClass"
             }
           }
         }
@@ -27825,18 +27825,18 @@ export const Iok8sapistoragev1StorageClassList: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
   }
 };
 
-export const Iok8sapistoragev1beta1StorageClass: msRest.CompositeMapper = {
+export const V1beta1StorageClass: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.storage.v1beta1.StorageClass",
   type: {
     name: "Composite",
-    className: "Iok8sapistoragev1beta1StorageClass",
+    className: "V1beta1StorageClass",
     modelProperties: {
       allowVolumeExpansion: {
         serializedName: "allowVolumeExpansion",
@@ -27872,7 +27872,7 @@ export const Iok8sapistoragev1beta1StorageClass: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       mountOptions: {
@@ -27920,11 +27920,11 @@ export const Iok8sapistoragev1beta1StorageClass: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapistoragev1beta1StorageClassList: msRest.CompositeMapper = {
+export const V1beta1StorageClassList: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.storage.v1beta1.StorageClassList",
   type: {
     name: "Composite",
-    className: "Iok8sapistoragev1beta1StorageClassList",
+    className: "V1beta1StorageClassList",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -27940,7 +27940,7 @@ export const Iok8sapistoragev1beta1StorageClassList: msRest.CompositeMapper = {
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapistoragev1beta1StorageClass"
+              className: "V1beta1StorageClass"
             }
           }
         }
@@ -27955,18 +27955,18 @@ export const Iok8sapistoragev1beta1StorageClassList: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
   }
 };
 
-export const Iok8sapistoragev1beta1VolumeAttachmentSource: msRest.CompositeMapper = {
+export const V1beta1VolumeAttachmentSource: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.storage.v1beta1.VolumeAttachmentSource",
   type: {
     name: "Composite",
-    className: "Iok8sapistoragev1beta1VolumeAttachmentSource",
+    className: "V1beta1VolumeAttachmentSource",
     modelProperties: {
       persistentVolumeName: {
         serializedName: "persistentVolumeName",
@@ -27978,11 +27978,11 @@ export const Iok8sapistoragev1beta1VolumeAttachmentSource: msRest.CompositeMappe
   }
 };
 
-export const Iok8sapistoragev1beta1VolumeAttachmentSpec: msRest.CompositeMapper = {
+export const V1beta1VolumeAttachmentSpec: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.storage.v1beta1.VolumeAttachmentSpec",
   type: {
     name: "Composite",
-    className: "Iok8sapistoragev1beta1VolumeAttachmentSpec",
+    className: "V1beta1VolumeAttachmentSpec",
     modelProperties: {
       attacher: {
         required: true,
@@ -28003,18 +28003,18 @@ export const Iok8sapistoragev1beta1VolumeAttachmentSpec: msRest.CompositeMapper 
         serializedName: "source",
         type: {
           name: "Composite",
-          className: "Iok8sapistoragev1beta1VolumeAttachmentSource"
+          className: "V1beta1VolumeAttachmentSource"
         }
       }
     }
   }
 };
 
-export const Iok8sapistoragev1beta1VolumeError: msRest.CompositeMapper = {
+export const V1beta1VolumeError: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.storage.v1beta1.VolumeError",
   type: {
     name: "Composite",
-    className: "Iok8sapistoragev1beta1VolumeError",
+    className: "V1beta1VolumeError",
     modelProperties: {
       message: {
         serializedName: "message",
@@ -28032,17 +28032,17 @@ export const Iok8sapistoragev1beta1VolumeError: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapistoragev1beta1VolumeAttachmentStatus: msRest.CompositeMapper = {
+export const V1beta1VolumeAttachmentStatus: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.storage.v1beta1.VolumeAttachmentStatus",
   type: {
     name: "Composite",
-    className: "Iok8sapistoragev1beta1VolumeAttachmentStatus",
+    className: "V1beta1VolumeAttachmentStatus",
     modelProperties: {
       attachError: {
         serializedName: "attachError",
         type: {
           name: "Composite",
-          className: "Iok8sapistoragev1beta1VolumeError"
+          className: "V1beta1VolumeError"
         }
       },
       attached: {
@@ -28067,18 +28067,18 @@ export const Iok8sapistoragev1beta1VolumeAttachmentStatus: msRest.CompositeMappe
         serializedName: "detachError",
         type: {
           name: "Composite",
-          className: "Iok8sapistoragev1beta1VolumeError"
+          className: "V1beta1VolumeError"
         }
       }
     }
   }
 };
 
-export const Iok8sapistoragev1beta1VolumeAttachment: msRest.CompositeMapper = {
+export const V1beta1VolumeAttachment: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.storage.v1beta1.VolumeAttachment",
   type: {
     name: "Composite",
-    className: "Iok8sapistoragev1beta1VolumeAttachment",
+    className: "V1beta1VolumeAttachment",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -28096,7 +28096,7 @@ export const Iok8sapistoragev1beta1VolumeAttachment: msRest.CompositeMapper = {
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       spec: {
@@ -28104,25 +28104,25 @@ export const Iok8sapistoragev1beta1VolumeAttachment: msRest.CompositeMapper = {
         serializedName: "spec",
         type: {
           name: "Composite",
-          className: "Iok8sapistoragev1beta1VolumeAttachmentSpec"
+          className: "V1beta1VolumeAttachmentSpec"
         }
       },
       status: {
         serializedName: "status",
         type: {
           name: "Composite",
-          className: "Iok8sapistoragev1beta1VolumeAttachmentStatus"
+          className: "V1beta1VolumeAttachmentStatus"
         }
       }
     }
   }
 };
 
-export const Iok8sapistoragev1beta1VolumeAttachmentList: msRest.CompositeMapper = {
+export const V1beta1VolumeAttachmentList: msRest.CompositeMapper = {
   serializedName: "io.k8s.api.storage.v1beta1.VolumeAttachmentList",
   type: {
     name: "Composite",
-    className: "Iok8sapistoragev1beta1VolumeAttachmentList",
+    className: "V1beta1VolumeAttachmentList",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -28138,7 +28138,7 @@ export const Iok8sapistoragev1beta1VolumeAttachmentList: msRest.CompositeMapper 
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapistoragev1beta1VolumeAttachment"
+              className: "V1beta1VolumeAttachment"
             }
           }
         }
@@ -28153,18 +28153,18 @@ export const Iok8sapistoragev1beta1VolumeAttachmentList: msRest.CompositeMapper 
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
   }
 };
 
-export const Iok8sapimachinerypkgapismetav1GroupVersionForDiscovery: msRest.CompositeMapper = {
+export const V1GroupVersionForDiscovery: msRest.CompositeMapper = {
   serializedName: "io.k8s.apimachinery.pkg.apis.meta.v1.GroupVersionForDiscovery",
   type: {
     name: "Composite",
-    className: "Iok8sapimachinerypkgapismetav1GroupVersionForDiscovery",
+    className: "V1GroupVersionForDiscovery",
     modelProperties: {
       groupVersion: {
         required: true,
@@ -28184,11 +28184,11 @@ export const Iok8sapimachinerypkgapismetav1GroupVersionForDiscovery: msRest.Comp
   }
 };
 
-export const Iok8sapimachinerypkgapismetav1ServerAddressByClientCIDR: msRest.CompositeMapper = {
+export const V1ServerAddressByClientCIDR: msRest.CompositeMapper = {
   serializedName: "io.k8s.apimachinery.pkg.apis.meta.v1.ServerAddressByClientCIDR",
   type: {
     name: "Composite",
-    className: "Iok8sapimachinerypkgapismetav1ServerAddressByClientCIDR",
+    className: "V1ServerAddressByClientCIDR",
     modelProperties: {
       clientCIDR: {
         required: true,
@@ -28208,11 +28208,11 @@ export const Iok8sapimachinerypkgapismetav1ServerAddressByClientCIDR: msRest.Com
   }
 };
 
-export const Iok8sapimachinerypkgapismetav1APIGroup: msRest.CompositeMapper = {
+export const V1APIGroup: msRest.CompositeMapper = {
   serializedName: "io.k8s.apimachinery.pkg.apis.meta.v1.APIGroup",
   type: {
     name: "Composite",
-    className: "Iok8sapimachinerypkgapismetav1APIGroup",
+    className: "V1APIGroup",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -28237,7 +28237,7 @@ export const Iok8sapimachinerypkgapismetav1APIGroup: msRest.CompositeMapper = {
         serializedName: "preferredVersion",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1GroupVersionForDiscovery"
+          className: "V1GroupVersionForDiscovery"
         }
       },
       serverAddressByClientCIDRs: {
@@ -28247,7 +28247,7 @@ export const Iok8sapimachinerypkgapismetav1APIGroup: msRest.CompositeMapper = {
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapimachinerypkgapismetav1ServerAddressByClientCIDR"
+              className: "V1ServerAddressByClientCIDR"
             }
           }
         }
@@ -28260,7 +28260,7 @@ export const Iok8sapimachinerypkgapismetav1APIGroup: msRest.CompositeMapper = {
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapimachinerypkgapismetav1GroupVersionForDiscovery"
+              className: "V1GroupVersionForDiscovery"
             }
           }
         }
@@ -28269,11 +28269,11 @@ export const Iok8sapimachinerypkgapismetav1APIGroup: msRest.CompositeMapper = {
   }
 };
 
-export const Iok8sapimachinerypkgapismetav1APIGroupList: msRest.CompositeMapper = {
+export const V1APIGroupList: msRest.CompositeMapper = {
   serializedName: "io.k8s.apimachinery.pkg.apis.meta.v1.APIGroupList",
   type: {
     name: "Composite",
-    className: "Iok8sapimachinerypkgapismetav1APIGroupList",
+    className: "V1APIGroupList",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -28289,7 +28289,7 @@ export const Iok8sapimachinerypkgapismetav1APIGroupList: msRest.CompositeMapper 
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapimachinerypkgapismetav1APIGroup"
+              className: "V1APIGroup"
             }
           }
         }
@@ -28304,11 +28304,11 @@ export const Iok8sapimachinerypkgapismetav1APIGroupList: msRest.CompositeMapper 
   }
 };
 
-export const Iok8sapimachinerypkgapismetav1APIResource: msRest.CompositeMapper = {
+export const V1APIResource: msRest.CompositeMapper = {
   serializedName: "io.k8s.apimachinery.pkg.apis.meta.v1.APIResource",
   type: {
     name: "Composite",
-    className: "Iok8sapimachinerypkgapismetav1APIResource",
+    className: "V1APIResource",
     modelProperties: {
       categories: {
         serializedName: "categories",
@@ -28388,11 +28388,11 @@ export const Iok8sapimachinerypkgapismetav1APIResource: msRest.CompositeMapper =
   }
 };
 
-export const Iok8sapimachinerypkgapismetav1APIResourceList: msRest.CompositeMapper = {
+export const V1APIResourceList: msRest.CompositeMapper = {
   serializedName: "io.k8s.apimachinery.pkg.apis.meta.v1.APIResourceList",
   type: {
     name: "Composite",
-    className: "Iok8sapimachinerypkgapismetav1APIResourceList",
+    className: "V1APIResourceList",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -28421,7 +28421,7 @@ export const Iok8sapimachinerypkgapismetav1APIResourceList: msRest.CompositeMapp
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapimachinerypkgapismetav1APIResource"
+              className: "V1APIResource"
             }
           }
         }
@@ -28430,11 +28430,11 @@ export const Iok8sapimachinerypkgapismetav1APIResourceList: msRest.CompositeMapp
   }
 };
 
-export const Iok8sapimachinerypkgapismetav1APIVersions: msRest.CompositeMapper = {
+export const V1APIVersions: msRest.CompositeMapper = {
   serializedName: "io.k8s.apimachinery.pkg.apis.meta.v1.APIVersions",
   type: {
     name: "Composite",
-    className: "Iok8sapimachinerypkgapismetav1APIVersions",
+    className: "V1APIVersions",
     modelProperties: {
       apiVersion: {
         serializedName: "apiVersion",
@@ -28456,7 +28456,7 @@ export const Iok8sapimachinerypkgapismetav1APIVersions: msRest.CompositeMapper =
           element: {
             type: {
               name: "Composite",
-              className: "Iok8sapimachinerypkgapismetav1ServerAddressByClientCIDR"
+              className: "V1ServerAddressByClientCIDR"
             }
           }
         }
@@ -28477,11 +28477,11 @@ export const Iok8sapimachinerypkgapismetav1APIVersions: msRest.CompositeMapper =
   }
 };
 
-export const Iok8sapimachinerypkgapismetav1WatchEvent: msRest.CompositeMapper = {
+export const V1WatchEvent: msRest.CompositeMapper = {
   serializedName: "io.k8s.apimachinery.pkg.apis.meta.v1.WatchEvent",
   type: {
     name: "Composite",
-    className: "Iok8sapimachinerypkgapismetav1WatchEvent",
+    className: "V1WatchEvent",
     modelProperties: {
       object: {
         required: true,
@@ -28666,7 +28666,7 @@ export const Iok8skubeAggregatorpkgapisapiregistrationv1APIService: msRest.Compo
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       spec: {
@@ -28722,7 +28722,7 @@ export const Iok8skubeAggregatorpkgapisapiregistrationv1APIServiceList: msRest.C
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }
@@ -28893,7 +28893,7 @@ export const Iok8skubeAggregatorpkgapisapiregistrationv1beta1APIService: msRest.
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ObjectMeta"
+          className: "V1ObjectMeta"
         }
       },
       spec: {
@@ -28949,7 +28949,7 @@ export const Iok8skubeAggregatorpkgapisapiregistrationv1beta1APIServiceList: msR
         serializedName: "metadata",
         type: {
           name: "Composite",
-          className: "Iok8sapimachinerypkgapismetav1ListMeta"
+          className: "V1ListMeta"
         }
       }
     }

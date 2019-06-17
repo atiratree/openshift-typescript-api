@@ -313,11 +313,11 @@ export interface Comgithubopenshiftapiappsv1DeploymentCondition {
 
 /**
  * @interface
- * An interface representing Iok8sapimachinerypkgapismetav1Initializer.
+ * An interface representing V1Initializer.
  * Initializer is information about an initializer that has not yet completed.
  *
  */
-export interface Iok8sapimachinerypkgapismetav1Initializer {
+export interface V1Initializer {
   /**
    * @member {string} name name of the process that is responsible for
    * initializing this object.
@@ -327,12 +327,12 @@ export interface Iok8sapimachinerypkgapismetav1Initializer {
 
 /**
  * @interface
- * An interface representing Iok8sapimachinerypkgapismetav1StatusCause.
+ * An interface representing V1StatusCause.
  * StatusCause provides more information about an api.Status failure, including
  * cases when multiple errors are encountered.
  *
  */
-export interface Iok8sapimachinerypkgapismetav1StatusCause {
+export interface V1StatusCause {
   /**
    * @member {string} [field] The field of the resource that has caused this
    * error, as named by its JSON serialization. May include dot and postfix
@@ -359,7 +359,7 @@ export interface Iok8sapimachinerypkgapismetav1StatusCause {
 
 /**
  * @interface
- * An interface representing Iok8sapimachinerypkgapismetav1StatusDetails.
+ * An interface representing V1StatusDetails.
  * StatusDetails is a set of additional properties that MAY be set by the
  * server to provide additional information about a response. The Reason field
  * of a Status object defines what attributes will be set. Clients must ignore
@@ -367,13 +367,13 @@ export interface Iok8sapimachinerypkgapismetav1StatusCause {
  * assume that any attribute may be empty, invalid, or under defined.
  *
  */
-export interface Iok8sapimachinerypkgapismetav1StatusDetails {
+export interface V1StatusDetails {
   /**
-   * @member {Iok8sapimachinerypkgapismetav1StatusCause[]} [causes] The Causes
+   * @member {V1StatusCause[]} [causes] The Causes
    * array includes more details associated with the StatusReason failure. Not
    * all StatusReasons may provide detailed causes.
    */
-  causes?: Iok8sapimachinerypkgapismetav1StatusCause[];
+  causes?: V1StatusCause[];
   /**
    * @member {string} [group] The group attribute of the resource associated
    * with the status StatusReason.
@@ -409,13 +409,13 @@ export interface Iok8sapimachinerypkgapismetav1StatusDetails {
 
 /**
  * @interface
- * An interface representing Iok8sapimachinerypkgapismetav1ListMeta.
+ * An interface representing V1ListMeta.
  * ListMeta describes metadata that synthetic resources must have, including
  * lists and various status objects. A resource may have only one of
  * {ObjectMeta, ListMeta}.
  *
  */
-export interface Iok8sapimachinerypkgapismetav1ListMeta {
+export interface V1ListMeta {
   /**
    * @member {string} [continueProperty] continue may be set if the user set a
    * limit on the number of items returned, and indicates that the server has
@@ -445,11 +445,11 @@ export interface Iok8sapimachinerypkgapismetav1ListMeta {
 
 /**
  * @interface
- * An interface representing Iok8sapimachinerypkgapismetav1Status.
+ * An interface representing V1Status.
  * Status is a return value for calls that don't return other objects.
  *
  */
-export interface Iok8sapimachinerypkgapismetav1Status {
+export interface V1Status {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -464,12 +464,12 @@ export interface Iok8sapimachinerypkgapismetav1Status {
    */
   code?: number;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1StatusDetails} [details] Extended
+   * @member {V1StatusDetails} [details] Extended
    * data associated with the reason.  Each reason may define its own extended
    * details. This field is optional and the data returned is not guaranteed to
    * conform to any schema except that defined by the reason type.
    */
-  details?: Iok8sapimachinerypkgapismetav1StatusDetails;
+  details?: V1StatusDetails;
   /**
    * @member {string} [kind] Kind is a string value representing the REST
    * resource this object represents. Servers may infer this from the endpoint
@@ -484,11 +484,11 @@ export interface Iok8sapimachinerypkgapismetav1Status {
    */
   message?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] Standard list
+   * @member {V1ListMeta} [metadata] Standard list
    * metadata. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
   /**
    * @member {string} [reason] A machine-readable description of why this
    * operation is in the "Failure" status. If this value is empty there is no
@@ -506,36 +506,36 @@ export interface Iok8sapimachinerypkgapismetav1Status {
 
 /**
  * @interface
- * An interface representing Iok8sapimachinerypkgapismetav1Initializers.
+ * An interface representing V1Initializers.
  * Initializers tracks the progress of initialization.
  *
  */
-export interface Iok8sapimachinerypkgapismetav1Initializers {
+export interface V1Initializers {
   /**
-   * @member {Iok8sapimachinerypkgapismetav1Initializer[]} pending Pending is a
+   * @member {V1Initializer[]} pending Pending is a
    * list of initializers that must execute in order before this object is
    * visible. When the last pending initializer is removed, and no failing
    * result is set, the initializers struct will be set to nil and the object
    * is considered as initialized and visible to all clients.
    */
-  pending: Iok8sapimachinerypkgapismetav1Initializer[];
+  pending: V1Initializer[];
   /**
-   * @member {Iok8sapimachinerypkgapismetav1Status} [result] If result is set
+   * @member {V1Status} [result] If result is set
    * with the Failure field, the object will be persisted to storage and then
    * deleted, ensuring that other clients can observe the deletion.
    */
-  result?: Iok8sapimachinerypkgapismetav1Status;
+  result?: V1Status;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapimachinerypkgapismetav1OwnerReference.
+ * An interface representing V1OwnerReference.
  * OwnerReference contains enough information to let you identify an owning
  * object. Currently, an owning object must be in the same namespace, so there
  * is no namespace field.
  *
  */
-export interface Iok8sapimachinerypkgapismetav1OwnerReference {
+export interface V1OwnerReference {
   /**
    * @member {string} apiVersion API version of the referent.
    */
@@ -572,12 +572,12 @@ export interface Iok8sapimachinerypkgapismetav1OwnerReference {
 
 /**
  * @interface
- * An interface representing Iok8sapimachinerypkgapismetav1ObjectMeta.
+ * An interface representing V1ObjectMeta.
  * ObjectMeta is metadata that all persisted resources must have, which
  * includes all objects users must create.
  *
  */
-export interface Iok8sapimachinerypkgapismetav1ObjectMeta {
+export interface V1ObjectMeta {
   /**
    * @member {{ [propertyName: string]: string }} [annotations] Annotations is
    * an unstructured key value map stored with a resource that may be set by
@@ -669,7 +669,7 @@ export interface Iok8sapimachinerypkgapismetav1ObjectMeta {
    */
   generation?: number;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1Initializers} [initializers] An
+   * @member {V1Initializers} [initializers] An
    * initializer is a controller which enforces some system invariant at object
    * creation time. This field is a list of initializers that have not yet
    * acted on this object. If nil or empty, this object has been completely
@@ -681,7 +681,7 @@ export interface Iok8sapimachinerypkgapismetav1ObjectMeta {
    * current set of initializers. Only privileged users may set or modify this
    * list. Once it is empty, it may not be modified further by any user.
    */
-  initializers?: Iok8sapimachinerypkgapismetav1Initializers;
+  initializers?: V1Initializers;
   /**
    * @member {{ [propertyName: string]: string }} [labels] Map of string keys
    * and values that can be used to organize and categorize (scope and select)
@@ -710,14 +710,14 @@ export interface Iok8sapimachinerypkgapismetav1ObjectMeta {
    */
   namespace?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1OwnerReference[]} [ownerReferences]
+   * @member {V1OwnerReference[]} [ownerReferences]
    * List of objects depended by this object. If ALL objects in the list have
    * been deleted, this object will be garbage collected. If this object is
    * managed by a controller, then an entry in this list will point to this
    * controller, with the controller field set to true. There cannot be more
    * than one managing controller.
    */
-  ownerReferences?: Iok8sapimachinerypkgapismetav1OwnerReference[];
+  ownerReferences?: V1OwnerReference[];
   /**
    * @member {string} [resourceVersion] An opaque value that represents the
    * internal version of this object that can be used by clients to determine
@@ -1132,12 +1132,12 @@ export interface V1NodeAffinity {
 
 /**
  * @interface
- * An interface representing Iok8sapimachinerypkgapismetav1LabelSelectorRequirement.
+ * An interface representing V1LabelSelectorRequirement.
  * A label selector requirement is a selector that contains values, a key, and
  * an operator that relates the key and values.
  *
  */
-export interface Iok8sapimachinerypkgapismetav1LabelSelectorRequirement {
+export interface V1LabelSelectorRequirement {
   /**
    * @member {string} key key is the label key that the selector applies to.
    */
@@ -1158,19 +1158,19 @@ export interface Iok8sapimachinerypkgapismetav1LabelSelectorRequirement {
 
 /**
  * @interface
- * An interface representing Iok8sapimachinerypkgapismetav1LabelSelector.
+ * An interface representing V1LabelSelector.
  * A label selector is a label query over a set of resources. The result of
  * matchLabels and matchExpressions are ANDed. An empty label selector matches
  * all objects. A null label selector matches no objects.
  *
  */
-export interface Iok8sapimachinerypkgapismetav1LabelSelector {
+export interface V1LabelSelector {
   /**
-   * @member {Iok8sapimachinerypkgapismetav1LabelSelectorRequirement[]}
+   * @member {V1LabelSelectorRequirement[]}
    * [matchExpressions] matchExpressions is a list of label selector
    * requirements. The requirements are ANDed.
    */
-  matchExpressions?: Iok8sapimachinerypkgapismetav1LabelSelectorRequirement[];
+  matchExpressions?: V1LabelSelectorRequirement[];
   /**
    * @member {{ [propertyName: string]: string }} [matchLabels] matchLabels is
    * a map of {key,value} pairs. A single {key,value} in the matchLabels map is
@@ -1193,10 +1193,10 @@ export interface Iok8sapimachinerypkgapismetav1LabelSelector {
  */
 export interface V1PodAffinityTerm {
   /**
-   * @member {Iok8sapimachinerypkgapismetav1LabelSelector} [labelSelector] A
+   * @member {V1LabelSelector} [labelSelector] A
    * label query over a set of resources, in this case pods.
    */
-  labelSelector?: Iok8sapimachinerypkgapismetav1LabelSelector;
+  labelSelector?: V1LabelSelector;
   /**
    * @member {string[]} [namespaces] namespaces specifies which namespaces the
    * labelSelector applies to (matches against); null or empty list means "this
@@ -3758,11 +3758,11 @@ export interface V1PodSpec {
  */
 export interface V1PodTemplateSpec {
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object's metadata. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
    * @member {V1PodSpec} [spec] Specification of the desired
    * behavior of the pod. More info:
@@ -4005,10 +4005,10 @@ export interface Comgithubopenshiftapiappsv1DeploymentConfig {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object's metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
    * @member {Comgithubopenshiftapiappsv1DeploymentConfigSpec} spec Spec
    * represents a desired deployment state and how to deploy to it.
@@ -4050,10 +4050,10 @@ export interface Comgithubopenshiftapiappsv1DeploymentConfigList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] Standard
+   * @member {V1ListMeta} [metadata] Standard
    * object's metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
@@ -4211,19 +4211,19 @@ export interface Comgithubopenshiftapiappsv1DeploymentRequest {
 
 /**
  * @interface
- * An interface representing Iok8sapirbacv1AggregationRule.
+ * An interface representing V1AggregationRule.
  * AggregationRule describes how to locate ClusterRoles to aggregate into the
  * ClusterRole
  *
  */
-export interface Iok8sapirbacv1AggregationRule {
+export interface V1AggregationRule {
   /**
-   * @member {Iok8sapimachinerypkgapismetav1LabelSelector[]}
+   * @member {V1LabelSelector[]}
    * [clusterRoleSelectors] ClusterRoleSelectors holds a list of selectors
    * which will be used to find ClusterRoles and create the rules. If any of
    * the selectors match, then the ClusterRole's permissions will be added
    */
-  clusterRoleSelectors?: Iok8sapimachinerypkgapismetav1LabelSelector[];
+  clusterRoleSelectors?: V1LabelSelector[];
 }
 
 /**
@@ -4337,12 +4337,12 @@ export interface Comgithubopenshiftapiauthorizationv1PolicyRule {
  */
 export interface Comgithubopenshiftapiauthorizationv1ClusterRole {
   /**
-   * @member {Iok8sapirbacv1AggregationRule} [aggregationRule] AggregationRule
+   * @member {V1AggregationRule} [aggregationRule] AggregationRule
    * is an optional field that describes how to build the Rules for this
    * ClusterRole. If AggregationRule is set, then the Rules are controller
    * managed and direct changes to Rules will be stomped by the controller.
    */
-  aggregationRule?: Iok8sapirbacv1AggregationRule;
+  aggregationRule?: V1AggregationRule;
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -4360,10 +4360,10 @@ export interface Comgithubopenshiftapiauthorizationv1ClusterRole {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object's metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
    * @member {Comgithubopenshiftapiauthorizationv1PolicyRule[]} rules Rules
    * holds all the PolicyRules for this ClusterRole
@@ -4406,10 +4406,10 @@ export interface Comgithubopenshiftapiauthorizationv1ClusterRoleBinding {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object's metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
    * @member {V1ObjectReference} roleRef RoleRef can only reference
    * the current namespace and the global namespace. If the ClusterRoleRef
@@ -4464,10 +4464,10 @@ export interface Comgithubopenshiftapiauthorizationv1ClusterRoleBindingList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] Standard
+   * @member {V1ListMeta} [metadata] Standard
    * object's metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
@@ -4499,10 +4499,10 @@ export interface Comgithubopenshiftapiauthorizationv1ClusterRoleList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] Standard
+   * @member {V1ListMeta} [metadata] Standard
    * object's metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
@@ -4520,10 +4520,10 @@ export interface Comgithubopenshiftapiauthorizationv1GroupRestriction {
    */
   groups: string[];
   /**
-   * @member {Iok8sapimachinerypkgapismetav1LabelSelector[]} labels Selectors
+   * @member {V1LabelSelector[]} labels Selectors
    * specifies a list of label selectors over group labels.
    */
-  labels: Iok8sapimachinerypkgapismetav1LabelSelector[];
+  labels: V1LabelSelector[];
 }
 
 /**
@@ -4785,10 +4785,10 @@ export interface Comgithubopenshiftapiauthorizationv1Role {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object's metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
    * @member {Comgithubopenshiftapiauthorizationv1PolicyRule[]} rules Rules
    * holds all the PolicyRules for this Role
@@ -4831,10 +4831,10 @@ export interface Comgithubopenshiftapiauthorizationv1RoleBinding {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object's metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
    * @member {V1ObjectReference} roleRef RoleRef can only reference
    * the current namespace and the global namespace. If the RoleRef cannot be
@@ -4889,10 +4889,10 @@ export interface Comgithubopenshiftapiauthorizationv1RoleBindingList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] Standard
+   * @member {V1ListMeta} [metadata] Standard
    * object's metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
@@ -4953,10 +4953,10 @@ export interface Comgithubopenshiftapiauthorizationv1UserRestriction {
    */
   groups: string[];
   /**
-   * @member {Iok8sapimachinerypkgapismetav1LabelSelector[]} labels Selectors
+   * @member {V1LabelSelector[]} labels Selectors
    * specifies a list of label selectors over user labels.
    */
-  labels: Iok8sapimachinerypkgapismetav1LabelSelector[];
+  labels: V1LabelSelector[];
   /**
    * @member {string[]} users Users specifies a list of literal user names.
    */
@@ -5017,10 +5017,10 @@ export interface Comgithubopenshiftapiauthorizationv1RoleBindingRestriction {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} metadata Standard
+   * @member {V1ObjectMeta} metadata Standard
    * object's metadata.
    */
-  metadata: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata: V1ObjectMeta;
   /**
    * @member {Comgithubopenshiftapiauthorizationv1RoleBindingRestrictionSpec}
    * spec Spec defines the matcher.
@@ -5058,10 +5058,10 @@ export interface Comgithubopenshiftapiauthorizationv1RoleBindingRestrictionList 
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] Standard
+   * @member {V1ListMeta} [metadata] Standard
    * object's metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
@@ -5093,10 +5093,10 @@ export interface Comgithubopenshiftapiauthorizationv1RoleList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] Standard
+   * @member {V1ListMeta} [metadata] Standard
    * object's metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
@@ -6429,10 +6429,10 @@ export interface Comgithubopenshiftapibuildv1Build {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object's metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
    * @member {Comgithubopenshiftapibuildv1BuildSpec} [spec] spec is all the
    * inputs used to execute the build.
@@ -6695,10 +6695,10 @@ export interface Comgithubopenshiftapibuildv1BuildConfig {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] metadata for
+   * @member {V1ObjectMeta} [metadata] metadata for
    * BuildConfig.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
    * @member {Comgithubopenshiftapibuildv1BuildConfigSpec} spec spec holds all
    * the input necessary to produce a new build, and the conditions when to
@@ -6741,10 +6741,10 @@ export interface Comgithubopenshiftapibuildv1BuildConfigList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] metadata for
+   * @member {V1ListMeta} [metadata] metadata for
    * BuildConfigList.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
@@ -6776,10 +6776,10 @@ export interface Comgithubopenshiftapibuildv1BuildList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] metadata for
+   * @member {V1ListMeta} [metadata] metadata for
    * BuildList.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
@@ -6893,10 +6893,10 @@ export interface Comgithubopenshiftapibuildv1BuildRequest {
    */
   lastVersion?: number;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] metadata for
+   * @member {V1ObjectMeta} [metadata] metadata for
    * BuildRequest.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
    * @member {Comgithubopenshiftapibuildv1SourceRevision} [revision] revision
    * is the information from the source for a specific repo snapshot.
@@ -7091,10 +7091,10 @@ export interface Comgithubopenshiftapiimagev1ImageSignature {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object's metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
    * @member {{ [propertyName: string]: string }} [signedClaims] Contains
    * claims from the signature.
@@ -7175,10 +7175,10 @@ export interface Comgithubopenshiftapiimagev1Image {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object's metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
    * @member {Comgithubopenshiftapiimagev1ImageSignature[]} [signatures]
    * Signatures holds all signatures of the image.
@@ -7311,11 +7311,11 @@ export interface Comgithubopenshiftapiimagev1ImageImportStatus {
    */
   image?: Comgithubopenshiftapiimagev1Image;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1Status} status Status is the status
+   * @member {V1Status} status Status is the status
    * of the image import, including errors encountered while retrieving the
    * image
    */
-  status: Iok8sapimachinerypkgapismetav1Status;
+  status: V1Status;
   /**
    * @member {string} [tag] Tag is the tag this image was located under, if any
    */
@@ -7370,10 +7370,10 @@ export interface Comgithubopenshiftapiimagev1ImageList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] Standard
+   * @member {V1ListMeta} [metadata] Standard
    * object's metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
@@ -7624,10 +7624,10 @@ export interface Comgithubopenshiftapiimagev1ImageStream {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object's metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
    * @member {Comgithubopenshiftapiimagev1ImageStreamSpec} spec Spec describes
    * the desired state of this stream
@@ -7670,10 +7670,10 @@ export interface Comgithubopenshiftapiimagev1ImageStreamImage {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object's metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
 }
 
 /**
@@ -7754,10 +7754,10 @@ export interface Comgithubopenshiftapiimagev1RepositoryImportStatus {
    */
   images?: Comgithubopenshiftapiimagev1ImageImportStatus[];
   /**
-   * @member {Iok8sapimachinerypkgapismetav1Status} [status] Status reflects
+   * @member {V1Status} [status] Status reflects
    * whether any failure occurred during import
    */
-  status?: Iok8sapimachinerypkgapismetav1Status;
+  status?: V1Status;
 }
 
 /**
@@ -7819,10 +7819,10 @@ export interface Comgithubopenshiftapiimagev1ImageStreamImport {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object's metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
    * @member {Comgithubopenshiftapiimagev1ImageStreamImportSpec} spec Spec is a
    * description of the images that the user wishes to import
@@ -7873,10 +7873,10 @@ export interface Comgithubopenshiftapiimagev1ImageStreamLayers {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object's metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
 }
 
 /**
@@ -7908,10 +7908,10 @@ export interface Comgithubopenshiftapiimagev1ImageStreamList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] Standard
+   * @member {V1ListMeta} [metadata] Standard
    * object's metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
@@ -7945,10 +7945,10 @@ export interface Comgithubopenshiftapiimagev1ImageStreamMapping {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object's metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
    * @member {string} tag Tag is a string value this image can be located with
    * inside the stream.
@@ -8004,10 +8004,10 @@ export interface Comgithubopenshiftapiimagev1ImageStreamTag {
    */
   lookupPolicy: Comgithubopenshiftapiimagev1ImageLookupPolicy;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object's metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
    * @member {Comgithubopenshiftapiimagev1TagReference} tag tag is the spec tag
    * associated with this image stream tag, and it may be null if only pushes
@@ -8045,10 +8045,10 @@ export interface Comgithubopenshiftapiimagev1ImageStreamTagList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] Standard
+   * @member {V1ListMeta} [metadata] Standard
    * object's metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
@@ -8114,10 +8114,10 @@ export interface Comgithubopenshiftapinetworkv1ClusterNetwork {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object's metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
    * @member {string} [network] Network is a CIDR string specifying the global
    * overlay network's L3 space
@@ -8173,10 +8173,10 @@ export interface Comgithubopenshiftapinetworkv1ClusterNetworkList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] Standard
+   * @member {V1ListMeta} [metadata] Standard
    * object's metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
@@ -8260,10 +8260,10 @@ export interface Comgithubopenshiftapinetworkv1EgressNetworkPolicy {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] metadata for
+   * @member {V1ObjectMeta} [metadata] metadata for
    * EgressNetworkPolicy
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
    * @member {Comgithubopenshiftapinetworkv1EgressNetworkPolicySpec} spec spec
    * is the specification of the current egress network policy
@@ -8300,10 +8300,10 @@ export interface Comgithubopenshiftapinetworkv1EgressNetworkPolicyList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] metadata for
+   * @member {V1ListMeta} [metadata] metadata for
    * EgressNetworkPolicyList
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
@@ -8354,10 +8354,10 @@ export interface Comgithubopenshiftapinetworkv1HostSubnet {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object's metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
    * @member {string} subnet Subnet is the CIDR range of the overlay network
    * assigned to the node for its pods
@@ -8394,10 +8394,10 @@ export interface Comgithubopenshiftapinetworkv1HostSubnetList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] Standard
+   * @member {V1ListMeta} [metadata] Standard
    * object's metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
@@ -8433,10 +8433,10 @@ export interface Comgithubopenshiftapinetworkv1NetNamespace {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object's metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
    * @member {number} netid NetID is the network identifier of the network
    * namespace assigned to each overlay network packet. This can be manipulated
@@ -8479,10 +8479,10 @@ export interface Comgithubopenshiftapinetworkv1NetNamespaceList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] Standard
+   * @member {V1ListMeta} [metadata] Standard
    * object's metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
@@ -8555,10 +8555,10 @@ export interface Comgithubopenshiftapioauthv1OAuthAccessToken {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object's metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
    * @member {string} [redirectURI] RedirectURI is the redirection associated
    * with the token.
@@ -8614,10 +8614,10 @@ export interface Comgithubopenshiftapioauthv1OAuthAccessTokenList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] Standard
+   * @member {V1ListMeta} [metadata] Standard
    * object's metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
@@ -8666,10 +8666,10 @@ export interface Comgithubopenshiftapioauthv1OAuthAuthorizeToken {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object's metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
    * @member {string} [redirectURI] RedirectURI is the redirection associated
    * with the token.
@@ -8724,10 +8724,10 @@ export interface Comgithubopenshiftapioauthv1OAuthAuthorizeTokenList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] Standard
+   * @member {V1ListMeta} [metadata] Standard
    * object's metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
@@ -8811,10 +8811,10 @@ export interface Comgithubopenshiftapioauthv1OAuthClient {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object's metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
    * @member {string[]} [redirectURIs] RedirectURIs is the valid redirection
    * URIs associated with a client
@@ -8871,10 +8871,10 @@ export interface Comgithubopenshiftapioauthv1OAuthClientAuthorization {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object's metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
    * @member {string[]} [scopes] Scopes is an array of the granted scopes.
    */
@@ -8921,10 +8921,10 @@ export interface Comgithubopenshiftapioauthv1OAuthClientAuthorizationList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] Standard
+   * @member {V1ListMeta} [metadata] Standard
    * object's metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
@@ -8956,10 +8956,10 @@ export interface Comgithubopenshiftapioauthv1OAuthClientList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] Standard
+   * @member {V1ListMeta} [metadata] Standard
    * object's metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
@@ -9029,10 +9029,10 @@ export interface Comgithubopenshiftapiprojectv1Project {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object's metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
    * @member {Comgithubopenshiftapiprojectv1ProjectSpec} [spec] Spec defines
    * the behavior of the Namespace.
@@ -9074,10 +9074,10 @@ export interface Comgithubopenshiftapiprojectv1ProjectList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] Standard
+   * @member {V1ListMeta} [metadata] Standard
    * object's metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
@@ -9115,10 +9115,10 @@ export interface Comgithubopenshiftapiprojectv1ProjectRequest {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object's metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
 }
 
 /**
@@ -9209,10 +9209,10 @@ export interface Comgithubopenshiftapiquotav1ClusterResourceQuotaSelector {
    */
   annotations: { [propertyName: string]: string };
   /**
-   * @member {Iok8sapimachinerypkgapismetav1LabelSelector} labels LabelSelector
+   * @member {V1LabelSelector} labels LabelSelector
    * is used to select projects by label.
    */
-  labels: Iok8sapimachinerypkgapismetav1LabelSelector;
+  labels: V1LabelSelector;
 }
 
 /**
@@ -9324,10 +9324,10 @@ export interface Comgithubopenshiftapiquotav1AppliedClusterResourceQuota {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} metadata Standard
+   * @member {V1ObjectMeta} metadata Standard
    * object's metadata.
    */
-  metadata: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata: V1ObjectMeta;
   /**
    * @member {Comgithubopenshiftapiquotav1ClusterResourceQuotaSpec} spec Spec
    * defines the desired quota
@@ -9370,10 +9370,10 @@ export interface Comgithubopenshiftapiquotav1AppliedClusterResourceQuotaList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] Standard
+   * @member {V1ListMeta} [metadata] Standard
    * object's metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
@@ -9402,10 +9402,10 @@ export interface Comgithubopenshiftapiquotav1ClusterResourceQuota {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} metadata Standard
+   * @member {V1ObjectMeta} metadata Standard
    * object's metadata.
    */
-  metadata: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata: V1ObjectMeta;
   /**
    * @member {Comgithubopenshiftapiquotav1ClusterResourceQuotaSpec} spec Spec
    * defines the desired quota
@@ -9447,10 +9447,10 @@ export interface Comgithubopenshiftapiquotav1ClusterResourceQuotaList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] Standard
+   * @member {V1ListMeta} [metadata] Standard
    * object's metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
@@ -9743,10 +9743,10 @@ export interface Comgithubopenshiftapiroutev1Route {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
    * @member {Comgithubopenshiftapiroutev1RouteSpec} spec spec is the desired
    * state of the route
@@ -9788,10 +9788,10 @@ export interface Comgithubopenshiftapiroutev1RouteList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] Standard
+   * @member {V1ListMeta} [metadata] Standard
    * object metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
@@ -10140,11 +10140,11 @@ export interface Comgithubopenshiftapisecurityv1RangeAllocation {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object's metadata. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
    * @member {string} range range is a string representing a unique label for a
    * range of uids, "1000000000-2000000000/10000".
@@ -10181,10 +10181,10 @@ export interface Comgithubopenshiftapisecurityv1RangeAllocationList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] More info:
+   * @member {V1ListMeta} [metadata] More info:
    * http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#metadata
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
@@ -10386,11 +10386,11 @@ export interface Comgithubopenshiftapisecurityv1SecurityContextConstraints {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object's metadata. More info:
    * http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#metadata
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
    * @member {number} priority Priority influences the sort order of SCCs when
    * evaluating which SCCs to try first for a given pod request based on access
@@ -10487,10 +10487,10 @@ export interface Comgithubopenshiftapisecurityv1SecurityContextConstraintsList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] More info:
+   * @member {V1ListMeta} [metadata] More info:
    * http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#metadata
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
@@ -10544,10 +10544,10 @@ export interface Comgithubopenshiftapitemplatev1BrokerTemplateInstance {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
    * @member {Comgithubopenshiftapitemplatev1BrokerTemplateInstanceSpec} spec
    * spec describes the state of this BrokerTemplateInstance.
@@ -10584,10 +10584,10 @@ export interface Comgithubopenshiftapitemplatev1BrokerTemplateInstanceList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] Standard
+   * @member {V1ListMeta} [metadata] Standard
    * object metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
@@ -10687,10 +10687,10 @@ export interface Comgithubopenshiftapitemplatev1Template {
    */
   message?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object's metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
    * @member {Iok8sapimachinerypkgruntimeRawExtension[]} objects objects is an
    * array of resources to include in this template. If a namespace value is
@@ -10860,10 +10860,10 @@ export interface Comgithubopenshiftapitemplatev1TemplateInstance {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
    * @member {Comgithubopenshiftapitemplatev1TemplateInstanceSpec} spec spec
    * describes the desired state of this TemplateInstance.
@@ -10905,10 +10905,10 @@ export interface Comgithubopenshiftapitemplatev1TemplateInstanceList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] Standard
+   * @member {V1ListMeta} [metadata] Standard
    * object metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
@@ -10940,10 +10940,10 @@ export interface Comgithubopenshiftapitemplatev1TemplateList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] Standard
+   * @member {V1ListMeta} [metadata] Standard
    * object's metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
@@ -10970,10 +10970,10 @@ export interface Comgithubopenshiftapiuserv1Group {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object's metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
    * @member {string[]} users Users is the list of users in this group.
    */
@@ -11009,10 +11009,10 @@ export interface Comgithubopenshiftapiuserv1GroupList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] Standard
+   * @member {V1ListMeta} [metadata] Standard
    * object's metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
@@ -11049,10 +11049,10 @@ export interface Comgithubopenshiftapiuserv1Identity {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object's metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
    * @member {string} providerName ProviderName is the source of identity
    * information
@@ -11099,10 +11099,10 @@ export interface Comgithubopenshiftapiuserv1IdentityList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] Standard
+   * @member {V1ListMeta} [metadata] Standard
    * object's metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
@@ -11149,10 +11149,10 @@ export interface Comgithubopenshiftapiuserv1User {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object's metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
 }
 
 /**
@@ -11184,10 +11184,10 @@ export interface Comgithubopenshiftapiuserv1UserIdentityMapping {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object's metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
    * @member {V1ObjectReference} [user] User is a reference to a
    * user
@@ -11224,19 +11224,19 @@ export interface Comgithubopenshiftapiuserv1UserList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] Standard
+   * @member {V1ListMeta} [metadata] Standard
    * object's metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapiadmissionregistrationv1beta1ServiceReference.
+ * An interface representing V1beta1ServiceReference.
  * ServiceReference holds a reference to Service.legacy.k8s.io
  *
  */
-export interface Iok8sapiadmissionregistrationv1beta1ServiceReference {
+export interface V1beta1ServiceReference {
   /**
    * @member {string} name `name` is the name of the service. Required
    */
@@ -11255,19 +11255,19 @@ export interface Iok8sapiadmissionregistrationv1beta1ServiceReference {
 
 /**
  * @interface
- * An interface representing Iok8sapiadmissionregistrationv1beta1WebhookClientConfig.
+ * An interface representing V1beta1WebhookClientConfig.
  * WebhookClientConfig contains the information to make a TLS connection with
  * the webhook
  *
  */
-export interface Iok8sapiadmissionregistrationv1beta1WebhookClientConfig {
+export interface V1beta1WebhookClientConfig {
   /**
    * @member {Uint8Array} caBundle `caBundle` is a PEM encoded CA bundle which
    * will be used to validate the webhook's server certificate. Required.
    */
   caBundle: Uint8Array;
   /**
-   * @member {Iok8sapiadmissionregistrationv1beta1ServiceReference} [service]
+   * @member {V1beta1ServiceReference} [service]
    * `service` is a reference to the service for this webhook. Either `service`
    * or `url` must be specified.
    *
@@ -11276,7 +11276,7 @@ export interface Iok8sapiadmissionregistrationv1beta1WebhookClientConfig {
    *
    * Port 443 will be used if it is open, otherwise it is an error.
    */
-  service?: Iok8sapiadmissionregistrationv1beta1ServiceReference;
+  service?: V1beta1ServiceReference;
   /**
    * @member {string} [url] `url` gives the location of the webhook, in
    * standard URL form (`[scheme://]host:port/path`). Exactly one of `url` or
@@ -11307,12 +11307,12 @@ export interface Iok8sapiadmissionregistrationv1beta1WebhookClientConfig {
 
 /**
  * @interface
- * An interface representing Iok8sapiadmissionregistrationv1beta1RuleWithOperations.
+ * An interface representing V1beta1RuleWithOperations.
  * RuleWithOperations is a tuple of Operations and Resources. It is recommended
  * to make sure that all the tuple expansions are valid.
  *
  */
-export interface Iok8sapiadmissionregistrationv1beta1RuleWithOperations {
+export interface V1beta1RuleWithOperations {
   /**
    * @member {string[]} [apiGroups] APIGroups is the API groups the resources
    * belong to. '*' is all groups. If '*' is present, the length of the slice
@@ -11351,18 +11351,18 @@ export interface Iok8sapiadmissionregistrationv1beta1RuleWithOperations {
 
 /**
  * @interface
- * An interface representing Iok8sapiadmissionregistrationv1beta1Webhook.
+ * An interface representing V1beta1Webhook.
  * Webhook describes an admission webhook and the resources and operations it
  * applies to.
  *
  */
-export interface Iok8sapiadmissionregistrationv1beta1Webhook {
+export interface V1beta1Webhook {
   /**
-   * @member {Iok8sapiadmissionregistrationv1beta1WebhookClientConfig}
+   * @member {V1beta1WebhookClientConfig}
    * clientConfig ClientConfig defines how to communicate with the hook.
    * Required
    */
-  clientConfig: Iok8sapiadmissionregistrationv1beta1WebhookClientConfig;
+  clientConfig: V1beta1WebhookClientConfig;
   /**
    * @member {string} [failurePolicy] FailurePolicy defines how unrecognized
    * errors from the admission endpoint are handled - allowed values are Ignore
@@ -11377,7 +11377,7 @@ export interface Iok8sapiadmissionregistrationv1beta1Webhook {
    */
   name: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1LabelSelector} [namespaceSelector]
+   * @member {V1LabelSelector} [namespaceSelector]
    * NamespaceSelector decides whether to run the webhook on an object based on
    * whether the namespace for that object matches the selector. If the object
    * itself is a namespace, the matching is performed on
@@ -11420,9 +11420,9 @@ export interface Iok8sapiadmissionregistrationv1beta1Webhook {
    *
    * Default to the empty LabelSelector, which matches everything.
    */
-  namespaceSelector?: Iok8sapimachinerypkgapismetav1LabelSelector;
+  namespaceSelector?: V1LabelSelector;
   /**
-   * @member {Iok8sapiadmissionregistrationv1beta1RuleWithOperations[]} [rules]
+   * @member {V1beta1RuleWithOperations[]} [rules]
    * Rules describes what operations on what resources/subresources the webhook
    * cares about. The webhook cares about an operation if it matches _any_
    * Rule. However, in order to prevent ValidatingAdmissionWebhooks and
@@ -11432,17 +11432,17 @@ export interface Iok8sapiadmissionregistrationv1beta1Webhook {
    * on admission requests for ValidatingWebhookConfiguration and
    * MutatingWebhookConfiguration objects.
    */
-  rules?: Iok8sapiadmissionregistrationv1beta1RuleWithOperations[];
+  rules?: V1beta1RuleWithOperations[];
 }
 
 /**
  * @interface
- * An interface representing Iok8sapiadmissionregistrationv1beta1MutatingWebhookConfiguration.
+ * An interface representing V1beta1MutatingWebhookConfiguration.
  * MutatingWebhookConfiguration describes the configuration of and admission
  * webhook that accept or reject and may change the object.
  *
  */
-export interface Iok8sapiadmissionregistrationv1beta1MutatingWebhookConfiguration {
+export interface V1beta1MutatingWebhookConfiguration {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -11460,25 +11460,25 @@ export interface Iok8sapiadmissionregistrationv1beta1MutatingWebhookConfiguratio
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object metadata; More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
-   * @member {Iok8sapiadmissionregistrationv1beta1Webhook[]} [webhooks]
+   * @member {V1beta1Webhook[]} [webhooks]
    * Webhooks is a list of webhooks and the affected resources and operations.
    */
-  webhooks?: Iok8sapiadmissionregistrationv1beta1Webhook[];
+  webhooks?: V1beta1Webhook[];
 }
 
 /**
  * @interface
- * An interface representing Iok8sapiadmissionregistrationv1beta1MutatingWebhookConfigurationList.
+ * An interface representing V1beta1MutatingWebhookConfigurationList.
  * MutatingWebhookConfigurationList is a list of MutatingWebhookConfiguration.
  *
  */
-export interface Iok8sapiadmissionregistrationv1beta1MutatingWebhookConfigurationList {
+export interface V1beta1MutatingWebhookConfigurationList {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -11489,10 +11489,10 @@ export interface Iok8sapiadmissionregistrationv1beta1MutatingWebhookConfiguratio
   apiVersion?: string;
   /**
    * @member
-   * {Iok8sapiadmissionregistrationv1beta1MutatingWebhookConfiguration[]} items
+   * {V1beta1MutatingWebhookConfiguration[]} items
    * List of MutatingWebhookConfiguration.
    */
-  items: Iok8sapiadmissionregistrationv1beta1MutatingWebhookConfiguration[];
+  items: V1beta1MutatingWebhookConfiguration[];
   /**
    * @member {string} [kind] Kind is a string value representing the REST
    * resource this object represents. Servers may infer this from the endpoint
@@ -11502,21 +11502,21 @@ export interface Iok8sapiadmissionregistrationv1beta1MutatingWebhookConfiguratio
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] Standard list
+   * @member {V1ListMeta} [metadata] Standard list
    * metadata. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapiadmissionregistrationv1beta1ValidatingWebhookConfiguration.
+ * An interface representing V1beta1ValidatingWebhookConfiguration.
  * ValidatingWebhookConfiguration describes the configuration of and admission
  * webhook that accept or reject and object without changing it.
  *
  */
-export interface Iok8sapiadmissionregistrationv1beta1ValidatingWebhookConfiguration {
+export interface V1beta1ValidatingWebhookConfiguration {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -11534,26 +11534,26 @@ export interface Iok8sapiadmissionregistrationv1beta1ValidatingWebhookConfigurat
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object metadata; More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
-   * @member {Iok8sapiadmissionregistrationv1beta1Webhook[]} [webhooks]
+   * @member {V1beta1Webhook[]} [webhooks]
    * Webhooks is a list of webhooks and the affected resources and operations.
    */
-  webhooks?: Iok8sapiadmissionregistrationv1beta1Webhook[];
+  webhooks?: V1beta1Webhook[];
 }
 
 /**
  * @interface
- * An interface representing Iok8sapiadmissionregistrationv1beta1ValidatingWebhookConfigurationList.
+ * An interface representing V1beta1ValidatingWebhookConfigurationList.
  * ValidatingWebhookConfigurationList is a list of
  * ValidatingWebhookConfiguration.
  *
  */
-export interface Iok8sapiadmissionregistrationv1beta1ValidatingWebhookConfigurationList {
+export interface V1beta1ValidatingWebhookConfigurationList {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -11564,10 +11564,10 @@ export interface Iok8sapiadmissionregistrationv1beta1ValidatingWebhookConfigurat
   apiVersion?: string;
   /**
    * @member
-   * {Iok8sapiadmissionregistrationv1beta1ValidatingWebhookConfiguration[]}
+   * {V1beta1ValidatingWebhookConfiguration[]}
    * items List of ValidatingWebhookConfiguration.
    */
-  items: Iok8sapiadmissionregistrationv1beta1ValidatingWebhookConfiguration[];
+  items: V1beta1ValidatingWebhookConfiguration[];
   /**
    * @member {string} [kind] Kind is a string value representing the REST
    * resource this object represents. Servers may infer this from the endpoint
@@ -11577,16 +11577,16 @@ export interface Iok8sapiadmissionregistrationv1beta1ValidatingWebhookConfigurat
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] Standard list
+   * @member {V1ListMeta} [metadata] Standard list
    * metadata. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1ControllerRevision.
+ * An interface representing V1ControllerRevision.
  * ControllerRevision implements an immutable snapshot of state data. Clients
  * are responsible for serializing and deserializing the objects that contain
  * their internal state. Once a ControllerRevision has been successfully
@@ -11599,7 +11599,7 @@ export interface Iok8sapiadmissionregistrationv1beta1ValidatingWebhookConfigurat
  * for internal use by controllers.
  *
  */
-export interface Iok8sapiappsv1ControllerRevision {
+export interface V1ControllerRevision {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -11622,11 +11622,11 @@ export interface Iok8sapiappsv1ControllerRevision {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object's metadata. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
    * @member {number} revision Revision indicates the revision of the state
    * represented by Data.
@@ -11636,12 +11636,12 @@ export interface Iok8sapiappsv1ControllerRevision {
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1ControllerRevisionList.
+ * An interface representing V1ControllerRevisionList.
  * ControllerRevisionList is a resource containing a list of ControllerRevision
  * objects.
  *
  */
-export interface Iok8sapiappsv1ControllerRevisionList {
+export interface V1ControllerRevisionList {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -11651,10 +11651,10 @@ export interface Iok8sapiappsv1ControllerRevisionList {
    */
   apiVersion?: string;
   /**
-   * @member {Iok8sapiappsv1ControllerRevision[]} items Items is the list of
+   * @member {V1ControllerRevision[]} items Items is the list of
    * ControllerRevisions
    */
-  items: Iok8sapiappsv1ControllerRevision[];
+  items: V1ControllerRevision[];
   /**
    * @member {string} [kind] Kind is a string value representing the REST
    * resource this object represents. Servers may infer this from the endpoint
@@ -11664,19 +11664,19 @@ export interface Iok8sapiappsv1ControllerRevisionList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] More info:
+   * @member {V1ListMeta} [metadata] More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1RollingUpdateDaemonSet.
+ * An interface representing V1RollingUpdateDaemonSet.
  * Spec to control the desired behavior of daemon set rolling update.
  *
  */
-export interface Iok8sapiappsv1RollingUpdateDaemonSet {
+export interface V1RollingUpdateDaemonSet {
   /**
    * @member {string} [maxUnavailable] The maximum number of DaemonSet pods
    * that can be unavailable during the update. Value can be an absolute number
@@ -11697,17 +11697,17 @@ export interface Iok8sapiappsv1RollingUpdateDaemonSet {
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1DaemonSetUpdateStrategy.
+ * An interface representing V1DaemonSetUpdateStrategy.
  * DaemonSetUpdateStrategy is a struct used to control the update strategy for
  * a DaemonSet.
  *
  */
-export interface Iok8sapiappsv1DaemonSetUpdateStrategy {
+export interface V1DaemonSetUpdateStrategy {
   /**
-   * @member {Iok8sapiappsv1RollingUpdateDaemonSet} [rollingUpdate] Rolling
+   * @member {V1RollingUpdateDaemonSet} [rollingUpdate] Rolling
    * update config params. Present only if type = "RollingUpdate".
    */
-  rollingUpdate?: Iok8sapiappsv1RollingUpdateDaemonSet;
+  rollingUpdate?: V1RollingUpdateDaemonSet;
   /**
    * @member {string} [type] Type of daemon set update. Can be "RollingUpdate"
    * or "OnDelete". Default is RollingUpdate.
@@ -11717,11 +11717,11 @@ export interface Iok8sapiappsv1DaemonSetUpdateStrategy {
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1DaemonSetSpec.
+ * An interface representing V1DaemonSetSpec.
  * DaemonSetSpec is the specification of a daemon set.
  *
  */
-export interface Iok8sapiappsv1DaemonSetSpec {
+export interface V1DaemonSetSpec {
   /**
    * @member {number} [minReadySeconds] The minimum number of seconds for which
    * a newly created DaemonSet pod should be ready without any of its container
@@ -11736,12 +11736,12 @@ export interface Iok8sapiappsv1DaemonSetSpec {
    */
   revisionHistoryLimit?: number;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1LabelSelector} selector A label
+   * @member {V1LabelSelector} selector A label
    * query over pods that are managed by the daemon set. Must match in order to
    * be controlled. It must match the pod template's labels. More info:
    * https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#label-selectors
    */
-  selector: Iok8sapimachinerypkgapismetav1LabelSelector;
+  selector: V1LabelSelector;
   /**
    * @member {V1PodTemplateSpec} template An object that describes
    * the pod that will be created. The DaemonSet will create exactly one copy
@@ -11751,19 +11751,19 @@ export interface Iok8sapiappsv1DaemonSetSpec {
    */
   template: V1PodTemplateSpec;
   /**
-   * @member {Iok8sapiappsv1DaemonSetUpdateStrategy} [updateStrategy] An update
+   * @member {V1DaemonSetUpdateStrategy} [updateStrategy] An update
    * strategy to replace existing DaemonSet pods with new pods.
    */
-  updateStrategy?: Iok8sapiappsv1DaemonSetUpdateStrategy;
+  updateStrategy?: V1DaemonSetUpdateStrategy;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1DaemonSetCondition.
+ * An interface representing V1DaemonSetCondition.
  * DaemonSetCondition describes the state of a DaemonSet at a certain point.
  *
  */
-export interface Iok8sapiappsv1DaemonSetCondition {
+export interface V1DaemonSetCondition {
   /**
    * @member {Date} [lastTransitionTime] Last time the condition transitioned
    * from one status to another.
@@ -11791,11 +11791,11 @@ export interface Iok8sapiappsv1DaemonSetCondition {
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1DaemonSetStatus.
+ * An interface representing V1DaemonSetStatus.
  * DaemonSetStatus represents the current status of a daemon set.
  *
  */
-export interface Iok8sapiappsv1DaemonSetStatus {
+export interface V1DaemonSetStatus {
   /**
    * @member {number} [collisionCount] Count of hash collisions for the
    * DaemonSet. The DaemonSet controller uses this field as a collision
@@ -11804,10 +11804,10 @@ export interface Iok8sapiappsv1DaemonSetStatus {
    */
   collisionCount?: number;
   /**
-   * @member {Iok8sapiappsv1DaemonSetCondition[]} [conditions] Represents the
+   * @member {V1DaemonSetCondition[]} [conditions] Represents the
    * latest available observations of a DaemonSet's current state.
    */
-  conditions?: Iok8sapiappsv1DaemonSetCondition[];
+  conditions?: V1DaemonSetCondition[];
   /**
    * @member {number} currentNumberScheduled The number of nodes that are
    * running at least 1 daemon pod and are supposed to run the daemon pod. More
@@ -11858,11 +11858,11 @@ export interface Iok8sapiappsv1DaemonSetStatus {
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1DaemonSet.
+ * An interface representing V1DaemonSet.
  * DaemonSet represents the configuration of a daemon set.
  *
  */
-export interface Iok8sapiappsv1DaemonSet {
+export interface V1DaemonSet {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -11880,33 +11880,33 @@ export interface Iok8sapiappsv1DaemonSet {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object's metadata. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
-   * @member {Iok8sapiappsv1DaemonSetSpec} [spec] The desired behavior of this
+   * @member {V1DaemonSetSpec} [spec] The desired behavior of this
    * daemon set. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status
    */
-  spec?: Iok8sapiappsv1DaemonSetSpec;
+  spec?: V1DaemonSetSpec;
   /**
-   * @member {Iok8sapiappsv1DaemonSetStatus} [status] The current status of
+   * @member {V1DaemonSetStatus} [status] The current status of
    * this daemon set. This data may be out of date by some window of time.
    * Populated by the system. Read-only. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status
    */
-  status?: Iok8sapiappsv1DaemonSetStatus;
+  status?: V1DaemonSetStatus;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1DaemonSetList.
+ * An interface representing V1DaemonSetList.
  * DaemonSetList is a collection of daemon sets.
  *
  */
-export interface Iok8sapiappsv1DaemonSetList {
+export interface V1DaemonSetList {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -11916,9 +11916,9 @@ export interface Iok8sapiappsv1DaemonSetList {
    */
   apiVersion?: string;
   /**
-   * @member {Iok8sapiappsv1DaemonSet[]} items A list of daemon sets.
+   * @member {V1DaemonSet[]} items A list of daemon sets.
    */
-  items: Iok8sapiappsv1DaemonSet[];
+  items: V1DaemonSet[];
   /**
    * @member {string} [kind] Kind is a string value representing the REST
    * resource this object represents. Servers may infer this from the endpoint
@@ -11928,20 +11928,20 @@ export interface Iok8sapiappsv1DaemonSetList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] Standard list
+   * @member {V1ListMeta} [metadata] Standard list
    * metadata. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1RollingUpdateDeployment.
+ * An interface representing V1RollingUpdateDeployment.
  * Spec to control the desired behavior of rolling update.
  *
  */
-export interface Iok8sapiappsv1RollingUpdateDeployment {
+export interface V1RollingUpdateDeployment {
   /**
    * @member {string} [maxSurge] The maximum number of pods that can be
    * scheduled above the desired number of pods. Value can be an absolute
@@ -11972,17 +11972,17 @@ export interface Iok8sapiappsv1RollingUpdateDeployment {
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1DeploymentStrategy.
+ * An interface representing V1DeploymentStrategy.
  * DeploymentStrategy describes how to replace existing pods with new ones.
  *
  */
-export interface Iok8sapiappsv1DeploymentStrategy {
+export interface V1DeploymentStrategy {
   /**
-   * @member {Iok8sapiappsv1RollingUpdateDeployment} [rollingUpdate] Rolling
+   * @member {V1RollingUpdateDeployment} [rollingUpdate] Rolling
    * update config params. Present only if DeploymentStrategyType =
    * RollingUpdate.
    */
-  rollingUpdate?: Iok8sapiappsv1RollingUpdateDeployment;
+  rollingUpdate?: V1RollingUpdateDeployment;
   /**
    * @member {string} [type] Type of deployment. Can be "Recreate" or
    * "RollingUpdate". Default is RollingUpdate.
@@ -11992,12 +11992,12 @@ export interface Iok8sapiappsv1DeploymentStrategy {
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1DeploymentSpec.
+ * An interface representing V1DeploymentSpec.
  * DeploymentSpec is the specification of the desired behavior of the
  * Deployment.
  *
  */
-export interface Iok8sapiappsv1DeploymentSpec {
+export interface V1DeploymentSpec {
   /**
    * @member {number} [minReadySeconds] Minimum number of seconds for which a
    * newly created pod should be ready without any of its container crashing,
@@ -12030,17 +12030,17 @@ export interface Iok8sapiappsv1DeploymentSpec {
    */
   revisionHistoryLimit?: number;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1LabelSelector} selector Label
+   * @member {V1LabelSelector} selector Label
    * selector for pods. Existing ReplicaSets whose pods are selected by this
    * will be the ones affected by this deployment. It must match the pod
    * template's labels.
    */
-  selector: Iok8sapimachinerypkgapismetav1LabelSelector;
+  selector: V1LabelSelector;
   /**
-   * @member {Iok8sapiappsv1DeploymentStrategy} [strategy] The deployment
+   * @member {V1DeploymentStrategy} [strategy] The deployment
    * strategy to use to replace existing pods with new ones.
    */
-  strategy?: Iok8sapiappsv1DeploymentStrategy;
+  strategy?: V1DeploymentStrategy;
   /**
    * @member {V1PodTemplateSpec} template Template describes the
    * pods that will be created.
@@ -12050,11 +12050,11 @@ export interface Iok8sapiappsv1DeploymentSpec {
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1DeploymentCondition.
+ * An interface representing V1DeploymentCondition.
  * DeploymentCondition describes the state of a deployment at a certain point.
  *
  */
-export interface Iok8sapiappsv1DeploymentCondition {
+export interface V1DeploymentCondition {
   /**
    * @member {Date} [lastTransitionTime] Last time the condition transitioned
    * from one status to another.
@@ -12086,11 +12086,11 @@ export interface Iok8sapiappsv1DeploymentCondition {
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1DeploymentStatus.
+ * An interface representing V1DeploymentStatus.
  * DeploymentStatus is the most recently observed status of the Deployment.
  *
  */
-export interface Iok8sapiappsv1DeploymentStatus {
+export interface V1DeploymentStatus {
   /**
    * @member {number} [availableReplicas] Total number of available pods (ready
    * for at least minReadySeconds) targeted by this deployment.
@@ -12104,10 +12104,10 @@ export interface Iok8sapiappsv1DeploymentStatus {
    */
   collisionCount?: number;
   /**
-   * @member {Iok8sapiappsv1DeploymentCondition[]} [conditions] Represents the
+   * @member {V1DeploymentCondition[]} [conditions] Represents the
    * latest available observations of a deployment's current state.
    */
-  conditions?: Iok8sapiappsv1DeploymentCondition[];
+  conditions?: V1DeploymentCondition[];
   /**
    * @member {number} [observedGeneration] The generation observed by the
    * deployment controller.
@@ -12140,11 +12140,11 @@ export interface Iok8sapiappsv1DeploymentStatus {
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1Deployment.
+ * An interface representing V1Deployment.
  * Deployment enables declarative updates for Pods and ReplicaSets.
  *
  */
-export interface Iok8sapiappsv1Deployment {
+export interface V1Deployment {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -12162,29 +12162,29 @@ export interface Iok8sapiappsv1Deployment {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
-   * @member {Iok8sapiappsv1DeploymentSpec} [spec] Specification of the desired
+   * @member {V1DeploymentSpec} [spec] Specification of the desired
    * behavior of the Deployment.
    */
-  spec?: Iok8sapiappsv1DeploymentSpec;
+  spec?: V1DeploymentSpec;
   /**
-   * @member {Iok8sapiappsv1DeploymentStatus} [status] Most recently observed
+   * @member {V1DeploymentStatus} [status] Most recently observed
    * status of the Deployment.
    */
-  status?: Iok8sapiappsv1DeploymentStatus;
+  status?: V1DeploymentStatus;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1DeploymentList.
+ * An interface representing V1DeploymentList.
  * DeploymentList is a list of Deployments.
  *
  */
-export interface Iok8sapiappsv1DeploymentList {
+export interface V1DeploymentList {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -12194,10 +12194,10 @@ export interface Iok8sapiappsv1DeploymentList {
    */
   apiVersion?: string;
   /**
-   * @member {Iok8sapiappsv1Deployment[]} items Items is the list of
+   * @member {V1Deployment[]} items Items is the list of
    * Deployments.
    */
-  items: Iok8sapiappsv1Deployment[];
+  items: V1Deployment[];
   /**
    * @member {string} [kind] Kind is a string value representing the REST
    * resource this object represents. Servers may infer this from the endpoint
@@ -12207,19 +12207,19 @@ export interface Iok8sapiappsv1DeploymentList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] Standard list
+   * @member {V1ListMeta} [metadata] Standard list
    * metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1ReplicaSetSpec.
+ * An interface representing V1ReplicaSetSpec.
  * ReplicaSetSpec is the specification of a ReplicaSet.
  *
  */
-export interface Iok8sapiappsv1ReplicaSetSpec {
+export interface V1ReplicaSetSpec {
   /**
    * @member {number} [minReadySeconds] Minimum number of seconds for which a
    * newly created pod should be ready without any of its container crashing,
@@ -12235,13 +12235,13 @@ export interface Iok8sapiappsv1ReplicaSetSpec {
    */
   replicas?: number;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1LabelSelector} selector Selector is
+   * @member {V1LabelSelector} selector Selector is
    * a label query over pods that should match the replica count. Label keys
    * and values that must match in order to be controlled by this replica set.
    * It must match the pod template's labels. More info:
    * https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#label-selectors
    */
-  selector: Iok8sapimachinerypkgapismetav1LabelSelector;
+  selector: V1LabelSelector;
   /**
    * @member {V1PodTemplateSpec} [template] Template is the object
    * that describes the pod that will be created if insufficient replicas are
@@ -12253,11 +12253,11 @@ export interface Iok8sapiappsv1ReplicaSetSpec {
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1ReplicaSetCondition.
+ * An interface representing V1ReplicaSetCondition.
  * ReplicaSetCondition describes the state of a replica set at a certain point.
  *
  */
-export interface Iok8sapiappsv1ReplicaSetCondition {
+export interface V1ReplicaSetCondition {
   /**
    * @member {Date} [lastTransitionTime] The last time the condition
    * transitioned from one status to another.
@@ -12285,21 +12285,21 @@ export interface Iok8sapiappsv1ReplicaSetCondition {
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1ReplicaSetStatus.
+ * An interface representing V1ReplicaSetStatus.
  * ReplicaSetStatus represents the current status of a ReplicaSet.
  *
  */
-export interface Iok8sapiappsv1ReplicaSetStatus {
+export interface V1ReplicaSetStatus {
   /**
    * @member {number} [availableReplicas] The number of available replicas
    * (ready for at least minReadySeconds) for this replica set.
    */
   availableReplicas?: number;
   /**
-   * @member {Iok8sapiappsv1ReplicaSetCondition[]} [conditions] Represents the
+   * @member {V1ReplicaSetCondition[]} [conditions] Represents the
    * latest available observations of a replica set's current state.
    */
-  conditions?: Iok8sapiappsv1ReplicaSetCondition[];
+  conditions?: V1ReplicaSetCondition[];
   /**
    * @member {number} [fullyLabeledReplicas] The number of pods that have
    * labels matching the labels of the pod template of the replicaset.
@@ -12325,12 +12325,12 @@ export interface Iok8sapiappsv1ReplicaSetStatus {
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1ReplicaSet.
+ * An interface representing V1ReplicaSet.
  * ReplicaSet ensures that a specified number of pod replicas are running at
  * any given time.
  *
  */
-export interface Iok8sapiappsv1ReplicaSet {
+export interface V1ReplicaSet {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -12348,34 +12348,34 @@ export interface Iok8sapiappsv1ReplicaSet {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] If the
+   * @member {V1ObjectMeta} [metadata] If the
    * Labels of a ReplicaSet are empty, they are defaulted to be the same as the
    * Pod(s) that the ReplicaSet manages. Standard object's metadata. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
-   * @member {Iok8sapiappsv1ReplicaSetSpec} [spec] Spec defines the
+   * @member {V1ReplicaSetSpec} [spec] Spec defines the
    * specification of the desired behavior of the ReplicaSet. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status
    */
-  spec?: Iok8sapiappsv1ReplicaSetSpec;
+  spec?: V1ReplicaSetSpec;
   /**
-   * @member {Iok8sapiappsv1ReplicaSetStatus} [status] Status is the most
+   * @member {V1ReplicaSetStatus} [status] Status is the most
    * recently observed status of the ReplicaSet. This data may be out of date
    * by some window of time. Populated by the system. Read-only. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status
    */
-  status?: Iok8sapiappsv1ReplicaSetStatus;
+  status?: V1ReplicaSetStatus;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1ReplicaSetList.
+ * An interface representing V1ReplicaSetList.
  * ReplicaSetList is a collection of ReplicaSets.
  *
  */
-export interface Iok8sapiappsv1ReplicaSetList {
+export interface V1ReplicaSetList {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -12385,10 +12385,10 @@ export interface Iok8sapiappsv1ReplicaSetList {
    */
   apiVersion?: string;
   /**
-   * @member {Iok8sapiappsv1ReplicaSet[]} items List of ReplicaSets. More info:
+   * @member {V1ReplicaSet[]} items List of ReplicaSets. More info:
    * https://kubernetes.io/docs/concepts/workloads/controllers/replicationcontroller
    */
-  items: Iok8sapiappsv1ReplicaSet[];
+  items: V1ReplicaSet[];
   /**
    * @member {string} [kind] Kind is a string value representing the REST
    * resource this object represents. Servers may infer this from the endpoint
@@ -12398,21 +12398,21 @@ export interface Iok8sapiappsv1ReplicaSetList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] Standard list
+   * @member {V1ListMeta} [metadata] Standard list
    * metadata. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1RollingUpdateStatefulSetStrategy.
+ * An interface representing V1RollingUpdateStatefulSetStrategy.
  * RollingUpdateStatefulSetStrategy is used to communicate parameter for
  * RollingUpdateStatefulSetStrategyType.
  *
  */
-export interface Iok8sapiappsv1RollingUpdateStatefulSetStrategy {
+export interface V1RollingUpdateStatefulSetStrategy {
   /**
    * @member {number} [partition] Partition indicates the ordinal at which the
    * StatefulSet should be partitioned. Default value is 0.
@@ -12422,19 +12422,19 @@ export interface Iok8sapiappsv1RollingUpdateStatefulSetStrategy {
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1StatefulSetUpdateStrategy.
+ * An interface representing V1StatefulSetUpdateStrategy.
  * StatefulSetUpdateStrategy indicates the strategy that the StatefulSet
  * controller will use to perform updates. It includes any additional
  * parameters necessary to perform the update for the indicated strategy.
  *
  */
-export interface Iok8sapiappsv1StatefulSetUpdateStrategy {
+export interface V1StatefulSetUpdateStrategy {
   /**
-   * @member {Iok8sapiappsv1RollingUpdateStatefulSetStrategy} [rollingUpdate]
+   * @member {V1RollingUpdateStatefulSetStrategy} [rollingUpdate]
    * RollingUpdate is used to communicate parameters when Type is
    * RollingUpdateStatefulSetStrategyType.
    */
-  rollingUpdate?: Iok8sapiappsv1RollingUpdateStatefulSetStrategy;
+  rollingUpdate?: V1RollingUpdateStatefulSetStrategy;
   /**
    * @member {string} [type] Type indicates the type of the
    * StatefulSetUpdateStrategy. Default is RollingUpdate.
@@ -12463,10 +12463,10 @@ export interface V1PersistentVolumeClaimSpec {
    */
   resources?: V1ResourceRequirements;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1LabelSelector} [selector] A label
+   * @member {V1LabelSelector} [selector] A label
    * query over volumes to consider for binding.
    */
-  selector?: Iok8sapimachinerypkgapismetav1LabelSelector;
+  selector?: V1LabelSelector;
   /**
    * @member {string} [storageClassName] Name of the StorageClass required by
    * the claim. More info:
@@ -12581,11 +12581,11 @@ export interface V1PersistentVolumeClaim {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object's metadata. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
    * @member {V1PersistentVolumeClaimSpec} [spec] Spec defines the
    * desired characteristics of a volume requested by a pod author. More info:
@@ -12603,11 +12603,11 @@ export interface V1PersistentVolumeClaim {
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1StatefulSetSpec.
+ * An interface representing V1StatefulSetSpec.
  * A StatefulSetSpec is the specification of a StatefulSet.
  *
  */
-export interface Iok8sapiappsv1StatefulSetSpec {
+export interface V1StatefulSetSpec {
   /**
    * @member {string} [podManagementPolicy] podManagementPolicy controls how
    * pods are created during initial scale up, when replacing pods on nodes, or
@@ -12635,12 +12635,12 @@ export interface Iok8sapiappsv1StatefulSetSpec {
    */
   revisionHistoryLimit?: number;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1LabelSelector} selector selector is
+   * @member {V1LabelSelector} selector selector is
    * a label query over pods that should match the replica count. It must match
    * the pod template's labels. More info:
    * https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#label-selectors
    */
-  selector: Iok8sapimachinerypkgapismetav1LabelSelector;
+  selector: V1LabelSelector;
   /**
    * @member {string} serviceName serviceName is the name of the service that
    * governs this StatefulSet. This service must exist before the StatefulSet,
@@ -12658,12 +12658,12 @@ export interface Iok8sapiappsv1StatefulSetSpec {
    */
   template: V1PodTemplateSpec;
   /**
-   * @member {Iok8sapiappsv1StatefulSetUpdateStrategy} [updateStrategy]
+   * @member {V1StatefulSetUpdateStrategy} [updateStrategy]
    * updateStrategy indicates the StatefulSetUpdateStrategy that will be
    * employed to update Pods in the StatefulSet when a revision is made to
    * Template.
    */
-  updateStrategy?: Iok8sapiappsv1StatefulSetUpdateStrategy;
+  updateStrategy?: V1StatefulSetUpdateStrategy;
   /**
    * @member {V1PersistentVolumeClaim[]} [volumeClaimTemplates]
    * volumeClaimTemplates is a list of claims that pods are allowed to
@@ -12678,12 +12678,12 @@ export interface Iok8sapiappsv1StatefulSetSpec {
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1StatefulSetCondition.
+ * An interface representing V1StatefulSetCondition.
  * StatefulSetCondition describes the state of a statefulset at a certain
  * point.
  *
  */
-export interface Iok8sapiappsv1StatefulSetCondition {
+export interface V1StatefulSetCondition {
   /**
    * @member {Date} [lastTransitionTime] Last time the condition transitioned
    * from one status to another.
@@ -12711,11 +12711,11 @@ export interface Iok8sapiappsv1StatefulSetCondition {
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1StatefulSetStatus.
+ * An interface representing V1StatefulSetStatus.
  * StatefulSetStatus represents the current state of a StatefulSet.
  *
  */
-export interface Iok8sapiappsv1StatefulSetStatus {
+export interface V1StatefulSetStatus {
   /**
    * @member {number} [collisionCount] collisionCount is the count of hash
    * collisions for the StatefulSet. The StatefulSet controller uses this field
@@ -12724,10 +12724,10 @@ export interface Iok8sapiappsv1StatefulSetStatus {
    */
   collisionCount?: number;
   /**
-   * @member {Iok8sapiappsv1StatefulSetCondition[]} [conditions] Represents the
+   * @member {V1StatefulSetCondition[]} [conditions] Represents the
    * latest available observations of a statefulset's current state.
    */
-  conditions?: Iok8sapiappsv1StatefulSetCondition[];
+  conditions?: V1StatefulSetCondition[];
   /**
    * @member {number} [currentReplicas] currentReplicas is the number of Pods
    * created by the StatefulSet controller from the StatefulSet version
@@ -12772,7 +12772,7 @@ export interface Iok8sapiappsv1StatefulSetStatus {
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1StatefulSet.
+ * An interface representing V1StatefulSet.
  * StatefulSet represents a set of pods with consistent identities. Identities
  * are defined as:
  * - Network: A single stable DNS and hostname.
@@ -12781,7 +12781,7 @@ export interface Iok8sapiappsv1StatefulSetStatus {
  * the same storage identity.
  *
  */
-export interface Iok8sapiappsv1StatefulSet {
+export interface V1StatefulSet {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -12799,29 +12799,29 @@ export interface Iok8sapiappsv1StatefulSet {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata]
+   * @member {V1ObjectMeta} [metadata]
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
-   * @member {Iok8sapiappsv1StatefulSetSpec} [spec] Spec defines the desired
+   * @member {V1StatefulSetSpec} [spec] Spec defines the desired
    * identities of pods in this set.
    */
-  spec?: Iok8sapiappsv1StatefulSetSpec;
+  spec?: V1StatefulSetSpec;
   /**
-   * @member {Iok8sapiappsv1StatefulSetStatus} [status] Status is the current
+   * @member {V1StatefulSetStatus} [status] Status is the current
    * status of Pods in this StatefulSet. This data may be out of date by some
    * window of time.
    */
-  status?: Iok8sapiappsv1StatefulSetStatus;
+  status?: V1StatefulSetStatus;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1StatefulSetList.
+ * An interface representing V1StatefulSetList.
  * StatefulSetList is a collection of StatefulSets.
  *
  */
-export interface Iok8sapiappsv1StatefulSetList {
+export interface V1StatefulSetList {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -12831,9 +12831,9 @@ export interface Iok8sapiappsv1StatefulSetList {
    */
   apiVersion?: string;
   /**
-   * @member {Iok8sapiappsv1StatefulSet[]} items
+   * @member {V1StatefulSet[]} items
    */
-  items: Iok8sapiappsv1StatefulSet[];
+  items: V1StatefulSet[];
   /**
    * @member {string} [kind] Kind is a string value representing the REST
    * resource this object represents. Servers may infer this from the endpoint
@@ -12843,14 +12843,14 @@ export interface Iok8sapiappsv1StatefulSetList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata]
+   * @member {V1ListMeta} [metadata]
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1beta1ControllerRevision.
+ * An interface representing V1beta1ControllerRevision.
  * DEPRECATED - This group version of ControllerRevision is deprecated by
  * apps/v1beta2/ControllerRevision. See the release notes for more information.
  * ControllerRevision implements an immutable snapshot of state data. Clients
@@ -12865,7 +12865,7 @@ export interface Iok8sapiappsv1StatefulSetList {
  * for internal use by controllers.
  *
  */
-export interface Iok8sapiappsv1beta1ControllerRevision {
+export interface V1beta1ControllerRevision {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -12888,11 +12888,11 @@ export interface Iok8sapiappsv1beta1ControllerRevision {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object's metadata. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
    * @member {number} revision Revision indicates the revision of the state
    * represented by Data.
@@ -12902,12 +12902,12 @@ export interface Iok8sapiappsv1beta1ControllerRevision {
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1beta1ControllerRevisionList.
+ * An interface representing V1beta1ControllerRevisionList.
  * ControllerRevisionList is a resource containing a list of ControllerRevision
  * objects.
  *
  */
-export interface Iok8sapiappsv1beta1ControllerRevisionList {
+export interface V1beta1ControllerRevisionList {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -12917,10 +12917,10 @@ export interface Iok8sapiappsv1beta1ControllerRevisionList {
    */
   apiVersion?: string;
   /**
-   * @member {Iok8sapiappsv1beta1ControllerRevision[]} items Items is the list
+   * @member {V1beta1ControllerRevision[]} items Items is the list
    * of ControllerRevisions
    */
-  items: Iok8sapiappsv1beta1ControllerRevision[];
+  items: V1beta1ControllerRevision[];
   /**
    * @member {string} [kind] Kind is a string value representing the REST
    * resource this object represents. Servers may infer this from the endpoint
@@ -12930,19 +12930,19 @@ export interface Iok8sapiappsv1beta1ControllerRevisionList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] More info:
+   * @member {V1ListMeta} [metadata] More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1beta1RollbackConfig.
+ * An interface representing V1beta1RollbackConfig.
  * DEPRECATED.
  *
  */
-export interface Iok8sapiappsv1beta1RollbackConfig {
+export interface V1beta1RollbackConfig {
   /**
    * @member {number} [revision] The revision to rollback to. If set to 0,
    * rollback to the last revision.
@@ -12952,11 +12952,11 @@ export interface Iok8sapiappsv1beta1RollbackConfig {
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1beta1RollingUpdateDeployment.
+ * An interface representing V1beta1RollingUpdateDeployment.
  * Spec to control the desired behavior of rolling update.
  *
  */
-export interface Iok8sapiappsv1beta1RollingUpdateDeployment {
+export interface V1beta1RollingUpdateDeployment {
   /**
    * @member {string} [maxSurge] The maximum number of pods that can be
    * scheduled above the desired number of pods. Value can be an absolute
@@ -12987,17 +12987,17 @@ export interface Iok8sapiappsv1beta1RollingUpdateDeployment {
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1beta1DeploymentStrategy.
+ * An interface representing V1beta1DeploymentStrategy.
  * DeploymentStrategy describes how to replace existing pods with new ones.
  *
  */
-export interface Iok8sapiappsv1beta1DeploymentStrategy {
+export interface V1beta1DeploymentStrategy {
   /**
-   * @member {Iok8sapiappsv1beta1RollingUpdateDeployment} [rollingUpdate]
+   * @member {V1beta1RollingUpdateDeployment} [rollingUpdate]
    * Rolling update config params. Present only if DeploymentStrategyType =
    * RollingUpdate.
    */
-  rollingUpdate?: Iok8sapiappsv1beta1RollingUpdateDeployment;
+  rollingUpdate?: V1beta1RollingUpdateDeployment;
   /**
    * @member {string} [type] Type of deployment. Can be "Recreate" or
    * "RollingUpdate". Default is RollingUpdate.
@@ -13007,12 +13007,12 @@ export interface Iok8sapiappsv1beta1DeploymentStrategy {
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1beta1DeploymentSpec.
+ * An interface representing V1beta1DeploymentSpec.
  * DeploymentSpec is the specification of the desired behavior of the
  * Deployment.
  *
  */
-export interface Iok8sapiappsv1beta1DeploymentSpec {
+export interface V1beta1DeploymentSpec {
   /**
    * @member {number} [minReadySeconds] Minimum number of seconds for which a
    * newly created pod should be ready without any of its container crashing,
@@ -13045,22 +13045,22 @@ export interface Iok8sapiappsv1beta1DeploymentSpec {
    */
   revisionHistoryLimit?: number;
   /**
-   * @member {Iok8sapiappsv1beta1RollbackConfig} [rollbackTo] DEPRECATED. The
+   * @member {V1beta1RollbackConfig} [rollbackTo] DEPRECATED. The
    * config this deployment is rolling back to. Will be cleared after rollback
    * is done.
    */
-  rollbackTo?: Iok8sapiappsv1beta1RollbackConfig;
+  rollbackTo?: V1beta1RollbackConfig;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1LabelSelector} [selector] Label
+   * @member {V1LabelSelector} [selector] Label
    * selector for pods. Existing ReplicaSets whose pods are selected by this
    * will be the ones affected by this deployment.
    */
-  selector?: Iok8sapimachinerypkgapismetav1LabelSelector;
+  selector?: V1LabelSelector;
   /**
-   * @member {Iok8sapiappsv1beta1DeploymentStrategy} [strategy] The deployment
+   * @member {V1beta1DeploymentStrategy} [strategy] The deployment
    * strategy to use to replace existing pods with new ones.
    */
-  strategy?: Iok8sapiappsv1beta1DeploymentStrategy;
+  strategy?: V1beta1DeploymentStrategy;
   /**
    * @member {V1PodTemplateSpec} template Template describes the
    * pods that will be created.
@@ -13070,11 +13070,11 @@ export interface Iok8sapiappsv1beta1DeploymentSpec {
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1beta1DeploymentCondition.
+ * An interface representing V1beta1DeploymentCondition.
  * DeploymentCondition describes the state of a deployment at a certain point.
  *
  */
-export interface Iok8sapiappsv1beta1DeploymentCondition {
+export interface V1beta1DeploymentCondition {
   /**
    * @member {Date} [lastTransitionTime] Last time the condition transitioned
    * from one status to another.
@@ -13106,11 +13106,11 @@ export interface Iok8sapiappsv1beta1DeploymentCondition {
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1beta1DeploymentStatus.
+ * An interface representing V1beta1DeploymentStatus.
  * DeploymentStatus is the most recently observed status of the Deployment.
  *
  */
-export interface Iok8sapiappsv1beta1DeploymentStatus {
+export interface V1beta1DeploymentStatus {
   /**
    * @member {number} [availableReplicas] Total number of available pods (ready
    * for at least minReadySeconds) targeted by this deployment.
@@ -13124,10 +13124,10 @@ export interface Iok8sapiappsv1beta1DeploymentStatus {
    */
   collisionCount?: number;
   /**
-   * @member {Iok8sapiappsv1beta1DeploymentCondition[]} [conditions] Represents
+   * @member {V1beta1DeploymentCondition[]} [conditions] Represents
    * the latest available observations of a deployment's current state.
    */
-  conditions?: Iok8sapiappsv1beta1DeploymentCondition[];
+  conditions?: V1beta1DeploymentCondition[];
   /**
    * @member {number} [observedGeneration] The generation observed by the
    * deployment controller.
@@ -13160,13 +13160,13 @@ export interface Iok8sapiappsv1beta1DeploymentStatus {
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1beta1Deployment.
+ * An interface representing V1beta1Deployment.
  * DEPRECATED - This group version of Deployment is deprecated by
  * apps/v1beta2/Deployment. See the release notes for more information.
  * Deployment enables declarative updates for Pods and ReplicaSets.
  *
  */
-export interface Iok8sapiappsv1beta1Deployment {
+export interface V1beta1Deployment {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -13184,29 +13184,29 @@ export interface Iok8sapiappsv1beta1Deployment {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
-   * @member {Iok8sapiappsv1beta1DeploymentSpec} [spec] Specification of the
+   * @member {V1beta1DeploymentSpec} [spec] Specification of the
    * desired behavior of the Deployment.
    */
-  spec?: Iok8sapiappsv1beta1DeploymentSpec;
+  spec?: V1beta1DeploymentSpec;
   /**
-   * @member {Iok8sapiappsv1beta1DeploymentStatus} [status] Most recently
+   * @member {V1beta1DeploymentStatus} [status] Most recently
    * observed status of the Deployment.
    */
-  status?: Iok8sapiappsv1beta1DeploymentStatus;
+  status?: V1beta1DeploymentStatus;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1beta1DeploymentList.
+ * An interface representing V1beta1DeploymentList.
  * DeploymentList is a list of Deployments.
  *
  */
-export interface Iok8sapiappsv1beta1DeploymentList {
+export interface V1beta1DeploymentList {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -13216,10 +13216,10 @@ export interface Iok8sapiappsv1beta1DeploymentList {
    */
   apiVersion?: string;
   /**
-   * @member {Iok8sapiappsv1beta1Deployment[]} items Items is the list of
+   * @member {V1beta1Deployment[]} items Items is the list of
    * Deployments.
    */
-  items: Iok8sapiappsv1beta1Deployment[];
+  items: V1beta1Deployment[];
   /**
    * @member {string} [kind] Kind is a string value representing the REST
    * resource this object represents. Servers may infer this from the endpoint
@@ -13229,20 +13229,20 @@ export interface Iok8sapiappsv1beta1DeploymentList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] Standard list
+   * @member {V1ListMeta} [metadata] Standard list
    * metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1beta1DeploymentRollback.
+ * An interface representing V1beta1DeploymentRollback.
  * DEPRECATED. DeploymentRollback stores the information required to rollback a
  * deployment.
  *
  */
-export interface Iok8sapiappsv1beta1DeploymentRollback {
+export interface V1beta1DeploymentRollback {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -13264,10 +13264,10 @@ export interface Iok8sapiappsv1beta1DeploymentRollback {
    */
   name: string;
   /**
-   * @member {Iok8sapiappsv1beta1RollbackConfig} rollbackTo The config of this
+   * @member {V1beta1RollbackConfig} rollbackTo The config of this
    * deployment rollback.
    */
-  rollbackTo: Iok8sapiappsv1beta1RollbackConfig;
+  rollbackTo: V1beta1RollbackConfig;
   /**
    * @member {{ [propertyName: string]: string }} [updatedAnnotations] The
    * annotations to be updated to a deployment
@@ -13277,12 +13277,12 @@ export interface Iok8sapiappsv1beta1DeploymentRollback {
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1beta1RollingUpdateStatefulSetStrategy.
+ * An interface representing V1beta1RollingUpdateStatefulSetStrategy.
  * RollingUpdateStatefulSetStrategy is used to communicate parameter for
  * RollingUpdateStatefulSetStrategyType.
  *
  */
-export interface Iok8sapiappsv1beta1RollingUpdateStatefulSetStrategy {
+export interface V1beta1RollingUpdateStatefulSetStrategy {
   /**
    * @member {number} [partition] Partition indicates the ordinal at which the
    * StatefulSet should be partitioned.
@@ -13292,11 +13292,11 @@ export interface Iok8sapiappsv1beta1RollingUpdateStatefulSetStrategy {
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1beta1ScaleSpec.
+ * An interface representing V1beta1ScaleSpec.
  * ScaleSpec describes the attributes of a scale subresource
  *
  */
-export interface Iok8sapiappsv1beta1ScaleSpec {
+export interface V1beta1ScaleSpec {
   /**
    * @member {number} [replicas] desired number of instances for the scaled
    * object.
@@ -13306,11 +13306,11 @@ export interface Iok8sapiappsv1beta1ScaleSpec {
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1beta1ScaleStatus.
+ * An interface representing V1beta1ScaleStatus.
  * ScaleStatus represents the current status of a scale subresource.
  *
  */
-export interface Iok8sapiappsv1beta1ScaleStatus {
+export interface V1beta1ScaleStatus {
   /**
    * @member {number} replicas actual number of observed instances of the
    * scaled object.
@@ -13336,11 +13336,11 @@ export interface Iok8sapiappsv1beta1ScaleStatus {
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1beta1Scale.
+ * An interface representing V1beta1Scale.
  * Scale represents a scaling request for a resource.
  *
  */
-export interface Iok8sapiappsv1beta1Scale {
+export interface V1beta1Scale {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -13358,41 +13358,41 @@ export interface Iok8sapiappsv1beta1Scale {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object metadata; More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
-   * @member {Iok8sapiappsv1beta1ScaleSpec} [spec] defines the behavior of the
+   * @member {V1beta1ScaleSpec} [spec] defines the behavior of the
    * scale. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status.
    */
-  spec?: Iok8sapiappsv1beta1ScaleSpec;
+  spec?: V1beta1ScaleSpec;
   /**
-   * @member {Iok8sapiappsv1beta1ScaleStatus} [status] current status of the
+   * @member {V1beta1ScaleStatus} [status] current status of the
    * scale. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status.
    * Read-only.
    */
-  status?: Iok8sapiappsv1beta1ScaleStatus;
+  status?: V1beta1ScaleStatus;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1beta1StatefulSetUpdateStrategy.
+ * An interface representing V1beta1StatefulSetUpdateStrategy.
  * StatefulSetUpdateStrategy indicates the strategy that the StatefulSet
  * controller will use to perform updates. It includes any additional
  * parameters necessary to perform the update for the indicated strategy.
  *
  */
-export interface Iok8sapiappsv1beta1StatefulSetUpdateStrategy {
+export interface V1beta1StatefulSetUpdateStrategy {
   /**
-   * @member {Iok8sapiappsv1beta1RollingUpdateStatefulSetStrategy}
+   * @member {V1beta1RollingUpdateStatefulSetStrategy}
    * [rollingUpdate] RollingUpdate is used to communicate parameters when Type
    * is RollingUpdateStatefulSetStrategyType.
    */
-  rollingUpdate?: Iok8sapiappsv1beta1RollingUpdateStatefulSetStrategy;
+  rollingUpdate?: V1beta1RollingUpdateStatefulSetStrategy;
   /**
    * @member {string} [type] Type indicates the type of the
    * StatefulSetUpdateStrategy.
@@ -13402,11 +13402,11 @@ export interface Iok8sapiappsv1beta1StatefulSetUpdateStrategy {
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1beta1StatefulSetSpec.
+ * An interface representing V1beta1StatefulSetSpec.
  * A StatefulSetSpec is the specification of a StatefulSet.
  *
  */
-export interface Iok8sapiappsv1beta1StatefulSetSpec {
+export interface V1beta1StatefulSetSpec {
   /**
    * @member {string} [podManagementPolicy] podManagementPolicy controls how
    * pods are created during initial scale up, when replacing pods on nodes, or
@@ -13434,12 +13434,12 @@ export interface Iok8sapiappsv1beta1StatefulSetSpec {
    */
   revisionHistoryLimit?: number;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1LabelSelector} [selector] selector
+   * @member {V1LabelSelector} [selector] selector
    * is a label query over pods that should match the replica count. If empty,
    * defaulted to labels on the pod template. More info:
    * https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#label-selectors
    */
-  selector?: Iok8sapimachinerypkgapismetav1LabelSelector;
+  selector?: V1LabelSelector;
   /**
    * @member {string} serviceName serviceName is the name of the service that
    * governs this StatefulSet. This service must exist before the StatefulSet,
@@ -13457,12 +13457,12 @@ export interface Iok8sapiappsv1beta1StatefulSetSpec {
    */
   template: V1PodTemplateSpec;
   /**
-   * @member {Iok8sapiappsv1beta1StatefulSetUpdateStrategy} [updateStrategy]
+   * @member {V1beta1StatefulSetUpdateStrategy} [updateStrategy]
    * updateStrategy indicates the StatefulSetUpdateStrategy that will be
    * employed to update Pods in the StatefulSet when a revision is made to
    * Template.
    */
-  updateStrategy?: Iok8sapiappsv1beta1StatefulSetUpdateStrategy;
+  updateStrategy?: V1beta1StatefulSetUpdateStrategy;
   /**
    * @member {V1PersistentVolumeClaim[]} [volumeClaimTemplates]
    * volumeClaimTemplates is a list of claims that pods are allowed to
@@ -13477,12 +13477,12 @@ export interface Iok8sapiappsv1beta1StatefulSetSpec {
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1beta1StatefulSetCondition.
+ * An interface representing V1beta1StatefulSetCondition.
  * StatefulSetCondition describes the state of a statefulset at a certain
  * point.
  *
  */
-export interface Iok8sapiappsv1beta1StatefulSetCondition {
+export interface V1beta1StatefulSetCondition {
   /**
    * @member {Date} [lastTransitionTime] Last time the condition transitioned
    * from one status to another.
@@ -13510,11 +13510,11 @@ export interface Iok8sapiappsv1beta1StatefulSetCondition {
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1beta1StatefulSetStatus.
+ * An interface representing V1beta1StatefulSetStatus.
  * StatefulSetStatus represents the current state of a StatefulSet.
  *
  */
-export interface Iok8sapiappsv1beta1StatefulSetStatus {
+export interface V1beta1StatefulSetStatus {
   /**
    * @member {number} [collisionCount] collisionCount is the count of hash
    * collisions for the StatefulSet. The StatefulSet controller uses this field
@@ -13523,11 +13523,11 @@ export interface Iok8sapiappsv1beta1StatefulSetStatus {
    */
   collisionCount?: number;
   /**
-   * @member {Iok8sapiappsv1beta1StatefulSetCondition[]} [conditions]
+   * @member {V1beta1StatefulSetCondition[]} [conditions]
    * Represents the latest available observations of a statefulset's current
    * state.
    */
-  conditions?: Iok8sapiappsv1beta1StatefulSetCondition[];
+  conditions?: V1beta1StatefulSetCondition[];
   /**
    * @member {number} [currentReplicas] currentReplicas is the number of Pods
    * created by the StatefulSet controller from the StatefulSet version
@@ -13572,7 +13572,7 @@ export interface Iok8sapiappsv1beta1StatefulSetStatus {
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1beta1StatefulSet.
+ * An interface representing V1beta1StatefulSet.
  * DEPRECATED - This group version of StatefulSet is deprecated by
  * apps/v1beta2/StatefulSet. See the release notes for more information.
  * StatefulSet represents a set of pods with consistent identities. Identities
@@ -13583,7 +13583,7 @@ export interface Iok8sapiappsv1beta1StatefulSetStatus {
  * the same storage identity.
  *
  */
-export interface Iok8sapiappsv1beta1StatefulSet {
+export interface V1beta1StatefulSet {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -13601,29 +13601,29 @@ export interface Iok8sapiappsv1beta1StatefulSet {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata]
+   * @member {V1ObjectMeta} [metadata]
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
-   * @member {Iok8sapiappsv1beta1StatefulSetSpec} [spec] Spec defines the
+   * @member {V1beta1StatefulSetSpec} [spec] Spec defines the
    * desired identities of pods in this set.
    */
-  spec?: Iok8sapiappsv1beta1StatefulSetSpec;
+  spec?: V1beta1StatefulSetSpec;
   /**
-   * @member {Iok8sapiappsv1beta1StatefulSetStatus} [status] Status is the
+   * @member {V1beta1StatefulSetStatus} [status] Status is the
    * current status of Pods in this StatefulSet. This data may be out of date
    * by some window of time.
    */
-  status?: Iok8sapiappsv1beta1StatefulSetStatus;
+  status?: V1beta1StatefulSetStatus;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1beta1StatefulSetList.
+ * An interface representing V1beta1StatefulSetList.
  * StatefulSetList is a collection of StatefulSets.
  *
  */
-export interface Iok8sapiappsv1beta1StatefulSetList {
+export interface V1beta1StatefulSetList {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -13633,9 +13633,9 @@ export interface Iok8sapiappsv1beta1StatefulSetList {
    */
   apiVersion?: string;
   /**
-   * @member {Iok8sapiappsv1beta1StatefulSet[]} items
+   * @member {V1beta1StatefulSet[]} items
    */
-  items: Iok8sapiappsv1beta1StatefulSet[];
+  items: V1beta1StatefulSet[];
   /**
    * @member {string} [kind] Kind is a string value representing the REST
    * resource this object represents. Servers may infer this from the endpoint
@@ -13645,14 +13645,14 @@ export interface Iok8sapiappsv1beta1StatefulSetList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata]
+   * @member {V1ListMeta} [metadata]
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1beta2ControllerRevision.
+ * An interface representing V1beta2ControllerRevision.
  * DEPRECATED - This group version of ControllerRevision is deprecated by
  * apps/v1/ControllerRevision. See the release notes for more information.
  * ControllerRevision implements an immutable snapshot of state data. Clients
@@ -13667,7 +13667,7 @@ export interface Iok8sapiappsv1beta1StatefulSetList {
  * for internal use by controllers.
  *
  */
-export interface Iok8sapiappsv1beta2ControllerRevision {
+export interface V1beta2ControllerRevision {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -13690,11 +13690,11 @@ export interface Iok8sapiappsv1beta2ControllerRevision {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object's metadata. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
    * @member {number} revision Revision indicates the revision of the state
    * represented by Data.
@@ -13704,12 +13704,12 @@ export interface Iok8sapiappsv1beta2ControllerRevision {
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1beta2ControllerRevisionList.
+ * An interface representing V1beta2ControllerRevisionList.
  * ControllerRevisionList is a resource containing a list of ControllerRevision
  * objects.
  *
  */
-export interface Iok8sapiappsv1beta2ControllerRevisionList {
+export interface V1beta2ControllerRevisionList {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -13719,10 +13719,10 @@ export interface Iok8sapiappsv1beta2ControllerRevisionList {
    */
   apiVersion?: string;
   /**
-   * @member {Iok8sapiappsv1beta2ControllerRevision[]} items Items is the list
+   * @member {V1beta2ControllerRevision[]} items Items is the list
    * of ControllerRevisions
    */
-  items: Iok8sapiappsv1beta2ControllerRevision[];
+  items: V1beta2ControllerRevision[];
   /**
    * @member {string} [kind] Kind is a string value representing the REST
    * resource this object represents. Servers may infer this from the endpoint
@@ -13732,19 +13732,19 @@ export interface Iok8sapiappsv1beta2ControllerRevisionList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] More info:
+   * @member {V1ListMeta} [metadata] More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1beta2RollingUpdateDaemonSet.
+ * An interface representing V1beta2RollingUpdateDaemonSet.
  * Spec to control the desired behavior of daemon set rolling update.
  *
  */
-export interface Iok8sapiappsv1beta2RollingUpdateDaemonSet {
+export interface V1beta2RollingUpdateDaemonSet {
   /**
    * @member {string} [maxUnavailable] The maximum number of DaemonSet pods
    * that can be unavailable during the update. Value can be an absolute number
@@ -13765,17 +13765,17 @@ export interface Iok8sapiappsv1beta2RollingUpdateDaemonSet {
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1beta2DaemonSetUpdateStrategy.
+ * An interface representing V1beta2DaemonSetUpdateStrategy.
  * DaemonSetUpdateStrategy is a struct used to control the update strategy for
  * a DaemonSet.
  *
  */
-export interface Iok8sapiappsv1beta2DaemonSetUpdateStrategy {
+export interface V1beta2DaemonSetUpdateStrategy {
   /**
-   * @member {Iok8sapiappsv1beta2RollingUpdateDaemonSet} [rollingUpdate]
+   * @member {V1beta2RollingUpdateDaemonSet} [rollingUpdate]
    * Rolling update config params. Present only if type = "RollingUpdate".
    */
-  rollingUpdate?: Iok8sapiappsv1beta2RollingUpdateDaemonSet;
+  rollingUpdate?: V1beta2RollingUpdateDaemonSet;
   /**
    * @member {string} [type] Type of daemon set update. Can be "RollingUpdate"
    * or "OnDelete". Default is RollingUpdate.
@@ -13785,11 +13785,11 @@ export interface Iok8sapiappsv1beta2DaemonSetUpdateStrategy {
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1beta2DaemonSetSpec.
+ * An interface representing V1beta2DaemonSetSpec.
  * DaemonSetSpec is the specification of a daemon set.
  *
  */
-export interface Iok8sapiappsv1beta2DaemonSetSpec {
+export interface V1beta2DaemonSetSpec {
   /**
    * @member {number} [minReadySeconds] The minimum number of seconds for which
    * a newly created DaemonSet pod should be ready without any of its container
@@ -13804,12 +13804,12 @@ export interface Iok8sapiappsv1beta2DaemonSetSpec {
    */
   revisionHistoryLimit?: number;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1LabelSelector} selector A label
+   * @member {V1LabelSelector} selector A label
    * query over pods that are managed by the daemon set. Must match in order to
    * be controlled. It must match the pod template's labels. More info:
    * https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#label-selectors
    */
-  selector: Iok8sapimachinerypkgapismetav1LabelSelector;
+  selector: V1LabelSelector;
   /**
    * @member {V1PodTemplateSpec} template An object that describes
    * the pod that will be created. The DaemonSet will create exactly one copy
@@ -13819,19 +13819,19 @@ export interface Iok8sapiappsv1beta2DaemonSetSpec {
    */
   template: V1PodTemplateSpec;
   /**
-   * @member {Iok8sapiappsv1beta2DaemonSetUpdateStrategy} [updateStrategy] An
+   * @member {V1beta2DaemonSetUpdateStrategy} [updateStrategy] An
    * update strategy to replace existing DaemonSet pods with new pods.
    */
-  updateStrategy?: Iok8sapiappsv1beta2DaemonSetUpdateStrategy;
+  updateStrategy?: V1beta2DaemonSetUpdateStrategy;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1beta2DaemonSetCondition.
+ * An interface representing V1beta2DaemonSetCondition.
  * DaemonSetCondition describes the state of a DaemonSet at a certain point.
  *
  */
-export interface Iok8sapiappsv1beta2DaemonSetCondition {
+export interface V1beta2DaemonSetCondition {
   /**
    * @member {Date} [lastTransitionTime] Last time the condition transitioned
    * from one status to another.
@@ -13859,11 +13859,11 @@ export interface Iok8sapiappsv1beta2DaemonSetCondition {
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1beta2DaemonSetStatus.
+ * An interface representing V1beta2DaemonSetStatus.
  * DaemonSetStatus represents the current status of a daemon set.
  *
  */
-export interface Iok8sapiappsv1beta2DaemonSetStatus {
+export interface V1beta2DaemonSetStatus {
   /**
    * @member {number} [collisionCount] Count of hash collisions for the
    * DaemonSet. The DaemonSet controller uses this field as a collision
@@ -13872,10 +13872,10 @@ export interface Iok8sapiappsv1beta2DaemonSetStatus {
    */
   collisionCount?: number;
   /**
-   * @member {Iok8sapiappsv1beta2DaemonSetCondition[]} [conditions] Represents
+   * @member {V1beta2DaemonSetCondition[]} [conditions] Represents
    * the latest available observations of a DaemonSet's current state.
    */
-  conditions?: Iok8sapiappsv1beta2DaemonSetCondition[];
+  conditions?: V1beta2DaemonSetCondition[];
   /**
    * @member {number} currentNumberScheduled The number of nodes that are
    * running at least 1 daemon pod and are supposed to run the daemon pod. More
@@ -13926,13 +13926,13 @@ export interface Iok8sapiappsv1beta2DaemonSetStatus {
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1beta2DaemonSet.
+ * An interface representing V1beta2DaemonSet.
  * DEPRECATED - This group version of DaemonSet is deprecated by
  * apps/v1/DaemonSet. See the release notes for more information. DaemonSet
  * represents the configuration of a daemon set.
  *
  */
-export interface Iok8sapiappsv1beta2DaemonSet {
+export interface V1beta2DaemonSet {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -13950,33 +13950,33 @@ export interface Iok8sapiappsv1beta2DaemonSet {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object's metadata. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
-   * @member {Iok8sapiappsv1beta2DaemonSetSpec} [spec] The desired behavior of
+   * @member {V1beta2DaemonSetSpec} [spec] The desired behavior of
    * this daemon set. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status
    */
-  spec?: Iok8sapiappsv1beta2DaemonSetSpec;
+  spec?: V1beta2DaemonSetSpec;
   /**
-   * @member {Iok8sapiappsv1beta2DaemonSetStatus} [status] The current status
+   * @member {V1beta2DaemonSetStatus} [status] The current status
    * of this daemon set. This data may be out of date by some window of time.
    * Populated by the system. Read-only. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status
    */
-  status?: Iok8sapiappsv1beta2DaemonSetStatus;
+  status?: V1beta2DaemonSetStatus;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1beta2DaemonSetList.
+ * An interface representing V1beta2DaemonSetList.
  * DaemonSetList is a collection of daemon sets.
  *
  */
-export interface Iok8sapiappsv1beta2DaemonSetList {
+export interface V1beta2DaemonSetList {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -13986,9 +13986,9 @@ export interface Iok8sapiappsv1beta2DaemonSetList {
    */
   apiVersion?: string;
   /**
-   * @member {Iok8sapiappsv1beta2DaemonSet[]} items A list of daemon sets.
+   * @member {V1beta2DaemonSet[]} items A list of daemon sets.
    */
-  items: Iok8sapiappsv1beta2DaemonSet[];
+  items: V1beta2DaemonSet[];
   /**
    * @member {string} [kind] Kind is a string value representing the REST
    * resource this object represents. Servers may infer this from the endpoint
@@ -13998,20 +13998,20 @@ export interface Iok8sapiappsv1beta2DaemonSetList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] Standard list
+   * @member {V1ListMeta} [metadata] Standard list
    * metadata. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1beta2RollingUpdateDeployment.
+ * An interface representing V1beta2RollingUpdateDeployment.
  * Spec to control the desired behavior of rolling update.
  *
  */
-export interface Iok8sapiappsv1beta2RollingUpdateDeployment {
+export interface V1beta2RollingUpdateDeployment {
   /**
    * @member {string} [maxSurge] The maximum number of pods that can be
    * scheduled above the desired number of pods. Value can be an absolute
@@ -14042,17 +14042,17 @@ export interface Iok8sapiappsv1beta2RollingUpdateDeployment {
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1beta2DeploymentStrategy.
+ * An interface representing V1beta2DeploymentStrategy.
  * DeploymentStrategy describes how to replace existing pods with new ones.
  *
  */
-export interface Iok8sapiappsv1beta2DeploymentStrategy {
+export interface V1beta2DeploymentStrategy {
   /**
-   * @member {Iok8sapiappsv1beta2RollingUpdateDeployment} [rollingUpdate]
+   * @member {V1beta2RollingUpdateDeployment} [rollingUpdate]
    * Rolling update config params. Present only if DeploymentStrategyType =
    * RollingUpdate.
    */
-  rollingUpdate?: Iok8sapiappsv1beta2RollingUpdateDeployment;
+  rollingUpdate?: V1beta2RollingUpdateDeployment;
   /**
    * @member {string} [type] Type of deployment. Can be "Recreate" or
    * "RollingUpdate". Default is RollingUpdate.
@@ -14062,12 +14062,12 @@ export interface Iok8sapiappsv1beta2DeploymentStrategy {
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1beta2DeploymentSpec.
+ * An interface representing V1beta2DeploymentSpec.
  * DeploymentSpec is the specification of the desired behavior of the
  * Deployment.
  *
  */
-export interface Iok8sapiappsv1beta2DeploymentSpec {
+export interface V1beta2DeploymentSpec {
   /**
    * @member {number} [minReadySeconds] Minimum number of seconds for which a
    * newly created pod should be ready without any of its container crashing,
@@ -14100,17 +14100,17 @@ export interface Iok8sapiappsv1beta2DeploymentSpec {
    */
   revisionHistoryLimit?: number;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1LabelSelector} selector Label
+   * @member {V1LabelSelector} selector Label
    * selector for pods. Existing ReplicaSets whose pods are selected by this
    * will be the ones affected by this deployment. It must match the pod
    * template's labels.
    */
-  selector: Iok8sapimachinerypkgapismetav1LabelSelector;
+  selector: V1LabelSelector;
   /**
-   * @member {Iok8sapiappsv1beta2DeploymentStrategy} [strategy] The deployment
+   * @member {V1beta2DeploymentStrategy} [strategy] The deployment
    * strategy to use to replace existing pods with new ones.
    */
-  strategy?: Iok8sapiappsv1beta2DeploymentStrategy;
+  strategy?: V1beta2DeploymentStrategy;
   /**
    * @member {V1PodTemplateSpec} template Template describes the
    * pods that will be created.
@@ -14120,11 +14120,11 @@ export interface Iok8sapiappsv1beta2DeploymentSpec {
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1beta2DeploymentCondition.
+ * An interface representing V1beta2DeploymentCondition.
  * DeploymentCondition describes the state of a deployment at a certain point.
  *
  */
-export interface Iok8sapiappsv1beta2DeploymentCondition {
+export interface V1beta2DeploymentCondition {
   /**
    * @member {Date} [lastTransitionTime] Last time the condition transitioned
    * from one status to another.
@@ -14156,11 +14156,11 @@ export interface Iok8sapiappsv1beta2DeploymentCondition {
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1beta2DeploymentStatus.
+ * An interface representing V1beta2DeploymentStatus.
  * DeploymentStatus is the most recently observed status of the Deployment.
  *
  */
-export interface Iok8sapiappsv1beta2DeploymentStatus {
+export interface V1beta2DeploymentStatus {
   /**
    * @member {number} [availableReplicas] Total number of available pods (ready
    * for at least minReadySeconds) targeted by this deployment.
@@ -14174,10 +14174,10 @@ export interface Iok8sapiappsv1beta2DeploymentStatus {
    */
   collisionCount?: number;
   /**
-   * @member {Iok8sapiappsv1beta2DeploymentCondition[]} [conditions] Represents
+   * @member {V1beta2DeploymentCondition[]} [conditions] Represents
    * the latest available observations of a deployment's current state.
    */
-  conditions?: Iok8sapiappsv1beta2DeploymentCondition[];
+  conditions?: V1beta2DeploymentCondition[];
   /**
    * @member {number} [observedGeneration] The generation observed by the
    * deployment controller.
@@ -14210,13 +14210,13 @@ export interface Iok8sapiappsv1beta2DeploymentStatus {
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1beta2Deployment.
+ * An interface representing V1beta2Deployment.
  * DEPRECATED - This group version of Deployment is deprecated by
  * apps/v1/Deployment. See the release notes for more information. Deployment
  * enables declarative updates for Pods and ReplicaSets.
  *
  */
-export interface Iok8sapiappsv1beta2Deployment {
+export interface V1beta2Deployment {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -14234,29 +14234,29 @@ export interface Iok8sapiappsv1beta2Deployment {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
-   * @member {Iok8sapiappsv1beta2DeploymentSpec} [spec] Specification of the
+   * @member {V1beta2DeploymentSpec} [spec] Specification of the
    * desired behavior of the Deployment.
    */
-  spec?: Iok8sapiappsv1beta2DeploymentSpec;
+  spec?: V1beta2DeploymentSpec;
   /**
-   * @member {Iok8sapiappsv1beta2DeploymentStatus} [status] Most recently
+   * @member {V1beta2DeploymentStatus} [status] Most recently
    * observed status of the Deployment.
    */
-  status?: Iok8sapiappsv1beta2DeploymentStatus;
+  status?: V1beta2DeploymentStatus;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1beta2DeploymentList.
+ * An interface representing V1beta2DeploymentList.
  * DeploymentList is a list of Deployments.
  *
  */
-export interface Iok8sapiappsv1beta2DeploymentList {
+export interface V1beta2DeploymentList {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -14266,10 +14266,10 @@ export interface Iok8sapiappsv1beta2DeploymentList {
    */
   apiVersion?: string;
   /**
-   * @member {Iok8sapiappsv1beta2Deployment[]} items Items is the list of
+   * @member {V1beta2Deployment[]} items Items is the list of
    * Deployments.
    */
-  items: Iok8sapiappsv1beta2Deployment[];
+  items: V1beta2Deployment[];
   /**
    * @member {string} [kind] Kind is a string value representing the REST
    * resource this object represents. Servers may infer this from the endpoint
@@ -14279,19 +14279,19 @@ export interface Iok8sapiappsv1beta2DeploymentList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] Standard list
+   * @member {V1ListMeta} [metadata] Standard list
    * metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1beta2ReplicaSetSpec.
+ * An interface representing V1beta2ReplicaSetSpec.
  * ReplicaSetSpec is the specification of a ReplicaSet.
  *
  */
-export interface Iok8sapiappsv1beta2ReplicaSetSpec {
+export interface V1beta2ReplicaSetSpec {
   /**
    * @member {number} [minReadySeconds] Minimum number of seconds for which a
    * newly created pod should be ready without any of its container crashing,
@@ -14307,13 +14307,13 @@ export interface Iok8sapiappsv1beta2ReplicaSetSpec {
    */
   replicas?: number;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1LabelSelector} selector Selector is
+   * @member {V1LabelSelector} selector Selector is
    * a label query over pods that should match the replica count. Label keys
    * and values that must match in order to be controlled by this replica set.
    * It must match the pod template's labels. More info:
    * https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#label-selectors
    */
-  selector: Iok8sapimachinerypkgapismetav1LabelSelector;
+  selector: V1LabelSelector;
   /**
    * @member {V1PodTemplateSpec} [template] Template is the object
    * that describes the pod that will be created if insufficient replicas are
@@ -14325,11 +14325,11 @@ export interface Iok8sapiappsv1beta2ReplicaSetSpec {
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1beta2ReplicaSetCondition.
+ * An interface representing V1beta2ReplicaSetCondition.
  * ReplicaSetCondition describes the state of a replica set at a certain point.
  *
  */
-export interface Iok8sapiappsv1beta2ReplicaSetCondition {
+export interface V1beta2ReplicaSetCondition {
   /**
    * @member {Date} [lastTransitionTime] The last time the condition
    * transitioned from one status to another.
@@ -14357,21 +14357,21 @@ export interface Iok8sapiappsv1beta2ReplicaSetCondition {
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1beta2ReplicaSetStatus.
+ * An interface representing V1beta2ReplicaSetStatus.
  * ReplicaSetStatus represents the current status of a ReplicaSet.
  *
  */
-export interface Iok8sapiappsv1beta2ReplicaSetStatus {
+export interface V1beta2ReplicaSetStatus {
   /**
    * @member {number} [availableReplicas] The number of available replicas
    * (ready for at least minReadySeconds) for this replica set.
    */
   availableReplicas?: number;
   /**
-   * @member {Iok8sapiappsv1beta2ReplicaSetCondition[]} [conditions] Represents
+   * @member {V1beta2ReplicaSetCondition[]} [conditions] Represents
    * the latest available observations of a replica set's current state.
    */
-  conditions?: Iok8sapiappsv1beta2ReplicaSetCondition[];
+  conditions?: V1beta2ReplicaSetCondition[];
   /**
    * @member {number} [fullyLabeledReplicas] The number of pods that have
    * labels matching the labels of the pod template of the replicaset.
@@ -14397,14 +14397,14 @@ export interface Iok8sapiappsv1beta2ReplicaSetStatus {
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1beta2ReplicaSet.
+ * An interface representing V1beta2ReplicaSet.
  * DEPRECATED - This group version of ReplicaSet is deprecated by
  * apps/v1/ReplicaSet. See the release notes for more information. ReplicaSet
  * ensures that a specified number of pod replicas are running at any given
  * time.
  *
  */
-export interface Iok8sapiappsv1beta2ReplicaSet {
+export interface V1beta2ReplicaSet {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -14422,34 +14422,34 @@ export interface Iok8sapiappsv1beta2ReplicaSet {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] If the
+   * @member {V1ObjectMeta} [metadata] If the
    * Labels of a ReplicaSet are empty, they are defaulted to be the same as the
    * Pod(s) that the ReplicaSet manages. Standard object's metadata. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
-   * @member {Iok8sapiappsv1beta2ReplicaSetSpec} [spec] Spec defines the
+   * @member {V1beta2ReplicaSetSpec} [spec] Spec defines the
    * specification of the desired behavior of the ReplicaSet. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status
    */
-  spec?: Iok8sapiappsv1beta2ReplicaSetSpec;
+  spec?: V1beta2ReplicaSetSpec;
   /**
-   * @member {Iok8sapiappsv1beta2ReplicaSetStatus} [status] Status is the most
+   * @member {V1beta2ReplicaSetStatus} [status] Status is the most
    * recently observed status of the ReplicaSet. This data may be out of date
    * by some window of time. Populated by the system. Read-only. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status
    */
-  status?: Iok8sapiappsv1beta2ReplicaSetStatus;
+  status?: V1beta2ReplicaSetStatus;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1beta2ReplicaSetList.
+ * An interface representing V1beta2ReplicaSetList.
  * ReplicaSetList is a collection of ReplicaSets.
  *
  */
-export interface Iok8sapiappsv1beta2ReplicaSetList {
+export interface V1beta2ReplicaSetList {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -14459,11 +14459,11 @@ export interface Iok8sapiappsv1beta2ReplicaSetList {
    */
   apiVersion?: string;
   /**
-   * @member {Iok8sapiappsv1beta2ReplicaSet[]} items List of ReplicaSets. More
+   * @member {V1beta2ReplicaSet[]} items List of ReplicaSets. More
    * info:
    * https://kubernetes.io/docs/concepts/workloads/controllers/replicationcontroller
    */
-  items: Iok8sapiappsv1beta2ReplicaSet[];
+  items: V1beta2ReplicaSet[];
   /**
    * @member {string} [kind] Kind is a string value representing the REST
    * resource this object represents. Servers may infer this from the endpoint
@@ -14473,21 +14473,21 @@ export interface Iok8sapiappsv1beta2ReplicaSetList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] Standard list
+   * @member {V1ListMeta} [metadata] Standard list
    * metadata. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1beta2RollingUpdateStatefulSetStrategy.
+ * An interface representing V1beta2RollingUpdateStatefulSetStrategy.
  * RollingUpdateStatefulSetStrategy is used to communicate parameter for
  * RollingUpdateStatefulSetStrategyType.
  *
  */
-export interface Iok8sapiappsv1beta2RollingUpdateStatefulSetStrategy {
+export interface V1beta2RollingUpdateStatefulSetStrategy {
   /**
    * @member {number} [partition] Partition indicates the ordinal at which the
    * StatefulSet should be partitioned. Default value is 0.
@@ -14497,11 +14497,11 @@ export interface Iok8sapiappsv1beta2RollingUpdateStatefulSetStrategy {
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1beta2ScaleSpec.
+ * An interface representing V1beta2ScaleSpec.
  * ScaleSpec describes the attributes of a scale subresource
  *
  */
-export interface Iok8sapiappsv1beta2ScaleSpec {
+export interface V1beta2ScaleSpec {
   /**
    * @member {number} [replicas] desired number of instances for the scaled
    * object.
@@ -14511,11 +14511,11 @@ export interface Iok8sapiappsv1beta2ScaleSpec {
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1beta2ScaleStatus.
+ * An interface representing V1beta2ScaleStatus.
  * ScaleStatus represents the current status of a scale subresource.
  *
  */
-export interface Iok8sapiappsv1beta2ScaleStatus {
+export interface V1beta2ScaleStatus {
   /**
    * @member {number} replicas actual number of observed instances of the
    * scaled object.
@@ -14541,11 +14541,11 @@ export interface Iok8sapiappsv1beta2ScaleStatus {
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1beta2Scale.
+ * An interface representing V1beta2Scale.
  * Scale represents a scaling request for a resource.
  *
  */
-export interface Iok8sapiappsv1beta2Scale {
+export interface V1beta2Scale {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -14563,41 +14563,41 @@ export interface Iok8sapiappsv1beta2Scale {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object metadata; More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
-   * @member {Iok8sapiappsv1beta2ScaleSpec} [spec] defines the behavior of the
+   * @member {V1beta2ScaleSpec} [spec] defines the behavior of the
    * scale. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status.
    */
-  spec?: Iok8sapiappsv1beta2ScaleSpec;
+  spec?: V1beta2ScaleSpec;
   /**
-   * @member {Iok8sapiappsv1beta2ScaleStatus} [status] current status of the
+   * @member {V1beta2ScaleStatus} [status] current status of the
    * scale. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status.
    * Read-only.
    */
-  status?: Iok8sapiappsv1beta2ScaleStatus;
+  status?: V1beta2ScaleStatus;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1beta2StatefulSetUpdateStrategy.
+ * An interface representing V1beta2StatefulSetUpdateStrategy.
  * StatefulSetUpdateStrategy indicates the strategy that the StatefulSet
  * controller will use to perform updates. It includes any additional
  * parameters necessary to perform the update for the indicated strategy.
  *
  */
-export interface Iok8sapiappsv1beta2StatefulSetUpdateStrategy {
+export interface V1beta2StatefulSetUpdateStrategy {
   /**
-   * @member {Iok8sapiappsv1beta2RollingUpdateStatefulSetStrategy}
+   * @member {V1beta2RollingUpdateStatefulSetStrategy}
    * [rollingUpdate] RollingUpdate is used to communicate parameters when Type
    * is RollingUpdateStatefulSetStrategyType.
    */
-  rollingUpdate?: Iok8sapiappsv1beta2RollingUpdateStatefulSetStrategy;
+  rollingUpdate?: V1beta2RollingUpdateStatefulSetStrategy;
   /**
    * @member {string} [type] Type indicates the type of the
    * StatefulSetUpdateStrategy. Default is RollingUpdate.
@@ -14607,11 +14607,11 @@ export interface Iok8sapiappsv1beta2StatefulSetUpdateStrategy {
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1beta2StatefulSetSpec.
+ * An interface representing V1beta2StatefulSetSpec.
  * A StatefulSetSpec is the specification of a StatefulSet.
  *
  */
-export interface Iok8sapiappsv1beta2StatefulSetSpec {
+export interface V1beta2StatefulSetSpec {
   /**
    * @member {string} [podManagementPolicy] podManagementPolicy controls how
    * pods are created during initial scale up, when replacing pods on nodes, or
@@ -14639,12 +14639,12 @@ export interface Iok8sapiappsv1beta2StatefulSetSpec {
    */
   revisionHistoryLimit?: number;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1LabelSelector} selector selector is
+   * @member {V1LabelSelector} selector selector is
    * a label query over pods that should match the replica count. It must match
    * the pod template's labels. More info:
    * https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#label-selectors
    */
-  selector: Iok8sapimachinerypkgapismetav1LabelSelector;
+  selector: V1LabelSelector;
   /**
    * @member {string} serviceName serviceName is the name of the service that
    * governs this StatefulSet. This service must exist before the StatefulSet,
@@ -14662,12 +14662,12 @@ export interface Iok8sapiappsv1beta2StatefulSetSpec {
    */
   template: V1PodTemplateSpec;
   /**
-   * @member {Iok8sapiappsv1beta2StatefulSetUpdateStrategy} [updateStrategy]
+   * @member {V1beta2StatefulSetUpdateStrategy} [updateStrategy]
    * updateStrategy indicates the StatefulSetUpdateStrategy that will be
    * employed to update Pods in the StatefulSet when a revision is made to
    * Template.
    */
-  updateStrategy?: Iok8sapiappsv1beta2StatefulSetUpdateStrategy;
+  updateStrategy?: V1beta2StatefulSetUpdateStrategy;
   /**
    * @member {V1PersistentVolumeClaim[]} [volumeClaimTemplates]
    * volumeClaimTemplates is a list of claims that pods are allowed to
@@ -14682,12 +14682,12 @@ export interface Iok8sapiappsv1beta2StatefulSetSpec {
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1beta2StatefulSetCondition.
+ * An interface representing V1beta2StatefulSetCondition.
  * StatefulSetCondition describes the state of a statefulset at a certain
  * point.
  *
  */
-export interface Iok8sapiappsv1beta2StatefulSetCondition {
+export interface V1beta2StatefulSetCondition {
   /**
    * @member {Date} [lastTransitionTime] Last time the condition transitioned
    * from one status to another.
@@ -14715,11 +14715,11 @@ export interface Iok8sapiappsv1beta2StatefulSetCondition {
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1beta2StatefulSetStatus.
+ * An interface representing V1beta2StatefulSetStatus.
  * StatefulSetStatus represents the current state of a StatefulSet.
  *
  */
-export interface Iok8sapiappsv1beta2StatefulSetStatus {
+export interface V1beta2StatefulSetStatus {
   /**
    * @member {number} [collisionCount] collisionCount is the count of hash
    * collisions for the StatefulSet. The StatefulSet controller uses this field
@@ -14728,11 +14728,11 @@ export interface Iok8sapiappsv1beta2StatefulSetStatus {
    */
   collisionCount?: number;
   /**
-   * @member {Iok8sapiappsv1beta2StatefulSetCondition[]} [conditions]
+   * @member {V1beta2StatefulSetCondition[]} [conditions]
    * Represents the latest available observations of a statefulset's current
    * state.
    */
-  conditions?: Iok8sapiappsv1beta2StatefulSetCondition[];
+  conditions?: V1beta2StatefulSetCondition[];
   /**
    * @member {number} [currentReplicas] currentReplicas is the number of Pods
    * created by the StatefulSet controller from the StatefulSet version
@@ -14777,7 +14777,7 @@ export interface Iok8sapiappsv1beta2StatefulSetStatus {
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1beta2StatefulSet.
+ * An interface representing V1beta2StatefulSet.
  * DEPRECATED - This group version of StatefulSet is deprecated by
  * apps/v1/StatefulSet. See the release notes for more information. StatefulSet
  * represents a set of pods with consistent identities. Identities are defined
@@ -14788,7 +14788,7 @@ export interface Iok8sapiappsv1beta2StatefulSetStatus {
  * the same storage identity.
  *
  */
-export interface Iok8sapiappsv1beta2StatefulSet {
+export interface V1beta2StatefulSet {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -14806,29 +14806,29 @@ export interface Iok8sapiappsv1beta2StatefulSet {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata]
+   * @member {V1ObjectMeta} [metadata]
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
-   * @member {Iok8sapiappsv1beta2StatefulSetSpec} [spec] Spec defines the
+   * @member {V1beta2StatefulSetSpec} [spec] Spec defines the
    * desired identities of pods in this set.
    */
-  spec?: Iok8sapiappsv1beta2StatefulSetSpec;
+  spec?: V1beta2StatefulSetSpec;
   /**
-   * @member {Iok8sapiappsv1beta2StatefulSetStatus} [status] Status is the
+   * @member {V1beta2StatefulSetStatus} [status] Status is the
    * current status of Pods in this StatefulSet. This data may be out of date
    * by some window of time.
    */
-  status?: Iok8sapiappsv1beta2StatefulSetStatus;
+  status?: V1beta2StatefulSetStatus;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapiappsv1beta2StatefulSetList.
+ * An interface representing V1beta2StatefulSetList.
  * StatefulSetList is a collection of StatefulSets.
  *
  */
-export interface Iok8sapiappsv1beta2StatefulSetList {
+export interface V1beta2StatefulSetList {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -14838,9 +14838,9 @@ export interface Iok8sapiappsv1beta2StatefulSetList {
    */
   apiVersion?: string;
   /**
-   * @member {Iok8sapiappsv1beta2StatefulSet[]} items
+   * @member {V1beta2StatefulSet[]} items
    */
-  items: Iok8sapiappsv1beta2StatefulSet[];
+  items: V1beta2StatefulSet[];
   /**
    * @member {string} [kind] Kind is a string value representing the REST
    * resource this object represents. Servers may infer this from the endpoint
@@ -14850,18 +14850,18 @@ export interface Iok8sapiappsv1beta2StatefulSetList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata]
+   * @member {V1ListMeta} [metadata]
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapiauthenticationv1TokenReviewSpec.
+ * An interface representing V1TokenReviewSpec.
  * TokenReviewSpec is a description of the token authentication request.
  *
  */
-export interface Iok8sapiauthenticationv1TokenReviewSpec {
+export interface V1TokenReviewSpec {
   /**
    * @member {string} [token] Token is the opaque bearer token.
    */
@@ -14870,12 +14870,12 @@ export interface Iok8sapiauthenticationv1TokenReviewSpec {
 
 /**
  * @interface
- * An interface representing Iok8sapiauthenticationv1UserInfo.
+ * An interface representing V1UserInfo.
  * UserInfo holds the information about the user needed to implement the
  * user.Info interface.
  *
  */
-export interface Iok8sapiauthenticationv1UserInfo {
+export interface V1UserInfo {
   /**
    * @member {{ [propertyName: string]: string[] }} [extra] Any additional
    * information provided by the authenticator.
@@ -14900,11 +14900,11 @@ export interface Iok8sapiauthenticationv1UserInfo {
 
 /**
  * @interface
- * An interface representing Iok8sapiauthenticationv1TokenReviewStatus.
+ * An interface representing V1TokenReviewStatus.
  * TokenReviewStatus is the result of the token authentication request.
  *
  */
-export interface Iok8sapiauthenticationv1TokenReviewStatus {
+export interface V1TokenReviewStatus {
   /**
    * @member {boolean} [authenticated] Authenticated indicates that the token
    * was associated with a known user.
@@ -14916,21 +14916,21 @@ export interface Iok8sapiauthenticationv1TokenReviewStatus {
    */
   error?: string;
   /**
-   * @member {Iok8sapiauthenticationv1UserInfo} [user] User is the UserInfo
+   * @member {V1UserInfo} [user] User is the UserInfo
    * associated with the provided token.
    */
-  user?: Iok8sapiauthenticationv1UserInfo;
+  user?: V1UserInfo;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapiauthenticationv1TokenReview.
+ * An interface representing V1TokenReview.
  * TokenReview attempts to authenticate a token to a known user. Note:
  * TokenReview requests may be cached by the webhook token authenticator plugin
  * in the kube-apiserver.
  *
  */
-export interface Iok8sapiauthenticationv1TokenReview {
+export interface V1TokenReview {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -14948,29 +14948,29 @@ export interface Iok8sapiauthenticationv1TokenReview {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata]
+   * @member {V1ObjectMeta} [metadata]
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
-   * @member {Iok8sapiauthenticationv1TokenReviewSpec} spec Spec holds
+   * @member {V1TokenReviewSpec} spec Spec holds
    * information about the request being evaluated
    */
-  spec: Iok8sapiauthenticationv1TokenReviewSpec;
+  spec: V1TokenReviewSpec;
   /**
-   * @member {Iok8sapiauthenticationv1TokenReviewStatus} [status] Status is
+   * @member {V1TokenReviewStatus} [status] Status is
    * filled in by the server and indicates whether the request can be
    * authenticated.
    */
-  status?: Iok8sapiauthenticationv1TokenReviewStatus;
+  status?: V1TokenReviewStatus;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapiauthenticationv1beta1TokenReviewSpec.
+ * An interface representing V1beta1TokenReviewSpec.
  * TokenReviewSpec is a description of the token authentication request.
  *
  */
-export interface Iok8sapiauthenticationv1beta1TokenReviewSpec {
+export interface V1beta1TokenReviewSpec {
   /**
    * @member {string} [token] Token is the opaque bearer token.
    */
@@ -14979,12 +14979,12 @@ export interface Iok8sapiauthenticationv1beta1TokenReviewSpec {
 
 /**
  * @interface
- * An interface representing Iok8sapiauthenticationv1beta1UserInfo.
+ * An interface representing V1beta1UserInfo.
  * UserInfo holds the information about the user needed to implement the
  * user.Info interface.
  *
  */
-export interface Iok8sapiauthenticationv1beta1UserInfo {
+export interface V1beta1UserInfo {
   /**
    * @member {{ [propertyName: string]: string[] }} [extra] Any additional
    * information provided by the authenticator.
@@ -15009,11 +15009,11 @@ export interface Iok8sapiauthenticationv1beta1UserInfo {
 
 /**
  * @interface
- * An interface representing Iok8sapiauthenticationv1beta1TokenReviewStatus.
+ * An interface representing V1beta1TokenReviewStatus.
  * TokenReviewStatus is the result of the token authentication request.
  *
  */
-export interface Iok8sapiauthenticationv1beta1TokenReviewStatus {
+export interface V1beta1TokenReviewStatus {
   /**
    * @member {boolean} [authenticated] Authenticated indicates that the token
    * was associated with a known user.
@@ -15025,21 +15025,21 @@ export interface Iok8sapiauthenticationv1beta1TokenReviewStatus {
    */
   error?: string;
   /**
-   * @member {Iok8sapiauthenticationv1beta1UserInfo} [user] User is the
+   * @member {V1beta1UserInfo} [user] User is the
    * UserInfo associated with the provided token.
    */
-  user?: Iok8sapiauthenticationv1beta1UserInfo;
+  user?: V1beta1UserInfo;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapiauthenticationv1beta1TokenReview.
+ * An interface representing V1beta1TokenReview.
  * TokenReview attempts to authenticate a token to a known user. Note:
  * TokenReview requests may be cached by the webhook token authenticator plugin
  * in the kube-apiserver.
  *
  */
-export interface Iok8sapiauthenticationv1beta1TokenReview {
+export interface V1beta1TokenReview {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -15057,30 +15057,30 @@ export interface Iok8sapiauthenticationv1beta1TokenReview {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata]
+   * @member {V1ObjectMeta} [metadata]
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
-   * @member {Iok8sapiauthenticationv1beta1TokenReviewSpec} spec Spec holds
+   * @member {V1beta1TokenReviewSpec} spec Spec holds
    * information about the request being evaluated
    */
-  spec: Iok8sapiauthenticationv1beta1TokenReviewSpec;
+  spec: V1beta1TokenReviewSpec;
   /**
-   * @member {Iok8sapiauthenticationv1beta1TokenReviewStatus} [status] Status
+   * @member {V1beta1TokenReviewStatus} [status] Status
    * is filled in by the server and indicates whether the request can be
    * authenticated.
    */
-  status?: Iok8sapiauthenticationv1beta1TokenReviewStatus;
+  status?: V1beta1TokenReviewStatus;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapiauthorizationv1NonResourceAttributes.
+ * An interface representing V1NonResourceAttributes.
  * NonResourceAttributes includes the authorization attributes available for
  * non-resource requests to the Authorizer interface
  *
  */
-export interface Iok8sapiauthorizationv1NonResourceAttributes {
+export interface V1NonResourceAttributes {
   /**
    * @member {string} [path] Path is the URL path of the request
    */
@@ -15093,12 +15093,12 @@ export interface Iok8sapiauthorizationv1NonResourceAttributes {
 
 /**
  * @interface
- * An interface representing Iok8sapiauthorizationv1ResourceAttributes.
+ * An interface representing V1ResourceAttributes.
  * ResourceAttributes includes the authorization attributes available for
  * resource requests to the Authorizer interface
  *
  */
-export interface Iok8sapiauthorizationv1ResourceAttributes {
+export interface V1ResourceAttributes {
   /**
    * @member {string} [group] Group is the API Group of the Resource.  "*"
    * means all.
@@ -15142,13 +15142,13 @@ export interface Iok8sapiauthorizationv1ResourceAttributes {
 
 /**
  * @interface
- * An interface representing Iok8sapiauthorizationv1SubjectAccessReviewSpec.
+ * An interface representing V1SubjectAccessReviewSpec.
  * SubjectAccessReviewSpec is a description of the access request.  Exactly one
  * of ResourceAuthorizationAttributes and NonResourceAuthorizationAttributes
  * must be set
  *
  */
-export interface Iok8sapiauthorizationv1SubjectAccessReviewSpec {
+export interface V1SubjectAccessReviewSpec {
   /**
    * @member {{ [propertyName: string]: string[] }} [extra] Extra corresponds
    * to the user.Info.GetExtra() method from the authenticator.  Since that is
@@ -15160,17 +15160,17 @@ export interface Iok8sapiauthorizationv1SubjectAccessReviewSpec {
    */
   groups?: string[];
   /**
-   * @member {Iok8sapiauthorizationv1NonResourceAttributes}
+   * @member {V1NonResourceAttributes}
    * [nonResourceAttributes] NonResourceAttributes describes information for a
    * non-resource access request
    */
-  nonResourceAttributes?: Iok8sapiauthorizationv1NonResourceAttributes;
+  nonResourceAttributes?: V1NonResourceAttributes;
   /**
-   * @member {Iok8sapiauthorizationv1ResourceAttributes} [resourceAttributes]
+   * @member {V1ResourceAttributes} [resourceAttributes]
    * ResourceAuthorizationAttributes describes information for a resource
    * access request
    */
-  resourceAttributes?: Iok8sapiauthorizationv1ResourceAttributes;
+  resourceAttributes?: V1ResourceAttributes;
   /**
    * @member {string} [uid] UID information about the requesting user.
    */
@@ -15185,11 +15185,11 @@ export interface Iok8sapiauthorizationv1SubjectAccessReviewSpec {
 
 /**
  * @interface
- * An interface representing Iok8sapiauthorizationv1SubjectAccessReviewStatus.
+ * An interface representing V1SubjectAccessReviewStatus.
  * SubjectAccessReviewStatus
  *
  */
-export interface Iok8sapiauthorizationv1SubjectAccessReviewStatus {
+export interface V1SubjectAccessReviewStatus {
   /**
    * @member {boolean} allowed Allowed is required. True if the action would be
    * allowed, false otherwise.
@@ -15219,14 +15219,14 @@ export interface Iok8sapiauthorizationv1SubjectAccessReviewStatus {
 
 /**
  * @interface
- * An interface representing Iok8sapiauthorizationv1LocalSubjectAccessReview.
+ * An interface representing V1LocalSubjectAccessReview.
  * LocalSubjectAccessReview checks whether or not a user or group can perform
  * an action in a given namespace. Having a namespace scoped resource makes it
  * much easier to grant namespace scoped policy that includes permissions
  * checking.
  *
  */
-export interface Iok8sapiauthorizationv1LocalSubjectAccessReview {
+export interface V1LocalSubjectAccessReview {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -15244,31 +15244,31 @@ export interface Iok8sapiauthorizationv1LocalSubjectAccessReview {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata]
+   * @member {V1ObjectMeta} [metadata]
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
-   * @member {Iok8sapiauthorizationv1SubjectAccessReviewSpec} spec Spec holds
+   * @member {V1SubjectAccessReviewSpec} spec Spec holds
    * information about the request being evaluated.  spec.namespace must be
    * equal to the namespace you made the request against.  If empty, it is
    * defaulted.
    */
-  spec: Iok8sapiauthorizationv1SubjectAccessReviewSpec;
+  spec: V1SubjectAccessReviewSpec;
   /**
-   * @member {Iok8sapiauthorizationv1SubjectAccessReviewStatus} [status] Status
+   * @member {V1SubjectAccessReviewStatus} [status] Status
    * is filled in by the server and indicates whether the request is allowed or
    * not
    */
-  status?: Iok8sapiauthorizationv1SubjectAccessReviewStatus;
+  status?: V1SubjectAccessReviewStatus;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapiauthorizationv1NonResourceRule.
+ * An interface representing V1NonResourceRule.
  * NonResourceRule holds information that describes a rule for the non-resource
  *
  */
-export interface Iok8sapiauthorizationv1NonResourceRule {
+export interface V1NonResourceRule {
   /**
    * @member {string[]} [nonResourceURLs] NonResourceURLs is a set of partial
    * urls that a user should have access to.  *s are allowed, but only as the
@@ -15284,13 +15284,13 @@ export interface Iok8sapiauthorizationv1NonResourceRule {
 
 /**
  * @interface
- * An interface representing Iok8sapiauthorizationv1ResourceRule.
+ * An interface representing V1ResourceRule.
  * ResourceRule is the list of actions the subject is allowed to perform on
  * resources. The list ordering isn't significant, may contain duplicates, and
  * possibly be incomplete.
  *
  */
-export interface Iok8sapiauthorizationv1ResourceRule {
+export interface V1ResourceRule {
   /**
    * @member {string[]} [apiGroups] APIGroups is the name of the APIGroup that
    * contains the resources.  If multiple API groups are specified, any action
@@ -15320,37 +15320,37 @@ export interface Iok8sapiauthorizationv1ResourceRule {
 
 /**
  * @interface
- * An interface representing Iok8sapiauthorizationv1SelfSubjectAccessReviewSpec.
+ * An interface representing V1SelfSubjectAccessReviewSpec.
  * SelfSubjectAccessReviewSpec is a description of the access request.  Exactly
  * one of ResourceAuthorizationAttributes and
  * NonResourceAuthorizationAttributes must be set
  *
  */
-export interface Iok8sapiauthorizationv1SelfSubjectAccessReviewSpec {
+export interface V1SelfSubjectAccessReviewSpec {
   /**
-   * @member {Iok8sapiauthorizationv1NonResourceAttributes}
+   * @member {V1NonResourceAttributes}
    * [nonResourceAttributes] NonResourceAttributes describes information for a
    * non-resource access request
    */
-  nonResourceAttributes?: Iok8sapiauthorizationv1NonResourceAttributes;
+  nonResourceAttributes?: V1NonResourceAttributes;
   /**
-   * @member {Iok8sapiauthorizationv1ResourceAttributes} [resourceAttributes]
+   * @member {V1ResourceAttributes} [resourceAttributes]
    * ResourceAuthorizationAttributes describes information for a resource
    * access request
    */
-  resourceAttributes?: Iok8sapiauthorizationv1ResourceAttributes;
+  resourceAttributes?: V1ResourceAttributes;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapiauthorizationv1SelfSubjectAccessReview.
+ * An interface representing V1SelfSubjectAccessReview.
  * SelfSubjectAccessReview checks whether or the current user can perform an
  * action.  Not filling in a spec.namespace means "in all namespaces".  Self is
  * a special case, because users should always be able to check whether they
  * can perform an action
  *
  */
-export interface Iok8sapiauthorizationv1SelfSubjectAccessReview {
+export interface V1SelfSubjectAccessReview {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -15368,28 +15368,28 @@ export interface Iok8sapiauthorizationv1SelfSubjectAccessReview {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata]
+   * @member {V1ObjectMeta} [metadata]
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
-   * @member {Iok8sapiauthorizationv1SelfSubjectAccessReviewSpec} spec Spec
+   * @member {V1SelfSubjectAccessReviewSpec} spec Spec
    * holds information about the request being evaluated.  user and groups must
    * be empty
    */
-  spec: Iok8sapiauthorizationv1SelfSubjectAccessReviewSpec;
+  spec: V1SelfSubjectAccessReviewSpec;
   /**
-   * @member {Iok8sapiauthorizationv1SubjectAccessReviewStatus} [status] Status
+   * @member {V1SubjectAccessReviewStatus} [status] Status
    * is filled in by the server and indicates whether the request is allowed or
    * not
    */
-  status?: Iok8sapiauthorizationv1SubjectAccessReviewStatus;
+  status?: V1SubjectAccessReviewStatus;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapiauthorizationv1SelfSubjectRulesReviewSpec.
+ * An interface representing V1SelfSubjectRulesReviewSpec.
  */
-export interface Iok8sapiauthorizationv1SelfSubjectRulesReviewSpec {
+export interface V1SelfSubjectRulesReviewSpec {
   /**
    * @member {string} [namespace] Namespace to evaluate rules for. Required.
    */
@@ -15398,7 +15398,7 @@ export interface Iok8sapiauthorizationv1SelfSubjectRulesReviewSpec {
 
 /**
  * @interface
- * An interface representing Iok8sapiauthorizationv1SubjectRulesReviewStatus.
+ * An interface representing V1SubjectRulesReviewStatus.
  * SubjectRulesReviewStatus contains the result of a rules check. This check
  * can be incomplete depending on the set of authorizers the server is
  * configured with and any errors experienced during evaluation. Because
@@ -15406,7 +15406,7 @@ export interface Iok8sapiauthorizationv1SelfSubjectRulesReviewSpec {
  * assume the subject has that permission, even if that list is incomplete.
  *
  */
-export interface Iok8sapiauthorizationv1SubjectRulesReviewStatus {
+export interface V1SubjectRulesReviewStatus {
   /**
    * @member {string} [evaluationError] EvaluationError can appear in
    * combination with Rules. It indicates an error occurred during rule
@@ -15422,24 +15422,24 @@ export interface Iok8sapiauthorizationv1SubjectRulesReviewStatus {
    */
   incomplete: boolean;
   /**
-   * @member {Iok8sapiauthorizationv1NonResourceRule[]} nonResourceRules
+   * @member {V1NonResourceRule[]} nonResourceRules
    * NonResourceRules is the list of actions the subject is allowed to perform
    * on non-resources. The list ordering isn't significant, may contain
    * duplicates, and possibly be incomplete.
    */
-  nonResourceRules: Iok8sapiauthorizationv1NonResourceRule[];
+  nonResourceRules: V1NonResourceRule[];
   /**
-   * @member {Iok8sapiauthorizationv1ResourceRule[]} resourceRules
+   * @member {V1ResourceRule[]} resourceRules
    * ResourceRules is the list of actions the subject is allowed to perform on
    * resources. The list ordering isn't significant, may contain duplicates,
    * and possibly be incomplete.
    */
-  resourceRules: Iok8sapiauthorizationv1ResourceRule[];
+  resourceRules: V1ResourceRule[];
 }
 
 /**
  * @interface
- * An interface representing Iok8sapiauthorizationv1SelfSubjectRulesReview.
+ * An interface representing V1SelfSubjectRulesReview.
  * SelfSubjectRulesReview enumerates the set of actions the current user can
  * perform within a namespace. The returned list of actions may be incomplete
  * depending on the server's authorization mode, and any errors experienced
@@ -15452,7 +15452,7 @@ export interface Iok8sapiauthorizationv1SubjectRulesReviewStatus {
  * the API server.
  *
  */
-export interface Iok8sapiauthorizationv1SelfSubjectRulesReview {
+export interface V1SelfSubjectRulesReview {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -15470,30 +15470,30 @@ export interface Iok8sapiauthorizationv1SelfSubjectRulesReview {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata]
+   * @member {V1ObjectMeta} [metadata]
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
-   * @member {Iok8sapiauthorizationv1SelfSubjectRulesReviewSpec} spec Spec
+   * @member {V1SelfSubjectRulesReviewSpec} spec Spec
    * holds information about the request being evaluated.
    */
-  spec: Iok8sapiauthorizationv1SelfSubjectRulesReviewSpec;
+  spec: V1SelfSubjectRulesReviewSpec;
   /**
-   * @member {Iok8sapiauthorizationv1SubjectRulesReviewStatus} [status] Status
+   * @member {V1SubjectRulesReviewStatus} [status] Status
    * is filled in by the server and indicates the set of actions a user can
    * perform.
    */
-  status?: Iok8sapiauthorizationv1SubjectRulesReviewStatus;
+  status?: V1SubjectRulesReviewStatus;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapiauthorizationv1SubjectAccessReview.
+ * An interface representing V1SubjectAccessReview.
  * SubjectAccessReview checks whether or not a user or group can perform an
  * action.
  *
  */
-export interface Iok8sapiauthorizationv1SubjectAccessReview {
+export interface V1SubjectAccessReview {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -15511,30 +15511,30 @@ export interface Iok8sapiauthorizationv1SubjectAccessReview {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata]
+   * @member {V1ObjectMeta} [metadata]
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
-   * @member {Iok8sapiauthorizationv1SubjectAccessReviewSpec} spec Spec holds
+   * @member {V1SubjectAccessReviewSpec} spec Spec holds
    * information about the request being evaluated
    */
-  spec: Iok8sapiauthorizationv1SubjectAccessReviewSpec;
+  spec: V1SubjectAccessReviewSpec;
   /**
-   * @member {Iok8sapiauthorizationv1SubjectAccessReviewStatus} [status] Status
+   * @member {V1SubjectAccessReviewStatus} [status] Status
    * is filled in by the server and indicates whether the request is allowed or
    * not
    */
-  status?: Iok8sapiauthorizationv1SubjectAccessReviewStatus;
+  status?: V1SubjectAccessReviewStatus;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapiauthorizationv1beta1NonResourceAttributes.
+ * An interface representing V1beta1NonResourceAttributes.
  * NonResourceAttributes includes the authorization attributes available for
  * non-resource requests to the Authorizer interface
  *
  */
-export interface Iok8sapiauthorizationv1beta1NonResourceAttributes {
+export interface V1beta1NonResourceAttributes {
   /**
    * @member {string} [path] Path is the URL path of the request
    */
@@ -15547,12 +15547,12 @@ export interface Iok8sapiauthorizationv1beta1NonResourceAttributes {
 
 /**
  * @interface
- * An interface representing Iok8sapiauthorizationv1beta1ResourceAttributes.
+ * An interface representing V1beta1ResourceAttributes.
  * ResourceAttributes includes the authorization attributes available for
  * resource requests to the Authorizer interface
  *
  */
-export interface Iok8sapiauthorizationv1beta1ResourceAttributes {
+export interface V1beta1ResourceAttributes {
   /**
    * @member {string} [group] Group is the API Group of the Resource.  "*"
    * means all.
@@ -15596,13 +15596,13 @@ export interface Iok8sapiauthorizationv1beta1ResourceAttributes {
 
 /**
  * @interface
- * An interface representing Iok8sapiauthorizationv1beta1SubjectAccessReviewSpec.
+ * An interface representing V1beta1SubjectAccessReviewSpec.
  * SubjectAccessReviewSpec is a description of the access request.  Exactly one
  * of ResourceAuthorizationAttributes and NonResourceAuthorizationAttributes
  * must be set
  *
  */
-export interface Iok8sapiauthorizationv1beta1SubjectAccessReviewSpec {
+export interface V1beta1SubjectAccessReviewSpec {
   /**
    * @member {{ [propertyName: string]: string[] }} [extra] Extra corresponds
    * to the user.Info.GetExtra() method from the authenticator.  Since that is
@@ -15614,17 +15614,17 @@ export interface Iok8sapiauthorizationv1beta1SubjectAccessReviewSpec {
    */
   group?: string[];
   /**
-   * @member {Iok8sapiauthorizationv1beta1NonResourceAttributes}
+   * @member {V1beta1NonResourceAttributes}
    * [nonResourceAttributes] NonResourceAttributes describes information for a
    * non-resource access request
    */
-  nonResourceAttributes?: Iok8sapiauthorizationv1beta1NonResourceAttributes;
+  nonResourceAttributes?: V1beta1NonResourceAttributes;
   /**
-   * @member {Iok8sapiauthorizationv1beta1ResourceAttributes}
+   * @member {V1beta1ResourceAttributes}
    * [resourceAttributes] ResourceAuthorizationAttributes describes information
    * for a resource access request
    */
-  resourceAttributes?: Iok8sapiauthorizationv1beta1ResourceAttributes;
+  resourceAttributes?: V1beta1ResourceAttributes;
   /**
    * @member {string} [uid] UID information about the requesting user.
    */
@@ -15639,11 +15639,11 @@ export interface Iok8sapiauthorizationv1beta1SubjectAccessReviewSpec {
 
 /**
  * @interface
- * An interface representing Iok8sapiauthorizationv1beta1SubjectAccessReviewStatus.
+ * An interface representing V1beta1SubjectAccessReviewStatus.
  * SubjectAccessReviewStatus
  *
  */
-export interface Iok8sapiauthorizationv1beta1SubjectAccessReviewStatus {
+export interface V1beta1SubjectAccessReviewStatus {
   /**
    * @member {boolean} allowed Allowed is required. True if the action would be
    * allowed, false otherwise.
@@ -15673,14 +15673,14 @@ export interface Iok8sapiauthorizationv1beta1SubjectAccessReviewStatus {
 
 /**
  * @interface
- * An interface representing Iok8sapiauthorizationv1beta1LocalSubjectAccessReview.
+ * An interface representing V1beta1LocalSubjectAccessReview.
  * LocalSubjectAccessReview checks whether or not a user or group can perform
  * an action in a given namespace. Having a namespace scoped resource makes it
  * much easier to grant namespace scoped policy that includes permissions
  * checking.
  *
  */
-export interface Iok8sapiauthorizationv1beta1LocalSubjectAccessReview {
+export interface V1beta1LocalSubjectAccessReview {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -15698,31 +15698,31 @@ export interface Iok8sapiauthorizationv1beta1LocalSubjectAccessReview {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata]
+   * @member {V1ObjectMeta} [metadata]
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
-   * @member {Iok8sapiauthorizationv1beta1SubjectAccessReviewSpec} spec Spec
+   * @member {V1beta1SubjectAccessReviewSpec} spec Spec
    * holds information about the request being evaluated.  spec.namespace must
    * be equal to the namespace you made the request against.  If empty, it is
    * defaulted.
    */
-  spec: Iok8sapiauthorizationv1beta1SubjectAccessReviewSpec;
+  spec: V1beta1SubjectAccessReviewSpec;
   /**
-   * @member {Iok8sapiauthorizationv1beta1SubjectAccessReviewStatus} [status]
+   * @member {V1beta1SubjectAccessReviewStatus} [status]
    * Status is filled in by the server and indicates whether the request is
    * allowed or not
    */
-  status?: Iok8sapiauthorizationv1beta1SubjectAccessReviewStatus;
+  status?: V1beta1SubjectAccessReviewStatus;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapiauthorizationv1beta1NonResourceRule.
+ * An interface representing V1beta1NonResourceRule.
  * NonResourceRule holds information that describes a rule for the non-resource
  *
  */
-export interface Iok8sapiauthorizationv1beta1NonResourceRule {
+export interface V1beta1NonResourceRule {
   /**
    * @member {string[]} [nonResourceURLs] NonResourceURLs is a set of partial
    * urls that a user should have access to.  *s are allowed, but only as the
@@ -15738,13 +15738,13 @@ export interface Iok8sapiauthorizationv1beta1NonResourceRule {
 
 /**
  * @interface
- * An interface representing Iok8sapiauthorizationv1beta1ResourceRule.
+ * An interface representing V1beta1ResourceRule.
  * ResourceRule is the list of actions the subject is allowed to perform on
  * resources. The list ordering isn't significant, may contain duplicates, and
  * possibly be incomplete.
  *
  */
-export interface Iok8sapiauthorizationv1beta1ResourceRule {
+export interface V1beta1ResourceRule {
   /**
    * @member {string[]} [apiGroups] APIGroups is the name of the APIGroup that
    * contains the resources.  If multiple API groups are specified, any action
@@ -15774,37 +15774,37 @@ export interface Iok8sapiauthorizationv1beta1ResourceRule {
 
 /**
  * @interface
- * An interface representing Iok8sapiauthorizationv1beta1SelfSubjectAccessReviewSpec.
+ * An interface representing V1beta1SelfSubjectAccessReviewSpec.
  * SelfSubjectAccessReviewSpec is a description of the access request.  Exactly
  * one of ResourceAuthorizationAttributes and
  * NonResourceAuthorizationAttributes must be set
  *
  */
-export interface Iok8sapiauthorizationv1beta1SelfSubjectAccessReviewSpec {
+export interface V1beta1SelfSubjectAccessReviewSpec {
   /**
-   * @member {Iok8sapiauthorizationv1beta1NonResourceAttributes}
+   * @member {V1beta1NonResourceAttributes}
    * [nonResourceAttributes] NonResourceAttributes describes information for a
    * non-resource access request
    */
-  nonResourceAttributes?: Iok8sapiauthorizationv1beta1NonResourceAttributes;
+  nonResourceAttributes?: V1beta1NonResourceAttributes;
   /**
-   * @member {Iok8sapiauthorizationv1beta1ResourceAttributes}
+   * @member {V1beta1ResourceAttributes}
    * [resourceAttributes] ResourceAuthorizationAttributes describes information
    * for a resource access request
    */
-  resourceAttributes?: Iok8sapiauthorizationv1beta1ResourceAttributes;
+  resourceAttributes?: V1beta1ResourceAttributes;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapiauthorizationv1beta1SelfSubjectAccessReview.
+ * An interface representing V1beta1SelfSubjectAccessReview.
  * SelfSubjectAccessReview checks whether or the current user can perform an
  * action.  Not filling in a spec.namespace means "in all namespaces".  Self is
  * a special case, because users should always be able to check whether they
  * can perform an action
  *
  */
-export interface Iok8sapiauthorizationv1beta1SelfSubjectAccessReview {
+export interface V1beta1SelfSubjectAccessReview {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -15822,28 +15822,28 @@ export interface Iok8sapiauthorizationv1beta1SelfSubjectAccessReview {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata]
+   * @member {V1ObjectMeta} [metadata]
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
-   * @member {Iok8sapiauthorizationv1beta1SelfSubjectAccessReviewSpec} spec
+   * @member {V1beta1SelfSubjectAccessReviewSpec} spec
    * Spec holds information about the request being evaluated.  user and groups
    * must be empty
    */
-  spec: Iok8sapiauthorizationv1beta1SelfSubjectAccessReviewSpec;
+  spec: V1beta1SelfSubjectAccessReviewSpec;
   /**
-   * @member {Iok8sapiauthorizationv1beta1SubjectAccessReviewStatus} [status]
+   * @member {V1beta1SubjectAccessReviewStatus} [status]
    * Status is filled in by the server and indicates whether the request is
    * allowed or not
    */
-  status?: Iok8sapiauthorizationv1beta1SubjectAccessReviewStatus;
+  status?: V1beta1SubjectAccessReviewStatus;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapiauthorizationv1beta1SelfSubjectRulesReviewSpec.
+ * An interface representing V1beta1SelfSubjectRulesReviewSpec.
  */
-export interface Iok8sapiauthorizationv1beta1SelfSubjectRulesReviewSpec {
+export interface V1beta1SelfSubjectRulesReviewSpec {
   /**
    * @member {string} [namespace] Namespace to evaluate rules for. Required.
    */
@@ -15852,7 +15852,7 @@ export interface Iok8sapiauthorizationv1beta1SelfSubjectRulesReviewSpec {
 
 /**
  * @interface
- * An interface representing Iok8sapiauthorizationv1beta1SubjectRulesReviewStatus.
+ * An interface representing V1beta1SubjectRulesReviewStatus.
  * SubjectRulesReviewStatus contains the result of a rules check. This check
  * can be incomplete depending on the set of authorizers the server is
  * configured with and any errors experienced during evaluation. Because
@@ -15860,7 +15860,7 @@ export interface Iok8sapiauthorizationv1beta1SelfSubjectRulesReviewSpec {
  * assume the subject has that permission, even if that list is incomplete.
  *
  */
-export interface Iok8sapiauthorizationv1beta1SubjectRulesReviewStatus {
+export interface V1beta1SubjectRulesReviewStatus {
   /**
    * @member {string} [evaluationError] EvaluationError can appear in
    * combination with Rules. It indicates an error occurred during rule
@@ -15876,24 +15876,24 @@ export interface Iok8sapiauthorizationv1beta1SubjectRulesReviewStatus {
    */
   incomplete: boolean;
   /**
-   * @member {Iok8sapiauthorizationv1beta1NonResourceRule[]} nonResourceRules
+   * @member {V1beta1NonResourceRule[]} nonResourceRules
    * NonResourceRules is the list of actions the subject is allowed to perform
    * on non-resources. The list ordering isn't significant, may contain
    * duplicates, and possibly be incomplete.
    */
-  nonResourceRules: Iok8sapiauthorizationv1beta1NonResourceRule[];
+  nonResourceRules: V1beta1NonResourceRule[];
   /**
-   * @member {Iok8sapiauthorizationv1beta1ResourceRule[]} resourceRules
+   * @member {V1beta1ResourceRule[]} resourceRules
    * ResourceRules is the list of actions the subject is allowed to perform on
    * resources. The list ordering isn't significant, may contain duplicates,
    * and possibly be incomplete.
    */
-  resourceRules: Iok8sapiauthorizationv1beta1ResourceRule[];
+  resourceRules: V1beta1ResourceRule[];
 }
 
 /**
  * @interface
- * An interface representing Iok8sapiauthorizationv1beta1SelfSubjectRulesReview.
+ * An interface representing V1beta1SelfSubjectRulesReview.
  * SelfSubjectRulesReview enumerates the set of actions the current user can
  * perform within a namespace. The returned list of actions may be incomplete
  * depending on the server's authorization mode, and any errors experienced
@@ -15906,7 +15906,7 @@ export interface Iok8sapiauthorizationv1beta1SubjectRulesReviewStatus {
  * the API server.
  *
  */
-export interface Iok8sapiauthorizationv1beta1SelfSubjectRulesReview {
+export interface V1beta1SelfSubjectRulesReview {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -15924,30 +15924,30 @@ export interface Iok8sapiauthorizationv1beta1SelfSubjectRulesReview {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata]
+   * @member {V1ObjectMeta} [metadata]
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
-   * @member {Iok8sapiauthorizationv1beta1SelfSubjectRulesReviewSpec} spec Spec
+   * @member {V1beta1SelfSubjectRulesReviewSpec} spec Spec
    * holds information about the request being evaluated.
    */
-  spec: Iok8sapiauthorizationv1beta1SelfSubjectRulesReviewSpec;
+  spec: V1beta1SelfSubjectRulesReviewSpec;
   /**
-   * @member {Iok8sapiauthorizationv1beta1SubjectRulesReviewStatus} [status]
+   * @member {V1beta1SubjectRulesReviewStatus} [status]
    * Status is filled in by the server and indicates the set of actions a user
    * can perform.
    */
-  status?: Iok8sapiauthorizationv1beta1SubjectRulesReviewStatus;
+  status?: V1beta1SubjectRulesReviewStatus;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapiauthorizationv1beta1SubjectAccessReview.
+ * An interface representing V1beta1SubjectAccessReview.
  * SubjectAccessReview checks whether or not a user or group can perform an
  * action.
  *
  */
-export interface Iok8sapiauthorizationv1beta1SubjectAccessReview {
+export interface V1beta1SubjectAccessReview {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -15965,30 +15965,30 @@ export interface Iok8sapiauthorizationv1beta1SubjectAccessReview {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata]
+   * @member {V1ObjectMeta} [metadata]
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
-   * @member {Iok8sapiauthorizationv1beta1SubjectAccessReviewSpec} spec Spec
+   * @member {V1beta1SubjectAccessReviewSpec} spec Spec
    * holds information about the request being evaluated
    */
-  spec: Iok8sapiauthorizationv1beta1SubjectAccessReviewSpec;
+  spec: V1beta1SubjectAccessReviewSpec;
   /**
-   * @member {Iok8sapiauthorizationv1beta1SubjectAccessReviewStatus} [status]
+   * @member {V1beta1SubjectAccessReviewStatus} [status]
    * Status is filled in by the server and indicates whether the request is
    * allowed or not
    */
-  status?: Iok8sapiauthorizationv1beta1SubjectAccessReviewStatus;
+  status?: V1beta1SubjectAccessReviewStatus;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapiautoscalingv1CrossVersionObjectReference.
+ * An interface representing V1CrossVersionObjectReference.
  * CrossVersionObjectReference contains enough information to let you identify
  * the referred resource.
  *
  */
-export interface Iok8sapiautoscalingv1CrossVersionObjectReference {
+export interface V1CrossVersionObjectReference {
   /**
    * @member {string} [apiVersion] API version of the referent
    */
@@ -16007,11 +16007,11 @@ export interface Iok8sapiautoscalingv1CrossVersionObjectReference {
 
 /**
  * @interface
- * An interface representing Iok8sapiautoscalingv1HorizontalPodAutoscalerSpec.
+ * An interface representing V1HorizontalPodAutoscalerSpec.
  * specification of a horizontal pod autoscaler.
  *
  */
-export interface Iok8sapiautoscalingv1HorizontalPodAutoscalerSpec {
+export interface V1HorizontalPodAutoscalerSpec {
   /**
    * @member {number} maxReplicas upper limit for the number of pods that can
    * be set by the autoscaler; cannot be smaller than MinReplicas.
@@ -16023,12 +16023,12 @@ export interface Iok8sapiautoscalingv1HorizontalPodAutoscalerSpec {
    */
   minReplicas?: number;
   /**
-   * @member {Iok8sapiautoscalingv1CrossVersionObjectReference} scaleTargetRef
+   * @member {V1CrossVersionObjectReference} scaleTargetRef
    * reference to scaled resource; horizontal pod autoscaler will learn the
    * current resource consumption and will set the desired number of pods by
    * using its Scale subresource.
    */
-  scaleTargetRef: Iok8sapiautoscalingv1CrossVersionObjectReference;
+  scaleTargetRef: V1CrossVersionObjectReference;
   /**
    * @member {number} [targetCPUUtilizationPercentage] target average CPU
    * utilization (represented as a percentage of requested CPU) over all the
@@ -16039,11 +16039,11 @@ export interface Iok8sapiautoscalingv1HorizontalPodAutoscalerSpec {
 
 /**
  * @interface
- * An interface representing Iok8sapiautoscalingv1HorizontalPodAutoscalerStatus.
+ * An interface representing V1HorizontalPodAutoscalerStatus.
  * current status of a horizontal pod autoscaler
  *
  */
-export interface Iok8sapiautoscalingv1HorizontalPodAutoscalerStatus {
+export interface V1HorizontalPodAutoscalerStatus {
   /**
    * @member {number} [currentCPUUtilizationPercentage] current average CPU
    * utilization over all pods, represented as a percentage of requested CPU,
@@ -16075,11 +16075,11 @@ export interface Iok8sapiautoscalingv1HorizontalPodAutoscalerStatus {
 
 /**
  * @interface
- * An interface representing Iok8sapiautoscalingv1HorizontalPodAutoscaler.
+ * An interface representing V1HorizontalPodAutoscaler.
  * configuration of a horizontal pod autoscaler.
  *
  */
-export interface Iok8sapiautoscalingv1HorizontalPodAutoscaler {
+export interface V1HorizontalPodAutoscaler {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -16097,31 +16097,31 @@ export interface Iok8sapiautoscalingv1HorizontalPodAutoscaler {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object metadata. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
-   * @member {Iok8sapiautoscalingv1HorizontalPodAutoscalerSpec} [spec]
+   * @member {V1HorizontalPodAutoscalerSpec} [spec]
    * behaviour of autoscaler. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status.
    */
-  spec?: Iok8sapiautoscalingv1HorizontalPodAutoscalerSpec;
+  spec?: V1HorizontalPodAutoscalerSpec;
   /**
-   * @member {Iok8sapiautoscalingv1HorizontalPodAutoscalerStatus} [status]
+   * @member {V1HorizontalPodAutoscalerStatus} [status]
    * current information about the autoscaler.
    */
-  status?: Iok8sapiautoscalingv1HorizontalPodAutoscalerStatus;
+  status?: V1HorizontalPodAutoscalerStatus;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapiautoscalingv1HorizontalPodAutoscalerList.
+ * An interface representing V1HorizontalPodAutoscalerList.
  * list of horizontal pod autoscaler objects.
  *
  */
-export interface Iok8sapiautoscalingv1HorizontalPodAutoscalerList {
+export interface V1HorizontalPodAutoscalerList {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -16131,10 +16131,10 @@ export interface Iok8sapiautoscalingv1HorizontalPodAutoscalerList {
    */
   apiVersion?: string;
   /**
-   * @member {Iok8sapiautoscalingv1HorizontalPodAutoscaler[]} items list of
+   * @member {V1HorizontalPodAutoscaler[]} items list of
    * horizontal pod autoscaler objects.
    */
-  items: Iok8sapiautoscalingv1HorizontalPodAutoscaler[];
+  items: V1HorizontalPodAutoscaler[];
   /**
    * @member {string} [kind] Kind is a string value representing the REST
    * resource this object represents. Servers may infer this from the endpoint
@@ -16144,19 +16144,19 @@ export interface Iok8sapiautoscalingv1HorizontalPodAutoscalerList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] Standard list
+   * @member {V1ListMeta} [metadata] Standard list
    * metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapiautoscalingv1ScaleSpec.
+ * An interface representing V1ScaleSpec.
  * ScaleSpec describes the attributes of a scale subresource.
  *
  */
-export interface Iok8sapiautoscalingv1ScaleSpec {
+export interface V1ScaleSpec {
   /**
    * @member {number} [replicas] desired number of instances for the scaled
    * object.
@@ -16166,11 +16166,11 @@ export interface Iok8sapiautoscalingv1ScaleSpec {
 
 /**
  * @interface
- * An interface representing Iok8sapiautoscalingv1ScaleStatus.
+ * An interface representing V1ScaleStatus.
  * ScaleStatus represents the current status of a scale subresource.
  *
  */
-export interface Iok8sapiautoscalingv1ScaleStatus {
+export interface V1ScaleStatus {
   /**
    * @member {number} replicas actual number of observed instances of the
    * scaled object.
@@ -16188,11 +16188,11 @@ export interface Iok8sapiautoscalingv1ScaleStatus {
 
 /**
  * @interface
- * An interface representing Iok8sapiautoscalingv1Scale.
+ * An interface representing V1Scale.
  * Scale represents a scaling request for a resource.
  *
  */
-export interface Iok8sapiautoscalingv1Scale {
+export interface V1Scale {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -16210,34 +16210,34 @@ export interface Iok8sapiautoscalingv1Scale {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object metadata; More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
-   * @member {Iok8sapiautoscalingv1ScaleSpec} [spec] defines the behavior of
+   * @member {V1ScaleSpec} [spec] defines the behavior of
    * the scale. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status.
    */
-  spec?: Iok8sapiautoscalingv1ScaleSpec;
+  spec?: V1ScaleSpec;
   /**
-   * @member {Iok8sapiautoscalingv1ScaleStatus} [status] current status of the
+   * @member {V1ScaleStatus} [status] current status of the
    * scale. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status.
    * Read-only.
    */
-  status?: Iok8sapiautoscalingv1ScaleStatus;
+  status?: V1ScaleStatus;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapiautoscalingv2beta1CrossVersionObjectReference.
+ * An interface representing V2beta1CrossVersionObjectReference.
  * CrossVersionObjectReference contains enough information to let you identify
  * the referred resource.
  *
  */
-export interface Iok8sapiautoscalingv2beta1CrossVersionObjectReference {
+export interface V2beta1CrossVersionObjectReference {
   /**
    * @member {string} [apiVersion] API version of the referent
    */
@@ -16256,25 +16256,25 @@ export interface Iok8sapiautoscalingv2beta1CrossVersionObjectReference {
 
 /**
  * @interface
- * An interface representing Iok8sapiautoscalingv2beta1ExternalMetricSource.
+ * An interface representing V2beta1ExternalMetricSource.
  * ExternalMetricSource indicates how to scale on a metric not associated with
  * any Kubernetes object (for example length of queue in cloud messaging
  * service, or QPS from loadbalancer running outside of cluster). Exactly one
  * "target" type should be set.
  *
  */
-export interface Iok8sapiautoscalingv2beta1ExternalMetricSource {
+export interface V2beta1ExternalMetricSource {
   /**
    * @member {string} metricName metricName is the name of the metric in
    * question.
    */
   metricName: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1LabelSelector} [metricSelector]
+   * @member {V1LabelSelector} [metricSelector]
    * metricSelector is used to identify a specific time series within a given
    * metric.
    */
-  metricSelector?: Iok8sapimachinerypkgapismetav1LabelSelector;
+  metricSelector?: V1LabelSelector;
   /**
    * @member {string} [targetAverageValue] targetAverageValue is the target
    * per-pod value of global metric (as a quantity). Mutually exclusive with
@@ -16290,12 +16290,12 @@ export interface Iok8sapiautoscalingv2beta1ExternalMetricSource {
 
 /**
  * @interface
- * An interface representing Iok8sapiautoscalingv2beta1ExternalMetricStatus.
+ * An interface representing V2beta1ExternalMetricStatus.
  * ExternalMetricStatus indicates the current value of a global metric not
  * associated with any Kubernetes object.
  *
  */
-export interface Iok8sapiautoscalingv2beta1ExternalMetricStatus {
+export interface V2beta1ExternalMetricStatus {
   /**
    * @member {string} [currentAverageValue] currentAverageValue is the current
    * value of metric averaged over autoscaled pods.
@@ -16312,31 +16312,31 @@ export interface Iok8sapiautoscalingv2beta1ExternalMetricStatus {
    */
   metricName: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1LabelSelector} [metricSelector]
+   * @member {V1LabelSelector} [metricSelector]
    * metricSelector is used to identify a specific time series within a given
    * metric.
    */
-  metricSelector?: Iok8sapimachinerypkgapismetav1LabelSelector;
+  metricSelector?: V1LabelSelector;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapiautoscalingv2beta1ObjectMetricSource.
+ * An interface representing V2beta1ObjectMetricSource.
  * ObjectMetricSource indicates how to scale on a metric describing a
  * kubernetes object (for example, hits-per-second on an Ingress object).
  *
  */
-export interface Iok8sapiautoscalingv2beta1ObjectMetricSource {
+export interface V2beta1ObjectMetricSource {
   /**
    * @member {string} metricName metricName is the name of the metric in
    * question.
    */
   metricName: string;
   /**
-   * @member {Iok8sapiautoscalingv2beta1CrossVersionObjectReference} target
+   * @member {V2beta1CrossVersionObjectReference} target
    * target is the described Kubernetes object.
    */
-  target: Iok8sapiautoscalingv2beta1CrossVersionObjectReference;
+  target: V2beta1CrossVersionObjectReference;
   /**
    * @member {string} targetValue targetValue is the target value of the metric
    * (as a quantity).
@@ -16346,14 +16346,14 @@ export interface Iok8sapiautoscalingv2beta1ObjectMetricSource {
 
 /**
  * @interface
- * An interface representing Iok8sapiautoscalingv2beta1PodsMetricSource.
+ * An interface representing V2beta1PodsMetricSource.
  * PodsMetricSource indicates how to scale on a metric describing each pod in
  * the current scale target (for example, transactions-processed-per-second).
  * The values will be averaged together before being compared to the target
  * value.
  *
  */
-export interface Iok8sapiautoscalingv2beta1PodsMetricSource {
+export interface V2beta1PodsMetricSource {
   /**
    * @member {string} metricName metricName is the name of the metric in
    * question
@@ -16368,7 +16368,7 @@ export interface Iok8sapiautoscalingv2beta1PodsMetricSource {
 
 /**
  * @interface
- * An interface representing Iok8sapiautoscalingv2beta1ResourceMetricSource.
+ * An interface representing V2beta1ResourceMetricSource.
  * ResourceMetricSource indicates how to scale on a resource metric known to
  * Kubernetes, as specified in requests and limits, describing each pod in the
  * current scale target (e.g. CPU or memory).  The values will be averaged
@@ -16378,7 +16378,7 @@ export interface Iok8sapiautoscalingv2beta1PodsMetricSource {
  * should be set.
  *
  */
-export interface Iok8sapiautoscalingv2beta1ResourceMetricSource {
+export interface V2beta1ResourceMetricSource {
   /**
    * @member {string} name name is the name of the resource in question.
    */
@@ -16401,43 +16401,43 @@ export interface Iok8sapiautoscalingv2beta1ResourceMetricSource {
 
 /**
  * @interface
- * An interface representing Iok8sapiautoscalingv2beta1MetricSpec.
+ * An interface representing V2beta1MetricSpec.
  * MetricSpec specifies how to scale based on a single metric (only `type` and
  * one other matching field should be set at once).
  *
  */
-export interface Iok8sapiautoscalingv2beta1MetricSpec {
+export interface V2beta1MetricSpec {
   /**
-   * @member {Iok8sapiautoscalingv2beta1ExternalMetricSource} [external]
+   * @member {V2beta1ExternalMetricSource} [external]
    * external refers to a global metric that is not associated with any
    * Kubernetes object. It allows autoscaling based on information coming from
    * components running outside of cluster (for example length of queue in
    * cloud messaging service, or QPS from loadbalancer running outside of
    * cluster).
    */
-  external?: Iok8sapiautoscalingv2beta1ExternalMetricSource;
+  external?: V2beta1ExternalMetricSource;
   /**
-   * @member {Iok8sapiautoscalingv2beta1ObjectMetricSource} [object] object
+   * @member {V2beta1ObjectMetricSource} [object] object
    * refers to a metric describing a single kubernetes object (for example,
    * hits-per-second on an Ingress object).
    */
-  object?: Iok8sapiautoscalingv2beta1ObjectMetricSource;
+  object?: V2beta1ObjectMetricSource;
   /**
-   * @member {Iok8sapiautoscalingv2beta1PodsMetricSource} [pods] pods refers to
+   * @member {V2beta1PodsMetricSource} [pods] pods refers to
    * a metric describing each pod in the current scale target (for example,
    * transactions-processed-per-second).  The values will be averaged together
    * before being compared to the target value.
    */
-  pods?: Iok8sapiautoscalingv2beta1PodsMetricSource;
+  pods?: V2beta1PodsMetricSource;
   /**
-   * @member {Iok8sapiautoscalingv2beta1ResourceMetricSource} [resource]
+   * @member {V2beta1ResourceMetricSource} [resource]
    * resource refers to a resource metric (such as those specified in requests
    * and limits) known to Kubernetes describing each pod in the current scale
    * target (e.g. CPU or memory). Such metrics are built in to Kubernetes, and
    * have special scaling options on top of those available to normal per-pod
    * metrics using the "pods" source.
    */
-  resource?: Iok8sapiautoscalingv2beta1ResourceMetricSource;
+  resource?: V2beta1ResourceMetricSource;
   /**
    * @member {string} type type is the type of metric source.  It should be one
    * of "Object", "Pods" or "Resource", each mapping to a matching field in the
@@ -16448,12 +16448,12 @@ export interface Iok8sapiautoscalingv2beta1MetricSpec {
 
 /**
  * @interface
- * An interface representing Iok8sapiautoscalingv2beta1HorizontalPodAutoscalerSpec.
+ * An interface representing V2beta1HorizontalPodAutoscalerSpec.
  * HorizontalPodAutoscalerSpec describes the desired functionality of the
  * HorizontalPodAutoscaler.
  *
  */
-export interface Iok8sapiautoscalingv2beta1HorizontalPodAutoscalerSpec {
+export interface V2beta1HorizontalPodAutoscalerSpec {
   /**
    * @member {number} maxReplicas maxReplicas is the upper limit for the number
    * of replicas to which the autoscaler can scale up. It cannot be less that
@@ -16461,7 +16461,7 @@ export interface Iok8sapiautoscalingv2beta1HorizontalPodAutoscalerSpec {
    */
   maxReplicas: number;
   /**
-   * @member {Iok8sapiautoscalingv2beta1MetricSpec[]} [metrics] metrics
+   * @member {V2beta1MetricSpec[]} [metrics] metrics
    * contains the specifications for which to use to calculate the desired
    * replica count (the maximum replica count across all metrics will be used).
    * The desired replica count is calculated multiplying the ratio between the
@@ -16470,7 +16470,7 @@ export interface Iok8sapiautoscalingv2beta1HorizontalPodAutoscalerSpec {
    * See the individual metric source types for more information about how each
    * type of metric must respond.
    */
-  metrics?: Iok8sapiautoscalingv2beta1MetricSpec[];
+  metrics?: V2beta1MetricSpec[];
   /**
    * @member {number} [minReplicas] minReplicas is the lower limit for the
    * number of replicas to which the autoscaler can scale down. It defaults to
@@ -16478,22 +16478,22 @@ export interface Iok8sapiautoscalingv2beta1HorizontalPodAutoscalerSpec {
    */
   minReplicas?: number;
   /**
-   * @member {Iok8sapiautoscalingv2beta1CrossVersionObjectReference}
+   * @member {V2beta1CrossVersionObjectReference}
    * scaleTargetRef scaleTargetRef points to the target resource to scale, and
    * is used to the pods for which metrics should be collected, as well as to
    * actually change the replica count.
    */
-  scaleTargetRef: Iok8sapiautoscalingv2beta1CrossVersionObjectReference;
+  scaleTargetRef: V2beta1CrossVersionObjectReference;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapiautoscalingv2beta1HorizontalPodAutoscalerCondition.
+ * An interface representing V2beta1HorizontalPodAutoscalerCondition.
  * HorizontalPodAutoscalerCondition describes the state of a
  * HorizontalPodAutoscaler at a certain point.
  *
  */
-export interface Iok8sapiautoscalingv2beta1HorizontalPodAutoscalerCondition {
+export interface V2beta1HorizontalPodAutoscalerCondition {
   /**
    * @member {Date} [lastTransitionTime] lastTransitionTime is the last time
    * the condition transitioned from one status to another
@@ -16522,12 +16522,12 @@ export interface Iok8sapiautoscalingv2beta1HorizontalPodAutoscalerCondition {
 
 /**
  * @interface
- * An interface representing Iok8sapiautoscalingv2beta1ObjectMetricStatus.
+ * An interface representing V2beta1ObjectMetricStatus.
  * ObjectMetricStatus indicates the current value of a metric describing a
  * kubernetes object (for example, hits-per-second on an Ingress object).
  *
  */
-export interface Iok8sapiautoscalingv2beta1ObjectMetricStatus {
+export interface V2beta1ObjectMetricStatus {
   /**
    * @member {string} currentValue currentValue is the current value of the
    * metric (as a quantity).
@@ -16539,21 +16539,21 @@ export interface Iok8sapiautoscalingv2beta1ObjectMetricStatus {
    */
   metricName: string;
   /**
-   * @member {Iok8sapiautoscalingv2beta1CrossVersionObjectReference} target
+   * @member {V2beta1CrossVersionObjectReference} target
    * target is the described Kubernetes object.
    */
-  target: Iok8sapiautoscalingv2beta1CrossVersionObjectReference;
+  target: V2beta1CrossVersionObjectReference;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapiautoscalingv2beta1PodsMetricStatus.
+ * An interface representing V2beta1PodsMetricStatus.
  * PodsMetricStatus indicates the current value of a metric describing each pod
  * in the current scale target (for example,
  * transactions-processed-per-second).
  *
  */
-export interface Iok8sapiautoscalingv2beta1PodsMetricStatus {
+export interface V2beta1PodsMetricStatus {
   /**
    * @member {string} currentAverageValue currentAverageValue is the current
    * value of the average of the metric across all relevant pods (as a
@@ -16569,7 +16569,7 @@ export interface Iok8sapiautoscalingv2beta1PodsMetricStatus {
 
 /**
  * @interface
- * An interface representing Iok8sapiautoscalingv2beta1ResourceMetricStatus.
+ * An interface representing V2beta1ResourceMetricStatus.
  * ResourceMetricStatus indicates the current value of a resource metric known
  * to Kubernetes, as specified in requests and limits, describing each pod in
  * the current scale target (e.g. CPU or memory).  Such metrics are built in to
@@ -16577,7 +16577,7 @@ export interface Iok8sapiautoscalingv2beta1PodsMetricStatus {
  * normal per-pod metrics using the "pods" source.
  *
  */
-export interface Iok8sapiautoscalingv2beta1ResourceMetricStatus {
+export interface V2beta1ResourceMetricStatus {
   /**
    * @member {number} [currentAverageUtilization] currentAverageUtilization is
    * the current value of the average of the resource metric across all
@@ -16602,42 +16602,42 @@ export interface Iok8sapiautoscalingv2beta1ResourceMetricStatus {
 
 /**
  * @interface
- * An interface representing Iok8sapiautoscalingv2beta1MetricStatus.
+ * An interface representing V2beta1MetricStatus.
  * MetricStatus describes the last-read state of a single metric.
  *
  */
-export interface Iok8sapiautoscalingv2beta1MetricStatus {
+export interface V2beta1MetricStatus {
   /**
-   * @member {Iok8sapiautoscalingv2beta1ExternalMetricStatus} [external]
+   * @member {V2beta1ExternalMetricStatus} [external]
    * external refers to a global metric that is not associated with any
    * Kubernetes object. It allows autoscaling based on information coming from
    * components running outside of cluster (for example length of queue in
    * cloud messaging service, or QPS from loadbalancer running outside of
    * cluster).
    */
-  external?: Iok8sapiautoscalingv2beta1ExternalMetricStatus;
+  external?: V2beta1ExternalMetricStatus;
   /**
-   * @member {Iok8sapiautoscalingv2beta1ObjectMetricStatus} [object] object
+   * @member {V2beta1ObjectMetricStatus} [object] object
    * refers to a metric describing a single kubernetes object (for example,
    * hits-per-second on an Ingress object).
    */
-  object?: Iok8sapiautoscalingv2beta1ObjectMetricStatus;
+  object?: V2beta1ObjectMetricStatus;
   /**
-   * @member {Iok8sapiautoscalingv2beta1PodsMetricStatus} [pods] pods refers to
+   * @member {V2beta1PodsMetricStatus} [pods] pods refers to
    * a metric describing each pod in the current scale target (for example,
    * transactions-processed-per-second).  The values will be averaged together
    * before being compared to the target value.
    */
-  pods?: Iok8sapiautoscalingv2beta1PodsMetricStatus;
+  pods?: V2beta1PodsMetricStatus;
   /**
-   * @member {Iok8sapiautoscalingv2beta1ResourceMetricStatus} [resource]
+   * @member {V2beta1ResourceMetricStatus} [resource]
    * resource refers to a resource metric (such as those specified in requests
    * and limits) known to Kubernetes describing each pod in the current scale
    * target (e.g. CPU or memory). Such metrics are built in to Kubernetes, and
    * have special scaling options on top of those available to normal per-pod
    * metrics using the "pods" source.
    */
-  resource?: Iok8sapiautoscalingv2beta1ResourceMetricStatus;
+  resource?: V2beta1ResourceMetricStatus;
   /**
    * @member {string} type type is the type of metric source.  It will be one
    * of "Object", "Pods" or "Resource", each corresponds to a matching field in
@@ -16648,25 +16648,25 @@ export interface Iok8sapiautoscalingv2beta1MetricStatus {
 
 /**
  * @interface
- * An interface representing Iok8sapiautoscalingv2beta1HorizontalPodAutoscalerStatus.
+ * An interface representing V2beta1HorizontalPodAutoscalerStatus.
  * HorizontalPodAutoscalerStatus describes the current status of a horizontal
  * pod autoscaler.
  *
  */
-export interface Iok8sapiautoscalingv2beta1HorizontalPodAutoscalerStatus {
+export interface V2beta1HorizontalPodAutoscalerStatus {
   /**
-   * @member {Iok8sapiautoscalingv2beta1HorizontalPodAutoscalerCondition[]}
+   * @member {V2beta1HorizontalPodAutoscalerCondition[]}
    * conditions conditions is the set of conditions required for this
    * autoscaler to scale its target, and indicates whether or not those
    * conditions are met.
    */
-  conditions: Iok8sapiautoscalingv2beta1HorizontalPodAutoscalerCondition[];
+  conditions: V2beta1HorizontalPodAutoscalerCondition[];
   /**
-   * @member {Iok8sapiautoscalingv2beta1MetricStatus[]} currentMetrics
+   * @member {V2beta1MetricStatus[]} currentMetrics
    * currentMetrics is the last read state of the metrics used by this
    * autoscaler.
    */
-  currentMetrics: Iok8sapiautoscalingv2beta1MetricStatus[];
+  currentMetrics: V2beta1MetricStatus[];
   /**
    * @member {number} currentReplicas currentReplicas is current number of
    * replicas of pods managed by this autoscaler, as last seen by the
@@ -16694,13 +16694,13 @@ export interface Iok8sapiautoscalingv2beta1HorizontalPodAutoscalerStatus {
 
 /**
  * @interface
- * An interface representing Iok8sapiautoscalingv2beta1HorizontalPodAutoscaler.
+ * An interface representing V2beta1HorizontalPodAutoscaler.
  * HorizontalPodAutoscaler is the configuration for a horizontal pod
  * autoscaler, which automatically manages the replica count of any resource
  * implementing the scale subresource based on the metrics specified.
  *
  */
-export interface Iok8sapiautoscalingv2beta1HorizontalPodAutoscaler {
+export interface V2beta1HorizontalPodAutoscaler {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -16718,31 +16718,31 @@ export interface Iok8sapiautoscalingv2beta1HorizontalPodAutoscaler {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] metadata is
+   * @member {V1ObjectMeta} [metadata] metadata is
    * the standard object metadata. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
-   * @member {Iok8sapiautoscalingv2beta1HorizontalPodAutoscalerSpec} [spec]
+   * @member {V2beta1HorizontalPodAutoscalerSpec} [spec]
    * spec is the specification for the behaviour of the autoscaler. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status.
    */
-  spec?: Iok8sapiautoscalingv2beta1HorizontalPodAutoscalerSpec;
+  spec?: V2beta1HorizontalPodAutoscalerSpec;
   /**
-   * @member {Iok8sapiautoscalingv2beta1HorizontalPodAutoscalerStatus} [status]
+   * @member {V2beta1HorizontalPodAutoscalerStatus} [status]
    * status is the current information about the autoscaler.
    */
-  status?: Iok8sapiautoscalingv2beta1HorizontalPodAutoscalerStatus;
+  status?: V2beta1HorizontalPodAutoscalerStatus;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapiautoscalingv2beta1HorizontalPodAutoscalerList.
+ * An interface representing V2beta1HorizontalPodAutoscalerList.
  * HorizontalPodAutoscaler is a list of horizontal pod autoscaler objects.
  *
  */
-export interface Iok8sapiautoscalingv2beta1HorizontalPodAutoscalerList {
+export interface V2beta1HorizontalPodAutoscalerList {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -16752,10 +16752,10 @@ export interface Iok8sapiautoscalingv2beta1HorizontalPodAutoscalerList {
    */
   apiVersion?: string;
   /**
-   * @member {Iok8sapiautoscalingv2beta1HorizontalPodAutoscaler[]} items items
+   * @member {V2beta1HorizontalPodAutoscaler[]} items items
    * is the list of horizontal pod autoscaler objects.
    */
-  items: Iok8sapiautoscalingv2beta1HorizontalPodAutoscaler[];
+  items: V2beta1HorizontalPodAutoscaler[];
   /**
    * @member {string} [kind] Kind is a string value representing the REST
    * resource this object represents. Servers may infer this from the endpoint
@@ -16765,19 +16765,19 @@ export interface Iok8sapiautoscalingv2beta1HorizontalPodAutoscalerList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] metadata is
+   * @member {V1ListMeta} [metadata] metadata is
    * the standard list metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapibatchv1JobSpec.
+ * An interface representing V1JobSpec.
  * JobSpec describes how the job execution will look like.
  *
  */
-export interface Iok8sapibatchv1JobSpec {
+export interface V1JobSpec {
   /**
    * @member {number} [activeDeadlineSeconds] Specifies the duration in seconds
    * relative to the startTime that the job may be active before the system
@@ -16821,12 +16821,12 @@ export interface Iok8sapibatchv1JobSpec {
    */
   parallelism?: number;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1LabelSelector} [selector] A label
+   * @member {V1LabelSelector} [selector] A label
    * query over pods that should match the pod count. Normally, the system sets
    * this field for you. More info:
    * https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#label-selectors
    */
-  selector?: Iok8sapimachinerypkgapismetav1LabelSelector;
+  selector?: V1LabelSelector;
   /**
    * @member {V1PodTemplateSpec} template Describes the pod that
    * will be created when executing a job. More info:
@@ -16837,11 +16837,11 @@ export interface Iok8sapibatchv1JobSpec {
 
 /**
  * @interface
- * An interface representing Iok8sapibatchv1JobCondition.
+ * An interface representing V1JobCondition.
  * JobCondition describes current state of a job.
  *
  */
-export interface Iok8sapibatchv1JobCondition {
+export interface V1JobCondition {
   /**
    * @member {Date} [lastProbeTime] Last time the condition was checked.
    */
@@ -16874,11 +16874,11 @@ export interface Iok8sapibatchv1JobCondition {
 
 /**
  * @interface
- * An interface representing Iok8sapibatchv1JobStatus.
+ * An interface representing V1JobStatus.
  * JobStatus represents the current state of a Job.
  *
  */
-export interface Iok8sapibatchv1JobStatus {
+export interface V1JobStatus {
   /**
    * @member {number} [active] The number of actively running pods.
    */
@@ -16890,11 +16890,11 @@ export interface Iok8sapibatchv1JobStatus {
    */
   completionTime?: Date;
   /**
-   * @member {Iok8sapibatchv1JobCondition[]} [conditions] The latest available
+   * @member {V1JobCondition[]} [conditions] The latest available
    * observations of an object's current state. More info:
    * https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/
    */
-  conditions?: Iok8sapibatchv1JobCondition[];
+  conditions?: V1JobCondition[];
   /**
    * @member {number} [failed] The number of pods which reached phase Failed.
    */
@@ -16915,11 +16915,11 @@ export interface Iok8sapibatchv1JobStatus {
 
 /**
  * @interface
- * An interface representing Iok8sapibatchv1Job.
+ * An interface representing V1Job.
  * Job represents the configuration of a single job.
  *
  */
-export interface Iok8sapibatchv1Job {
+export interface V1Job {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -16937,32 +16937,32 @@ export interface Iok8sapibatchv1Job {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object's metadata. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
-   * @member {Iok8sapibatchv1JobSpec} [spec] Specification of the desired
+   * @member {V1JobSpec} [spec] Specification of the desired
    * behavior of a job. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status
    */
-  spec?: Iok8sapibatchv1JobSpec;
+  spec?: V1JobSpec;
   /**
-   * @member {Iok8sapibatchv1JobStatus} [status] Current status of a job. More
+   * @member {V1JobStatus} [status] Current status of a job. More
    * info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status
    */
-  status?: Iok8sapibatchv1JobStatus;
+  status?: V1JobStatus;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapibatchv1JobList.
+ * An interface representing V1JobList.
  * JobList is a collection of jobs.
  *
  */
-export interface Iok8sapibatchv1JobList {
+export interface V1JobList {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -16972,9 +16972,9 @@ export interface Iok8sapibatchv1JobList {
    */
   apiVersion?: string;
   /**
-   * @member {Iok8sapibatchv1Job[]} items items is the list of Jobs.
+   * @member {V1Job[]} items items is the list of Jobs.
    */
-  items: Iok8sapibatchv1Job[];
+  items: V1Job[];
   /**
    * @member {string} [kind] Kind is a string value representing the REST
    * resource this object represents. Servers may infer this from the endpoint
@@ -16984,43 +16984,43 @@ export interface Iok8sapibatchv1JobList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] Standard list
+   * @member {V1ListMeta} [metadata] Standard list
    * metadata. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapibatchv1beta1JobTemplateSpec.
+ * An interface representing V1beta1JobTemplateSpec.
  * JobTemplateSpec describes the data a Job should have when created from a
  * template
  *
  */
-export interface Iok8sapibatchv1beta1JobTemplateSpec {
+export interface V1beta1JobTemplateSpec {
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object's metadata of the jobs created from this template. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
-   * @member {Iok8sapibatchv1JobSpec} [spec] Specification of the desired
+   * @member {V1JobSpec} [spec] Specification of the desired
    * behavior of the job. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status
    */
-  spec?: Iok8sapibatchv1JobSpec;
+  spec?: V1JobSpec;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapibatchv1beta1CronJobSpec.
+ * An interface representing V1beta1CronJobSpec.
  * CronJobSpec describes how the job execution will look like and when it will
  * actually run.
  *
  */
-export interface Iok8sapibatchv1beta1CronJobSpec {
+export interface V1beta1CronJobSpec {
   /**
    * @member {string} [concurrencyPolicy] Specifies how to treat concurrent
    * executions of a Job. Valid values are: - "Allow" (default): allows
@@ -17036,10 +17036,10 @@ export interface Iok8sapibatchv1beta1CronJobSpec {
    */
   failedJobsHistoryLimit?: number;
   /**
-   * @member {Iok8sapibatchv1beta1JobTemplateSpec} jobTemplate Specifies the
+   * @member {V1beta1JobTemplateSpec} jobTemplate Specifies the
    * job that will be created when executing a CronJob.
    */
-  jobTemplate: Iok8sapibatchv1beta1JobTemplateSpec;
+  jobTemplate: V1beta1JobTemplateSpec;
   /**
    * @member {string} schedule The schedule in Cron format, see
    * https://en.wikipedia.org/wiki/Cron.
@@ -17067,11 +17067,11 @@ export interface Iok8sapibatchv1beta1CronJobSpec {
 
 /**
  * @interface
- * An interface representing Iok8sapibatchv1beta1CronJobStatus.
+ * An interface representing V1beta1CronJobStatus.
  * CronJobStatus represents the current state of a cron job.
  *
  */
-export interface Iok8sapibatchv1beta1CronJobStatus {
+export interface V1beta1CronJobStatus {
   /**
    * @member {V1ObjectReference[]} [active] A list of pointers to
    * currently running jobs.
@@ -17086,11 +17086,11 @@ export interface Iok8sapibatchv1beta1CronJobStatus {
 
 /**
  * @interface
- * An interface representing Iok8sapibatchv1beta1CronJob.
+ * An interface representing V1beta1CronJob.
  * CronJob represents the configuration of a single cron job.
  *
  */
-export interface Iok8sapibatchv1beta1CronJob {
+export interface V1beta1CronJob {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -17108,32 +17108,32 @@ export interface Iok8sapibatchv1beta1CronJob {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object's metadata. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
-   * @member {Iok8sapibatchv1beta1CronJobSpec} [spec] Specification of the
+   * @member {V1beta1CronJobSpec} [spec] Specification of the
    * desired behavior of a cron job, including the schedule. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status
    */
-  spec?: Iok8sapibatchv1beta1CronJobSpec;
+  spec?: V1beta1CronJobSpec;
   /**
-   * @member {Iok8sapibatchv1beta1CronJobStatus} [status] Current status of a
+   * @member {V1beta1CronJobStatus} [status] Current status of a
    * cron job. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status
    */
-  status?: Iok8sapibatchv1beta1CronJobStatus;
+  status?: V1beta1CronJobStatus;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapibatchv1beta1CronJobList.
+ * An interface representing V1beta1CronJobList.
  * CronJobList is a collection of cron jobs.
  *
  */
-export interface Iok8sapibatchv1beta1CronJobList {
+export interface V1beta1CronJobList {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -17143,10 +17143,10 @@ export interface Iok8sapibatchv1beta1CronJobList {
    */
   apiVersion?: string;
   /**
-   * @member {Iok8sapibatchv1beta1CronJob[]} items items is the list of
+   * @member {V1beta1CronJob[]} items items is the list of
    * CronJobs.
    */
-  items: Iok8sapibatchv1beta1CronJob[];
+  items: V1beta1CronJob[];
   /**
    * @member {string} [kind] Kind is a string value representing the REST
    * resource this object represents. Servers may infer this from the endpoint
@@ -17156,22 +17156,22 @@ export interface Iok8sapibatchv1beta1CronJobList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] Standard list
+   * @member {V1ListMeta} [metadata] Standard list
    * metadata. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapicertificatesv1beta1CertificateSigningRequestSpec.
+ * An interface representing V1beta1CertificateSigningRequestSpec.
  * This information is immutable after the request is created. Only the Request
  * and Usages fields can be set on creation, other fields are derived by
  * Kubernetes and cannot be modified by users.
  *
  */
-export interface Iok8sapicertificatesv1beta1CertificateSigningRequestSpec {
+export interface V1beta1CertificateSigningRequestSpec {
   /**
    * @member {{ [propertyName: string]: string[] }} [extra] Extra information
    * about the requesting user. See user.Info interface for details.
@@ -17207,9 +17207,9 @@ export interface Iok8sapicertificatesv1beta1CertificateSigningRequestSpec {
 
 /**
  * @interface
- * An interface representing Iok8sapicertificatesv1beta1CertificateSigningRequestCondition.
+ * An interface representing V1beta1CertificateSigningRequestCondition.
  */
-export interface Iok8sapicertificatesv1beta1CertificateSigningRequestCondition {
+export interface V1beta1CertificateSigningRequestCondition {
   /**
    * @member {Date} [lastUpdateTime] timestamp for the last update to this
    * condition
@@ -17233,29 +17233,29 @@ export interface Iok8sapicertificatesv1beta1CertificateSigningRequestCondition {
 
 /**
  * @interface
- * An interface representing Iok8sapicertificatesv1beta1CertificateSigningRequestStatus.
+ * An interface representing V1beta1CertificateSigningRequestStatus.
  */
-export interface Iok8sapicertificatesv1beta1CertificateSigningRequestStatus {
+export interface V1beta1CertificateSigningRequestStatus {
   /**
    * @member {Uint8Array} [certificate] If request was approved, the controller
    * will place the issued certificate here.
    */
   certificate?: Uint8Array;
   /**
-   * @member {Iok8sapicertificatesv1beta1CertificateSigningRequestCondition[]}
+   * @member {V1beta1CertificateSigningRequestCondition[]}
    * [conditions] Conditions applied to the request, such as approval or
    * denial.
    */
-  conditions?: Iok8sapicertificatesv1beta1CertificateSigningRequestCondition[];
+  conditions?: V1beta1CertificateSigningRequestCondition[];
 }
 
 /**
  * @interface
- * An interface representing Iok8sapicertificatesv1beta1CertificateSigningRequest.
+ * An interface representing V1beta1CertificateSigningRequest.
  * Describes a certificate signing request
  *
  */
-export interface Iok8sapicertificatesv1beta1CertificateSigningRequest {
+export interface V1beta1CertificateSigningRequest {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -17273,26 +17273,26 @@ export interface Iok8sapicertificatesv1beta1CertificateSigningRequest {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata]
+   * @member {V1ObjectMeta} [metadata]
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
-   * @member {Iok8sapicertificatesv1beta1CertificateSigningRequestSpec} [spec]
+   * @member {V1beta1CertificateSigningRequestSpec} [spec]
    * The certificate request itself and any additional information.
    */
-  spec?: Iok8sapicertificatesv1beta1CertificateSigningRequestSpec;
+  spec?: V1beta1CertificateSigningRequestSpec;
   /**
-   * @member {Iok8sapicertificatesv1beta1CertificateSigningRequestStatus}
+   * @member {V1beta1CertificateSigningRequestStatus}
    * [status] Derived information about the request.
    */
-  status?: Iok8sapicertificatesv1beta1CertificateSigningRequestStatus;
+  status?: V1beta1CertificateSigningRequestStatus;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapicertificatesv1beta1CertificateSigningRequestList.
+ * An interface representing V1beta1CertificateSigningRequestList.
  */
-export interface Iok8sapicertificatesv1beta1CertificateSigningRequestList {
+export interface V1beta1CertificateSigningRequestList {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -17302,9 +17302,9 @@ export interface Iok8sapicertificatesv1beta1CertificateSigningRequestList {
    */
   apiVersion?: string;
   /**
-   * @member {Iok8sapicertificatesv1beta1CertificateSigningRequest[]} items
+   * @member {V1beta1CertificateSigningRequest[]} items
    */
-  items: Iok8sapicertificatesv1beta1CertificateSigningRequest[];
+  items: V1beta1CertificateSigningRequest[];
   /**
    * @member {string} [kind] Kind is a string value representing the REST
    * resource this object represents. Servers may infer this from the endpoint
@@ -17314,9 +17314,9 @@ export interface Iok8sapicertificatesv1beta1CertificateSigningRequestList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata]
+   * @member {V1ListMeta} [metadata]
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
@@ -17392,11 +17392,11 @@ export interface V1Binding {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object's metadata. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
    * @member {V1ObjectReference} target The target object that you
    * want to bind to the standard object.
@@ -17643,11 +17643,11 @@ export interface V1ComponentStatus {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object's metadata. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
 }
 
 /**
@@ -17680,11 +17680,11 @@ export interface V1ComponentStatusList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] Standard list
+   * @member {V1ListMeta} [metadata] Standard list
    * metadata. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
@@ -17728,11 +17728,11 @@ export interface V1ConfigMap {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object's metadata. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
 }
 
 /**
@@ -17763,10 +17763,10 @@ export interface V1ConfigMapList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] More info:
+   * @member {V1ListMeta} [metadata] More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
@@ -18118,11 +18118,11 @@ export interface V1Endpoints {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object's metadata. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
    * @member {V1EndpointSubset[]} [subsets] The set of all
    * endpoints is the union of all subsets. Addresses are placed into subsets
@@ -18164,11 +18164,11 @@ export interface V1EndpointsList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] Standard list
+   * @member {V1ListMeta} [metadata] Standard list
    * metadata. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
@@ -18268,11 +18268,11 @@ export interface V1Event {
    */
   message?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} metadata Standard
+   * @member {V1ObjectMeta} metadata Standard
    * object's metadata. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata: V1ObjectMeta;
   /**
    * @member {string} [reason] This should be a short, machine understandable
    * string that gives the reason for the transition into the object's current
@@ -18339,11 +18339,11 @@ export interface V1EventList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] Standard list
+   * @member {V1ListMeta} [metadata] Standard list
    * metadata. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
@@ -18539,11 +18539,11 @@ export interface V1LimitRange {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object's metadata. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
    * @member {V1LimitRangeSpec} [spec] Spec defines the limits
    * enforced. More info:
@@ -18582,11 +18582,11 @@ export interface V1LimitRangeList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] Standard list
+   * @member {V1ListMeta} [metadata] Standard list
    * metadata. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
@@ -18696,11 +18696,11 @@ export interface V1Namespace {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object's metadata. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
    * @member {V1NamespaceSpec} [spec] Spec defines the behavior of
    * the Namespace. More info:
@@ -18745,11 +18745,11 @@ export interface V1NamespaceList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] Standard list
+   * @member {V1ListMeta} [metadata] Standard list
    * metadata. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
@@ -19124,11 +19124,11 @@ export interface V1Node {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object's metadata. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
    * @member {V1NodeSpec} [spec] Spec defines the behavior of a
    * node.
@@ -19172,11 +19172,11 @@ export interface V1NodeList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] Standard list
+   * @member {V1ListMeta} [metadata] Standard list
    * metadata. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
@@ -19605,11 +19605,11 @@ export interface V1PersistentVolume {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object's metadata. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
    * @member {V1PersistentVolumeSpec} [spec] Spec defines a
    * specification of a persistent volume owned by the cluster. Provisioned by
@@ -19656,11 +19656,11 @@ export interface V1PersistentVolumeClaimList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] Standard list
+   * @member {V1ListMeta} [metadata] Standard list
    * metadata. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
@@ -19693,11 +19693,11 @@ export interface V1PersistentVolumeList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] Standard list
+   * @member {V1ListMeta} [metadata] Standard list
    * metadata. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
@@ -19865,11 +19865,11 @@ export interface V1Pod {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object's metadata. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
    * @member {V1PodSpec} [spec] Specification of the desired
    * behavior of the pod. More info:
@@ -19914,11 +19914,11 @@ export interface V1PodList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] Standard list
+   * @member {V1ListMeta} [metadata] Standard list
    * metadata. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
@@ -19945,11 +19945,11 @@ export interface V1PodTemplate {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object's metadata. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
    * @member {V1PodTemplateSpec} [template] Template defines the
    * pods that will be created from this pod template.
@@ -19986,11 +19986,11 @@ export interface V1PodTemplateList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] Standard list
+   * @member {V1ListMeta} [metadata] Standard list
    * metadata. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
@@ -20134,13 +20134,13 @@ export interface V1ReplicationController {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] If the
+   * @member {V1ObjectMeta} [metadata] If the
    * Labels of a ReplicationController are empty, they are defaulted to be the
    * same as the Pod(s) that the replication controller manages. Standard
    * object's metadata. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
    * @member {V1ReplicationControllerSpec} [spec] Spec defines the
    * specification of the desired behavior of the replication controller. More
@@ -20188,11 +20188,11 @@ export interface V1ReplicationControllerList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] Standard list
+   * @member {V1ListMeta} [metadata] Standard list
    * metadata. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
@@ -20219,11 +20219,11 @@ export interface V1ResourceQuota {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object's metadata. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
    * @member {V1ResourceQuotaSpec} [spec] Spec defines the desired
    * quota.
@@ -20268,11 +20268,11 @@ export interface V1ResourceQuotaList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] Standard list
+   * @member {V1ListMeta} [metadata] Standard list
    * metadata. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
@@ -20308,11 +20308,11 @@ export interface V1Secret {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object's metadata. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
    * @member {{ [propertyName: string]: string }} [stringData] stringData
    * allows specifying non-binary secret data in string form. It is provided as
@@ -20357,11 +20357,11 @@ export interface V1SecretList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] Standard list
+   * @member {V1ListMeta} [metadata] Standard list
    * metadata. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
@@ -20592,11 +20592,11 @@ export interface V1Service {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object's metadata. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
    * @member {V1ServiceSpec} [spec] Spec defines the behavior of a
    * service.
@@ -20654,11 +20654,11 @@ export interface V1ServiceAccount {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object's metadata. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
    * @member {V1ObjectReference[]} [secrets] Secrets is the list of
    * secrets allowed to be used by pods running using this ServiceAccount. More
@@ -20697,11 +20697,11 @@ export interface V1ServiceAccountList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] Standard list
+   * @member {V1ListMeta} [metadata] Standard list
    * metadata. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
@@ -20732,11 +20732,11 @@ export interface V1ServiceList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] Standard list
+   * @member {V1ListMeta} [metadata] Standard list
    * metadata. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
@@ -20778,12 +20778,12 @@ export interface V1TopologySelectorTerm {
 
 /**
  * @interface
- * An interface representing Iok8sapieventsv1beta1EventSeries.
+ * An interface representing V1beta1EventSeries.
  * EventSeries contain information on series of events, i.e. thing that was/is
  * happening continuously for some time.
  *
  */
-export interface Iok8sapieventsv1beta1EventSeries {
+export interface V1beta1EventSeries {
   /**
    * @member {number} count Number of occurrences in this series up to the last
    * heartbeat time
@@ -20803,12 +20803,12 @@ export interface Iok8sapieventsv1beta1EventSeries {
 
 /**
  * @interface
- * An interface representing Iok8sapieventsv1beta1Event.
+ * An interface representing V1beta1Event.
  * Event is a report of an event somewhere in the cluster. It generally denotes
  * some state change in the system.
  *
  */
-export interface Iok8sapieventsv1beta1Event {
+export interface V1beta1Event {
   /**
    * @member {string} [action] What action was taken/failed regarding to the
    * regarding object.
@@ -20856,9 +20856,9 @@ export interface Iok8sapieventsv1beta1Event {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata]
+   * @member {V1ObjectMeta} [metadata]
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
    * @member {string} [note] Optional. A human-readable description of the
    * status of this operation. Maximal length of the note is 1kB, but libraries
@@ -20893,10 +20893,10 @@ export interface Iok8sapieventsv1beta1Event {
    */
   reportingInstance?: string;
   /**
-   * @member {Iok8sapieventsv1beta1EventSeries} [series] Data about the Event
+   * @member {V1beta1EventSeries} [series] Data about the Event
    * series this event represents or nil if it's a singleton Event.
    */
-  series?: Iok8sapieventsv1beta1EventSeries;
+  series?: V1beta1EventSeries;
   /**
    * @member {string} [type] Type of this event (Normal, Warning), new types
    * could be added in the future.
@@ -20906,11 +20906,11 @@ export interface Iok8sapieventsv1beta1Event {
 
 /**
  * @interface
- * An interface representing Iok8sapieventsv1beta1EventList.
+ * An interface representing V1beta1EventList.
  * EventList is a list of Event objects.
  *
  */
-export interface Iok8sapieventsv1beta1EventList {
+export interface V1beta1EventList {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -20920,10 +20920,10 @@ export interface Iok8sapieventsv1beta1EventList {
    */
   apiVersion?: string;
   /**
-   * @member {Iok8sapieventsv1beta1Event[]} items Items is a list of schema
+   * @member {V1beta1Event[]} items Items is a list of schema
    * objects.
    */
-  items: Iok8sapieventsv1beta1Event[];
+  items: V1beta1Event[];
   /**
    * @member {string} [kind] Kind is a string value representing the REST
    * resource this object represents. Servers may infer this from the endpoint
@@ -20933,11 +20933,11 @@ export interface Iok8sapieventsv1beta1EventList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] Standard list
+   * @member {V1ListMeta} [metadata] Standard list
    * metadata. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
@@ -21042,12 +21042,12 @@ export interface Iok8sapiextensionsv1beta1DaemonSetSpec {
    */
   revisionHistoryLimit?: number;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1LabelSelector} [selector] A label
+   * @member {V1LabelSelector} [selector] A label
    * query over pods that are managed by the daemon set. Must match in order to
    * be controlled. If empty, defaulted to labels on Pod template. More info:
    * https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#label-selectors
    */
-  selector?: Iok8sapimachinerypkgapismetav1LabelSelector;
+  selector?: V1LabelSelector;
   /**
    * @member {V1PodTemplateSpec} template An object that describes
    * the pod that will be created. The DaemonSet will create exactly one copy
@@ -21196,11 +21196,11 @@ export interface Iok8sapiextensionsv1beta1DaemonSet {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object's metadata. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
    * @member {Iok8sapiextensionsv1beta1DaemonSetSpec} [spec] The desired
    * behavior of this daemon set. More info:
@@ -21245,11 +21245,11 @@ export interface Iok8sapiextensionsv1beta1DaemonSetList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] Standard list
+   * @member {V1ListMeta} [metadata] Standard list
    * metadata. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
@@ -21368,11 +21368,11 @@ export interface Iok8sapiextensionsv1beta1DeploymentSpec {
    */
   rollbackTo?: Iok8sapiextensionsv1beta1RollbackConfig;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1LabelSelector} [selector] Label
+   * @member {V1LabelSelector} [selector] Label
    * selector for pods. Existing ReplicaSets whose pods are selected by this
    * will be the ones affected by this deployment.
    */
-  selector?: Iok8sapimachinerypkgapismetav1LabelSelector;
+  selector?: V1LabelSelector;
   /**
    * @member {Iok8sapiextensionsv1beta1DeploymentStrategy} [strategy] The
    * deployment strategy to use to replace existing pods with new ones.
@@ -21502,10 +21502,10 @@ export interface Iok8sapiextensionsv1beta1Deployment {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
    * @member {Iok8sapiextensionsv1beta1DeploymentSpec} [spec] Specification of
    * the desired behavior of the Deployment.
@@ -21547,10 +21547,10 @@ export interface Iok8sapiextensionsv1beta1DeploymentList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] Standard list
+   * @member {V1ListMeta} [metadata] Standard list
    * metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
@@ -21862,11 +21862,11 @@ export interface Iok8sapiextensionsv1beta1Ingress {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object's metadata. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
    * @member {Iok8sapiextensionsv1beta1IngressSpec} [spec] Spec is the desired
    * state of the Ingress. More info:
@@ -21910,11 +21910,11 @@ export interface Iok8sapiextensionsv1beta1IngressList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] Standard
+   * @member {V1ListMeta} [metadata] Standard
    * object's metadata. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
@@ -21954,7 +21954,7 @@ export interface Iok8sapiextensionsv1beta1NetworkPolicyPeer {
    */
   ipBlock?: Iok8sapiextensionsv1beta1IPBlock;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1LabelSelector} [namespaceSelector]
+   * @member {V1LabelSelector} [namespaceSelector]
    * Selects Namespaces using cluster-scoped labels. This field follows
    * standard label selector semantics; if present but empty, it selects all
    * namespaces.
@@ -21964,9 +21964,9 @@ export interface Iok8sapiextensionsv1beta1NetworkPolicyPeer {
    * NamespaceSelector. Otherwise it selects all Pods in the Namespaces
    * selected by NamespaceSelector.
    */
-  namespaceSelector?: Iok8sapimachinerypkgapismetav1LabelSelector;
+  namespaceSelector?: V1LabelSelector;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1LabelSelector} [podSelector] This
+   * @member {V1LabelSelector} [podSelector] This
    * is a label selector which selects Pods. This field follows standard label
    * selector semantics; if present but empty, it selects all pods.
    *
@@ -21975,7 +21975,7 @@ export interface Iok8sapiextensionsv1beta1NetworkPolicyPeer {
    * NamespaceSelector. Otherwise it selects the Pods matching PodSelector in
    * the policy's own Namespace.
    */
-  podSelector?: Iok8sapimachinerypkgapismetav1LabelSelector;
+  podSelector?: V1LabelSelector;
 }
 
 /**
@@ -22073,7 +22073,7 @@ export interface Iok8sapiextensionsv1beta1NetworkPolicySpec {
    */
   ingress?: Iok8sapiextensionsv1beta1NetworkPolicyIngressRule[];
   /**
-   * @member {Iok8sapimachinerypkgapismetav1LabelSelector} podSelector Selects
+   * @member {V1LabelSelector} podSelector Selects
    * the pods to which this NetworkPolicy object applies.  The array of ingress
    * rules is applied to any pods selected by this field. Multiple network
    * policies can select the same set of pods.  In this case, the ingress rules
@@ -22081,7 +22081,7 @@ export interface Iok8sapiextensionsv1beta1NetworkPolicySpec {
    * standard label selector semantics. An empty podSelector matches all pods
    * in this namespace.
    */
-  podSelector: Iok8sapimachinerypkgapismetav1LabelSelector;
+  podSelector: V1LabelSelector;
   /**
    * @member {string[]} [policyTypes] List of rule types that the NetworkPolicy
    * relates to. Valid options are Ingress, Egress, or Ingress,Egress. If this
@@ -22124,11 +22124,11 @@ export interface Iok8sapiextensionsv1beta1NetworkPolicy {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object's metadata. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
    * @member {Iok8sapiextensionsv1beta1NetworkPolicySpec} [spec] Specification
    * of the desired behavior for this NetworkPolicy.
@@ -22167,11 +22167,11 @@ export interface Iok8sapiextensionsv1beta1NetworkPolicyList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] Standard list
+   * @member {V1ListMeta} [metadata] Standard list
    * metadata. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
@@ -22412,11 +22412,11 @@ export interface Iok8sapiextensionsv1beta1PodSecurityPolicy {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object's metadata. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
    * @member {Iok8sapiextensionsv1beta1PodSecurityPolicySpec} [spec] spec
    * defines the policy enforced.
@@ -22454,11 +22454,11 @@ export interface Iok8sapiextensionsv1beta1PodSecurityPolicyList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] Standard list
+   * @member {V1ListMeta} [metadata] Standard list
    * metadata. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
@@ -22483,14 +22483,14 @@ export interface Iok8sapiextensionsv1beta1ReplicaSetSpec {
    */
   replicas?: number;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1LabelSelector} [selector] Selector
+   * @member {V1LabelSelector} [selector] Selector
    * is a label query over pods that should match the replica count. If the
    * selector is empty, it is defaulted to the labels present on the pod
    * template. Label keys and values that must match in order to be controlled
    * by this replica set. More info:
    * https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#label-selectors
    */
-  selector?: Iok8sapimachinerypkgapismetav1LabelSelector;
+  selector?: V1LabelSelector;
   /**
    * @member {V1PodTemplateSpec} [template] Template is the object
    * that describes the pod that will be created if insufficient replicas are
@@ -22600,12 +22600,12 @@ export interface Iok8sapiextensionsv1beta1ReplicaSet {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] If the
+   * @member {V1ObjectMeta} [metadata] If the
    * Labels of a ReplicaSet are empty, they are defaulted to be the same as the
    * Pod(s) that the ReplicaSet manages. Standard object's metadata. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
    * @member {Iok8sapiextensionsv1beta1ReplicaSetSpec} [spec] Spec defines the
    * specification of the desired behavior of the ReplicaSet. More info:
@@ -22652,11 +22652,11 @@ export interface Iok8sapiextensionsv1beta1ReplicaSetList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] Standard list
+   * @member {V1ListMeta} [metadata] Standard list
    * metadata. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
@@ -22727,11 +22727,11 @@ export interface Iok8sapiextensionsv1beta1Scale {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object metadata; More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
    * @member {Iok8sapiextensionsv1beta1ScaleSpec} [spec] defines the behavior
    * of the scale. More info:
@@ -22749,13 +22749,13 @@ export interface Iok8sapiextensionsv1beta1Scale {
 
 /**
  * @interface
- * An interface representing Iok8sapinetworkingv1IPBlock.
+ * An interface representing V1IPBlock.
  * IPBlock describes a particular CIDR (Ex. "192.168.1.1/24") that is allowed
  * to the pods matched by a NetworkPolicySpec's podSelector. The except entry
  * describes CIDRs that should not be included within this rule.
  *
  */
-export interface Iok8sapinetworkingv1IPBlock {
+export interface V1IPBlock {
   /**
    * @member {string} cidr CIDR is a string representing the IP Block Valid
    * examples are "192.168.1.1/24"
@@ -22771,11 +22771,11 @@ export interface Iok8sapinetworkingv1IPBlock {
 
 /**
  * @interface
- * An interface representing Iok8sapinetworkingv1NetworkPolicyPort.
+ * An interface representing V1NetworkPolicyPort.
  * NetworkPolicyPort describes a port to allow traffic on
  *
  */
-export interface Iok8sapinetworkingv1NetworkPolicyPort {
+export interface V1NetworkPolicyPort {
   /**
    * @member {string} [port] The port on the given protocol. This can either be
    * a numerical or named port on a pod. If this field is not provided, this
@@ -22791,20 +22791,20 @@ export interface Iok8sapinetworkingv1NetworkPolicyPort {
 
 /**
  * @interface
- * An interface representing Iok8sapinetworkingv1NetworkPolicyPeer.
+ * An interface representing V1NetworkPolicyPeer.
  * NetworkPolicyPeer describes a peer to allow traffic from. Only certain
  * combinations of fields are allowed
  *
  */
-export interface Iok8sapinetworkingv1NetworkPolicyPeer {
+export interface V1NetworkPolicyPeer {
   /**
-   * @member {Iok8sapinetworkingv1IPBlock} [ipBlock] IPBlock defines policy on
+   * @member {V1IPBlock} [ipBlock] IPBlock defines policy on
    * a particular IPBlock. If this field is set then neither of the other
    * fields can be.
    */
-  ipBlock?: Iok8sapinetworkingv1IPBlock;
+  ipBlock?: V1IPBlock;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1LabelSelector} [namespaceSelector]
+   * @member {V1LabelSelector} [namespaceSelector]
    * Selects Namespaces using cluster-scoped labels. This field follows
    * standard label selector semantics; if present but empty, it selects all
    * namespaces.
@@ -22814,9 +22814,9 @@ export interface Iok8sapinetworkingv1NetworkPolicyPeer {
    * NamespaceSelector. Otherwise it selects all Pods in the Namespaces
    * selected by NamespaceSelector.
    */
-  namespaceSelector?: Iok8sapimachinerypkgapismetav1LabelSelector;
+  namespaceSelector?: V1LabelSelector;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1LabelSelector} [podSelector] This
+   * @member {V1LabelSelector} [podSelector] This
    * is a label selector which selects Pods. This field follows standard label
    * selector semantics; if present but empty, it selects all pods.
    *
@@ -22825,29 +22825,29 @@ export interface Iok8sapinetworkingv1NetworkPolicyPeer {
    * NamespaceSelector. Otherwise it selects the Pods matching PodSelector in
    * the policy's own Namespace.
    */
-  podSelector?: Iok8sapimachinerypkgapismetav1LabelSelector;
+  podSelector?: V1LabelSelector;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapinetworkingv1NetworkPolicyEgressRule.
+ * An interface representing V1NetworkPolicyEgressRule.
  * NetworkPolicyEgressRule describes a particular set of traffic that is
  * allowed out of pods matched by a NetworkPolicySpec's podSelector. The
  * traffic must match both ports and to. This type is beta-level in 1.8
  *
  */
-export interface Iok8sapinetworkingv1NetworkPolicyEgressRule {
+export interface V1NetworkPolicyEgressRule {
   /**
-   * @member {Iok8sapinetworkingv1NetworkPolicyPort[]} [ports] List of
+   * @member {V1NetworkPolicyPort[]} [ports] List of
    * destination ports for outgoing traffic. Each item in this list is combined
    * using a logical OR. If this field is empty or missing, this rule matches
    * all ports (traffic not restricted by port). If this field is present and
    * contains at least one item, then this rule allows traffic only if the
    * traffic matches at least one port in the list.
    */
-  ports?: Iok8sapinetworkingv1NetworkPolicyPort[];
+  ports?: V1NetworkPolicyPort[];
   /**
-   * @member {Iok8sapinetworkingv1NetworkPolicyPeer[]} [to] List of
+   * @member {V1NetworkPolicyPeer[]} [to] List of
    * destinations for outgoing traffic of pods selected for this rule. Items in
    * this list are combined using a logical OR operation. If this field is
    * empty or missing, this rule matches all destinations (traffic not
@@ -22855,20 +22855,20 @@ export interface Iok8sapinetworkingv1NetworkPolicyEgressRule {
    * one item, this rule allows traffic only if the traffic matches at least
    * one item in the to list.
    */
-  to?: Iok8sapinetworkingv1NetworkPolicyPeer[];
+  to?: V1NetworkPolicyPeer[];
 }
 
 /**
  * @interface
- * An interface representing Iok8sapinetworkingv1NetworkPolicyIngressRule.
+ * An interface representing V1NetworkPolicyIngressRule.
  * NetworkPolicyIngressRule describes a particular set of traffic that is
  * allowed to the pods matched by a NetworkPolicySpec's podSelector. The
  * traffic must match both ports and from.
  *
  */
-export interface Iok8sapinetworkingv1NetworkPolicyIngressRule {
+export interface V1NetworkPolicyIngressRule {
   /**
-   * @member {Iok8sapinetworkingv1NetworkPolicyPeer[]} [from] List of sources
+   * @member {V1NetworkPolicyPeer[]} [from] List of sources
    * which should be able to access the pods selected for this rule. Items in
    * this list are combined using a logical OR operation. If this field is
    * empty or missing, this rule matches all sources (traffic not restricted by
@@ -22876,27 +22876,27 @@ export interface Iok8sapinetworkingv1NetworkPolicyIngressRule {
    * allows traffic only if the traffic matches at least one item in the from
    * list.
    */
-  from?: Iok8sapinetworkingv1NetworkPolicyPeer[];
+  from?: V1NetworkPolicyPeer[];
   /**
-   * @member {Iok8sapinetworkingv1NetworkPolicyPort[]} [ports] List of ports
+   * @member {V1NetworkPolicyPort[]} [ports] List of ports
    * which should be made accessible on the pods selected for this rule. Each
    * item in this list is combined using a logical OR. If this field is empty
    * or missing, this rule matches all ports (traffic not restricted by port).
    * If this field is present and contains at least one item, then this rule
    * allows traffic only if the traffic matches at least one port in the list.
    */
-  ports?: Iok8sapinetworkingv1NetworkPolicyPort[];
+  ports?: V1NetworkPolicyPort[];
 }
 
 /**
  * @interface
- * An interface representing Iok8sapinetworkingv1NetworkPolicySpec.
+ * An interface representing V1NetworkPolicySpec.
  * NetworkPolicySpec provides the specification of a NetworkPolicy
  *
  */
-export interface Iok8sapinetworkingv1NetworkPolicySpec {
+export interface V1NetworkPolicySpec {
   /**
-   * @member {Iok8sapinetworkingv1NetworkPolicyEgressRule[]} [egress] List of
+   * @member {V1NetworkPolicyEgressRule[]} [egress] List of
    * egress rules to be applied to the selected pods. Outgoing traffic is
    * allowed if there are no NetworkPolicies selecting the pod (and cluster
    * policy otherwise allows the traffic), OR if the traffic matches at least
@@ -22905,9 +22905,9 @@ export interface Iok8sapinetworkingv1NetworkPolicySpec {
    * outgoing traffic (and serves solely to ensure that the pods it selects are
    * isolated by default). This field is beta-level in 1.8
    */
-  egress?: Iok8sapinetworkingv1NetworkPolicyEgressRule[];
+  egress?: V1NetworkPolicyEgressRule[];
   /**
-   * @member {Iok8sapinetworkingv1NetworkPolicyIngressRule[]} [ingress] List of
+   * @member {V1NetworkPolicyIngressRule[]} [ingress] List of
    * ingress rules to be applied to the selected pods. Traffic is allowed to a
    * pod if there are no NetworkPolicies selecting the pod (and cluster policy
    * otherwise allows the traffic), OR if the traffic source is the pod's local
@@ -22916,9 +22916,9 @@ export interface Iok8sapinetworkingv1NetworkPolicySpec {
    * is empty then this NetworkPolicy does not allow any traffic (and serves
    * solely to ensure that the pods it selects are isolated by default)
    */
-  ingress?: Iok8sapinetworkingv1NetworkPolicyIngressRule[];
+  ingress?: V1NetworkPolicyIngressRule[];
   /**
-   * @member {Iok8sapimachinerypkgapismetav1LabelSelector} podSelector Selects
+   * @member {V1LabelSelector} podSelector Selects
    * the pods to which this NetworkPolicy object applies. The array of ingress
    * rules is applied to any pods selected by this field. Multiple network
    * policies can select the same set of pods. In this case, the ingress rules
@@ -22926,7 +22926,7 @@ export interface Iok8sapinetworkingv1NetworkPolicySpec {
    * standard label selector semantics. An empty podSelector matches all pods
    * in this namespace.
    */
-  podSelector: Iok8sapimachinerypkgapismetav1LabelSelector;
+  podSelector: V1LabelSelector;
   /**
    * @member {string[]} [policyTypes] List of rule types that the NetworkPolicy
    * relates to. Valid options are Ingress, Egress, or Ingress,Egress. If this
@@ -22945,11 +22945,11 @@ export interface Iok8sapinetworkingv1NetworkPolicySpec {
 
 /**
  * @interface
- * An interface representing Iok8sapinetworkingv1NetworkPolicy.
+ * An interface representing V1NetworkPolicy.
  * NetworkPolicy describes what network traffic is allowed for a set of Pods
  *
  */
-export interface Iok8sapinetworkingv1NetworkPolicy {
+export interface V1NetworkPolicy {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -22967,25 +22967,25 @@ export interface Iok8sapinetworkingv1NetworkPolicy {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object's metadata. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
-   * @member {Iok8sapinetworkingv1NetworkPolicySpec} [spec] Specification of
+   * @member {V1NetworkPolicySpec} [spec] Specification of
    * the desired behavior for this NetworkPolicy.
    */
-  spec?: Iok8sapinetworkingv1NetworkPolicySpec;
+  spec?: V1NetworkPolicySpec;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapinetworkingv1NetworkPolicyList.
+ * An interface representing V1NetworkPolicyList.
  * NetworkPolicyList is a list of NetworkPolicy objects.
  *
  */
-export interface Iok8sapinetworkingv1NetworkPolicyList {
+export interface V1NetworkPolicyList {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -22995,10 +22995,10 @@ export interface Iok8sapinetworkingv1NetworkPolicyList {
    */
   apiVersion?: string;
   /**
-   * @member {Iok8sapinetworkingv1NetworkPolicy[]} items Items is a list of
+   * @member {V1NetworkPolicy[]} items Items is a list of
    * schema objects.
    */
-  items: Iok8sapinetworkingv1NetworkPolicy[];
+  items: V1NetworkPolicy[];
   /**
    * @member {string} [kind] Kind is a string value representing the REST
    * resource this object represents. Servers may infer this from the endpoint
@@ -23008,20 +23008,20 @@ export interface Iok8sapinetworkingv1NetworkPolicyList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] Standard list
+   * @member {V1ListMeta} [metadata] Standard list
    * metadata. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapipolicyv1beta1AllowedFlexVolume.
+ * An interface representing V1beta1AllowedFlexVolume.
  * AllowedFlexVolume represents a single Flexvolume that is allowed to be used.
  *
  */
-export interface Iok8sapipolicyv1beta1AllowedFlexVolume {
+export interface V1beta1AllowedFlexVolume {
   /**
    * @member {string} driver driver is the name of the Flexvolume driver.
    */
@@ -23030,12 +23030,12 @@ export interface Iok8sapipolicyv1beta1AllowedFlexVolume {
 
 /**
  * @interface
- * An interface representing Iok8sapipolicyv1beta1AllowedHostPath.
+ * An interface representing V1beta1AllowedHostPath.
  * AllowedHostPath defines the host volume conditions that will be enabled by a
  * policy for pods to use. It requires the path prefix to be defined.
  *
  */
-export interface Iok8sapipolicyv1beta1AllowedHostPath {
+export interface V1beta1AllowedHostPath {
   /**
    * @member {string} [pathPrefix] pathPrefix is the path prefix that the host
    * volume must match. It does not support `*`. Trailing slashes are trimmed
@@ -23054,12 +23054,12 @@ export interface Iok8sapipolicyv1beta1AllowedHostPath {
 
 /**
  * @interface
- * An interface representing Iok8sapimachinerypkgapismetav1Preconditions.
+ * An interface representing V1Preconditions.
  * Preconditions must be fulfilled before an operation (update, delete, etc.)
  * is carried out.
  *
  */
-export interface Iok8sapimachinerypkgapismetav1Preconditions {
+export interface V1Preconditions {
   /**
    * @member {string} [uid] Specifies the target UID.
    */
@@ -23068,11 +23068,11 @@ export interface Iok8sapimachinerypkgapismetav1Preconditions {
 
 /**
  * @interface
- * An interface representing Iok8sapimachinerypkgapismetav1DeleteOptions.
+ * An interface representing V1DeleteOptions.
  * DeleteOptions may be provided when deleting an API object.
  *
  */
-export interface Iok8sapimachinerypkgapismetav1DeleteOptions {
+export interface V1DeleteOptions {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -23106,11 +23106,11 @@ export interface Iok8sapimachinerypkgapismetav1DeleteOptions {
    */
   orphanDependents?: boolean;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1Preconditions} [preconditions] Must
+   * @member {V1Preconditions} [preconditions] Must
    * be fulfilled before a deletion is carried out. If not possible, a 409
    * Conflict status will be returned.
    */
-  preconditions?: Iok8sapimachinerypkgapismetav1Preconditions;
+  preconditions?: V1Preconditions;
   /**
    * @member {string} [propagationPolicy] Whether and how garbage collection
    * will be performed. Either this field or OrphanDependents may be set, but
@@ -23126,13 +23126,13 @@ export interface Iok8sapimachinerypkgapismetav1DeleteOptions {
 
 /**
  * @interface
- * An interface representing Iok8sapipolicyv1beta1Eviction.
+ * An interface representing V1beta1Eviction.
  * Eviction evicts a pod from its node subject to certain policies and safety
  * constraints. This is a subresource of Pod.  A request to cause such an
  * eviction is created by POSTing to .../pods/<pod name>/evictions.
  *
  */
-export interface Iok8sapipolicyv1beta1Eviction {
+export interface V1beta1Eviction {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -23142,10 +23142,10 @@ export interface Iok8sapipolicyv1beta1Eviction {
    */
   apiVersion?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1DeleteOptions} [deleteOptions]
+   * @member {V1DeleteOptions} [deleteOptions]
    * DeleteOptions may be provided
    */
-  deleteOptions?: Iok8sapimachinerypkgapismetav1DeleteOptions;
+  deleteOptions?: V1DeleteOptions;
   /**
    * @member {string} [kind] Kind is a string value representing the REST
    * resource this object represents. Servers may infer this from the endpoint
@@ -23155,19 +23155,19 @@ export interface Iok8sapipolicyv1beta1Eviction {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] ObjectMeta
+   * @member {V1ObjectMeta} [metadata] ObjectMeta
    * describes the pod that is being evicted.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapipolicyv1beta1IDRange.
+ * An interface representing V1beta1IDRange.
  * IDRange provides a min/max of an allowed range of IDs.
  *
  */
-export interface Iok8sapipolicyv1beta1IDRange {
+export interface V1beta1IDRange {
   /**
    * @member {number} max max is the end of the range, inclusive.
    */
@@ -23180,18 +23180,18 @@ export interface Iok8sapipolicyv1beta1IDRange {
 
 /**
  * @interface
- * An interface representing Iok8sapipolicyv1beta1FSGroupStrategyOptions.
+ * An interface representing V1beta1FSGroupStrategyOptions.
  * FSGroupStrategyOptions defines the strategy type and options used to create
  * the strategy.
  *
  */
-export interface Iok8sapipolicyv1beta1FSGroupStrategyOptions {
+export interface V1beta1FSGroupStrategyOptions {
   /**
-   * @member {Iok8sapipolicyv1beta1IDRange[]} [ranges] ranges are the allowed
+   * @member {V1beta1IDRange[]} [ranges] ranges are the allowed
    * ranges of fs groups.  If you would like to force a single fs group then
    * supply a single range with the same start and end. Required for MustRunAs.
    */
-  ranges?: Iok8sapipolicyv1beta1IDRange[];
+  ranges?: V1beta1IDRange[];
   /**
    * @member {string} [rule] rule is the strategy that will dictate what
    * FSGroup is used in the SecurityContext.
@@ -23201,12 +23201,12 @@ export interface Iok8sapipolicyv1beta1FSGroupStrategyOptions {
 
 /**
  * @interface
- * An interface representing Iok8sapipolicyv1beta1HostPortRange.
+ * An interface representing V1beta1HostPortRange.
  * HostPortRange defines a range of host ports that will be enabled by a policy
  * for pods to use.  It requires both the start and end to be defined.
  *
  */
-export interface Iok8sapipolicyv1beta1HostPortRange {
+export interface V1beta1HostPortRange {
   /**
    * @member {number} max max is the end of the range, inclusive.
    */
@@ -23219,11 +23219,11 @@ export interface Iok8sapipolicyv1beta1HostPortRange {
 
 /**
  * @interface
- * An interface representing Iok8sapipolicyv1beta1PodDisruptionBudgetSpec.
+ * An interface representing V1beta1PodDisruptionBudgetSpec.
  * PodDisruptionBudgetSpec is a description of a PodDisruptionBudget.
  *
  */
-export interface Iok8sapipolicyv1beta1PodDisruptionBudgetSpec {
+export interface V1beta1PodDisruptionBudgetSpec {
   /**
    * @member {string} [maxUnavailable] An eviction is allowed if at most
    * "maxUnavailable" pods selected by "selector" are unavailable after the
@@ -23240,20 +23240,20 @@ export interface Iok8sapipolicyv1beta1PodDisruptionBudgetSpec {
    */
   minAvailable?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1LabelSelector} [selector] Label
+   * @member {V1LabelSelector} [selector] Label
    * query over pods whose evictions are managed by the disruption budget.
    */
-  selector?: Iok8sapimachinerypkgapismetav1LabelSelector;
+  selector?: V1LabelSelector;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapipolicyv1beta1PodDisruptionBudgetStatus.
+ * An interface representing V1beta1PodDisruptionBudgetStatus.
  * PodDisruptionBudgetStatus represents information about the status of a
  * PodDisruptionBudget. Status may trail the actual state of a system.
  *
  */
-export interface Iok8sapipolicyv1beta1PodDisruptionBudgetStatus {
+export interface V1beta1PodDisruptionBudgetStatus {
   /**
    * @member {number} currentHealthy current number of healthy pods
    */
@@ -23299,12 +23299,12 @@ export interface Iok8sapipolicyv1beta1PodDisruptionBudgetStatus {
 
 /**
  * @interface
- * An interface representing Iok8sapipolicyv1beta1PodDisruptionBudget.
+ * An interface representing V1beta1PodDisruptionBudget.
  * PodDisruptionBudget is an object to define the max disruption that can be
  * caused to a collection of pods
  *
  */
-export interface Iok8sapipolicyv1beta1PodDisruptionBudget {
+export interface V1beta1PodDisruptionBudget {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -23322,28 +23322,28 @@ export interface Iok8sapipolicyv1beta1PodDisruptionBudget {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata]
+   * @member {V1ObjectMeta} [metadata]
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
-   * @member {Iok8sapipolicyv1beta1PodDisruptionBudgetSpec} [spec]
+   * @member {V1beta1PodDisruptionBudgetSpec} [spec]
    * Specification of the desired behavior of the PodDisruptionBudget.
    */
-  spec?: Iok8sapipolicyv1beta1PodDisruptionBudgetSpec;
+  spec?: V1beta1PodDisruptionBudgetSpec;
   /**
-   * @member {Iok8sapipolicyv1beta1PodDisruptionBudgetStatus} [status] Most
+   * @member {V1beta1PodDisruptionBudgetStatus} [status] Most
    * recently observed status of the PodDisruptionBudget.
    */
-  status?: Iok8sapipolicyv1beta1PodDisruptionBudgetStatus;
+  status?: V1beta1PodDisruptionBudgetStatus;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapipolicyv1beta1PodDisruptionBudgetList.
+ * An interface representing V1beta1PodDisruptionBudgetList.
  * PodDisruptionBudgetList is a collection of PodDisruptionBudgets.
  *
  */
-export interface Iok8sapipolicyv1beta1PodDisruptionBudgetList {
+export interface V1beta1PodDisruptionBudgetList {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -23353,9 +23353,9 @@ export interface Iok8sapipolicyv1beta1PodDisruptionBudgetList {
    */
   apiVersion?: string;
   /**
-   * @member {Iok8sapipolicyv1beta1PodDisruptionBudget[]} items
+   * @member {V1beta1PodDisruptionBudget[]} items
    */
-  items: Iok8sapipolicyv1beta1PodDisruptionBudget[];
+  items: V1beta1PodDisruptionBudget[];
   /**
    * @member {string} [kind] Kind is a string value representing the REST
    * resource this object represents. Servers may infer this from the endpoint
@@ -23365,26 +23365,26 @@ export interface Iok8sapipolicyv1beta1PodDisruptionBudgetList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata]
+   * @member {V1ListMeta} [metadata]
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapipolicyv1beta1RunAsUserStrategyOptions.
+ * An interface representing V1beta1RunAsUserStrategyOptions.
  * RunAsUserStrategyOptions defines the strategy type and any options used to
  * create the strategy.
  *
  */
-export interface Iok8sapipolicyv1beta1RunAsUserStrategyOptions {
+export interface V1beta1RunAsUserStrategyOptions {
   /**
-   * @member {Iok8sapipolicyv1beta1IDRange[]} [ranges] ranges are the allowed
+   * @member {V1beta1IDRange[]} [ranges] ranges are the allowed
    * ranges of uids that may be used. If you would like to force a single uid
    * then supply a single range with the same start and end. Required for
    * MustRunAs.
    */
-  ranges?: Iok8sapipolicyv1beta1IDRange[];
+  ranges?: V1beta1IDRange[];
   /**
    * @member {string} rule rule is the strategy that will dictate the allowable
    * RunAsUser values that may be set.
@@ -23394,12 +23394,12 @@ export interface Iok8sapipolicyv1beta1RunAsUserStrategyOptions {
 
 /**
  * @interface
- * An interface representing Iok8sapipolicyv1beta1SELinuxStrategyOptions.
+ * An interface representing V1beta1SELinuxStrategyOptions.
  * SELinuxStrategyOptions defines the strategy type and any options used to
  * create the strategy.
  *
  */
-export interface Iok8sapipolicyv1beta1SELinuxStrategyOptions {
+export interface V1beta1SELinuxStrategyOptions {
   /**
    * @member {string} rule rule is the strategy that will dictate the allowable
    * labels that may be set.
@@ -23415,19 +23415,19 @@ export interface Iok8sapipolicyv1beta1SELinuxStrategyOptions {
 
 /**
  * @interface
- * An interface representing Iok8sapipolicyv1beta1SupplementalGroupsStrategyOptions.
+ * An interface representing V1beta1SupplementalGroupsStrategyOptions.
  * SupplementalGroupsStrategyOptions defines the strategy type and options used
  * to create the strategy.
  *
  */
-export interface Iok8sapipolicyv1beta1SupplementalGroupsStrategyOptions {
+export interface V1beta1SupplementalGroupsStrategyOptions {
   /**
-   * @member {Iok8sapipolicyv1beta1IDRange[]} [ranges] ranges are the allowed
+   * @member {V1beta1IDRange[]} [ranges] ranges are the allowed
    * ranges of supplemental groups.  If you would like to force a single
    * supplemental group then supply a single range with the same start and end.
    * Required for MustRunAs.
    */
-  ranges?: Iok8sapipolicyv1beta1IDRange[];
+  ranges?: V1beta1IDRange[];
   /**
    * @member {string} [rule] rule is the strategy that will dictate what
    * supplemental groups is used in the SecurityContext.
@@ -23437,11 +23437,11 @@ export interface Iok8sapipolicyv1beta1SupplementalGroupsStrategyOptions {
 
 /**
  * @interface
- * An interface representing Iok8sapipolicyv1beta1PodSecurityPolicySpec.
+ * An interface representing V1beta1PodSecurityPolicySpec.
  * PodSecurityPolicySpec defines the policy enforced.
  *
  */
-export interface Iok8sapipolicyv1beta1PodSecurityPolicySpec {
+export interface V1beta1PodSecurityPolicySpec {
   /**
    * @member {boolean} [allowPrivilegeEscalation] allowPrivilegeEscalation
    * determines if a pod can request to allow privilege escalation. If
@@ -23457,18 +23457,18 @@ export interface Iok8sapipolicyv1beta1PodSecurityPolicySpec {
    */
   allowedCapabilities?: string[];
   /**
-   * @member {Iok8sapipolicyv1beta1AllowedFlexVolume[]} [allowedFlexVolumes]
+   * @member {V1beta1AllowedFlexVolume[]} [allowedFlexVolumes]
    * allowedFlexVolumes is a whitelist of allowed Flexvolumes.  Empty or nil
    * indicates that all Flexvolumes may be used.  This parameter is effective
    * only when the usage of the Flexvolumes is allowed in the "volumes" field.
    */
-  allowedFlexVolumes?: Iok8sapipolicyv1beta1AllowedFlexVolume[];
+  allowedFlexVolumes?: V1beta1AllowedFlexVolume[];
   /**
-   * @member {Iok8sapipolicyv1beta1AllowedHostPath[]} [allowedHostPaths]
+   * @member {V1beta1AllowedHostPath[]} [allowedHostPaths]
    * allowedHostPaths is a white list of allowed host paths. Empty indicates
    * that all host paths may be used.
    */
-  allowedHostPaths?: Iok8sapipolicyv1beta1AllowedHostPath[];
+  allowedHostPaths?: V1beta1AllowedHostPath[];
   /**
    * @member {string[]} [allowedUnsafeSysctls] allowedUnsafeSysctls is a list
    * of explicitly allowed unsafe sysctls, defaults to none. Each entry is
@@ -23507,11 +23507,11 @@ export interface Iok8sapipolicyv1beta1PodSecurityPolicySpec {
    */
   forbiddenSysctls?: string[];
   /**
-   * @member {Iok8sapipolicyv1beta1FSGroupStrategyOptions} fsGroup fsGroup is
+   * @member {V1beta1FSGroupStrategyOptions} fsGroup fsGroup is
    * the strategy that will dictate what fs group is used by the
    * SecurityContext.
    */
-  fsGroup: Iok8sapipolicyv1beta1FSGroupStrategyOptions;
+  fsGroup: V1beta1FSGroupStrategyOptions;
   /**
    * @member {boolean} [hostIPC] hostIPC determines if the policy allows the
    * use of HostIPC in the pod spec.
@@ -23528,10 +23528,10 @@ export interface Iok8sapipolicyv1beta1PodSecurityPolicySpec {
    */
   hostPID?: boolean;
   /**
-   * @member {Iok8sapipolicyv1beta1HostPortRange[]} [hostPorts] hostPorts
+   * @member {V1beta1HostPortRange[]} [hostPorts] hostPorts
    * determines which host port ranges are allowed to be exposed.
    */
-  hostPorts?: Iok8sapipolicyv1beta1HostPortRange[];
+  hostPorts?: V1beta1HostPortRange[];
   /**
    * @member {boolean} [privileged] privileged determines if a pod can request
    * to be run as privileged.
@@ -23553,22 +23553,22 @@ export interface Iok8sapipolicyv1beta1PodSecurityPolicySpec {
    */
   requiredDropCapabilities?: string[];
   /**
-   * @member {Iok8sapipolicyv1beta1RunAsUserStrategyOptions} runAsUser
+   * @member {V1beta1RunAsUserStrategyOptions} runAsUser
    * runAsUser is the strategy that will dictate the allowable RunAsUser values
    * that may be set.
    */
-  runAsUser: Iok8sapipolicyv1beta1RunAsUserStrategyOptions;
+  runAsUser: V1beta1RunAsUserStrategyOptions;
   /**
-   * @member {Iok8sapipolicyv1beta1SELinuxStrategyOptions} seLinux seLinux is
+   * @member {V1beta1SELinuxStrategyOptions} seLinux seLinux is
    * the strategy that will dictate the allowable labels that may be set.
    */
-  seLinux: Iok8sapipolicyv1beta1SELinuxStrategyOptions;
+  seLinux: V1beta1SELinuxStrategyOptions;
   /**
-   * @member {Iok8sapipolicyv1beta1SupplementalGroupsStrategyOptions}
+   * @member {V1beta1SupplementalGroupsStrategyOptions}
    * supplementalGroups supplementalGroups is the strategy that will dictate
    * what supplemental groups are used by the SecurityContext.
    */
-  supplementalGroups: Iok8sapipolicyv1beta1SupplementalGroupsStrategyOptions;
+  supplementalGroups: V1beta1SupplementalGroupsStrategyOptions;
   /**
    * @member {string[]} [volumes] volumes is a white list of allowed volume
    * plugins. Empty indicates that no volumes may be used. To allow all volumes
@@ -23579,12 +23579,12 @@ export interface Iok8sapipolicyv1beta1PodSecurityPolicySpec {
 
 /**
  * @interface
- * An interface representing Iok8sapipolicyv1beta1PodSecurityPolicy.
+ * An interface representing V1beta1PodSecurityPolicy.
  * PodSecurityPolicy governs the ability to make requests that affect the
  * Security Context that will be applied to a pod and container.
  *
  */
-export interface Iok8sapipolicyv1beta1PodSecurityPolicy {
+export interface V1beta1PodSecurityPolicy {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -23602,25 +23602,25 @@ export interface Iok8sapipolicyv1beta1PodSecurityPolicy {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object's metadata. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
-   * @member {Iok8sapipolicyv1beta1PodSecurityPolicySpec} [spec] spec defines
+   * @member {V1beta1PodSecurityPolicySpec} [spec] spec defines
    * the policy enforced.
    */
-  spec?: Iok8sapipolicyv1beta1PodSecurityPolicySpec;
+  spec?: V1beta1PodSecurityPolicySpec;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapipolicyv1beta1PodSecurityPolicyList.
+ * An interface representing V1beta1PodSecurityPolicyList.
  * PodSecurityPolicyList is a list of PodSecurityPolicy objects.
  *
  */
-export interface Iok8sapipolicyv1beta1PodSecurityPolicyList {
+export interface V1beta1PodSecurityPolicyList {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -23630,10 +23630,10 @@ export interface Iok8sapipolicyv1beta1PodSecurityPolicyList {
    */
   apiVersion?: string;
   /**
-   * @member {Iok8sapipolicyv1beta1PodSecurityPolicy[]} items items is a list
+   * @member {V1beta1PodSecurityPolicy[]} items items is a list
    * of schema objects.
    */
-  items: Iok8sapipolicyv1beta1PodSecurityPolicy[];
+  items: V1beta1PodSecurityPolicy[];
   /**
    * @member {string} [kind] Kind is a string value representing the REST
    * resource this object represents. Servers may infer this from the endpoint
@@ -23643,22 +23643,22 @@ export interface Iok8sapipolicyv1beta1PodSecurityPolicyList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] Standard list
+   * @member {V1ListMeta} [metadata] Standard list
    * metadata. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapirbacv1PolicyRule.
+ * An interface representing V1PolicyRule.
  * PolicyRule holds information that describes a policy rule, but does not
  * contain information about who the rule applies to or which namespace the
  * rule applies to.
  *
  */
-export interface Iok8sapirbacv1PolicyRule {
+export interface V1PolicyRule {
   /**
    * @member {string[]} [apiGroups] APIGroups is the name of the APIGroup that
    * contains the resources.  If multiple API groups are specified, any action
@@ -23697,19 +23697,19 @@ export interface Iok8sapirbacv1PolicyRule {
 
 /**
  * @interface
- * An interface representing Iok8sapirbacv1ClusterRole.
+ * An interface representing V1ClusterRole.
  * ClusterRole is a cluster level, logical grouping of PolicyRules that can be
  * referenced as a unit by a RoleBinding or ClusterRoleBinding.
  *
  */
-export interface Iok8sapirbacv1ClusterRole {
+export interface V1ClusterRole {
   /**
-   * @member {Iok8sapirbacv1AggregationRule} [aggregationRule] AggregationRule
+   * @member {V1AggregationRule} [aggregationRule] AggregationRule
    * is an optional field that describes how to build the Rules for this
    * ClusterRole. If AggregationRule is set, then the Rules are controller
    * managed and direct changes to Rules will be stomped by the controller.
    */
-  aggregationRule?: Iok8sapirbacv1AggregationRule;
+  aggregationRule?: V1AggregationRule;
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -23727,24 +23727,24 @@ export interface Iok8sapirbacv1ClusterRole {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object's metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
-   * @member {Iok8sapirbacv1PolicyRule[]} rules Rules holds all the PolicyRules
+   * @member {V1PolicyRule[]} rules Rules holds all the PolicyRules
    * for this ClusterRole
    */
-  rules: Iok8sapirbacv1PolicyRule[];
+  rules: V1PolicyRule[];
 }
 
 /**
  * @interface
- * An interface representing Iok8sapirbacv1RoleRef.
+ * An interface representing V1RoleRef.
  * RoleRef contains information that points to the role being used
  *
  */
-export interface Iok8sapirbacv1RoleRef {
+export interface V1RoleRef {
   /**
    * @member {string} apiGroup APIGroup is the group for the resource being
    * referenced
@@ -23762,13 +23762,13 @@ export interface Iok8sapirbacv1RoleRef {
 
 /**
  * @interface
- * An interface representing Iok8sapirbacv1Subject.
+ * An interface representing V1Subject.
  * Subject contains a reference to the object or user identities a role binding
  * applies to.  This can either hold a direct API object reference, or a value
  * for non-objects such as user and group names.
  *
  */
-export interface Iok8sapirbacv1Subject {
+export interface V1Subject {
   /**
    * @member {string} [apiGroup] APIGroup holds the API group of the referenced
    * subject. Defaults to "" for ServiceAccount subjects. Defaults to
@@ -23796,13 +23796,13 @@ export interface Iok8sapirbacv1Subject {
 
 /**
  * @interface
- * An interface representing Iok8sapirbacv1ClusterRoleBinding.
+ * An interface representing V1ClusterRoleBinding.
  * ClusterRoleBinding references a ClusterRole, but not contain it.  It can
  * reference a ClusterRole in the global namespace, and adds who information
  * via Subject.
  *
  */
-export interface Iok8sapirbacv1ClusterRoleBinding {
+export interface V1ClusterRoleBinding {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -23820,30 +23820,30 @@ export interface Iok8sapirbacv1ClusterRoleBinding {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object's metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
-   * @member {Iok8sapirbacv1RoleRef} roleRef RoleRef can only reference a
+   * @member {V1RoleRef} roleRef RoleRef can only reference a
    * ClusterRole in the global namespace. If the RoleRef cannot be resolved,
    * the Authorizer must return an error.
    */
-  roleRef: Iok8sapirbacv1RoleRef;
+  roleRef: V1RoleRef;
   /**
-   * @member {Iok8sapirbacv1Subject[]} [subjects] Subjects holds references to
+   * @member {V1Subject[]} [subjects] Subjects holds references to
    * the objects the role applies to.
    */
-  subjects?: Iok8sapirbacv1Subject[];
+  subjects?: V1Subject[];
 }
 
 /**
  * @interface
- * An interface representing Iok8sapirbacv1ClusterRoleBindingList.
+ * An interface representing V1ClusterRoleBindingList.
  * ClusterRoleBindingList is a collection of ClusterRoleBindings
  *
  */
-export interface Iok8sapirbacv1ClusterRoleBindingList {
+export interface V1ClusterRoleBindingList {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -23853,10 +23853,10 @@ export interface Iok8sapirbacv1ClusterRoleBindingList {
    */
   apiVersion?: string;
   /**
-   * @member {Iok8sapirbacv1ClusterRoleBinding[]} items Items is a list of
+   * @member {V1ClusterRoleBinding[]} items Items is a list of
    * ClusterRoleBindings
    */
-  items: Iok8sapirbacv1ClusterRoleBinding[];
+  items: V1ClusterRoleBinding[];
   /**
    * @member {string} [kind] Kind is a string value representing the REST
    * resource this object represents. Servers may infer this from the endpoint
@@ -23866,19 +23866,19 @@ export interface Iok8sapirbacv1ClusterRoleBindingList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] Standard
+   * @member {V1ListMeta} [metadata] Standard
    * object's metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapirbacv1ClusterRoleList.
+ * An interface representing V1ClusterRoleList.
  * ClusterRoleList is a collection of ClusterRoles
  *
  */
-export interface Iok8sapirbacv1ClusterRoleList {
+export interface V1ClusterRoleList {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -23888,10 +23888,10 @@ export interface Iok8sapirbacv1ClusterRoleList {
    */
   apiVersion?: string;
   /**
-   * @member {Iok8sapirbacv1ClusterRole[]} items Items is a list of
+   * @member {V1ClusterRole[]} items Items is a list of
    * ClusterRoles
    */
-  items: Iok8sapirbacv1ClusterRole[];
+  items: V1ClusterRole[];
   /**
    * @member {string} [kind] Kind is a string value representing the REST
    * resource this object represents. Servers may infer this from the endpoint
@@ -23901,20 +23901,20 @@ export interface Iok8sapirbacv1ClusterRoleList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] Standard
+   * @member {V1ListMeta} [metadata] Standard
    * object's metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapirbacv1Role.
+ * An interface representing V1Role.
  * Role is a namespaced, logical grouping of PolicyRules that can be referenced
  * as a unit by a RoleBinding.
  *
  */
-export interface Iok8sapirbacv1Role {
+export interface V1Role {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -23932,20 +23932,20 @@ export interface Iok8sapirbacv1Role {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object's metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
-   * @member {Iok8sapirbacv1PolicyRule[]} rules Rules holds all the PolicyRules
+   * @member {V1PolicyRule[]} rules Rules holds all the PolicyRules
    * for this Role
    */
-  rules: Iok8sapirbacv1PolicyRule[];
+  rules: V1PolicyRule[];
 }
 
 /**
  * @interface
- * An interface representing Iok8sapirbacv1RoleBinding.
+ * An interface representing V1RoleBinding.
  * RoleBinding references a role, but does not contain it.  It can reference a
  * Role in the same namespace or a ClusterRole in the global namespace. It adds
  * who information via Subjects and namespace information by which namespace it
@@ -23953,7 +23953,7 @@ export interface Iok8sapirbacv1Role {
  * namespace.
  *
  */
-export interface Iok8sapirbacv1RoleBinding {
+export interface V1RoleBinding {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -23971,30 +23971,30 @@ export interface Iok8sapirbacv1RoleBinding {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object's metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
-   * @member {Iok8sapirbacv1RoleRef} roleRef RoleRef can reference a Role in
+   * @member {V1RoleRef} roleRef RoleRef can reference a Role in
    * the current namespace or a ClusterRole in the global namespace. If the
    * RoleRef cannot be resolved, the Authorizer must return an error.
    */
-  roleRef: Iok8sapirbacv1RoleRef;
+  roleRef: V1RoleRef;
   /**
-   * @member {Iok8sapirbacv1Subject[]} [subjects] Subjects holds references to
+   * @member {V1Subject[]} [subjects] Subjects holds references to
    * the objects the role applies to.
    */
-  subjects?: Iok8sapirbacv1Subject[];
+  subjects?: V1Subject[];
 }
 
 /**
  * @interface
- * An interface representing Iok8sapirbacv1RoleBindingList.
+ * An interface representing V1RoleBindingList.
  * RoleBindingList is a collection of RoleBindings
  *
  */
-export interface Iok8sapirbacv1RoleBindingList {
+export interface V1RoleBindingList {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -24004,10 +24004,10 @@ export interface Iok8sapirbacv1RoleBindingList {
    */
   apiVersion?: string;
   /**
-   * @member {Iok8sapirbacv1RoleBinding[]} items Items is a list of
+   * @member {V1RoleBinding[]} items Items is a list of
    * RoleBindings
    */
-  items: Iok8sapirbacv1RoleBinding[];
+  items: V1RoleBinding[];
   /**
    * @member {string} [kind] Kind is a string value representing the REST
    * resource this object represents. Servers may infer this from the endpoint
@@ -24017,19 +24017,19 @@ export interface Iok8sapirbacv1RoleBindingList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] Standard
+   * @member {V1ListMeta} [metadata] Standard
    * object's metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapirbacv1RoleList.
+ * An interface representing V1RoleList.
  * RoleList is a collection of Roles
  *
  */
-export interface Iok8sapirbacv1RoleList {
+export interface V1RoleList {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -24039,9 +24039,9 @@ export interface Iok8sapirbacv1RoleList {
    */
   apiVersion?: string;
   /**
-   * @member {Iok8sapirbacv1Role[]} items Items is a list of Roles
+   * @member {V1Role[]} items Items is a list of Roles
    */
-  items: Iok8sapirbacv1Role[];
+  items: V1Role[];
   /**
    * @member {string} [kind] Kind is a string value representing the REST
    * resource this object represents. Servers may infer this from the endpoint
@@ -24051,38 +24051,38 @@ export interface Iok8sapirbacv1RoleList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] Standard
+   * @member {V1ListMeta} [metadata] Standard
    * object's metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapirbacv1beta1AggregationRule.
+ * An interface representing V1beta1AggregationRule.
  * AggregationRule describes how to locate ClusterRoles to aggregate into the
  * ClusterRole
  *
  */
-export interface Iok8sapirbacv1beta1AggregationRule {
+export interface V1beta1AggregationRule {
   /**
-   * @member {Iok8sapimachinerypkgapismetav1LabelSelector[]}
+   * @member {V1LabelSelector[]}
    * [clusterRoleSelectors] ClusterRoleSelectors holds a list of selectors
    * which will be used to find ClusterRoles and create the rules. If any of
    * the selectors match, then the ClusterRole's permissions will be added
    */
-  clusterRoleSelectors?: Iok8sapimachinerypkgapismetav1LabelSelector[];
+  clusterRoleSelectors?: V1LabelSelector[];
 }
 
 /**
  * @interface
- * An interface representing Iok8sapirbacv1beta1PolicyRule.
+ * An interface representing V1beta1PolicyRule.
  * PolicyRule holds information that describes a policy rule, but does not
  * contain information about who the rule applies to or which namespace the
  * rule applies to.
  *
  */
-export interface Iok8sapirbacv1beta1PolicyRule {
+export interface V1beta1PolicyRule {
   /**
    * @member {string[]} [apiGroups] APIGroups is the name of the APIGroup that
    * contains the resources.  If multiple API groups are specified, any action
@@ -24123,20 +24123,20 @@ export interface Iok8sapirbacv1beta1PolicyRule {
 
 /**
  * @interface
- * An interface representing Iok8sapirbacv1beta1ClusterRole.
+ * An interface representing V1beta1ClusterRole.
  * ClusterRole is a cluster level, logical grouping of PolicyRules that can be
  * referenced as a unit by a RoleBinding or ClusterRoleBinding.
  *
  */
-export interface Iok8sapirbacv1beta1ClusterRole {
+export interface V1beta1ClusterRole {
   /**
-   * @member {Iok8sapirbacv1beta1AggregationRule} [aggregationRule]
+   * @member {V1beta1AggregationRule} [aggregationRule]
    * AggregationRule is an optional field that describes how to build the Rules
    * for this ClusterRole. If AggregationRule is set, then the Rules are
    * controller managed and direct changes to Rules will be stomped by the
    * controller.
    */
-  aggregationRule?: Iok8sapirbacv1beta1AggregationRule;
+  aggregationRule?: V1beta1AggregationRule;
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -24154,24 +24154,24 @@ export interface Iok8sapirbacv1beta1ClusterRole {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object's metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
-   * @member {Iok8sapirbacv1beta1PolicyRule[]} rules Rules holds all the
+   * @member {V1beta1PolicyRule[]} rules Rules holds all the
    * PolicyRules for this ClusterRole
    */
-  rules: Iok8sapirbacv1beta1PolicyRule[];
+  rules: V1beta1PolicyRule[];
 }
 
 /**
  * @interface
- * An interface representing Iok8sapirbacv1beta1RoleRef.
+ * An interface representing V1beta1RoleRef.
  * RoleRef contains information that points to the role being used
  *
  */
-export interface Iok8sapirbacv1beta1RoleRef {
+export interface V1beta1RoleRef {
   /**
    * @member {string} apiGroup APIGroup is the group for the resource being
    * referenced
@@ -24189,13 +24189,13 @@ export interface Iok8sapirbacv1beta1RoleRef {
 
 /**
  * @interface
- * An interface representing Iok8sapirbacv1beta1Subject.
+ * An interface representing V1beta1Subject.
  * Subject contains a reference to the object or user identities a role binding
  * applies to.  This can either hold a direct API object reference, or a value
  * for non-objects such as user and group names.
  *
  */
-export interface Iok8sapirbacv1beta1Subject {
+export interface V1beta1Subject {
   /**
    * @member {string} [apiGroup] APIGroup holds the API group of the referenced
    * subject. Defaults to "" for ServiceAccount subjects. Defaults to
@@ -24223,13 +24223,13 @@ export interface Iok8sapirbacv1beta1Subject {
 
 /**
  * @interface
- * An interface representing Iok8sapirbacv1beta1ClusterRoleBinding.
+ * An interface representing V1beta1ClusterRoleBinding.
  * ClusterRoleBinding references a ClusterRole, but not contain it.  It can
  * reference a ClusterRole in the global namespace, and adds who information
  * via Subject.
  *
  */
-export interface Iok8sapirbacv1beta1ClusterRoleBinding {
+export interface V1beta1ClusterRoleBinding {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -24247,30 +24247,30 @@ export interface Iok8sapirbacv1beta1ClusterRoleBinding {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object's metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
-   * @member {Iok8sapirbacv1beta1RoleRef} roleRef RoleRef can only reference a
+   * @member {V1beta1RoleRef} roleRef RoleRef can only reference a
    * ClusterRole in the global namespace. If the RoleRef cannot be resolved,
    * the Authorizer must return an error.
    */
-  roleRef: Iok8sapirbacv1beta1RoleRef;
+  roleRef: V1beta1RoleRef;
   /**
-   * @member {Iok8sapirbacv1beta1Subject[]} [subjects] Subjects holds
+   * @member {V1beta1Subject[]} [subjects] Subjects holds
    * references to the objects the role applies to.
    */
-  subjects?: Iok8sapirbacv1beta1Subject[];
+  subjects?: V1beta1Subject[];
 }
 
 /**
  * @interface
- * An interface representing Iok8sapirbacv1beta1ClusterRoleBindingList.
+ * An interface representing V1beta1ClusterRoleBindingList.
  * ClusterRoleBindingList is a collection of ClusterRoleBindings
  *
  */
-export interface Iok8sapirbacv1beta1ClusterRoleBindingList {
+export interface V1beta1ClusterRoleBindingList {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -24280,10 +24280,10 @@ export interface Iok8sapirbacv1beta1ClusterRoleBindingList {
    */
   apiVersion?: string;
   /**
-   * @member {Iok8sapirbacv1beta1ClusterRoleBinding[]} items Items is a list of
+   * @member {V1beta1ClusterRoleBinding[]} items Items is a list of
    * ClusterRoleBindings
    */
-  items: Iok8sapirbacv1beta1ClusterRoleBinding[];
+  items: V1beta1ClusterRoleBinding[];
   /**
    * @member {string} [kind] Kind is a string value representing the REST
    * resource this object represents. Servers may infer this from the endpoint
@@ -24293,19 +24293,19 @@ export interface Iok8sapirbacv1beta1ClusterRoleBindingList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] Standard
+   * @member {V1ListMeta} [metadata] Standard
    * object's metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapirbacv1beta1ClusterRoleList.
+ * An interface representing V1beta1ClusterRoleList.
  * ClusterRoleList is a collection of ClusterRoles
  *
  */
-export interface Iok8sapirbacv1beta1ClusterRoleList {
+export interface V1beta1ClusterRoleList {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -24315,10 +24315,10 @@ export interface Iok8sapirbacv1beta1ClusterRoleList {
    */
   apiVersion?: string;
   /**
-   * @member {Iok8sapirbacv1beta1ClusterRole[]} items Items is a list of
+   * @member {V1beta1ClusterRole[]} items Items is a list of
    * ClusterRoles
    */
-  items: Iok8sapirbacv1beta1ClusterRole[];
+  items: V1beta1ClusterRole[];
   /**
    * @member {string} [kind] Kind is a string value representing the REST
    * resource this object represents. Servers may infer this from the endpoint
@@ -24328,20 +24328,20 @@ export interface Iok8sapirbacv1beta1ClusterRoleList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] Standard
+   * @member {V1ListMeta} [metadata] Standard
    * object's metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapirbacv1beta1Role.
+ * An interface representing V1beta1Role.
  * Role is a namespaced, logical grouping of PolicyRules that can be referenced
  * as a unit by a RoleBinding.
  *
  */
-export interface Iok8sapirbacv1beta1Role {
+export interface V1beta1Role {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -24359,20 +24359,20 @@ export interface Iok8sapirbacv1beta1Role {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object's metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
-   * @member {Iok8sapirbacv1beta1PolicyRule[]} rules Rules holds all the
+   * @member {V1beta1PolicyRule[]} rules Rules holds all the
    * PolicyRules for this Role
    */
-  rules: Iok8sapirbacv1beta1PolicyRule[];
+  rules: V1beta1PolicyRule[];
 }
 
 /**
  * @interface
- * An interface representing Iok8sapirbacv1beta1RoleBinding.
+ * An interface representing V1beta1RoleBinding.
  * RoleBinding references a role, but does not contain it.  It can reference a
  * Role in the same namespace or a ClusterRole in the global namespace. It adds
  * who information via Subjects and namespace information by which namespace it
@@ -24380,7 +24380,7 @@ export interface Iok8sapirbacv1beta1Role {
  * namespace.
  *
  */
-export interface Iok8sapirbacv1beta1RoleBinding {
+export interface V1beta1RoleBinding {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -24398,30 +24398,30 @@ export interface Iok8sapirbacv1beta1RoleBinding {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object's metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
-   * @member {Iok8sapirbacv1beta1RoleRef} roleRef RoleRef can reference a Role
+   * @member {V1beta1RoleRef} roleRef RoleRef can reference a Role
    * in the current namespace or a ClusterRole in the global namespace. If the
    * RoleRef cannot be resolved, the Authorizer must return an error.
    */
-  roleRef: Iok8sapirbacv1beta1RoleRef;
+  roleRef: V1beta1RoleRef;
   /**
-   * @member {Iok8sapirbacv1beta1Subject[]} [subjects] Subjects holds
+   * @member {V1beta1Subject[]} [subjects] Subjects holds
    * references to the objects the role applies to.
    */
-  subjects?: Iok8sapirbacv1beta1Subject[];
+  subjects?: V1beta1Subject[];
 }
 
 /**
  * @interface
- * An interface representing Iok8sapirbacv1beta1RoleBindingList.
+ * An interface representing V1beta1RoleBindingList.
  * RoleBindingList is a collection of RoleBindings
  *
  */
-export interface Iok8sapirbacv1beta1RoleBindingList {
+export interface V1beta1RoleBindingList {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -24431,10 +24431,10 @@ export interface Iok8sapirbacv1beta1RoleBindingList {
    */
   apiVersion?: string;
   /**
-   * @member {Iok8sapirbacv1beta1RoleBinding[]} items Items is a list of
+   * @member {V1beta1RoleBinding[]} items Items is a list of
    * RoleBindings
    */
-  items: Iok8sapirbacv1beta1RoleBinding[];
+  items: V1beta1RoleBinding[];
   /**
    * @member {string} [kind] Kind is a string value representing the REST
    * resource this object represents. Servers may infer this from the endpoint
@@ -24444,19 +24444,19 @@ export interface Iok8sapirbacv1beta1RoleBindingList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] Standard
+   * @member {V1ListMeta} [metadata] Standard
    * object's metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapirbacv1beta1RoleList.
+ * An interface representing V1beta1RoleList.
  * RoleList is a collection of Roles
  *
  */
-export interface Iok8sapirbacv1beta1RoleList {
+export interface V1beta1RoleList {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -24466,9 +24466,9 @@ export interface Iok8sapirbacv1beta1RoleList {
    */
   apiVersion?: string;
   /**
-   * @member {Iok8sapirbacv1beta1Role[]} items Items is a list of Roles
+   * @member {V1beta1Role[]} items Items is a list of Roles
    */
-  items: Iok8sapirbacv1beta1Role[];
+  items: V1beta1Role[];
   /**
    * @member {string} [kind] Kind is a string value representing the REST
    * resource this object represents. Servers may infer this from the endpoint
@@ -24478,20 +24478,20 @@ export interface Iok8sapirbacv1beta1RoleList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] Standard
+   * @member {V1ListMeta} [metadata] Standard
    * object's metadata.
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapischedulingv1beta1PriorityClass.
+ * An interface representing V1beta1PriorityClass.
  * PriorityClass defines mapping from a priority class name to the priority
  * integer value. The value can be any valid integer.
  *
  */
-export interface Iok8sapischedulingv1beta1PriorityClass {
+export interface V1beta1PriorityClass {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -24523,11 +24523,11 @@ export interface Iok8sapischedulingv1beta1PriorityClass {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object's metadata. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
    * @member {number} value The value of this priority class. This is the
    * actual priority that pods receive when they have the name of this class in
@@ -24538,11 +24538,11 @@ export interface Iok8sapischedulingv1beta1PriorityClass {
 
 /**
  * @interface
- * An interface representing Iok8sapischedulingv1beta1PriorityClassList.
+ * An interface representing V1beta1PriorityClassList.
  * PriorityClassList is a collection of priority classes.
  *
  */
-export interface Iok8sapischedulingv1beta1PriorityClassList {
+export interface V1beta1PriorityClassList {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -24552,10 +24552,10 @@ export interface Iok8sapischedulingv1beta1PriorityClassList {
    */
   apiVersion?: string;
   /**
-   * @member {Iok8sapischedulingv1beta1PriorityClass[]} items items is the list
+   * @member {V1beta1PriorityClass[]} items items is the list
    * of PriorityClasses
    */
-  items: Iok8sapischedulingv1beta1PriorityClass[];
+  items: V1beta1PriorityClass[];
   /**
    * @member {string} [kind] Kind is a string value representing the REST
    * resource this object represents. Servers may infer this from the endpoint
@@ -24565,16 +24565,16 @@ export interface Iok8sapischedulingv1beta1PriorityClassList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] Standard list
+   * @member {V1ListMeta} [metadata] Standard list
    * metadata More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapistoragev1StorageClass.
+ * An interface representing V1StorageClass.
  * StorageClass describes the parameters for a class of storage for which
  * PersistentVolumes can be dynamically provisioned.
  *
@@ -24582,7 +24582,7 @@ export interface Iok8sapischedulingv1beta1PriorityClassList {
  * to etcd is in ObjectMeta.Name.
  *
  */
-export interface Iok8sapistoragev1StorageClass {
+export interface V1StorageClass {
   /**
    * @member {boolean} [allowVolumeExpansion] AllowVolumeExpansion shows
    * whether the storage class allow volume expand
@@ -24614,11 +24614,11 @@ export interface Iok8sapistoragev1StorageClass {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object's metadata. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
    * @member {string[]} [mountOptions] Dynamically provisioned
    * PersistentVolumes of this storage class are created with these
@@ -24654,11 +24654,11 @@ export interface Iok8sapistoragev1StorageClass {
 
 /**
  * @interface
- * An interface representing Iok8sapistoragev1StorageClassList.
+ * An interface representing V1StorageClassList.
  * StorageClassList is a collection of storage classes.
  *
  */
-export interface Iok8sapistoragev1StorageClassList {
+export interface V1StorageClassList {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -24668,10 +24668,10 @@ export interface Iok8sapistoragev1StorageClassList {
    */
   apiVersion?: string;
   /**
-   * @member {Iok8sapistoragev1StorageClass[]} items Items is the list of
+   * @member {V1StorageClass[]} items Items is the list of
    * StorageClasses
    */
-  items: Iok8sapistoragev1StorageClass[];
+  items: V1StorageClass[];
   /**
    * @member {string} [kind] Kind is a string value representing the REST
    * resource this object represents. Servers may infer this from the endpoint
@@ -24681,16 +24681,16 @@ export interface Iok8sapistoragev1StorageClassList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] Standard list
+   * @member {V1ListMeta} [metadata] Standard list
    * metadata More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapistoragev1beta1StorageClass.
+ * An interface representing V1beta1StorageClass.
  * StorageClass describes the parameters for a class of storage for which
  * PersistentVolumes can be dynamically provisioned.
  *
@@ -24698,7 +24698,7 @@ export interface Iok8sapistoragev1StorageClassList {
  * to etcd is in ObjectMeta.Name.
  *
  */
-export interface Iok8sapistoragev1beta1StorageClass {
+export interface V1beta1StorageClass {
   /**
    * @member {boolean} [allowVolumeExpansion] AllowVolumeExpansion shows
    * whether the storage class allow volume expand
@@ -24730,11 +24730,11 @@ export interface Iok8sapistoragev1beta1StorageClass {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object's metadata. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
    * @member {string[]} [mountOptions] Dynamically provisioned
    * PersistentVolumes of this storage class are created with these
@@ -24770,11 +24770,11 @@ export interface Iok8sapistoragev1beta1StorageClass {
 
 /**
  * @interface
- * An interface representing Iok8sapistoragev1beta1StorageClassList.
+ * An interface representing V1beta1StorageClassList.
  * StorageClassList is a collection of storage classes.
  *
  */
-export interface Iok8sapistoragev1beta1StorageClassList {
+export interface V1beta1StorageClassList {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -24784,10 +24784,10 @@ export interface Iok8sapistoragev1beta1StorageClassList {
    */
   apiVersion?: string;
   /**
-   * @member {Iok8sapistoragev1beta1StorageClass[]} items Items is the list of
+   * @member {V1beta1StorageClass[]} items Items is the list of
    * StorageClasses
    */
-  items: Iok8sapistoragev1beta1StorageClass[];
+  items: V1beta1StorageClass[];
   /**
    * @member {string} [kind] Kind is a string value representing the REST
    * resource this object represents. Servers may infer this from the endpoint
@@ -24797,22 +24797,22 @@ export interface Iok8sapistoragev1beta1StorageClassList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] Standard list
+   * @member {V1ListMeta} [metadata] Standard list
    * metadata More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapistoragev1beta1VolumeAttachmentSource.
+ * An interface representing V1beta1VolumeAttachmentSource.
  * VolumeAttachmentSource represents a volume that should be attached. Right
  * now only PersistenVolumes can be attached via external attacher, in future
  * we may allow also inline volumes in pods. Exactly one member can be set.
  *
  */
-export interface Iok8sapistoragev1beta1VolumeAttachmentSource {
+export interface V1beta1VolumeAttachmentSource {
   /**
    * @member {string} [persistentVolumeName] Name of the persistent volume to
    * attach.
@@ -24822,11 +24822,11 @@ export interface Iok8sapistoragev1beta1VolumeAttachmentSource {
 
 /**
  * @interface
- * An interface representing Iok8sapistoragev1beta1VolumeAttachmentSpec.
+ * An interface representing V1beta1VolumeAttachmentSpec.
  * VolumeAttachmentSpec is the specification of a VolumeAttachment request.
  *
  */
-export interface Iok8sapistoragev1beta1VolumeAttachmentSpec {
+export interface V1beta1VolumeAttachmentSpec {
   /**
    * @member {string} attacher Attacher indicates the name of the volume driver
    * that MUST handle this request. This is the name returned by
@@ -24838,19 +24838,19 @@ export interface Iok8sapistoragev1beta1VolumeAttachmentSpec {
    */
   nodeName: string;
   /**
-   * @member {Iok8sapistoragev1beta1VolumeAttachmentSource} source Source
+   * @member {V1beta1VolumeAttachmentSource} source Source
    * represents the volume that should be attached.
    */
-  source: Iok8sapistoragev1beta1VolumeAttachmentSource;
+  source: V1beta1VolumeAttachmentSource;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapistoragev1beta1VolumeError.
+ * An interface representing V1beta1VolumeError.
  * VolumeError captures an error encountered during a volume operation.
  *
  */
-export interface Iok8sapistoragev1beta1VolumeError {
+export interface V1beta1VolumeError {
   /**
    * @member {string} [message] String detailing the error encountered during
    * Attach or Detach operation. This string maybe logged, so it should not
@@ -24865,17 +24865,17 @@ export interface Iok8sapistoragev1beta1VolumeError {
 
 /**
  * @interface
- * An interface representing Iok8sapistoragev1beta1VolumeAttachmentStatus.
+ * An interface representing V1beta1VolumeAttachmentStatus.
  * VolumeAttachmentStatus is the status of a VolumeAttachment request.
  *
  */
-export interface Iok8sapistoragev1beta1VolumeAttachmentStatus {
+export interface V1beta1VolumeAttachmentStatus {
   /**
-   * @member {Iok8sapistoragev1beta1VolumeError} [attachError] The last error
+   * @member {V1beta1VolumeError} [attachError] The last error
    * encountered during attach operation, if any. This field must only be set
    * by the entity completing the attach operation, i.e. the external-attacher.
    */
-  attachError?: Iok8sapistoragev1beta1VolumeError;
+  attachError?: V1beta1VolumeError;
   /**
    * @member {boolean} attached Indicates the volume is successfully attached.
    * This field must only be set by the entity completing the attach operation,
@@ -24891,23 +24891,23 @@ export interface Iok8sapistoragev1beta1VolumeAttachmentStatus {
    */
   attachmentMetadata?: { [propertyName: string]: string };
   /**
-   * @member {Iok8sapistoragev1beta1VolumeError} [detachError] The last error
+   * @member {V1beta1VolumeError} [detachError] The last error
    * encountered during detach operation, if any. This field must only be set
    * by the entity completing the detach operation, i.e. the external-attacher.
    */
-  detachError?: Iok8sapistoragev1beta1VolumeError;
+  detachError?: V1beta1VolumeError;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapistoragev1beta1VolumeAttachment.
+ * An interface representing V1beta1VolumeAttachment.
  * VolumeAttachment captures the intent to attach or detach the specified
  * volume to/from the specified node.
  *
  * VolumeAttachment objects are non-namespaced.
  *
  */
-export interface Iok8sapistoragev1beta1VolumeAttachment {
+export interface V1beta1VolumeAttachment {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -24925,32 +24925,32 @@ export interface Iok8sapistoragev1beta1VolumeAttachment {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata] Standard
+   * @member {V1ObjectMeta} [metadata] Standard
    * object metadata. More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
-   * @member {Iok8sapistoragev1beta1VolumeAttachmentSpec} spec Specification of
+   * @member {V1beta1VolumeAttachmentSpec} spec Specification of
    * the desired attach/detach volume behavior. Populated by the Kubernetes
    * system.
    */
-  spec: Iok8sapistoragev1beta1VolumeAttachmentSpec;
+  spec: V1beta1VolumeAttachmentSpec;
   /**
-   * @member {Iok8sapistoragev1beta1VolumeAttachmentStatus} [status] Status of
+   * @member {V1beta1VolumeAttachmentStatus} [status] Status of
    * the VolumeAttachment request. Populated by the entity completing the
    * attach or detach operation, i.e. the external-attacher.
    */
-  status?: Iok8sapistoragev1beta1VolumeAttachmentStatus;
+  status?: V1beta1VolumeAttachmentStatus;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapistoragev1beta1VolumeAttachmentList.
+ * An interface representing V1beta1VolumeAttachmentList.
  * VolumeAttachmentList is a collection of VolumeAttachment objects.
  *
  */
-export interface Iok8sapistoragev1beta1VolumeAttachmentList {
+export interface V1beta1VolumeAttachmentList {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -24960,10 +24960,10 @@ export interface Iok8sapistoragev1beta1VolumeAttachmentList {
    */
   apiVersion?: string;
   /**
-   * @member {Iok8sapistoragev1beta1VolumeAttachment[]} items Items is the list
+   * @member {V1beta1VolumeAttachment[]} items Items is the list
    * of VolumeAttachments
    */
-  items: Iok8sapistoragev1beta1VolumeAttachment[];
+  items: V1beta1VolumeAttachment[];
   /**
    * @member {string} [kind] Kind is a string value representing the REST
    * resource this object represents. Servers may infer this from the endpoint
@@ -24973,21 +24973,21 @@ export interface Iok8sapistoragev1beta1VolumeAttachmentList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata] Standard list
+   * @member {V1ListMeta} [metadata] Standard list
    * metadata More info:
    * https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
  * @interface
- * An interface representing Iok8sapimachinerypkgapismetav1GroupVersionForDiscovery.
+ * An interface representing V1GroupVersionForDiscovery.
  * GroupVersion contains the "group/version" and "version" string of a version.
  * It is made a struct to keep extensibility.
  *
  */
-export interface Iok8sapimachinerypkgapismetav1GroupVersionForDiscovery {
+export interface V1GroupVersionForDiscovery {
   /**
    * @member {string} groupVersion groupVersion specifies the API group and
    * version in the form "group/version"
@@ -25003,12 +25003,12 @@ export interface Iok8sapimachinerypkgapismetav1GroupVersionForDiscovery {
 
 /**
  * @interface
- * An interface representing Iok8sapimachinerypkgapismetav1ServerAddressByClientCIDR.
+ * An interface representing V1ServerAddressByClientCIDR.
  * ServerAddressByClientCIDR helps the client to determine the server address
  * that they should use, depending on the clientCIDR that they match.
  *
  */
-export interface Iok8sapimachinerypkgapismetav1ServerAddressByClientCIDR {
+export interface V1ServerAddressByClientCIDR {
   /**
    * @member {string} clientCIDR The CIDR with which clients can match their IP
    * to figure out the server address that they should use.
@@ -25024,12 +25024,12 @@ export interface Iok8sapimachinerypkgapismetav1ServerAddressByClientCIDR {
 
 /**
  * @interface
- * An interface representing Iok8sapimachinerypkgapismetav1APIGroup.
+ * An interface representing V1APIGroup.
  * APIGroup contains the name, the supported versions, and the preferred
  * version of a group.
  *
  */
-export interface Iok8sapimachinerypkgapismetav1APIGroup {
+export interface V1APIGroup {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -25051,13 +25051,13 @@ export interface Iok8sapimachinerypkgapismetav1APIGroup {
    */
   name: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1GroupVersionForDiscovery}
+   * @member {V1GroupVersionForDiscovery}
    * [preferredVersion] preferredVersion is the version preferred by the API
    * server, which probably is the storage version.
    */
-  preferredVersion?: Iok8sapimachinerypkgapismetav1GroupVersionForDiscovery;
+  preferredVersion?: V1GroupVersionForDiscovery;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ServerAddressByClientCIDR[]}
+   * @member {V1ServerAddressByClientCIDR[]}
    * [serverAddressByClientCIDRs] a map of client CIDR to server address that
    * is serving this group. This is to help clients reach servers in the most
    * network-efficient way possible. Clients can use the appropriate server
@@ -25069,22 +25069,22 @@ export interface Iok8sapimachinerypkgapismetav1APIGroup {
    * X-Real-Ip header or request.RemoteAddr (in that order) to get the client
    * IP.
    */
-  serverAddressByClientCIDRs?: Iok8sapimachinerypkgapismetav1ServerAddressByClientCIDR[];
+  serverAddressByClientCIDRs?: V1ServerAddressByClientCIDR[];
   /**
-   * @member {Iok8sapimachinerypkgapismetav1GroupVersionForDiscovery[]}
+   * @member {V1GroupVersionForDiscovery[]}
    * versions versions are the versions supported in this group.
    */
-  versions: Iok8sapimachinerypkgapismetav1GroupVersionForDiscovery[];
+  versions: V1GroupVersionForDiscovery[];
 }
 
 /**
  * @interface
- * An interface representing Iok8sapimachinerypkgapismetav1APIGroupList.
+ * An interface representing V1APIGroupList.
  * APIGroupList is a list of APIGroup, to allow clients to discover the API at
  * /apis.
  *
  */
-export interface Iok8sapimachinerypkgapismetav1APIGroupList {
+export interface V1APIGroupList {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -25094,10 +25094,10 @@ export interface Iok8sapimachinerypkgapismetav1APIGroupList {
    */
   apiVersion?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1APIGroup[]} groups groups is a list
+   * @member {V1APIGroup[]} groups groups is a list
    * of APIGroup.
    */
-  groups: Iok8sapimachinerypkgapismetav1APIGroup[];
+  groups: V1APIGroup[];
   /**
    * @member {string} [kind] Kind is a string value representing the REST
    * resource this object represents. Servers may infer this from the endpoint
@@ -25110,11 +25110,11 @@ export interface Iok8sapimachinerypkgapismetav1APIGroupList {
 
 /**
  * @interface
- * An interface representing Iok8sapimachinerypkgapismetav1APIResource.
+ * An interface representing V1APIResource.
  * APIResource specifies the name of a resource and whether it is namespaced.
  *
  */
-export interface Iok8sapimachinerypkgapismetav1APIResource {
+export interface V1APIResource {
   /**
    * @member {string[]} [categories] categories is a list of the grouped
    * resources this resource belongs to (e.g. 'all')
@@ -25169,13 +25169,13 @@ export interface Iok8sapimachinerypkgapismetav1APIResource {
 
 /**
  * @interface
- * An interface representing Iok8sapimachinerypkgapismetav1APIResourceList.
+ * An interface representing V1APIResourceList.
  * APIResourceList is a list of APIResource, it is used to expose the name of
  * the resources supported in a specific group and version, and if the resource
  * is namespaced.
  *
  */
-export interface Iok8sapimachinerypkgapismetav1APIResourceList {
+export interface V1APIResourceList {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -25198,20 +25198,20 @@ export interface Iok8sapimachinerypkgapismetav1APIResourceList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1APIResource[]} resources resources
+   * @member {V1APIResource[]} resources resources
    * contains the name of the resources and if they are namespaced.
    */
-  resources: Iok8sapimachinerypkgapismetav1APIResource[];
+  resources: V1APIResource[];
 }
 
 /**
  * @interface
- * An interface representing Iok8sapimachinerypkgapismetav1APIVersions.
+ * An interface representing V1APIVersions.
  * APIVersions lists the versions that are available, to allow clients to
  * discover the API at /api, which is the root path of the legacy v1 API.
  *
  */
-export interface Iok8sapimachinerypkgapismetav1APIVersions {
+export interface V1APIVersions {
   /**
    * @member {string} [apiVersion] APIVersion defines the versioned schema of
    * this representation of an object. Servers should convert recognized
@@ -25229,7 +25229,7 @@ export interface Iok8sapimachinerypkgapismetav1APIVersions {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ServerAddressByClientCIDR[]}
+   * @member {V1ServerAddressByClientCIDR[]}
    * serverAddressByClientCIDRs a map of client CIDR to server address that is
    * serving this group. This is to help clients reach servers in the most
    * network-efficient way possible. Clients can use the appropriate server
@@ -25241,7 +25241,7 @@ export interface Iok8sapimachinerypkgapismetav1APIVersions {
    * X-Real-Ip header or request.RemoteAddr (in that order) to get the client
    * IP.
    */
-  serverAddressByClientCIDRs: Iok8sapimachinerypkgapismetav1ServerAddressByClientCIDR[];
+  serverAddressByClientCIDRs: V1ServerAddressByClientCIDR[];
   /**
    * @member {string[]} versions versions are the api versions that are
    * available.
@@ -25251,11 +25251,11 @@ export interface Iok8sapimachinerypkgapismetav1APIVersions {
 
 /**
  * @interface
- * An interface representing Iok8sapimachinerypkgapismetav1WatchEvent.
+ * An interface representing V1WatchEvent.
  * Event represents a single event to a watched resource.
  *
  */
-export interface Iok8sapimachinerypkgapismetav1WatchEvent {
+export interface V1WatchEvent {
   /**
    * @member {Iok8sapimachinerypkgruntimeRawExtension} object Object is:
    * * If Type is Added or Modified: the new state of the object.
@@ -25426,9 +25426,9 @@ export interface Iok8skubeAggregatorpkgapisapiregistrationv1APIService {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata]
+   * @member {V1ObjectMeta} [metadata]
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
    * @member {Iok8skubeAggregatorpkgapisapiregistrationv1APIServiceSpec} [spec]
    * Spec contains information for locating and communicating with a server
@@ -25469,9 +25469,9 @@ export interface Iok8skubeAggregatorpkgapisapiregistrationv1APIServiceList {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata]
+   * @member {V1ListMeta} [metadata]
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
@@ -25631,9 +25631,9 @@ export interface Iok8skubeAggregatorpkgapisapiregistrationv1beta1APIService {
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ObjectMeta} [metadata]
+   * @member {V1ObjectMeta} [metadata]
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ObjectMeta;
+  metadata?: V1ObjectMeta;
   /**
    * @member {Iok8skubeAggregatorpkgapisapiregistrationv1beta1APIServiceSpec}
    * [spec] Spec contains information for locating and communicating with a
@@ -25676,9 +25676,9 @@ export interface Iok8skubeAggregatorpkgapisapiregistrationv1beta1APIServiceList 
    */
   kind?: string;
   /**
-   * @member {Iok8sapimachinerypkgapismetav1ListMeta} [metadata]
+   * @member {V1ListMeta} [metadata]
    */
-  metadata?: Iok8sapimachinerypkgapismetav1ListMeta;
+  metadata?: V1ListMeta;
 }
 
 /**
@@ -78208,7 +78208,7 @@ export interface OpenShiftAPIwithKubernetesWatchUserOpenshiftIoV1UserOptionalPar
 /**
  * Contains response data for the getCoreLegacyAPIVersions operation.
  */
-export type GetCoreLegacyAPIVersionsResponse = Iok8sapimachinerypkgapismetav1APIVersions & {
+export type GetCoreLegacyAPIVersionsResponse = V1APIVersions & {
   /**
    * The underlying HTTP response.
    */
@@ -78220,14 +78220,14 @@ export type GetCoreLegacyAPIVersionsResponse = Iok8sapimachinerypkgapismetav1API
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1APIVersions;
+      parsedBody: V1APIVersions;
     };
 };
 
 /**
  * Contains response data for the getCoreV1APIResources operation.
  */
-export type GetCoreV1APIResourcesResponse = Iok8sapimachinerypkgapismetav1APIResourceList & {
+export type GetCoreV1APIResourcesResponse = V1APIResourceList & {
   /**
    * The underlying HTTP response.
    */
@@ -78239,7 +78239,7 @@ export type GetCoreV1APIResourcesResponse = Iok8sapimachinerypkgapismetav1APIRes
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1APIResourceList;
+      parsedBody: V1APIResourceList;
     };
 };
 
@@ -78455,7 +78455,7 @@ export type CreateCoreV1NamespacedConfigMapResponse = V1ConfigMap & {
 /**
  * Contains response data for the deleteCoreV1CollectionNamespacedConfigMap operation.
  */
-export type DeleteCoreV1CollectionNamespacedConfigMapResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteCoreV1CollectionNamespacedConfigMapResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -78467,7 +78467,7 @@ export type DeleteCoreV1CollectionNamespacedConfigMapResponse = Iok8sapimachiner
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -78512,7 +78512,7 @@ export type ReplaceCoreV1NamespacedConfigMapResponse = V1ConfigMap & {
 /**
  * Contains response data for the deleteCoreV1NamespacedConfigMap operation.
  */
-export type DeleteCoreV1NamespacedConfigMapResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteCoreV1NamespacedConfigMapResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -78524,7 +78524,7 @@ export type DeleteCoreV1NamespacedConfigMapResponse = Iok8sapimachinerypkgapisme
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -78588,7 +78588,7 @@ export type CreateCoreV1NamespacedEndpointsResponse = V1Endpoints & {
 /**
  * Contains response data for the deleteCoreV1CollectionNamespacedEndpoints operation.
  */
-export type DeleteCoreV1CollectionNamespacedEndpointsResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteCoreV1CollectionNamespacedEndpointsResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -78600,7 +78600,7 @@ export type DeleteCoreV1CollectionNamespacedEndpointsResponse = Iok8sapimachiner
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -78645,7 +78645,7 @@ export type ReplaceCoreV1NamespacedEndpointsResponse = V1Endpoints & {
 /**
  * Contains response data for the deleteCoreV1NamespacedEndpoints operation.
  */
-export type DeleteCoreV1NamespacedEndpointsResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteCoreV1NamespacedEndpointsResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -78657,7 +78657,7 @@ export type DeleteCoreV1NamespacedEndpointsResponse = Iok8sapimachinerypkgapisme
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -78721,7 +78721,7 @@ export type CreateCoreV1NamespacedEventResponse = V1Event & {
 /**
  * Contains response data for the deleteCoreV1CollectionNamespacedEvent operation.
  */
-export type DeleteCoreV1CollectionNamespacedEventResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteCoreV1CollectionNamespacedEventResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -78733,7 +78733,7 @@ export type DeleteCoreV1CollectionNamespacedEventResponse = Iok8sapimachinerypkg
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -78778,7 +78778,7 @@ export type ReplaceCoreV1NamespacedEventResponse = V1Event & {
 /**
  * Contains response data for the deleteCoreV1NamespacedEvent operation.
  */
-export type DeleteCoreV1NamespacedEventResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteCoreV1NamespacedEventResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -78790,7 +78790,7 @@ export type DeleteCoreV1NamespacedEventResponse = Iok8sapimachinerypkgapismetav1
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -78854,7 +78854,7 @@ export type CreateCoreV1NamespacedLimitRangeResponse = V1LimitRange & {
 /**
  * Contains response data for the deleteCoreV1CollectionNamespacedLimitRange operation.
  */
-export type DeleteCoreV1CollectionNamespacedLimitRangeResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteCoreV1CollectionNamespacedLimitRangeResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -78866,7 +78866,7 @@ export type DeleteCoreV1CollectionNamespacedLimitRangeResponse = Iok8sapimachine
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -78911,7 +78911,7 @@ export type ReplaceCoreV1NamespacedLimitRangeResponse = V1LimitRange & {
 /**
  * Contains response data for the deleteCoreV1NamespacedLimitRange operation.
  */
-export type DeleteCoreV1NamespacedLimitRangeResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteCoreV1NamespacedLimitRangeResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -78923,7 +78923,7 @@ export type DeleteCoreV1NamespacedLimitRangeResponse = Iok8sapimachinerypkgapism
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -78987,7 +78987,7 @@ export type CreateCoreV1NamespacedPersistentVolumeClaimResponse = V1PersistentVo
 /**
  * Contains response data for the deleteCoreV1CollectionNamespacedPersistentVolumeClaim operation.
  */
-export type DeleteCoreV1CollectionNamespacedPersistentVolumeClaimResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteCoreV1CollectionNamespacedPersistentVolumeClaimResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -78999,7 +78999,7 @@ export type DeleteCoreV1CollectionNamespacedPersistentVolumeClaimResponse = Iok8
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -79044,7 +79044,7 @@ export type ReplaceCoreV1NamespacedPersistentVolumeClaimResponse = V1PersistentV
 /**
  * Contains response data for the deleteCoreV1NamespacedPersistentVolumeClaim operation.
  */
-export type DeleteCoreV1NamespacedPersistentVolumeClaimResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteCoreV1NamespacedPersistentVolumeClaimResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -79056,7 +79056,7 @@ export type DeleteCoreV1NamespacedPersistentVolumeClaimResponse = Iok8sapimachin
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -79177,7 +79177,7 @@ export type CreateCoreV1NamespacedPodResponse = V1Pod & {
 /**
  * Contains response data for the deleteCoreV1CollectionNamespacedPod operation.
  */
-export type DeleteCoreV1CollectionNamespacedPodResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteCoreV1CollectionNamespacedPodResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -79189,7 +79189,7 @@ export type DeleteCoreV1CollectionNamespacedPodResponse = Iok8sapimachinerypkgap
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -79234,7 +79234,7 @@ export type ReplaceCoreV1NamespacedPodResponse = V1Pod & {
 /**
  * Contains response data for the deleteCoreV1NamespacedPod operation.
  */
-export type DeleteCoreV1NamespacedPodResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteCoreV1NamespacedPodResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -79246,7 +79246,7 @@ export type DeleteCoreV1NamespacedPodResponse = Iok8sapimachinerypkgapismetav1St
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -79337,7 +79337,7 @@ export type CreateCoreV1NamespacedPodBindingResponse = V1Binding & {
 /**
  * Contains response data for the createCoreV1NamespacedPodEviction operation.
  */
-export type CreateCoreV1NamespacedPodEvictionResponse = Iok8sapipolicyv1beta1Eviction & {
+export type CreateCoreV1NamespacedPodEvictionResponse = V1beta1Eviction & {
   /**
    * The underlying HTTP response.
    */
@@ -79349,7 +79349,7 @@ export type CreateCoreV1NamespacedPodEvictionResponse = Iok8sapipolicyv1beta1Evi
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapipolicyv1beta1Eviction;
+      parsedBody: V1beta1Eviction;
     };
 };
 
@@ -79842,7 +79842,7 @@ export type CreateCoreV1NamespacedPodTemplateResponse = V1PodTemplate & {
 /**
  * Contains response data for the deleteCoreV1CollectionNamespacedPodTemplate operation.
  */
-export type DeleteCoreV1CollectionNamespacedPodTemplateResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteCoreV1CollectionNamespacedPodTemplateResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -79854,7 +79854,7 @@ export type DeleteCoreV1CollectionNamespacedPodTemplateResponse = Iok8sapimachin
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -79899,7 +79899,7 @@ export type ReplaceCoreV1NamespacedPodTemplateResponse = V1PodTemplate & {
 /**
  * Contains response data for the deleteCoreV1NamespacedPodTemplate operation.
  */
-export type DeleteCoreV1NamespacedPodTemplateResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteCoreV1NamespacedPodTemplateResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -79911,7 +79911,7 @@ export type DeleteCoreV1NamespacedPodTemplateResponse = Iok8sapimachinerypkgapis
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -79975,7 +79975,7 @@ export type CreateCoreV1NamespacedReplicationControllerResponse = V1ReplicationC
 /**
  * Contains response data for the deleteCoreV1CollectionNamespacedReplicationController operation.
  */
-export type DeleteCoreV1CollectionNamespacedReplicationControllerResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteCoreV1CollectionNamespacedReplicationControllerResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -79987,7 +79987,7 @@ export type DeleteCoreV1CollectionNamespacedReplicationControllerResponse = Iok8
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -80032,7 +80032,7 @@ export type ReplaceCoreV1NamespacedReplicationControllerResponse = V1Replication
 /**
  * Contains response data for the deleteCoreV1NamespacedReplicationController operation.
  */
-export type DeleteCoreV1NamespacedReplicationControllerResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteCoreV1NamespacedReplicationControllerResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -80044,7 +80044,7 @@ export type DeleteCoreV1NamespacedReplicationControllerResponse = Iok8sapimachin
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -80070,7 +80070,7 @@ export type PatchCoreV1NamespacedReplicationControllerResponse = V1ReplicationCo
 /**
  * Contains response data for the readCoreV1NamespacedReplicationControllerScale operation.
  */
-export type ReadCoreV1NamespacedReplicationControllerScaleResponse = Iok8sapiautoscalingv1Scale & {
+export type ReadCoreV1NamespacedReplicationControllerScaleResponse = V1Scale & {
   /**
    * The underlying HTTP response.
    */
@@ -80082,14 +80082,14 @@ export type ReadCoreV1NamespacedReplicationControllerScaleResponse = Iok8sapiaut
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiautoscalingv1Scale;
+      parsedBody: V1Scale;
     };
 };
 
 /**
  * Contains response data for the replaceCoreV1NamespacedReplicationControllerScale operation.
  */
-export type ReplaceCoreV1NamespacedReplicationControllerScaleResponse = Iok8sapiautoscalingv1Scale & {
+export type ReplaceCoreV1NamespacedReplicationControllerScaleResponse = V1Scale & {
   /**
    * The underlying HTTP response.
    */
@@ -80101,14 +80101,14 @@ export type ReplaceCoreV1NamespacedReplicationControllerScaleResponse = Iok8sapi
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiautoscalingv1Scale;
+      parsedBody: V1Scale;
     };
 };
 
 /**
  * Contains response data for the patchCoreV1NamespacedReplicationControllerScale operation.
  */
-export type PatchCoreV1NamespacedReplicationControllerScaleResponse = Iok8sapiautoscalingv1Scale & {
+export type PatchCoreV1NamespacedReplicationControllerScaleResponse = V1Scale & {
   /**
    * The underlying HTTP response.
    */
@@ -80120,7 +80120,7 @@ export type PatchCoreV1NamespacedReplicationControllerScaleResponse = Iok8sapiau
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiautoscalingv1Scale;
+      parsedBody: V1Scale;
     };
 };
 
@@ -80222,7 +80222,7 @@ export type CreateCoreV1NamespacedResourceQuotaResponse = V1ResourceQuota & {
 /**
  * Contains response data for the deleteCoreV1CollectionNamespacedResourceQuota operation.
  */
-export type DeleteCoreV1CollectionNamespacedResourceQuotaResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteCoreV1CollectionNamespacedResourceQuotaResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -80234,7 +80234,7 @@ export type DeleteCoreV1CollectionNamespacedResourceQuotaResponse = Iok8sapimach
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -80279,7 +80279,7 @@ export type ReplaceCoreV1NamespacedResourceQuotaResponse = V1ResourceQuota & {
 /**
  * Contains response data for the deleteCoreV1NamespacedResourceQuota operation.
  */
-export type DeleteCoreV1NamespacedResourceQuotaResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteCoreV1NamespacedResourceQuotaResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -80291,7 +80291,7 @@ export type DeleteCoreV1NamespacedResourceQuotaResponse = Iok8sapimachinerypkgap
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -80412,7 +80412,7 @@ export type CreateCoreV1NamespacedSecretResponse = V1Secret & {
 /**
  * Contains response data for the deleteCoreV1CollectionNamespacedSecret operation.
  */
-export type DeleteCoreV1CollectionNamespacedSecretResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteCoreV1CollectionNamespacedSecretResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -80424,7 +80424,7 @@ export type DeleteCoreV1CollectionNamespacedSecretResponse = Iok8sapimachinerypk
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -80469,7 +80469,7 @@ export type ReplaceCoreV1NamespacedSecretResponse = V1Secret & {
 /**
  * Contains response data for the deleteCoreV1NamespacedSecret operation.
  */
-export type DeleteCoreV1NamespacedSecretResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteCoreV1NamespacedSecretResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -80481,7 +80481,7 @@ export type DeleteCoreV1NamespacedSecretResponse = Iok8sapimachinerypkgapismetav
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -80545,7 +80545,7 @@ export type CreateCoreV1NamespacedServiceAccountResponse = V1ServiceAccount & {
 /**
  * Contains response data for the deleteCoreV1CollectionNamespacedServiceAccount operation.
  */
-export type DeleteCoreV1CollectionNamespacedServiceAccountResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteCoreV1CollectionNamespacedServiceAccountResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -80557,7 +80557,7 @@ export type DeleteCoreV1CollectionNamespacedServiceAccountResponse = Iok8sapimac
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -80602,7 +80602,7 @@ export type ReplaceCoreV1NamespacedServiceAccountResponse = V1ServiceAccount & {
 /**
  * Contains response data for the deleteCoreV1NamespacedServiceAccount operation.
  */
-export type DeleteCoreV1NamespacedServiceAccountResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteCoreV1NamespacedServiceAccountResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -80614,7 +80614,7 @@ export type DeleteCoreV1NamespacedServiceAccountResponse = Iok8sapimachinerypkga
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -80716,7 +80716,7 @@ export type ReplaceCoreV1NamespacedServiceResponse = V1Service & {
 /**
  * Contains response data for the deleteCoreV1NamespacedService operation.
  */
-export type DeleteCoreV1NamespacedServiceResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteCoreV1NamespacedServiceResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -80728,7 +80728,7 @@ export type DeleteCoreV1NamespacedServiceResponse = Iok8sapimachinerypkgapismeta
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -81125,7 +81125,7 @@ export type ReplaceCoreV1NamespaceResponse = V1Namespace & {
 /**
  * Contains response data for the deleteCoreV1Namespace operation.
  */
-export type DeleteCoreV1NamespaceResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteCoreV1NamespaceResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -81137,7 +81137,7 @@ export type DeleteCoreV1NamespaceResponse = Iok8sapimachinerypkgapismetav1Status
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -81277,7 +81277,7 @@ export type CreateCoreV1NodeResponse = V1Node & {
 /**
  * Contains response data for the deleteCoreV1CollectionNode operation.
  */
-export type DeleteCoreV1CollectionNodeResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteCoreV1CollectionNodeResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -81289,7 +81289,7 @@ export type DeleteCoreV1CollectionNodeResponse = Iok8sapimachinerypkgapismetav1S
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -81334,7 +81334,7 @@ export type ReplaceCoreV1NodeResponse = V1Node & {
 /**
  * Contains response data for the deleteCoreV1Node operation.
  */
-export type DeleteCoreV1NodeResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteCoreV1NodeResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -81346,7 +81346,7 @@ export type DeleteCoreV1NodeResponse = Iok8sapimachinerypkgapismetav1Status & {
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -81762,7 +81762,7 @@ export type CreateCoreV1PersistentVolumeResponse = V1PersistentVolume & {
 /**
  * Contains response data for the deleteCoreV1CollectionPersistentVolume operation.
  */
-export type DeleteCoreV1CollectionPersistentVolumeResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteCoreV1CollectionPersistentVolumeResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -81774,7 +81774,7 @@ export type DeleteCoreV1CollectionPersistentVolumeResponse = Iok8sapimachinerypk
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -81819,7 +81819,7 @@ export type ReplaceCoreV1PersistentVolumeResponse = V1PersistentVolume & {
 /**
  * Contains response data for the deleteCoreV1PersistentVolume operation.
  */
-export type DeleteCoreV1PersistentVolumeResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteCoreV1PersistentVolumeResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -81831,7 +81831,7 @@ export type DeleteCoreV1PersistentVolumeResponse = Iok8sapimachinerypkgapismetav
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -82047,7 +82047,7 @@ export type ListCoreV1ServiceForAllNamespacesResponse = V1ServiceList & {
 /**
  * Contains response data for the watchCoreV1ConfigMapListForAllNamespaces operation.
  */
-export type WatchCoreV1ConfigMapListForAllNamespacesResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchCoreV1ConfigMapListForAllNamespacesResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -82059,14 +82059,14 @@ export type WatchCoreV1ConfigMapListForAllNamespacesResponse = Iok8sapimachinery
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchCoreV1EndpointsListForAllNamespaces operation.
  */
-export type WatchCoreV1EndpointsListForAllNamespacesResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchCoreV1EndpointsListForAllNamespacesResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -82078,14 +82078,14 @@ export type WatchCoreV1EndpointsListForAllNamespacesResponse = Iok8sapimachinery
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchCoreV1EventListForAllNamespaces operation.
  */
-export type WatchCoreV1EventListForAllNamespacesResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchCoreV1EventListForAllNamespacesResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -82097,14 +82097,14 @@ export type WatchCoreV1EventListForAllNamespacesResponse = Iok8sapimachinerypkga
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchCoreV1LimitRangeListForAllNamespaces operation.
  */
-export type WatchCoreV1LimitRangeListForAllNamespacesResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchCoreV1LimitRangeListForAllNamespacesResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -82116,14 +82116,14 @@ export type WatchCoreV1LimitRangeListForAllNamespacesResponse = Iok8sapimachiner
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchCoreV1NamespaceList operation.
  */
-export type WatchCoreV1NamespaceListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchCoreV1NamespaceListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -82135,14 +82135,14 @@ export type WatchCoreV1NamespaceListResponse = Iok8sapimachinerypkgapismetav1Wat
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchCoreV1NamespacedConfigMapList operation.
  */
-export type WatchCoreV1NamespacedConfigMapListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchCoreV1NamespacedConfigMapListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -82154,14 +82154,14 @@ export type WatchCoreV1NamespacedConfigMapListResponse = Iok8sapimachinerypkgapi
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchCoreV1NamespacedConfigMap operation.
  */
-export type WatchCoreV1NamespacedConfigMapResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchCoreV1NamespacedConfigMapResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -82173,14 +82173,14 @@ export type WatchCoreV1NamespacedConfigMapResponse = Iok8sapimachinerypkgapismet
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchCoreV1NamespacedEndpointsList operation.
  */
-export type WatchCoreV1NamespacedEndpointsListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchCoreV1NamespacedEndpointsListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -82192,14 +82192,14 @@ export type WatchCoreV1NamespacedEndpointsListResponse = Iok8sapimachinerypkgapi
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchCoreV1NamespacedEndpoints operation.
  */
-export type WatchCoreV1NamespacedEndpointsResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchCoreV1NamespacedEndpointsResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -82211,14 +82211,14 @@ export type WatchCoreV1NamespacedEndpointsResponse = Iok8sapimachinerypkgapismet
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchCoreV1NamespacedEventList operation.
  */
-export type WatchCoreV1NamespacedEventListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchCoreV1NamespacedEventListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -82230,14 +82230,14 @@ export type WatchCoreV1NamespacedEventListResponse = Iok8sapimachinerypkgapismet
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchCoreV1NamespacedEvent operation.
  */
-export type WatchCoreV1NamespacedEventResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchCoreV1NamespacedEventResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -82249,14 +82249,14 @@ export type WatchCoreV1NamespacedEventResponse = Iok8sapimachinerypkgapismetav1W
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchCoreV1NamespacedLimitRangeList operation.
  */
-export type WatchCoreV1NamespacedLimitRangeListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchCoreV1NamespacedLimitRangeListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -82268,14 +82268,14 @@ export type WatchCoreV1NamespacedLimitRangeListResponse = Iok8sapimachinerypkgap
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchCoreV1NamespacedLimitRange operation.
  */
-export type WatchCoreV1NamespacedLimitRangeResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchCoreV1NamespacedLimitRangeResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -82287,14 +82287,14 @@ export type WatchCoreV1NamespacedLimitRangeResponse = Iok8sapimachinerypkgapisme
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchCoreV1NamespacedPersistentVolumeClaimList operation.
  */
-export type WatchCoreV1NamespacedPersistentVolumeClaimListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchCoreV1NamespacedPersistentVolumeClaimListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -82306,14 +82306,14 @@ export type WatchCoreV1NamespacedPersistentVolumeClaimListResponse = Iok8sapimac
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchCoreV1NamespacedPersistentVolumeClaim operation.
  */
-export type WatchCoreV1NamespacedPersistentVolumeClaimResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchCoreV1NamespacedPersistentVolumeClaimResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -82325,14 +82325,14 @@ export type WatchCoreV1NamespacedPersistentVolumeClaimResponse = Iok8sapimachine
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchCoreV1NamespacedPodList operation.
  */
-export type WatchCoreV1NamespacedPodListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchCoreV1NamespacedPodListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -82344,14 +82344,14 @@ export type WatchCoreV1NamespacedPodListResponse = Iok8sapimachinerypkgapismetav
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchCoreV1NamespacedPod operation.
  */
-export type WatchCoreV1NamespacedPodResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchCoreV1NamespacedPodResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -82363,14 +82363,14 @@ export type WatchCoreV1NamespacedPodResponse = Iok8sapimachinerypkgapismetav1Wat
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchCoreV1NamespacedPodTemplateList operation.
  */
-export type WatchCoreV1NamespacedPodTemplateListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchCoreV1NamespacedPodTemplateListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -82382,14 +82382,14 @@ export type WatchCoreV1NamespacedPodTemplateListResponse = Iok8sapimachinerypkga
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchCoreV1NamespacedPodTemplate operation.
  */
-export type WatchCoreV1NamespacedPodTemplateResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchCoreV1NamespacedPodTemplateResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -82401,14 +82401,14 @@ export type WatchCoreV1NamespacedPodTemplateResponse = Iok8sapimachinerypkgapism
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchCoreV1NamespacedReplicationControllerList operation.
  */
-export type WatchCoreV1NamespacedReplicationControllerListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchCoreV1NamespacedReplicationControllerListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -82420,14 +82420,14 @@ export type WatchCoreV1NamespacedReplicationControllerListResponse = Iok8sapimac
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchCoreV1NamespacedReplicationController operation.
  */
-export type WatchCoreV1NamespacedReplicationControllerResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchCoreV1NamespacedReplicationControllerResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -82439,14 +82439,14 @@ export type WatchCoreV1NamespacedReplicationControllerResponse = Iok8sapimachine
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchCoreV1NamespacedResourceQuotaList operation.
  */
-export type WatchCoreV1NamespacedResourceQuotaListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchCoreV1NamespacedResourceQuotaListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -82458,14 +82458,14 @@ export type WatchCoreV1NamespacedResourceQuotaListResponse = Iok8sapimachinerypk
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchCoreV1NamespacedResourceQuota operation.
  */
-export type WatchCoreV1NamespacedResourceQuotaResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchCoreV1NamespacedResourceQuotaResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -82477,14 +82477,14 @@ export type WatchCoreV1NamespacedResourceQuotaResponse = Iok8sapimachinerypkgapi
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchCoreV1NamespacedSecretList operation.
  */
-export type WatchCoreV1NamespacedSecretListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchCoreV1NamespacedSecretListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -82496,14 +82496,14 @@ export type WatchCoreV1NamespacedSecretListResponse = Iok8sapimachinerypkgapisme
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchCoreV1NamespacedSecret operation.
  */
-export type WatchCoreV1NamespacedSecretResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchCoreV1NamespacedSecretResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -82515,14 +82515,14 @@ export type WatchCoreV1NamespacedSecretResponse = Iok8sapimachinerypkgapismetav1
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchCoreV1NamespacedServiceAccountList operation.
  */
-export type WatchCoreV1NamespacedServiceAccountListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchCoreV1NamespacedServiceAccountListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -82534,14 +82534,14 @@ export type WatchCoreV1NamespacedServiceAccountListResponse = Iok8sapimachineryp
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchCoreV1NamespacedServiceAccount operation.
  */
-export type WatchCoreV1NamespacedServiceAccountResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchCoreV1NamespacedServiceAccountResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -82553,14 +82553,14 @@ export type WatchCoreV1NamespacedServiceAccountResponse = Iok8sapimachinerypkgap
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchCoreV1NamespacedServiceList operation.
  */
-export type WatchCoreV1NamespacedServiceListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchCoreV1NamespacedServiceListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -82572,14 +82572,14 @@ export type WatchCoreV1NamespacedServiceListResponse = Iok8sapimachinerypkgapism
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchCoreV1NamespacedService operation.
  */
-export type WatchCoreV1NamespacedServiceResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchCoreV1NamespacedServiceResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -82591,14 +82591,14 @@ export type WatchCoreV1NamespacedServiceResponse = Iok8sapimachinerypkgapismetav
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchCoreV1Namespace operation.
  */
-export type WatchCoreV1NamespaceResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchCoreV1NamespaceResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -82610,14 +82610,14 @@ export type WatchCoreV1NamespaceResponse = Iok8sapimachinerypkgapismetav1WatchEv
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchCoreV1NodeList operation.
  */
-export type WatchCoreV1NodeListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchCoreV1NodeListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -82629,14 +82629,14 @@ export type WatchCoreV1NodeListResponse = Iok8sapimachinerypkgapismetav1WatchEve
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchCoreV1Node operation.
  */
-export type WatchCoreV1NodeResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchCoreV1NodeResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -82648,14 +82648,14 @@ export type WatchCoreV1NodeResponse = Iok8sapimachinerypkgapismetav1WatchEvent &
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchCoreV1PersistentVolumeClaimListForAllNamespaces operation.
  */
-export type WatchCoreV1PersistentVolumeClaimListForAllNamespacesResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchCoreV1PersistentVolumeClaimListForAllNamespacesResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -82667,14 +82667,14 @@ export type WatchCoreV1PersistentVolumeClaimListForAllNamespacesResponse = Iok8s
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchCoreV1PersistentVolumeList operation.
  */
-export type WatchCoreV1PersistentVolumeListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchCoreV1PersistentVolumeListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -82686,14 +82686,14 @@ export type WatchCoreV1PersistentVolumeListResponse = Iok8sapimachinerypkgapisme
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchCoreV1PersistentVolume operation.
  */
-export type WatchCoreV1PersistentVolumeResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchCoreV1PersistentVolumeResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -82705,14 +82705,14 @@ export type WatchCoreV1PersistentVolumeResponse = Iok8sapimachinerypkgapismetav1
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchCoreV1PodListForAllNamespaces operation.
  */
-export type WatchCoreV1PodListForAllNamespacesResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchCoreV1PodListForAllNamespacesResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -82724,14 +82724,14 @@ export type WatchCoreV1PodListForAllNamespacesResponse = Iok8sapimachinerypkgapi
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchCoreV1PodTemplateListForAllNamespaces operation.
  */
-export type WatchCoreV1PodTemplateListForAllNamespacesResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchCoreV1PodTemplateListForAllNamespacesResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -82743,14 +82743,14 @@ export type WatchCoreV1PodTemplateListForAllNamespacesResponse = Iok8sapimachine
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchCoreV1ReplicationControllerListForAllNamespaces operation.
  */
-export type WatchCoreV1ReplicationControllerListForAllNamespacesResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchCoreV1ReplicationControllerListForAllNamespacesResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -82762,14 +82762,14 @@ export type WatchCoreV1ReplicationControllerListForAllNamespacesResponse = Iok8s
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchCoreV1ResourceQuotaListForAllNamespaces operation.
  */
-export type WatchCoreV1ResourceQuotaListForAllNamespacesResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchCoreV1ResourceQuotaListForAllNamespacesResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -82781,14 +82781,14 @@ export type WatchCoreV1ResourceQuotaListForAllNamespacesResponse = Iok8sapimachi
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchCoreV1SecretListForAllNamespaces operation.
  */
-export type WatchCoreV1SecretListForAllNamespacesResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchCoreV1SecretListForAllNamespacesResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -82800,14 +82800,14 @@ export type WatchCoreV1SecretListForAllNamespacesResponse = Iok8sapimachinerypkg
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchCoreV1ServiceAccountListForAllNamespaces operation.
  */
-export type WatchCoreV1ServiceAccountListForAllNamespacesResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchCoreV1ServiceAccountListForAllNamespacesResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -82819,14 +82819,14 @@ export type WatchCoreV1ServiceAccountListForAllNamespacesResponse = Iok8sapimach
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchCoreV1ServiceListForAllNamespaces operation.
  */
-export type WatchCoreV1ServiceListForAllNamespacesResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchCoreV1ServiceListForAllNamespacesResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -82838,14 +82838,14 @@ export type WatchCoreV1ServiceListForAllNamespacesResponse = Iok8sapimachinerypk
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the getAPIVersions operation.
  */
-export type GetAPIVersionsResponse = Iok8sapimachinerypkgapismetav1APIGroupList & {
+export type GetAPIVersionsResponse = V1APIGroupList & {
   /**
    * The underlying HTTP response.
    */
@@ -82857,14 +82857,14 @@ export type GetAPIVersionsResponse = Iok8sapimachinerypkgapismetav1APIGroupList 
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1APIGroupList;
+      parsedBody: V1APIGroupList;
     };
 };
 
 /**
  * Contains response data for the getAdmissionregistrationAPIGroup operation.
  */
-export type GetAdmissionregistrationAPIGroupResponse = Iok8sapimachinerypkgapismetav1APIGroup & {
+export type GetAdmissionregistrationAPIGroupResponse = V1APIGroup & {
   /**
    * The underlying HTTP response.
    */
@@ -82876,14 +82876,14 @@ export type GetAdmissionregistrationAPIGroupResponse = Iok8sapimachinerypkgapism
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1APIGroup;
+      parsedBody: V1APIGroup;
     };
 };
 
 /**
  * Contains response data for the getAdmissionregistrationV1beta1APIResources operation.
  */
-export type GetAdmissionregistrationV1beta1APIResourcesResponse = Iok8sapimachinerypkgapismetav1APIResourceList & {
+export type GetAdmissionregistrationV1beta1APIResourcesResponse = V1APIResourceList & {
   /**
    * The underlying HTTP response.
    */
@@ -82895,7 +82895,7 @@ export type GetAdmissionregistrationV1beta1APIResourcesResponse = Iok8sapimachin
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1APIResourceList;
+      parsedBody: V1APIResourceList;
     };
 };
 
@@ -82903,7 +82903,7 @@ export type GetAdmissionregistrationV1beta1APIResourcesResponse = Iok8sapimachin
  * Contains response data for the listAdmissionregistrationV1beta1MutatingWebhookConfiguration
  * operation.
  */
-export type ListAdmissionregistrationV1beta1MutatingWebhookConfigurationResponse = Iok8sapiadmissionregistrationv1beta1MutatingWebhookConfigurationList & {
+export type ListAdmissionregistrationV1beta1MutatingWebhookConfigurationResponse = V1beta1MutatingWebhookConfigurationList & {
   /**
    * The underlying HTTP response.
    */
@@ -82915,7 +82915,7 @@ export type ListAdmissionregistrationV1beta1MutatingWebhookConfigurationResponse
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiadmissionregistrationv1beta1MutatingWebhookConfigurationList;
+      parsedBody: V1beta1MutatingWebhookConfigurationList;
     };
 };
 
@@ -82923,7 +82923,7 @@ export type ListAdmissionregistrationV1beta1MutatingWebhookConfigurationResponse
  * Contains response data for the createAdmissionregistrationV1beta1MutatingWebhookConfiguration
  * operation.
  */
-export type CreateAdmissionregistrationV1beta1MutatingWebhookConfigurationResponse = Iok8sapiadmissionregistrationv1beta1MutatingWebhookConfiguration & {
+export type CreateAdmissionregistrationV1beta1MutatingWebhookConfigurationResponse = V1beta1MutatingWebhookConfiguration & {
   /**
    * The underlying HTTP response.
    */
@@ -82935,7 +82935,7 @@ export type CreateAdmissionregistrationV1beta1MutatingWebhookConfigurationRespon
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiadmissionregistrationv1beta1MutatingWebhookConfiguration;
+      parsedBody: V1beta1MutatingWebhookConfiguration;
     };
 };
 
@@ -82943,7 +82943,7 @@ export type CreateAdmissionregistrationV1beta1MutatingWebhookConfigurationRespon
  * Contains response data for the
  * deleteAdmissionregistrationV1beta1CollectionMutatingWebhookConfiguration operation.
  */
-export type DeleteAdmissionregistrationV1beta1CollectionMutatingWebhookConfigurationResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteAdmissionregistrationV1beta1CollectionMutatingWebhookConfigurationResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -82955,7 +82955,7 @@ export type DeleteAdmissionregistrationV1beta1CollectionMutatingWebhookConfigura
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -82963,7 +82963,7 @@ export type DeleteAdmissionregistrationV1beta1CollectionMutatingWebhookConfigura
  * Contains response data for the readAdmissionregistrationV1beta1MutatingWebhookConfiguration
  * operation.
  */
-export type ReadAdmissionregistrationV1beta1MutatingWebhookConfigurationResponse = Iok8sapiadmissionregistrationv1beta1MutatingWebhookConfiguration & {
+export type ReadAdmissionregistrationV1beta1MutatingWebhookConfigurationResponse = V1beta1MutatingWebhookConfiguration & {
   /**
    * The underlying HTTP response.
    */
@@ -82975,7 +82975,7 @@ export type ReadAdmissionregistrationV1beta1MutatingWebhookConfigurationResponse
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiadmissionregistrationv1beta1MutatingWebhookConfiguration;
+      parsedBody: V1beta1MutatingWebhookConfiguration;
     };
 };
 
@@ -82983,7 +82983,7 @@ export type ReadAdmissionregistrationV1beta1MutatingWebhookConfigurationResponse
  * Contains response data for the replaceAdmissionregistrationV1beta1MutatingWebhookConfiguration
  * operation.
  */
-export type ReplaceAdmissionregistrationV1beta1MutatingWebhookConfigurationResponse = Iok8sapiadmissionregistrationv1beta1MutatingWebhookConfiguration & {
+export type ReplaceAdmissionregistrationV1beta1MutatingWebhookConfigurationResponse = V1beta1MutatingWebhookConfiguration & {
   /**
    * The underlying HTTP response.
    */
@@ -82995,7 +82995,7 @@ export type ReplaceAdmissionregistrationV1beta1MutatingWebhookConfigurationRespo
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiadmissionregistrationv1beta1MutatingWebhookConfiguration;
+      parsedBody: V1beta1MutatingWebhookConfiguration;
     };
 };
 
@@ -83003,7 +83003,7 @@ export type ReplaceAdmissionregistrationV1beta1MutatingWebhookConfigurationRespo
  * Contains response data for the deleteAdmissionregistrationV1beta1MutatingWebhookConfiguration
  * operation.
  */
-export type DeleteAdmissionregistrationV1beta1MutatingWebhookConfigurationResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteAdmissionregistrationV1beta1MutatingWebhookConfigurationResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -83015,7 +83015,7 @@ export type DeleteAdmissionregistrationV1beta1MutatingWebhookConfigurationRespon
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -83023,7 +83023,7 @@ export type DeleteAdmissionregistrationV1beta1MutatingWebhookConfigurationRespon
  * Contains response data for the patchAdmissionregistrationV1beta1MutatingWebhookConfiguration
  * operation.
  */
-export type PatchAdmissionregistrationV1beta1MutatingWebhookConfigurationResponse = Iok8sapiadmissionregistrationv1beta1MutatingWebhookConfiguration & {
+export type PatchAdmissionregistrationV1beta1MutatingWebhookConfigurationResponse = V1beta1MutatingWebhookConfiguration & {
   /**
    * The underlying HTTP response.
    */
@@ -83035,7 +83035,7 @@ export type PatchAdmissionregistrationV1beta1MutatingWebhookConfigurationRespons
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiadmissionregistrationv1beta1MutatingWebhookConfiguration;
+      parsedBody: V1beta1MutatingWebhookConfiguration;
     };
 };
 
@@ -83043,7 +83043,7 @@ export type PatchAdmissionregistrationV1beta1MutatingWebhookConfigurationRespons
  * Contains response data for the listAdmissionregistrationV1beta1ValidatingWebhookConfiguration
  * operation.
  */
-export type ListAdmissionregistrationV1beta1ValidatingWebhookConfigurationResponse = Iok8sapiadmissionregistrationv1beta1ValidatingWebhookConfigurationList & {
+export type ListAdmissionregistrationV1beta1ValidatingWebhookConfigurationResponse = V1beta1ValidatingWebhookConfigurationList & {
   /**
    * The underlying HTTP response.
    */
@@ -83055,7 +83055,7 @@ export type ListAdmissionregistrationV1beta1ValidatingWebhookConfigurationRespon
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiadmissionregistrationv1beta1ValidatingWebhookConfigurationList;
+      parsedBody: V1beta1ValidatingWebhookConfigurationList;
     };
 };
 
@@ -83063,7 +83063,7 @@ export type ListAdmissionregistrationV1beta1ValidatingWebhookConfigurationRespon
  * Contains response data for the createAdmissionregistrationV1beta1ValidatingWebhookConfiguration
  * operation.
  */
-export type CreateAdmissionregistrationV1beta1ValidatingWebhookConfigurationResponse = Iok8sapiadmissionregistrationv1beta1ValidatingWebhookConfiguration & {
+export type CreateAdmissionregistrationV1beta1ValidatingWebhookConfigurationResponse = V1beta1ValidatingWebhookConfiguration & {
   /**
    * The underlying HTTP response.
    */
@@ -83075,7 +83075,7 @@ export type CreateAdmissionregistrationV1beta1ValidatingWebhookConfigurationResp
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiadmissionregistrationv1beta1ValidatingWebhookConfiguration;
+      parsedBody: V1beta1ValidatingWebhookConfiguration;
     };
 };
 
@@ -83083,7 +83083,7 @@ export type CreateAdmissionregistrationV1beta1ValidatingWebhookConfigurationResp
  * Contains response data for the
  * deleteAdmissionregistrationV1beta1CollectionValidatingWebhookConfiguration operation.
  */
-export type DeleteAdmissionregistrationV1beta1CollectionValidatingWebhookConfigurationResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteAdmissionregistrationV1beta1CollectionValidatingWebhookConfigurationResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -83095,7 +83095,7 @@ export type DeleteAdmissionregistrationV1beta1CollectionValidatingWebhookConfigu
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -83103,7 +83103,7 @@ export type DeleteAdmissionregistrationV1beta1CollectionValidatingWebhookConfigu
  * Contains response data for the readAdmissionregistrationV1beta1ValidatingWebhookConfiguration
  * operation.
  */
-export type ReadAdmissionregistrationV1beta1ValidatingWebhookConfigurationResponse = Iok8sapiadmissionregistrationv1beta1ValidatingWebhookConfiguration & {
+export type ReadAdmissionregistrationV1beta1ValidatingWebhookConfigurationResponse = V1beta1ValidatingWebhookConfiguration & {
   /**
    * The underlying HTTP response.
    */
@@ -83115,7 +83115,7 @@ export type ReadAdmissionregistrationV1beta1ValidatingWebhookConfigurationRespon
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiadmissionregistrationv1beta1ValidatingWebhookConfiguration;
+      parsedBody: V1beta1ValidatingWebhookConfiguration;
     };
 };
 
@@ -83123,7 +83123,7 @@ export type ReadAdmissionregistrationV1beta1ValidatingWebhookConfigurationRespon
  * Contains response data for the replaceAdmissionregistrationV1beta1ValidatingWebhookConfiguration
  * operation.
  */
-export type ReplaceAdmissionregistrationV1beta1ValidatingWebhookConfigurationResponse = Iok8sapiadmissionregistrationv1beta1ValidatingWebhookConfiguration & {
+export type ReplaceAdmissionregistrationV1beta1ValidatingWebhookConfigurationResponse = V1beta1ValidatingWebhookConfiguration & {
   /**
    * The underlying HTTP response.
    */
@@ -83135,7 +83135,7 @@ export type ReplaceAdmissionregistrationV1beta1ValidatingWebhookConfigurationRes
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiadmissionregistrationv1beta1ValidatingWebhookConfiguration;
+      parsedBody: V1beta1ValidatingWebhookConfiguration;
     };
 };
 
@@ -83143,7 +83143,7 @@ export type ReplaceAdmissionregistrationV1beta1ValidatingWebhookConfigurationRes
  * Contains response data for the deleteAdmissionregistrationV1beta1ValidatingWebhookConfiguration
  * operation.
  */
-export type DeleteAdmissionregistrationV1beta1ValidatingWebhookConfigurationResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteAdmissionregistrationV1beta1ValidatingWebhookConfigurationResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -83155,7 +83155,7 @@ export type DeleteAdmissionregistrationV1beta1ValidatingWebhookConfigurationResp
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -83163,7 +83163,7 @@ export type DeleteAdmissionregistrationV1beta1ValidatingWebhookConfigurationResp
  * Contains response data for the patchAdmissionregistrationV1beta1ValidatingWebhookConfiguration
  * operation.
  */
-export type PatchAdmissionregistrationV1beta1ValidatingWebhookConfigurationResponse = Iok8sapiadmissionregistrationv1beta1ValidatingWebhookConfiguration & {
+export type PatchAdmissionregistrationV1beta1ValidatingWebhookConfigurationResponse = V1beta1ValidatingWebhookConfiguration & {
   /**
    * The underlying HTTP response.
    */
@@ -83175,7 +83175,7 @@ export type PatchAdmissionregistrationV1beta1ValidatingWebhookConfigurationRespo
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiadmissionregistrationv1beta1ValidatingWebhookConfiguration;
+      parsedBody: V1beta1ValidatingWebhookConfiguration;
     };
 };
 
@@ -83183,7 +83183,7 @@ export type PatchAdmissionregistrationV1beta1ValidatingWebhookConfigurationRespo
  * Contains response data for the watchAdmissionregistrationV1beta1MutatingWebhookConfigurationList
  * operation.
  */
-export type WatchAdmissionregistrationV1beta1MutatingWebhookConfigurationListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchAdmissionregistrationV1beta1MutatingWebhookConfigurationListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -83195,7 +83195,7 @@ export type WatchAdmissionregistrationV1beta1MutatingWebhookConfigurationListRes
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
@@ -83203,7 +83203,7 @@ export type WatchAdmissionregistrationV1beta1MutatingWebhookConfigurationListRes
  * Contains response data for the watchAdmissionregistrationV1beta1MutatingWebhookConfiguration
  * operation.
  */
-export type WatchAdmissionregistrationV1beta1MutatingWebhookConfigurationResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchAdmissionregistrationV1beta1MutatingWebhookConfigurationResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -83215,7 +83215,7 @@ export type WatchAdmissionregistrationV1beta1MutatingWebhookConfigurationRespons
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
@@ -83223,7 +83223,7 @@ export type WatchAdmissionregistrationV1beta1MutatingWebhookConfigurationRespons
  * Contains response data for the
  * watchAdmissionregistrationV1beta1ValidatingWebhookConfigurationList operation.
  */
-export type WatchAdmissionregistrationV1beta1ValidatingWebhookConfigurationListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchAdmissionregistrationV1beta1ValidatingWebhookConfigurationListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -83235,7 +83235,7 @@ export type WatchAdmissionregistrationV1beta1ValidatingWebhookConfigurationListR
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
@@ -83243,7 +83243,7 @@ export type WatchAdmissionregistrationV1beta1ValidatingWebhookConfigurationListR
  * Contains response data for the watchAdmissionregistrationV1beta1ValidatingWebhookConfiguration
  * operation.
  */
-export type WatchAdmissionregistrationV1beta1ValidatingWebhookConfigurationResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchAdmissionregistrationV1beta1ValidatingWebhookConfigurationResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -83255,14 +83255,14 @@ export type WatchAdmissionregistrationV1beta1ValidatingWebhookConfigurationRespo
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the getApiregistrationAPIGroup operation.
  */
-export type GetApiregistrationAPIGroupResponse = Iok8sapimachinerypkgapismetav1APIGroup & {
+export type GetApiregistrationAPIGroupResponse = V1APIGroup & {
   /**
    * The underlying HTTP response.
    */
@@ -83274,14 +83274,14 @@ export type GetApiregistrationAPIGroupResponse = Iok8sapimachinerypkgapismetav1A
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1APIGroup;
+      parsedBody: V1APIGroup;
     };
 };
 
 /**
  * Contains response data for the getApiregistrationV1APIResources operation.
  */
-export type GetApiregistrationV1APIResourcesResponse = Iok8sapimachinerypkgapismetav1APIResourceList & {
+export type GetApiregistrationV1APIResourcesResponse = V1APIResourceList & {
   /**
    * The underlying HTTP response.
    */
@@ -83293,7 +83293,7 @@ export type GetApiregistrationV1APIResourcesResponse = Iok8sapimachinerypkgapism
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1APIResourceList;
+      parsedBody: V1APIResourceList;
     };
 };
 
@@ -83338,7 +83338,7 @@ export type CreateApiregistrationV1APIServiceResponse = Iok8skubeAggregatorpkgap
 /**
  * Contains response data for the deleteApiregistrationV1CollectionAPIService operation.
  */
-export type DeleteApiregistrationV1CollectionAPIServiceResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteApiregistrationV1CollectionAPIServiceResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -83350,7 +83350,7 @@ export type DeleteApiregistrationV1CollectionAPIServiceResponse = Iok8sapimachin
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -83395,7 +83395,7 @@ export type ReplaceApiregistrationV1APIServiceResponse = Iok8skubeAggregatorpkga
 /**
  * Contains response data for the deleteApiregistrationV1APIService operation.
  */
-export type DeleteApiregistrationV1APIServiceResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteApiregistrationV1APIServiceResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -83407,7 +83407,7 @@ export type DeleteApiregistrationV1APIServiceResponse = Iok8sapimachinerypkgapis
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -83490,7 +83490,7 @@ export type PatchApiregistrationV1APIServiceStatusResponse = Iok8skubeAggregator
 /**
  * Contains response data for the watchApiregistrationV1APIServiceList operation.
  */
-export type WatchApiregistrationV1APIServiceListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchApiregistrationV1APIServiceListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -83502,14 +83502,14 @@ export type WatchApiregistrationV1APIServiceListResponse = Iok8sapimachinerypkga
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchApiregistrationV1APIService operation.
  */
-export type WatchApiregistrationV1APIServiceResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchApiregistrationV1APIServiceResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -83521,14 +83521,14 @@ export type WatchApiregistrationV1APIServiceResponse = Iok8sapimachinerypkgapism
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the getApiregistrationV1beta1APIResources operation.
  */
-export type GetApiregistrationV1beta1APIResourcesResponse = Iok8sapimachinerypkgapismetav1APIResourceList & {
+export type GetApiregistrationV1beta1APIResourcesResponse = V1APIResourceList & {
   /**
    * The underlying HTTP response.
    */
@@ -83540,7 +83540,7 @@ export type GetApiregistrationV1beta1APIResourcesResponse = Iok8sapimachinerypkg
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1APIResourceList;
+      parsedBody: V1APIResourceList;
     };
 };
 
@@ -83585,7 +83585,7 @@ export type CreateApiregistrationV1beta1APIServiceResponse = Iok8skubeAggregator
 /**
  * Contains response data for the deleteApiregistrationV1beta1CollectionAPIService operation.
  */
-export type DeleteApiregistrationV1beta1CollectionAPIServiceResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteApiregistrationV1beta1CollectionAPIServiceResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -83597,7 +83597,7 @@ export type DeleteApiregistrationV1beta1CollectionAPIServiceResponse = Iok8sapim
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -83642,7 +83642,7 @@ export type ReplaceApiregistrationV1beta1APIServiceResponse = Iok8skubeAggregato
 /**
  * Contains response data for the deleteApiregistrationV1beta1APIService operation.
  */
-export type DeleteApiregistrationV1beta1APIServiceResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteApiregistrationV1beta1APIServiceResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -83654,7 +83654,7 @@ export type DeleteApiregistrationV1beta1APIServiceResponse = Iok8sapimachinerypk
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -83737,7 +83737,7 @@ export type PatchApiregistrationV1beta1APIServiceStatusResponse = Iok8skubeAggre
 /**
  * Contains response data for the watchApiregistrationV1beta1APIServiceList operation.
  */
-export type WatchApiregistrationV1beta1APIServiceListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchApiregistrationV1beta1APIServiceListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -83749,14 +83749,14 @@ export type WatchApiregistrationV1beta1APIServiceListResponse = Iok8sapimachiner
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchApiregistrationV1beta1APIService operation.
  */
-export type WatchApiregistrationV1beta1APIServiceResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchApiregistrationV1beta1APIServiceResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -83768,14 +83768,14 @@ export type WatchApiregistrationV1beta1APIServiceResponse = Iok8sapimachinerypkg
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the getAppsOpenshiftIoAPIGroup operation.
  */
-export type GetAppsOpenshiftIoAPIGroupResponse = Iok8sapimachinerypkgapismetav1APIGroup & {
+export type GetAppsOpenshiftIoAPIGroupResponse = V1APIGroup & {
   /**
    * The underlying HTTP response.
    */
@@ -83787,14 +83787,14 @@ export type GetAppsOpenshiftIoAPIGroupResponse = Iok8sapimachinerypkgapismetav1A
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1APIGroup;
+      parsedBody: V1APIGroup;
     };
 };
 
 /**
  * Contains response data for the getAppsOpenshiftIoV1APIResources operation.
  */
-export type GetAppsOpenshiftIoV1APIResourcesResponse = Iok8sapimachinerypkgapismetav1APIResourceList & {
+export type GetAppsOpenshiftIoV1APIResourcesResponse = V1APIResourceList & {
   /**
    * The underlying HTTP response.
    */
@@ -83806,7 +83806,7 @@ export type GetAppsOpenshiftIoV1APIResourcesResponse = Iok8sapimachinerypkgapism
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1APIResourceList;
+      parsedBody: V1APIResourceList;
     };
 };
 
@@ -83871,7 +83871,7 @@ export type CreateAppsOpenshiftIoV1NamespacedDeploymentConfigResponse = Comgithu
  * Contains response data for the deleteAppsOpenshiftIoV1CollectionNamespacedDeploymentConfig
  * operation.
  */
-export type DeleteAppsOpenshiftIoV1CollectionNamespacedDeploymentConfigResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteAppsOpenshiftIoV1CollectionNamespacedDeploymentConfigResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -83883,7 +83883,7 @@ export type DeleteAppsOpenshiftIoV1CollectionNamespacedDeploymentConfigResponse 
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -83928,7 +83928,7 @@ export type ReplaceAppsOpenshiftIoV1NamespacedDeploymentConfigResponse = Comgith
 /**
  * Contains response data for the deleteAppsOpenshiftIoV1NamespacedDeploymentConfig operation.
  */
-export type DeleteAppsOpenshiftIoV1NamespacedDeploymentConfigResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteAppsOpenshiftIoV1NamespacedDeploymentConfigResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -83940,7 +83940,7 @@ export type DeleteAppsOpenshiftIoV1NamespacedDeploymentConfigResponse = Iok8sapi
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -84142,7 +84142,7 @@ export type PatchAppsOpenshiftIoV1NamespacedDeploymentConfigStatusResponse = Com
  * Contains response data for the watchAppsOpenshiftIoV1DeploymentConfigListForAllNamespaces
  * operation.
  */
-export type WatchAppsOpenshiftIoV1DeploymentConfigListForAllNamespacesResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchAppsOpenshiftIoV1DeploymentConfigListForAllNamespacesResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -84154,14 +84154,14 @@ export type WatchAppsOpenshiftIoV1DeploymentConfigListForAllNamespacesResponse =
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchAppsOpenshiftIoV1NamespacedDeploymentConfigList operation.
  */
-export type WatchAppsOpenshiftIoV1NamespacedDeploymentConfigListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchAppsOpenshiftIoV1NamespacedDeploymentConfigListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -84173,14 +84173,14 @@ export type WatchAppsOpenshiftIoV1NamespacedDeploymentConfigListResponse = Iok8s
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchAppsOpenshiftIoV1NamespacedDeploymentConfig operation.
  */
-export type WatchAppsOpenshiftIoV1NamespacedDeploymentConfigResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchAppsOpenshiftIoV1NamespacedDeploymentConfigResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -84192,14 +84192,14 @@ export type WatchAppsOpenshiftIoV1NamespacedDeploymentConfigResponse = Iok8sapim
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the getAppsAPIGroup operation.
  */
-export type GetAppsAPIGroupResponse = Iok8sapimachinerypkgapismetav1APIGroup & {
+export type GetAppsAPIGroupResponse = V1APIGroup & {
   /**
    * The underlying HTTP response.
    */
@@ -84211,14 +84211,14 @@ export type GetAppsAPIGroupResponse = Iok8sapimachinerypkgapismetav1APIGroup & {
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1APIGroup;
+      parsedBody: V1APIGroup;
     };
 };
 
 /**
  * Contains response data for the getAppsV1APIResources operation.
  */
-export type GetAppsV1APIResourcesResponse = Iok8sapimachinerypkgapismetav1APIResourceList & {
+export type GetAppsV1APIResourcesResponse = V1APIResourceList & {
   /**
    * The underlying HTTP response.
    */
@@ -84230,14 +84230,14 @@ export type GetAppsV1APIResourcesResponse = Iok8sapimachinerypkgapismetav1APIRes
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1APIResourceList;
+      parsedBody: V1APIResourceList;
     };
 };
 
 /**
  * Contains response data for the listAppsV1ControllerRevisionForAllNamespaces operation.
  */
-export type ListAppsV1ControllerRevisionForAllNamespacesResponse = Iok8sapiappsv1ControllerRevisionList & {
+export type ListAppsV1ControllerRevisionForAllNamespacesResponse = V1ControllerRevisionList & {
   /**
    * The underlying HTTP response.
    */
@@ -84249,14 +84249,14 @@ export type ListAppsV1ControllerRevisionForAllNamespacesResponse = Iok8sapiappsv
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1ControllerRevisionList;
+      parsedBody: V1ControllerRevisionList;
     };
 };
 
 /**
  * Contains response data for the listAppsV1DaemonSetForAllNamespaces operation.
  */
-export type ListAppsV1DaemonSetForAllNamespacesResponse = Iok8sapiappsv1DaemonSetList & {
+export type ListAppsV1DaemonSetForAllNamespacesResponse = V1DaemonSetList & {
   /**
    * The underlying HTTP response.
    */
@@ -84268,14 +84268,14 @@ export type ListAppsV1DaemonSetForAllNamespacesResponse = Iok8sapiappsv1DaemonSe
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1DaemonSetList;
+      parsedBody: V1DaemonSetList;
     };
 };
 
 /**
  * Contains response data for the listAppsV1DeploymentForAllNamespaces operation.
  */
-export type ListAppsV1DeploymentForAllNamespacesResponse = Iok8sapiappsv1DeploymentList & {
+export type ListAppsV1DeploymentForAllNamespacesResponse = V1DeploymentList & {
   /**
    * The underlying HTTP response.
    */
@@ -84287,14 +84287,14 @@ export type ListAppsV1DeploymentForAllNamespacesResponse = Iok8sapiappsv1Deploym
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1DeploymentList;
+      parsedBody: V1DeploymentList;
     };
 };
 
 /**
  * Contains response data for the listAppsV1NamespacedControllerRevision operation.
  */
-export type ListAppsV1NamespacedControllerRevisionResponse = Iok8sapiappsv1ControllerRevisionList & {
+export type ListAppsV1NamespacedControllerRevisionResponse = V1ControllerRevisionList & {
   /**
    * The underlying HTTP response.
    */
@@ -84306,14 +84306,14 @@ export type ListAppsV1NamespacedControllerRevisionResponse = Iok8sapiappsv1Contr
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1ControllerRevisionList;
+      parsedBody: V1ControllerRevisionList;
     };
 };
 
 /**
  * Contains response data for the createAppsV1NamespacedControllerRevision operation.
  */
-export type CreateAppsV1NamespacedControllerRevisionResponse = Iok8sapiappsv1ControllerRevision & {
+export type CreateAppsV1NamespacedControllerRevisionResponse = V1ControllerRevision & {
   /**
    * The underlying HTTP response.
    */
@@ -84325,14 +84325,14 @@ export type CreateAppsV1NamespacedControllerRevisionResponse = Iok8sapiappsv1Con
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1ControllerRevision;
+      parsedBody: V1ControllerRevision;
     };
 };
 
 /**
  * Contains response data for the deleteAppsV1CollectionNamespacedControllerRevision operation.
  */
-export type DeleteAppsV1CollectionNamespacedControllerRevisionResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteAppsV1CollectionNamespacedControllerRevisionResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -84344,14 +84344,14 @@ export type DeleteAppsV1CollectionNamespacedControllerRevisionResponse = Iok8sap
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
 /**
  * Contains response data for the readAppsV1NamespacedControllerRevision operation.
  */
-export type ReadAppsV1NamespacedControllerRevisionResponse = Iok8sapiappsv1ControllerRevision & {
+export type ReadAppsV1NamespacedControllerRevisionResponse = V1ControllerRevision & {
   /**
    * The underlying HTTP response.
    */
@@ -84363,14 +84363,14 @@ export type ReadAppsV1NamespacedControllerRevisionResponse = Iok8sapiappsv1Contr
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1ControllerRevision;
+      parsedBody: V1ControllerRevision;
     };
 };
 
 /**
  * Contains response data for the replaceAppsV1NamespacedControllerRevision operation.
  */
-export type ReplaceAppsV1NamespacedControllerRevisionResponse = Iok8sapiappsv1ControllerRevision & {
+export type ReplaceAppsV1NamespacedControllerRevisionResponse = V1ControllerRevision & {
   /**
    * The underlying HTTP response.
    */
@@ -84382,14 +84382,14 @@ export type ReplaceAppsV1NamespacedControllerRevisionResponse = Iok8sapiappsv1Co
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1ControllerRevision;
+      parsedBody: V1ControllerRevision;
     };
 };
 
 /**
  * Contains response data for the deleteAppsV1NamespacedControllerRevision operation.
  */
-export type DeleteAppsV1NamespacedControllerRevisionResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteAppsV1NamespacedControllerRevisionResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -84401,14 +84401,14 @@ export type DeleteAppsV1NamespacedControllerRevisionResponse = Iok8sapimachinery
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
 /**
  * Contains response data for the patchAppsV1NamespacedControllerRevision operation.
  */
-export type PatchAppsV1NamespacedControllerRevisionResponse = Iok8sapiappsv1ControllerRevision & {
+export type PatchAppsV1NamespacedControllerRevisionResponse = V1ControllerRevision & {
   /**
    * The underlying HTTP response.
    */
@@ -84420,14 +84420,14 @@ export type PatchAppsV1NamespacedControllerRevisionResponse = Iok8sapiappsv1Cont
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1ControllerRevision;
+      parsedBody: V1ControllerRevision;
     };
 };
 
 /**
  * Contains response data for the listAppsV1NamespacedDaemonSet operation.
  */
-export type ListAppsV1NamespacedDaemonSetResponse = Iok8sapiappsv1DaemonSetList & {
+export type ListAppsV1NamespacedDaemonSetResponse = V1DaemonSetList & {
   /**
    * The underlying HTTP response.
    */
@@ -84439,14 +84439,14 @@ export type ListAppsV1NamespacedDaemonSetResponse = Iok8sapiappsv1DaemonSetList 
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1DaemonSetList;
+      parsedBody: V1DaemonSetList;
     };
 };
 
 /**
  * Contains response data for the createAppsV1NamespacedDaemonSet operation.
  */
-export type CreateAppsV1NamespacedDaemonSetResponse = Iok8sapiappsv1DaemonSet & {
+export type CreateAppsV1NamespacedDaemonSetResponse = V1DaemonSet & {
   /**
    * The underlying HTTP response.
    */
@@ -84458,14 +84458,14 @@ export type CreateAppsV1NamespacedDaemonSetResponse = Iok8sapiappsv1DaemonSet & 
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1DaemonSet;
+      parsedBody: V1DaemonSet;
     };
 };
 
 /**
  * Contains response data for the deleteAppsV1CollectionNamespacedDaemonSet operation.
  */
-export type DeleteAppsV1CollectionNamespacedDaemonSetResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteAppsV1CollectionNamespacedDaemonSetResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -84477,14 +84477,14 @@ export type DeleteAppsV1CollectionNamespacedDaemonSetResponse = Iok8sapimachiner
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
 /**
  * Contains response data for the readAppsV1NamespacedDaemonSet operation.
  */
-export type ReadAppsV1NamespacedDaemonSetResponse = Iok8sapiappsv1DaemonSet & {
+export type ReadAppsV1NamespacedDaemonSetResponse = V1DaemonSet & {
   /**
    * The underlying HTTP response.
    */
@@ -84496,14 +84496,14 @@ export type ReadAppsV1NamespacedDaemonSetResponse = Iok8sapiappsv1DaemonSet & {
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1DaemonSet;
+      parsedBody: V1DaemonSet;
     };
 };
 
 /**
  * Contains response data for the replaceAppsV1NamespacedDaemonSet operation.
  */
-export type ReplaceAppsV1NamespacedDaemonSetResponse = Iok8sapiappsv1DaemonSet & {
+export type ReplaceAppsV1NamespacedDaemonSetResponse = V1DaemonSet & {
   /**
    * The underlying HTTP response.
    */
@@ -84515,14 +84515,14 @@ export type ReplaceAppsV1NamespacedDaemonSetResponse = Iok8sapiappsv1DaemonSet &
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1DaemonSet;
+      parsedBody: V1DaemonSet;
     };
 };
 
 /**
  * Contains response data for the deleteAppsV1NamespacedDaemonSet operation.
  */
-export type DeleteAppsV1NamespacedDaemonSetResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteAppsV1NamespacedDaemonSetResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -84534,14 +84534,14 @@ export type DeleteAppsV1NamespacedDaemonSetResponse = Iok8sapimachinerypkgapisme
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
 /**
  * Contains response data for the patchAppsV1NamespacedDaemonSet operation.
  */
-export type PatchAppsV1NamespacedDaemonSetResponse = Iok8sapiappsv1DaemonSet & {
+export type PatchAppsV1NamespacedDaemonSetResponse = V1DaemonSet & {
   /**
    * The underlying HTTP response.
    */
@@ -84553,14 +84553,14 @@ export type PatchAppsV1NamespacedDaemonSetResponse = Iok8sapiappsv1DaemonSet & {
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1DaemonSet;
+      parsedBody: V1DaemonSet;
     };
 };
 
 /**
  * Contains response data for the readAppsV1NamespacedDaemonSetStatus operation.
  */
-export type ReadAppsV1NamespacedDaemonSetStatusResponse = Iok8sapiappsv1DaemonSet & {
+export type ReadAppsV1NamespacedDaemonSetStatusResponse = V1DaemonSet & {
   /**
    * The underlying HTTP response.
    */
@@ -84572,14 +84572,14 @@ export type ReadAppsV1NamespacedDaemonSetStatusResponse = Iok8sapiappsv1DaemonSe
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1DaemonSet;
+      parsedBody: V1DaemonSet;
     };
 };
 
 /**
  * Contains response data for the replaceAppsV1NamespacedDaemonSetStatus operation.
  */
-export type ReplaceAppsV1NamespacedDaemonSetStatusResponse = Iok8sapiappsv1DaemonSet & {
+export type ReplaceAppsV1NamespacedDaemonSetStatusResponse = V1DaemonSet & {
   /**
    * The underlying HTTP response.
    */
@@ -84591,14 +84591,14 @@ export type ReplaceAppsV1NamespacedDaemonSetStatusResponse = Iok8sapiappsv1Daemo
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1DaemonSet;
+      parsedBody: V1DaemonSet;
     };
 };
 
 /**
  * Contains response data for the patchAppsV1NamespacedDaemonSetStatus operation.
  */
-export type PatchAppsV1NamespacedDaemonSetStatusResponse = Iok8sapiappsv1DaemonSet & {
+export type PatchAppsV1NamespacedDaemonSetStatusResponse = V1DaemonSet & {
   /**
    * The underlying HTTP response.
    */
@@ -84610,14 +84610,14 @@ export type PatchAppsV1NamespacedDaemonSetStatusResponse = Iok8sapiappsv1DaemonS
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1DaemonSet;
+      parsedBody: V1DaemonSet;
     };
 };
 
 /**
  * Contains response data for the listAppsV1NamespacedDeployment operation.
  */
-export type ListAppsV1NamespacedDeploymentResponse = Iok8sapiappsv1DeploymentList & {
+export type ListAppsV1NamespacedDeploymentResponse = V1DeploymentList & {
   /**
    * The underlying HTTP response.
    */
@@ -84629,14 +84629,14 @@ export type ListAppsV1NamespacedDeploymentResponse = Iok8sapiappsv1DeploymentLis
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1DeploymentList;
+      parsedBody: V1DeploymentList;
     };
 };
 
 /**
  * Contains response data for the createAppsV1NamespacedDeployment operation.
  */
-export type CreateAppsV1NamespacedDeploymentResponse = Iok8sapiappsv1Deployment & {
+export type CreateAppsV1NamespacedDeploymentResponse = V1Deployment & {
   /**
    * The underlying HTTP response.
    */
@@ -84648,14 +84648,14 @@ export type CreateAppsV1NamespacedDeploymentResponse = Iok8sapiappsv1Deployment 
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1Deployment;
+      parsedBody: V1Deployment;
     };
 };
 
 /**
  * Contains response data for the deleteAppsV1CollectionNamespacedDeployment operation.
  */
-export type DeleteAppsV1CollectionNamespacedDeploymentResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteAppsV1CollectionNamespacedDeploymentResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -84667,14 +84667,14 @@ export type DeleteAppsV1CollectionNamespacedDeploymentResponse = Iok8sapimachine
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
 /**
  * Contains response data for the readAppsV1NamespacedDeployment operation.
  */
-export type ReadAppsV1NamespacedDeploymentResponse = Iok8sapiappsv1Deployment & {
+export type ReadAppsV1NamespacedDeploymentResponse = V1Deployment & {
   /**
    * The underlying HTTP response.
    */
@@ -84686,14 +84686,14 @@ export type ReadAppsV1NamespacedDeploymentResponse = Iok8sapiappsv1Deployment & 
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1Deployment;
+      parsedBody: V1Deployment;
     };
 };
 
 /**
  * Contains response data for the replaceAppsV1NamespacedDeployment operation.
  */
-export type ReplaceAppsV1NamespacedDeploymentResponse = Iok8sapiappsv1Deployment & {
+export type ReplaceAppsV1NamespacedDeploymentResponse = V1Deployment & {
   /**
    * The underlying HTTP response.
    */
@@ -84705,14 +84705,14 @@ export type ReplaceAppsV1NamespacedDeploymentResponse = Iok8sapiappsv1Deployment
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1Deployment;
+      parsedBody: V1Deployment;
     };
 };
 
 /**
  * Contains response data for the deleteAppsV1NamespacedDeployment operation.
  */
-export type DeleteAppsV1NamespacedDeploymentResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteAppsV1NamespacedDeploymentResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -84724,14 +84724,14 @@ export type DeleteAppsV1NamespacedDeploymentResponse = Iok8sapimachinerypkgapism
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
 /**
  * Contains response data for the patchAppsV1NamespacedDeployment operation.
  */
-export type PatchAppsV1NamespacedDeploymentResponse = Iok8sapiappsv1Deployment & {
+export type PatchAppsV1NamespacedDeploymentResponse = V1Deployment & {
   /**
    * The underlying HTTP response.
    */
@@ -84743,14 +84743,14 @@ export type PatchAppsV1NamespacedDeploymentResponse = Iok8sapiappsv1Deployment &
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1Deployment;
+      parsedBody: V1Deployment;
     };
 };
 
 /**
  * Contains response data for the readAppsV1NamespacedDeploymentScale operation.
  */
-export type ReadAppsV1NamespacedDeploymentScaleResponse = Iok8sapiautoscalingv1Scale & {
+export type ReadAppsV1NamespacedDeploymentScaleResponse = V1Scale & {
   /**
    * The underlying HTTP response.
    */
@@ -84762,14 +84762,14 @@ export type ReadAppsV1NamespacedDeploymentScaleResponse = Iok8sapiautoscalingv1S
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiautoscalingv1Scale;
+      parsedBody: V1Scale;
     };
 };
 
 /**
  * Contains response data for the replaceAppsV1NamespacedDeploymentScale operation.
  */
-export type ReplaceAppsV1NamespacedDeploymentScaleResponse = Iok8sapiautoscalingv1Scale & {
+export type ReplaceAppsV1NamespacedDeploymentScaleResponse = V1Scale & {
   /**
    * The underlying HTTP response.
    */
@@ -84781,14 +84781,14 @@ export type ReplaceAppsV1NamespacedDeploymentScaleResponse = Iok8sapiautoscaling
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiautoscalingv1Scale;
+      parsedBody: V1Scale;
     };
 };
 
 /**
  * Contains response data for the patchAppsV1NamespacedDeploymentScale operation.
  */
-export type PatchAppsV1NamespacedDeploymentScaleResponse = Iok8sapiautoscalingv1Scale & {
+export type PatchAppsV1NamespacedDeploymentScaleResponse = V1Scale & {
   /**
    * The underlying HTTP response.
    */
@@ -84800,14 +84800,14 @@ export type PatchAppsV1NamespacedDeploymentScaleResponse = Iok8sapiautoscalingv1
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiautoscalingv1Scale;
+      parsedBody: V1Scale;
     };
 };
 
 /**
  * Contains response data for the readAppsV1NamespacedDeploymentStatus operation.
  */
-export type ReadAppsV1NamespacedDeploymentStatusResponse = Iok8sapiappsv1Deployment & {
+export type ReadAppsV1NamespacedDeploymentStatusResponse = V1Deployment & {
   /**
    * The underlying HTTP response.
    */
@@ -84819,14 +84819,14 @@ export type ReadAppsV1NamespacedDeploymentStatusResponse = Iok8sapiappsv1Deploym
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1Deployment;
+      parsedBody: V1Deployment;
     };
 };
 
 /**
  * Contains response data for the replaceAppsV1NamespacedDeploymentStatus operation.
  */
-export type ReplaceAppsV1NamespacedDeploymentStatusResponse = Iok8sapiappsv1Deployment & {
+export type ReplaceAppsV1NamespacedDeploymentStatusResponse = V1Deployment & {
   /**
    * The underlying HTTP response.
    */
@@ -84838,14 +84838,14 @@ export type ReplaceAppsV1NamespacedDeploymentStatusResponse = Iok8sapiappsv1Depl
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1Deployment;
+      parsedBody: V1Deployment;
     };
 };
 
 /**
  * Contains response data for the patchAppsV1NamespacedDeploymentStatus operation.
  */
-export type PatchAppsV1NamespacedDeploymentStatusResponse = Iok8sapiappsv1Deployment & {
+export type PatchAppsV1NamespacedDeploymentStatusResponse = V1Deployment & {
   /**
    * The underlying HTTP response.
    */
@@ -84857,14 +84857,14 @@ export type PatchAppsV1NamespacedDeploymentStatusResponse = Iok8sapiappsv1Deploy
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1Deployment;
+      parsedBody: V1Deployment;
     };
 };
 
 /**
  * Contains response data for the listAppsV1NamespacedReplicaSet operation.
  */
-export type ListAppsV1NamespacedReplicaSetResponse = Iok8sapiappsv1ReplicaSetList & {
+export type ListAppsV1NamespacedReplicaSetResponse = V1ReplicaSetList & {
   /**
    * The underlying HTTP response.
    */
@@ -84876,14 +84876,14 @@ export type ListAppsV1NamespacedReplicaSetResponse = Iok8sapiappsv1ReplicaSetLis
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1ReplicaSetList;
+      parsedBody: V1ReplicaSetList;
     };
 };
 
 /**
  * Contains response data for the createAppsV1NamespacedReplicaSet operation.
  */
-export type CreateAppsV1NamespacedReplicaSetResponse = Iok8sapiappsv1ReplicaSet & {
+export type CreateAppsV1NamespacedReplicaSetResponse = V1ReplicaSet & {
   /**
    * The underlying HTTP response.
    */
@@ -84895,14 +84895,14 @@ export type CreateAppsV1NamespacedReplicaSetResponse = Iok8sapiappsv1ReplicaSet 
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1ReplicaSet;
+      parsedBody: V1ReplicaSet;
     };
 };
 
 /**
  * Contains response data for the deleteAppsV1CollectionNamespacedReplicaSet operation.
  */
-export type DeleteAppsV1CollectionNamespacedReplicaSetResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteAppsV1CollectionNamespacedReplicaSetResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -84914,14 +84914,14 @@ export type DeleteAppsV1CollectionNamespacedReplicaSetResponse = Iok8sapimachine
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
 /**
  * Contains response data for the readAppsV1NamespacedReplicaSet operation.
  */
-export type ReadAppsV1NamespacedReplicaSetResponse = Iok8sapiappsv1ReplicaSet & {
+export type ReadAppsV1NamespacedReplicaSetResponse = V1ReplicaSet & {
   /**
    * The underlying HTTP response.
    */
@@ -84933,14 +84933,14 @@ export type ReadAppsV1NamespacedReplicaSetResponse = Iok8sapiappsv1ReplicaSet & 
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1ReplicaSet;
+      parsedBody: V1ReplicaSet;
     };
 };
 
 /**
  * Contains response data for the replaceAppsV1NamespacedReplicaSet operation.
  */
-export type ReplaceAppsV1NamespacedReplicaSetResponse = Iok8sapiappsv1ReplicaSet & {
+export type ReplaceAppsV1NamespacedReplicaSetResponse = V1ReplicaSet & {
   /**
    * The underlying HTTP response.
    */
@@ -84952,14 +84952,14 @@ export type ReplaceAppsV1NamespacedReplicaSetResponse = Iok8sapiappsv1ReplicaSet
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1ReplicaSet;
+      parsedBody: V1ReplicaSet;
     };
 };
 
 /**
  * Contains response data for the deleteAppsV1NamespacedReplicaSet operation.
  */
-export type DeleteAppsV1NamespacedReplicaSetResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteAppsV1NamespacedReplicaSetResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -84971,14 +84971,14 @@ export type DeleteAppsV1NamespacedReplicaSetResponse = Iok8sapimachinerypkgapism
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
 /**
  * Contains response data for the patchAppsV1NamespacedReplicaSet operation.
  */
-export type PatchAppsV1NamespacedReplicaSetResponse = Iok8sapiappsv1ReplicaSet & {
+export type PatchAppsV1NamespacedReplicaSetResponse = V1ReplicaSet & {
   /**
    * The underlying HTTP response.
    */
@@ -84990,14 +84990,14 @@ export type PatchAppsV1NamespacedReplicaSetResponse = Iok8sapiappsv1ReplicaSet &
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1ReplicaSet;
+      parsedBody: V1ReplicaSet;
     };
 };
 
 /**
  * Contains response data for the readAppsV1NamespacedReplicaSetScale operation.
  */
-export type ReadAppsV1NamespacedReplicaSetScaleResponse = Iok8sapiautoscalingv1Scale & {
+export type ReadAppsV1NamespacedReplicaSetScaleResponse = V1Scale & {
   /**
    * The underlying HTTP response.
    */
@@ -85009,14 +85009,14 @@ export type ReadAppsV1NamespacedReplicaSetScaleResponse = Iok8sapiautoscalingv1S
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiautoscalingv1Scale;
+      parsedBody: V1Scale;
     };
 };
 
 /**
  * Contains response data for the replaceAppsV1NamespacedReplicaSetScale operation.
  */
-export type ReplaceAppsV1NamespacedReplicaSetScaleResponse = Iok8sapiautoscalingv1Scale & {
+export type ReplaceAppsV1NamespacedReplicaSetScaleResponse = V1Scale & {
   /**
    * The underlying HTTP response.
    */
@@ -85028,14 +85028,14 @@ export type ReplaceAppsV1NamespacedReplicaSetScaleResponse = Iok8sapiautoscaling
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiautoscalingv1Scale;
+      parsedBody: V1Scale;
     };
 };
 
 /**
  * Contains response data for the patchAppsV1NamespacedReplicaSetScale operation.
  */
-export type PatchAppsV1NamespacedReplicaSetScaleResponse = Iok8sapiautoscalingv1Scale & {
+export type PatchAppsV1NamespacedReplicaSetScaleResponse = V1Scale & {
   /**
    * The underlying HTTP response.
    */
@@ -85047,14 +85047,14 @@ export type PatchAppsV1NamespacedReplicaSetScaleResponse = Iok8sapiautoscalingv1
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiautoscalingv1Scale;
+      parsedBody: V1Scale;
     };
 };
 
 /**
  * Contains response data for the readAppsV1NamespacedReplicaSetStatus operation.
  */
-export type ReadAppsV1NamespacedReplicaSetStatusResponse = Iok8sapiappsv1ReplicaSet & {
+export type ReadAppsV1NamespacedReplicaSetStatusResponse = V1ReplicaSet & {
   /**
    * The underlying HTTP response.
    */
@@ -85066,14 +85066,14 @@ export type ReadAppsV1NamespacedReplicaSetStatusResponse = Iok8sapiappsv1Replica
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1ReplicaSet;
+      parsedBody: V1ReplicaSet;
     };
 };
 
 /**
  * Contains response data for the replaceAppsV1NamespacedReplicaSetStatus operation.
  */
-export type ReplaceAppsV1NamespacedReplicaSetStatusResponse = Iok8sapiappsv1ReplicaSet & {
+export type ReplaceAppsV1NamespacedReplicaSetStatusResponse = V1ReplicaSet & {
   /**
    * The underlying HTTP response.
    */
@@ -85085,14 +85085,14 @@ export type ReplaceAppsV1NamespacedReplicaSetStatusResponse = Iok8sapiappsv1Repl
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1ReplicaSet;
+      parsedBody: V1ReplicaSet;
     };
 };
 
 /**
  * Contains response data for the patchAppsV1NamespacedReplicaSetStatus operation.
  */
-export type PatchAppsV1NamespacedReplicaSetStatusResponse = Iok8sapiappsv1ReplicaSet & {
+export type PatchAppsV1NamespacedReplicaSetStatusResponse = V1ReplicaSet & {
   /**
    * The underlying HTTP response.
    */
@@ -85104,14 +85104,14 @@ export type PatchAppsV1NamespacedReplicaSetStatusResponse = Iok8sapiappsv1Replic
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1ReplicaSet;
+      parsedBody: V1ReplicaSet;
     };
 };
 
 /**
  * Contains response data for the listAppsV1NamespacedStatefulSet operation.
  */
-export type ListAppsV1NamespacedStatefulSetResponse = Iok8sapiappsv1StatefulSetList & {
+export type ListAppsV1NamespacedStatefulSetResponse = V1StatefulSetList & {
   /**
    * The underlying HTTP response.
    */
@@ -85123,14 +85123,14 @@ export type ListAppsV1NamespacedStatefulSetResponse = Iok8sapiappsv1StatefulSetL
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1StatefulSetList;
+      parsedBody: V1StatefulSetList;
     };
 };
 
 /**
  * Contains response data for the createAppsV1NamespacedStatefulSet operation.
  */
-export type CreateAppsV1NamespacedStatefulSetResponse = Iok8sapiappsv1StatefulSet & {
+export type CreateAppsV1NamespacedStatefulSetResponse = V1StatefulSet & {
   /**
    * The underlying HTTP response.
    */
@@ -85142,14 +85142,14 @@ export type CreateAppsV1NamespacedStatefulSetResponse = Iok8sapiappsv1StatefulSe
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1StatefulSet;
+      parsedBody: V1StatefulSet;
     };
 };
 
 /**
  * Contains response data for the deleteAppsV1CollectionNamespacedStatefulSet operation.
  */
-export type DeleteAppsV1CollectionNamespacedStatefulSetResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteAppsV1CollectionNamespacedStatefulSetResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -85161,14 +85161,14 @@ export type DeleteAppsV1CollectionNamespacedStatefulSetResponse = Iok8sapimachin
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
 /**
  * Contains response data for the readAppsV1NamespacedStatefulSet operation.
  */
-export type ReadAppsV1NamespacedStatefulSetResponse = Iok8sapiappsv1StatefulSet & {
+export type ReadAppsV1NamespacedStatefulSetResponse = V1StatefulSet & {
   /**
    * The underlying HTTP response.
    */
@@ -85180,14 +85180,14 @@ export type ReadAppsV1NamespacedStatefulSetResponse = Iok8sapiappsv1StatefulSet 
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1StatefulSet;
+      parsedBody: V1StatefulSet;
     };
 };
 
 /**
  * Contains response data for the replaceAppsV1NamespacedStatefulSet operation.
  */
-export type ReplaceAppsV1NamespacedStatefulSetResponse = Iok8sapiappsv1StatefulSet & {
+export type ReplaceAppsV1NamespacedStatefulSetResponse = V1StatefulSet & {
   /**
    * The underlying HTTP response.
    */
@@ -85199,14 +85199,14 @@ export type ReplaceAppsV1NamespacedStatefulSetResponse = Iok8sapiappsv1StatefulS
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1StatefulSet;
+      parsedBody: V1StatefulSet;
     };
 };
 
 /**
  * Contains response data for the deleteAppsV1NamespacedStatefulSet operation.
  */
-export type DeleteAppsV1NamespacedStatefulSetResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteAppsV1NamespacedStatefulSetResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -85218,14 +85218,14 @@ export type DeleteAppsV1NamespacedStatefulSetResponse = Iok8sapimachinerypkgapis
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
 /**
  * Contains response data for the patchAppsV1NamespacedStatefulSet operation.
  */
-export type PatchAppsV1NamespacedStatefulSetResponse = Iok8sapiappsv1StatefulSet & {
+export type PatchAppsV1NamespacedStatefulSetResponse = V1StatefulSet & {
   /**
    * The underlying HTTP response.
    */
@@ -85237,14 +85237,14 @@ export type PatchAppsV1NamespacedStatefulSetResponse = Iok8sapiappsv1StatefulSet
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1StatefulSet;
+      parsedBody: V1StatefulSet;
     };
 };
 
 /**
  * Contains response data for the readAppsV1NamespacedStatefulSetScale operation.
  */
-export type ReadAppsV1NamespacedStatefulSetScaleResponse = Iok8sapiautoscalingv1Scale & {
+export type ReadAppsV1NamespacedStatefulSetScaleResponse = V1Scale & {
   /**
    * The underlying HTTP response.
    */
@@ -85256,14 +85256,14 @@ export type ReadAppsV1NamespacedStatefulSetScaleResponse = Iok8sapiautoscalingv1
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiautoscalingv1Scale;
+      parsedBody: V1Scale;
     };
 };
 
 /**
  * Contains response data for the replaceAppsV1NamespacedStatefulSetScale operation.
  */
-export type ReplaceAppsV1NamespacedStatefulSetScaleResponse = Iok8sapiautoscalingv1Scale & {
+export type ReplaceAppsV1NamespacedStatefulSetScaleResponse = V1Scale & {
   /**
    * The underlying HTTP response.
    */
@@ -85275,14 +85275,14 @@ export type ReplaceAppsV1NamespacedStatefulSetScaleResponse = Iok8sapiautoscalin
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiautoscalingv1Scale;
+      parsedBody: V1Scale;
     };
 };
 
 /**
  * Contains response data for the patchAppsV1NamespacedStatefulSetScale operation.
  */
-export type PatchAppsV1NamespacedStatefulSetScaleResponse = Iok8sapiautoscalingv1Scale & {
+export type PatchAppsV1NamespacedStatefulSetScaleResponse = V1Scale & {
   /**
    * The underlying HTTP response.
    */
@@ -85294,14 +85294,14 @@ export type PatchAppsV1NamespacedStatefulSetScaleResponse = Iok8sapiautoscalingv
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiautoscalingv1Scale;
+      parsedBody: V1Scale;
     };
 };
 
 /**
  * Contains response data for the readAppsV1NamespacedStatefulSetStatus operation.
  */
-export type ReadAppsV1NamespacedStatefulSetStatusResponse = Iok8sapiappsv1StatefulSet & {
+export type ReadAppsV1NamespacedStatefulSetStatusResponse = V1StatefulSet & {
   /**
    * The underlying HTTP response.
    */
@@ -85313,14 +85313,14 @@ export type ReadAppsV1NamespacedStatefulSetStatusResponse = Iok8sapiappsv1Statef
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1StatefulSet;
+      parsedBody: V1StatefulSet;
     };
 };
 
 /**
  * Contains response data for the replaceAppsV1NamespacedStatefulSetStatus operation.
  */
-export type ReplaceAppsV1NamespacedStatefulSetStatusResponse = Iok8sapiappsv1StatefulSet & {
+export type ReplaceAppsV1NamespacedStatefulSetStatusResponse = V1StatefulSet & {
   /**
    * The underlying HTTP response.
    */
@@ -85332,14 +85332,14 @@ export type ReplaceAppsV1NamespacedStatefulSetStatusResponse = Iok8sapiappsv1Sta
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1StatefulSet;
+      parsedBody: V1StatefulSet;
     };
 };
 
 /**
  * Contains response data for the patchAppsV1NamespacedStatefulSetStatus operation.
  */
-export type PatchAppsV1NamespacedStatefulSetStatusResponse = Iok8sapiappsv1StatefulSet & {
+export type PatchAppsV1NamespacedStatefulSetStatusResponse = V1StatefulSet & {
   /**
    * The underlying HTTP response.
    */
@@ -85351,14 +85351,14 @@ export type PatchAppsV1NamespacedStatefulSetStatusResponse = Iok8sapiappsv1State
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1StatefulSet;
+      parsedBody: V1StatefulSet;
     };
 };
 
 /**
  * Contains response data for the listAppsV1ReplicaSetForAllNamespaces operation.
  */
-export type ListAppsV1ReplicaSetForAllNamespacesResponse = Iok8sapiappsv1ReplicaSetList & {
+export type ListAppsV1ReplicaSetForAllNamespacesResponse = V1ReplicaSetList & {
   /**
    * The underlying HTTP response.
    */
@@ -85370,14 +85370,14 @@ export type ListAppsV1ReplicaSetForAllNamespacesResponse = Iok8sapiappsv1Replica
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1ReplicaSetList;
+      parsedBody: V1ReplicaSetList;
     };
 };
 
 /**
  * Contains response data for the listAppsV1StatefulSetForAllNamespaces operation.
  */
-export type ListAppsV1StatefulSetForAllNamespacesResponse = Iok8sapiappsv1StatefulSetList & {
+export type ListAppsV1StatefulSetForAllNamespacesResponse = V1StatefulSetList & {
   /**
    * The underlying HTTP response.
    */
@@ -85389,14 +85389,14 @@ export type ListAppsV1StatefulSetForAllNamespacesResponse = Iok8sapiappsv1Statef
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1StatefulSetList;
+      parsedBody: V1StatefulSetList;
     };
 };
 
 /**
  * Contains response data for the watchAppsV1ControllerRevisionListForAllNamespaces operation.
  */
-export type WatchAppsV1ControllerRevisionListForAllNamespacesResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchAppsV1ControllerRevisionListForAllNamespacesResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -85408,14 +85408,14 @@ export type WatchAppsV1ControllerRevisionListForAllNamespacesResponse = Iok8sapi
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchAppsV1DaemonSetListForAllNamespaces operation.
  */
-export type WatchAppsV1DaemonSetListForAllNamespacesResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchAppsV1DaemonSetListForAllNamespacesResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -85427,14 +85427,14 @@ export type WatchAppsV1DaemonSetListForAllNamespacesResponse = Iok8sapimachinery
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchAppsV1DeploymentListForAllNamespaces operation.
  */
-export type WatchAppsV1DeploymentListForAllNamespacesResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchAppsV1DeploymentListForAllNamespacesResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -85446,14 +85446,14 @@ export type WatchAppsV1DeploymentListForAllNamespacesResponse = Iok8sapimachiner
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchAppsV1NamespacedControllerRevisionList operation.
  */
-export type WatchAppsV1NamespacedControllerRevisionListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchAppsV1NamespacedControllerRevisionListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -85465,14 +85465,14 @@ export type WatchAppsV1NamespacedControllerRevisionListResponse = Iok8sapimachin
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchAppsV1NamespacedControllerRevision operation.
  */
-export type WatchAppsV1NamespacedControllerRevisionResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchAppsV1NamespacedControllerRevisionResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -85484,14 +85484,14 @@ export type WatchAppsV1NamespacedControllerRevisionResponse = Iok8sapimachineryp
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchAppsV1NamespacedDaemonSetList operation.
  */
-export type WatchAppsV1NamespacedDaemonSetListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchAppsV1NamespacedDaemonSetListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -85503,14 +85503,14 @@ export type WatchAppsV1NamespacedDaemonSetListResponse = Iok8sapimachinerypkgapi
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchAppsV1NamespacedDaemonSet operation.
  */
-export type WatchAppsV1NamespacedDaemonSetResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchAppsV1NamespacedDaemonSetResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -85522,14 +85522,14 @@ export type WatchAppsV1NamespacedDaemonSetResponse = Iok8sapimachinerypkgapismet
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchAppsV1NamespacedDeploymentList operation.
  */
-export type WatchAppsV1NamespacedDeploymentListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchAppsV1NamespacedDeploymentListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -85541,14 +85541,14 @@ export type WatchAppsV1NamespacedDeploymentListResponse = Iok8sapimachinerypkgap
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchAppsV1NamespacedDeployment operation.
  */
-export type WatchAppsV1NamespacedDeploymentResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchAppsV1NamespacedDeploymentResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -85560,14 +85560,14 @@ export type WatchAppsV1NamespacedDeploymentResponse = Iok8sapimachinerypkgapisme
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchAppsV1NamespacedReplicaSetList operation.
  */
-export type WatchAppsV1NamespacedReplicaSetListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchAppsV1NamespacedReplicaSetListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -85579,14 +85579,14 @@ export type WatchAppsV1NamespacedReplicaSetListResponse = Iok8sapimachinerypkgap
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchAppsV1NamespacedReplicaSet operation.
  */
-export type WatchAppsV1NamespacedReplicaSetResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchAppsV1NamespacedReplicaSetResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -85598,14 +85598,14 @@ export type WatchAppsV1NamespacedReplicaSetResponse = Iok8sapimachinerypkgapisme
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchAppsV1NamespacedStatefulSetList operation.
  */
-export type WatchAppsV1NamespacedStatefulSetListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchAppsV1NamespacedStatefulSetListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -85617,14 +85617,14 @@ export type WatchAppsV1NamespacedStatefulSetListResponse = Iok8sapimachinerypkga
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchAppsV1NamespacedStatefulSet operation.
  */
-export type WatchAppsV1NamespacedStatefulSetResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchAppsV1NamespacedStatefulSetResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -85636,14 +85636,14 @@ export type WatchAppsV1NamespacedStatefulSetResponse = Iok8sapimachinerypkgapism
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchAppsV1ReplicaSetListForAllNamespaces operation.
  */
-export type WatchAppsV1ReplicaSetListForAllNamespacesResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchAppsV1ReplicaSetListForAllNamespacesResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -85655,14 +85655,14 @@ export type WatchAppsV1ReplicaSetListForAllNamespacesResponse = Iok8sapimachiner
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchAppsV1StatefulSetListForAllNamespaces operation.
  */
-export type WatchAppsV1StatefulSetListForAllNamespacesResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchAppsV1StatefulSetListForAllNamespacesResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -85674,14 +85674,14 @@ export type WatchAppsV1StatefulSetListForAllNamespacesResponse = Iok8sapimachine
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the getAppsV1beta1APIResources operation.
  */
-export type GetAppsV1beta1APIResourcesResponse = Iok8sapimachinerypkgapismetav1APIResourceList & {
+export type GetAppsV1beta1APIResourcesResponse = V1APIResourceList & {
   /**
    * The underlying HTTP response.
    */
@@ -85693,14 +85693,14 @@ export type GetAppsV1beta1APIResourcesResponse = Iok8sapimachinerypkgapismetav1A
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1APIResourceList;
+      parsedBody: V1APIResourceList;
     };
 };
 
 /**
  * Contains response data for the listAppsV1beta1ControllerRevisionForAllNamespaces operation.
  */
-export type ListAppsV1beta1ControllerRevisionForAllNamespacesResponse = Iok8sapiappsv1beta1ControllerRevisionList & {
+export type ListAppsV1beta1ControllerRevisionForAllNamespacesResponse = V1beta1ControllerRevisionList & {
   /**
    * The underlying HTTP response.
    */
@@ -85712,14 +85712,14 @@ export type ListAppsV1beta1ControllerRevisionForAllNamespacesResponse = Iok8sapi
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta1ControllerRevisionList;
+      parsedBody: V1beta1ControllerRevisionList;
     };
 };
 
 /**
  * Contains response data for the listAppsV1beta1DeploymentForAllNamespaces operation.
  */
-export type ListAppsV1beta1DeploymentForAllNamespacesResponse = Iok8sapiappsv1beta1DeploymentList & {
+export type ListAppsV1beta1DeploymentForAllNamespacesResponse = V1beta1DeploymentList & {
   /**
    * The underlying HTTP response.
    */
@@ -85731,14 +85731,14 @@ export type ListAppsV1beta1DeploymentForAllNamespacesResponse = Iok8sapiappsv1be
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta1DeploymentList;
+      parsedBody: V1beta1DeploymentList;
     };
 };
 
 /**
  * Contains response data for the listAppsV1beta1NamespacedControllerRevision operation.
  */
-export type ListAppsV1beta1NamespacedControllerRevisionResponse = Iok8sapiappsv1beta1ControllerRevisionList & {
+export type ListAppsV1beta1NamespacedControllerRevisionResponse = V1beta1ControllerRevisionList & {
   /**
    * The underlying HTTP response.
    */
@@ -85750,14 +85750,14 @@ export type ListAppsV1beta1NamespacedControllerRevisionResponse = Iok8sapiappsv1
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta1ControllerRevisionList;
+      parsedBody: V1beta1ControllerRevisionList;
     };
 };
 
 /**
  * Contains response data for the createAppsV1beta1NamespacedControllerRevision operation.
  */
-export type CreateAppsV1beta1NamespacedControllerRevisionResponse = Iok8sapiappsv1beta1ControllerRevision & {
+export type CreateAppsV1beta1NamespacedControllerRevisionResponse = V1beta1ControllerRevision & {
   /**
    * The underlying HTTP response.
    */
@@ -85769,7 +85769,7 @@ export type CreateAppsV1beta1NamespacedControllerRevisionResponse = Iok8sapiapps
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta1ControllerRevision;
+      parsedBody: V1beta1ControllerRevision;
     };
 };
 
@@ -85777,7 +85777,7 @@ export type CreateAppsV1beta1NamespacedControllerRevisionResponse = Iok8sapiapps
  * Contains response data for the deleteAppsV1beta1CollectionNamespacedControllerRevision
  * operation.
  */
-export type DeleteAppsV1beta1CollectionNamespacedControllerRevisionResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteAppsV1beta1CollectionNamespacedControllerRevisionResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -85789,14 +85789,14 @@ export type DeleteAppsV1beta1CollectionNamespacedControllerRevisionResponse = Io
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
 /**
  * Contains response data for the readAppsV1beta1NamespacedControllerRevision operation.
  */
-export type ReadAppsV1beta1NamespacedControllerRevisionResponse = Iok8sapiappsv1beta1ControllerRevision & {
+export type ReadAppsV1beta1NamespacedControllerRevisionResponse = V1beta1ControllerRevision & {
   /**
    * The underlying HTTP response.
    */
@@ -85808,14 +85808,14 @@ export type ReadAppsV1beta1NamespacedControllerRevisionResponse = Iok8sapiappsv1
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta1ControllerRevision;
+      parsedBody: V1beta1ControllerRevision;
     };
 };
 
 /**
  * Contains response data for the replaceAppsV1beta1NamespacedControllerRevision operation.
  */
-export type ReplaceAppsV1beta1NamespacedControllerRevisionResponse = Iok8sapiappsv1beta1ControllerRevision & {
+export type ReplaceAppsV1beta1NamespacedControllerRevisionResponse = V1beta1ControllerRevision & {
   /**
    * The underlying HTTP response.
    */
@@ -85827,14 +85827,14 @@ export type ReplaceAppsV1beta1NamespacedControllerRevisionResponse = Iok8sapiapp
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta1ControllerRevision;
+      parsedBody: V1beta1ControllerRevision;
     };
 };
 
 /**
  * Contains response data for the deleteAppsV1beta1NamespacedControllerRevision operation.
  */
-export type DeleteAppsV1beta1NamespacedControllerRevisionResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteAppsV1beta1NamespacedControllerRevisionResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -85846,14 +85846,14 @@ export type DeleteAppsV1beta1NamespacedControllerRevisionResponse = Iok8sapimach
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
 /**
  * Contains response data for the patchAppsV1beta1NamespacedControllerRevision operation.
  */
-export type PatchAppsV1beta1NamespacedControllerRevisionResponse = Iok8sapiappsv1beta1ControllerRevision & {
+export type PatchAppsV1beta1NamespacedControllerRevisionResponse = V1beta1ControllerRevision & {
   /**
    * The underlying HTTP response.
    */
@@ -85865,14 +85865,14 @@ export type PatchAppsV1beta1NamespacedControllerRevisionResponse = Iok8sapiappsv
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta1ControllerRevision;
+      parsedBody: V1beta1ControllerRevision;
     };
 };
 
 /**
  * Contains response data for the listAppsV1beta1NamespacedDeployment operation.
  */
-export type ListAppsV1beta1NamespacedDeploymentResponse = Iok8sapiappsv1beta1DeploymentList & {
+export type ListAppsV1beta1NamespacedDeploymentResponse = V1beta1DeploymentList & {
   /**
    * The underlying HTTP response.
    */
@@ -85884,14 +85884,14 @@ export type ListAppsV1beta1NamespacedDeploymentResponse = Iok8sapiappsv1beta1Dep
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta1DeploymentList;
+      parsedBody: V1beta1DeploymentList;
     };
 };
 
 /**
  * Contains response data for the createAppsV1beta1NamespacedDeployment operation.
  */
-export type CreateAppsV1beta1NamespacedDeploymentResponse = Iok8sapiappsv1beta1Deployment & {
+export type CreateAppsV1beta1NamespacedDeploymentResponse = V1beta1Deployment & {
   /**
    * The underlying HTTP response.
    */
@@ -85903,14 +85903,14 @@ export type CreateAppsV1beta1NamespacedDeploymentResponse = Iok8sapiappsv1beta1D
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta1Deployment;
+      parsedBody: V1beta1Deployment;
     };
 };
 
 /**
  * Contains response data for the deleteAppsV1beta1CollectionNamespacedDeployment operation.
  */
-export type DeleteAppsV1beta1CollectionNamespacedDeploymentResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteAppsV1beta1CollectionNamespacedDeploymentResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -85922,14 +85922,14 @@ export type DeleteAppsV1beta1CollectionNamespacedDeploymentResponse = Iok8sapima
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
 /**
  * Contains response data for the readAppsV1beta1NamespacedDeployment operation.
  */
-export type ReadAppsV1beta1NamespacedDeploymentResponse = Iok8sapiappsv1beta1Deployment & {
+export type ReadAppsV1beta1NamespacedDeploymentResponse = V1beta1Deployment & {
   /**
    * The underlying HTTP response.
    */
@@ -85941,14 +85941,14 @@ export type ReadAppsV1beta1NamespacedDeploymentResponse = Iok8sapiappsv1beta1Dep
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta1Deployment;
+      parsedBody: V1beta1Deployment;
     };
 };
 
 /**
  * Contains response data for the replaceAppsV1beta1NamespacedDeployment operation.
  */
-export type ReplaceAppsV1beta1NamespacedDeploymentResponse = Iok8sapiappsv1beta1Deployment & {
+export type ReplaceAppsV1beta1NamespacedDeploymentResponse = V1beta1Deployment & {
   /**
    * The underlying HTTP response.
    */
@@ -85960,14 +85960,14 @@ export type ReplaceAppsV1beta1NamespacedDeploymentResponse = Iok8sapiappsv1beta1
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta1Deployment;
+      parsedBody: V1beta1Deployment;
     };
 };
 
 /**
  * Contains response data for the deleteAppsV1beta1NamespacedDeployment operation.
  */
-export type DeleteAppsV1beta1NamespacedDeploymentResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteAppsV1beta1NamespacedDeploymentResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -85979,14 +85979,14 @@ export type DeleteAppsV1beta1NamespacedDeploymentResponse = Iok8sapimachinerypkg
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
 /**
  * Contains response data for the patchAppsV1beta1NamespacedDeployment operation.
  */
-export type PatchAppsV1beta1NamespacedDeploymentResponse = Iok8sapiappsv1beta1Deployment & {
+export type PatchAppsV1beta1NamespacedDeploymentResponse = V1beta1Deployment & {
   /**
    * The underlying HTTP response.
    */
@@ -85998,14 +85998,14 @@ export type PatchAppsV1beta1NamespacedDeploymentResponse = Iok8sapiappsv1beta1De
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta1Deployment;
+      parsedBody: V1beta1Deployment;
     };
 };
 
 /**
  * Contains response data for the createAppsV1beta1NamespacedDeploymentRollback operation.
  */
-export type CreateAppsV1beta1NamespacedDeploymentRollbackResponse = Iok8sapiappsv1beta1DeploymentRollback & {
+export type CreateAppsV1beta1NamespacedDeploymentRollbackResponse = V1beta1DeploymentRollback & {
   /**
    * The underlying HTTP response.
    */
@@ -86017,14 +86017,14 @@ export type CreateAppsV1beta1NamespacedDeploymentRollbackResponse = Iok8sapiapps
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta1DeploymentRollback;
+      parsedBody: V1beta1DeploymentRollback;
     };
 };
 
 /**
  * Contains response data for the readAppsV1beta1NamespacedDeploymentScale operation.
  */
-export type ReadAppsV1beta1NamespacedDeploymentScaleResponse = Iok8sapiappsv1beta1Scale & {
+export type ReadAppsV1beta1NamespacedDeploymentScaleResponse = V1beta1Scale & {
   /**
    * The underlying HTTP response.
    */
@@ -86036,14 +86036,14 @@ export type ReadAppsV1beta1NamespacedDeploymentScaleResponse = Iok8sapiappsv1bet
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta1Scale;
+      parsedBody: V1beta1Scale;
     };
 };
 
 /**
  * Contains response data for the replaceAppsV1beta1NamespacedDeploymentScale operation.
  */
-export type ReplaceAppsV1beta1NamespacedDeploymentScaleResponse = Iok8sapiappsv1beta1Scale & {
+export type ReplaceAppsV1beta1NamespacedDeploymentScaleResponse = V1beta1Scale & {
   /**
    * The underlying HTTP response.
    */
@@ -86055,14 +86055,14 @@ export type ReplaceAppsV1beta1NamespacedDeploymentScaleResponse = Iok8sapiappsv1
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta1Scale;
+      parsedBody: V1beta1Scale;
     };
 };
 
 /**
  * Contains response data for the patchAppsV1beta1NamespacedDeploymentScale operation.
  */
-export type PatchAppsV1beta1NamespacedDeploymentScaleResponse = Iok8sapiappsv1beta1Scale & {
+export type PatchAppsV1beta1NamespacedDeploymentScaleResponse = V1beta1Scale & {
   /**
    * The underlying HTTP response.
    */
@@ -86074,14 +86074,14 @@ export type PatchAppsV1beta1NamespacedDeploymentScaleResponse = Iok8sapiappsv1be
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta1Scale;
+      parsedBody: V1beta1Scale;
     };
 };
 
 /**
  * Contains response data for the readAppsV1beta1NamespacedDeploymentStatus operation.
  */
-export type ReadAppsV1beta1NamespacedDeploymentStatusResponse = Iok8sapiappsv1beta1Deployment & {
+export type ReadAppsV1beta1NamespacedDeploymentStatusResponse = V1beta1Deployment & {
   /**
    * The underlying HTTP response.
    */
@@ -86093,14 +86093,14 @@ export type ReadAppsV1beta1NamespacedDeploymentStatusResponse = Iok8sapiappsv1be
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta1Deployment;
+      parsedBody: V1beta1Deployment;
     };
 };
 
 /**
  * Contains response data for the replaceAppsV1beta1NamespacedDeploymentStatus operation.
  */
-export type ReplaceAppsV1beta1NamespacedDeploymentStatusResponse = Iok8sapiappsv1beta1Deployment & {
+export type ReplaceAppsV1beta1NamespacedDeploymentStatusResponse = V1beta1Deployment & {
   /**
    * The underlying HTTP response.
    */
@@ -86112,14 +86112,14 @@ export type ReplaceAppsV1beta1NamespacedDeploymentStatusResponse = Iok8sapiappsv
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta1Deployment;
+      parsedBody: V1beta1Deployment;
     };
 };
 
 /**
  * Contains response data for the patchAppsV1beta1NamespacedDeploymentStatus operation.
  */
-export type PatchAppsV1beta1NamespacedDeploymentStatusResponse = Iok8sapiappsv1beta1Deployment & {
+export type PatchAppsV1beta1NamespacedDeploymentStatusResponse = V1beta1Deployment & {
   /**
    * The underlying HTTP response.
    */
@@ -86131,14 +86131,14 @@ export type PatchAppsV1beta1NamespacedDeploymentStatusResponse = Iok8sapiappsv1b
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta1Deployment;
+      parsedBody: V1beta1Deployment;
     };
 };
 
 /**
  * Contains response data for the listAppsV1beta1NamespacedStatefulSet operation.
  */
-export type ListAppsV1beta1NamespacedStatefulSetResponse = Iok8sapiappsv1beta1StatefulSetList & {
+export type ListAppsV1beta1NamespacedStatefulSetResponse = V1beta1StatefulSetList & {
   /**
    * The underlying HTTP response.
    */
@@ -86150,14 +86150,14 @@ export type ListAppsV1beta1NamespacedStatefulSetResponse = Iok8sapiappsv1beta1St
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta1StatefulSetList;
+      parsedBody: V1beta1StatefulSetList;
     };
 };
 
 /**
  * Contains response data for the createAppsV1beta1NamespacedStatefulSet operation.
  */
-export type CreateAppsV1beta1NamespacedStatefulSetResponse = Iok8sapiappsv1beta1StatefulSet & {
+export type CreateAppsV1beta1NamespacedStatefulSetResponse = V1beta1StatefulSet & {
   /**
    * The underlying HTTP response.
    */
@@ -86169,14 +86169,14 @@ export type CreateAppsV1beta1NamespacedStatefulSetResponse = Iok8sapiappsv1beta1
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta1StatefulSet;
+      parsedBody: V1beta1StatefulSet;
     };
 };
 
 /**
  * Contains response data for the deleteAppsV1beta1CollectionNamespacedStatefulSet operation.
  */
-export type DeleteAppsV1beta1CollectionNamespacedStatefulSetResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteAppsV1beta1CollectionNamespacedStatefulSetResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -86188,14 +86188,14 @@ export type DeleteAppsV1beta1CollectionNamespacedStatefulSetResponse = Iok8sapim
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
 /**
  * Contains response data for the readAppsV1beta1NamespacedStatefulSet operation.
  */
-export type ReadAppsV1beta1NamespacedStatefulSetResponse = Iok8sapiappsv1beta1StatefulSet & {
+export type ReadAppsV1beta1NamespacedStatefulSetResponse = V1beta1StatefulSet & {
   /**
    * The underlying HTTP response.
    */
@@ -86207,14 +86207,14 @@ export type ReadAppsV1beta1NamespacedStatefulSetResponse = Iok8sapiappsv1beta1St
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta1StatefulSet;
+      parsedBody: V1beta1StatefulSet;
     };
 };
 
 /**
  * Contains response data for the replaceAppsV1beta1NamespacedStatefulSet operation.
  */
-export type ReplaceAppsV1beta1NamespacedStatefulSetResponse = Iok8sapiappsv1beta1StatefulSet & {
+export type ReplaceAppsV1beta1NamespacedStatefulSetResponse = V1beta1StatefulSet & {
   /**
    * The underlying HTTP response.
    */
@@ -86226,14 +86226,14 @@ export type ReplaceAppsV1beta1NamespacedStatefulSetResponse = Iok8sapiappsv1beta
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta1StatefulSet;
+      parsedBody: V1beta1StatefulSet;
     };
 };
 
 /**
  * Contains response data for the deleteAppsV1beta1NamespacedStatefulSet operation.
  */
-export type DeleteAppsV1beta1NamespacedStatefulSetResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteAppsV1beta1NamespacedStatefulSetResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -86245,14 +86245,14 @@ export type DeleteAppsV1beta1NamespacedStatefulSetResponse = Iok8sapimachinerypk
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
 /**
  * Contains response data for the patchAppsV1beta1NamespacedStatefulSet operation.
  */
-export type PatchAppsV1beta1NamespacedStatefulSetResponse = Iok8sapiappsv1beta1StatefulSet & {
+export type PatchAppsV1beta1NamespacedStatefulSetResponse = V1beta1StatefulSet & {
   /**
    * The underlying HTTP response.
    */
@@ -86264,14 +86264,14 @@ export type PatchAppsV1beta1NamespacedStatefulSetResponse = Iok8sapiappsv1beta1S
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta1StatefulSet;
+      parsedBody: V1beta1StatefulSet;
     };
 };
 
 /**
  * Contains response data for the readAppsV1beta1NamespacedStatefulSetScale operation.
  */
-export type ReadAppsV1beta1NamespacedStatefulSetScaleResponse = Iok8sapiappsv1beta1Scale & {
+export type ReadAppsV1beta1NamespacedStatefulSetScaleResponse = V1beta1Scale & {
   /**
    * The underlying HTTP response.
    */
@@ -86283,14 +86283,14 @@ export type ReadAppsV1beta1NamespacedStatefulSetScaleResponse = Iok8sapiappsv1be
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta1Scale;
+      parsedBody: V1beta1Scale;
     };
 };
 
 /**
  * Contains response data for the replaceAppsV1beta1NamespacedStatefulSetScale operation.
  */
-export type ReplaceAppsV1beta1NamespacedStatefulSetScaleResponse = Iok8sapiappsv1beta1Scale & {
+export type ReplaceAppsV1beta1NamespacedStatefulSetScaleResponse = V1beta1Scale & {
   /**
    * The underlying HTTP response.
    */
@@ -86302,14 +86302,14 @@ export type ReplaceAppsV1beta1NamespacedStatefulSetScaleResponse = Iok8sapiappsv
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta1Scale;
+      parsedBody: V1beta1Scale;
     };
 };
 
 /**
  * Contains response data for the patchAppsV1beta1NamespacedStatefulSetScale operation.
  */
-export type PatchAppsV1beta1NamespacedStatefulSetScaleResponse = Iok8sapiappsv1beta1Scale & {
+export type PatchAppsV1beta1NamespacedStatefulSetScaleResponse = V1beta1Scale & {
   /**
    * The underlying HTTP response.
    */
@@ -86321,14 +86321,14 @@ export type PatchAppsV1beta1NamespacedStatefulSetScaleResponse = Iok8sapiappsv1b
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta1Scale;
+      parsedBody: V1beta1Scale;
     };
 };
 
 /**
  * Contains response data for the readAppsV1beta1NamespacedStatefulSetStatus operation.
  */
-export type ReadAppsV1beta1NamespacedStatefulSetStatusResponse = Iok8sapiappsv1beta1StatefulSet & {
+export type ReadAppsV1beta1NamespacedStatefulSetStatusResponse = V1beta1StatefulSet & {
   /**
    * The underlying HTTP response.
    */
@@ -86340,14 +86340,14 @@ export type ReadAppsV1beta1NamespacedStatefulSetStatusResponse = Iok8sapiappsv1b
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta1StatefulSet;
+      parsedBody: V1beta1StatefulSet;
     };
 };
 
 /**
  * Contains response data for the replaceAppsV1beta1NamespacedStatefulSetStatus operation.
  */
-export type ReplaceAppsV1beta1NamespacedStatefulSetStatusResponse = Iok8sapiappsv1beta1StatefulSet & {
+export type ReplaceAppsV1beta1NamespacedStatefulSetStatusResponse = V1beta1StatefulSet & {
   /**
    * The underlying HTTP response.
    */
@@ -86359,14 +86359,14 @@ export type ReplaceAppsV1beta1NamespacedStatefulSetStatusResponse = Iok8sapiapps
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta1StatefulSet;
+      parsedBody: V1beta1StatefulSet;
     };
 };
 
 /**
  * Contains response data for the patchAppsV1beta1NamespacedStatefulSetStatus operation.
  */
-export type PatchAppsV1beta1NamespacedStatefulSetStatusResponse = Iok8sapiappsv1beta1StatefulSet & {
+export type PatchAppsV1beta1NamespacedStatefulSetStatusResponse = V1beta1StatefulSet & {
   /**
    * The underlying HTTP response.
    */
@@ -86378,14 +86378,14 @@ export type PatchAppsV1beta1NamespacedStatefulSetStatusResponse = Iok8sapiappsv1
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta1StatefulSet;
+      parsedBody: V1beta1StatefulSet;
     };
 };
 
 /**
  * Contains response data for the listAppsV1beta1StatefulSetForAllNamespaces operation.
  */
-export type ListAppsV1beta1StatefulSetForAllNamespacesResponse = Iok8sapiappsv1beta1StatefulSetList & {
+export type ListAppsV1beta1StatefulSetForAllNamespacesResponse = V1beta1StatefulSetList & {
   /**
    * The underlying HTTP response.
    */
@@ -86397,14 +86397,14 @@ export type ListAppsV1beta1StatefulSetForAllNamespacesResponse = Iok8sapiappsv1b
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta1StatefulSetList;
+      parsedBody: V1beta1StatefulSetList;
     };
 };
 
 /**
  * Contains response data for the watchAppsV1beta1ControllerRevisionListForAllNamespaces operation.
  */
-export type WatchAppsV1beta1ControllerRevisionListForAllNamespacesResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchAppsV1beta1ControllerRevisionListForAllNamespacesResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -86416,14 +86416,14 @@ export type WatchAppsV1beta1ControllerRevisionListForAllNamespacesResponse = Iok
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchAppsV1beta1DeploymentListForAllNamespaces operation.
  */
-export type WatchAppsV1beta1DeploymentListForAllNamespacesResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchAppsV1beta1DeploymentListForAllNamespacesResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -86435,14 +86435,14 @@ export type WatchAppsV1beta1DeploymentListForAllNamespacesResponse = Iok8sapimac
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchAppsV1beta1NamespacedControllerRevisionList operation.
  */
-export type WatchAppsV1beta1NamespacedControllerRevisionListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchAppsV1beta1NamespacedControllerRevisionListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -86454,14 +86454,14 @@ export type WatchAppsV1beta1NamespacedControllerRevisionListResponse = Iok8sapim
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchAppsV1beta1NamespacedControllerRevision operation.
  */
-export type WatchAppsV1beta1NamespacedControllerRevisionResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchAppsV1beta1NamespacedControllerRevisionResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -86473,14 +86473,14 @@ export type WatchAppsV1beta1NamespacedControllerRevisionResponse = Iok8sapimachi
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchAppsV1beta1NamespacedDeploymentList operation.
  */
-export type WatchAppsV1beta1NamespacedDeploymentListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchAppsV1beta1NamespacedDeploymentListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -86492,14 +86492,14 @@ export type WatchAppsV1beta1NamespacedDeploymentListResponse = Iok8sapimachinery
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchAppsV1beta1NamespacedDeployment operation.
  */
-export type WatchAppsV1beta1NamespacedDeploymentResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchAppsV1beta1NamespacedDeploymentResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -86511,14 +86511,14 @@ export type WatchAppsV1beta1NamespacedDeploymentResponse = Iok8sapimachinerypkga
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchAppsV1beta1NamespacedStatefulSetList operation.
  */
-export type WatchAppsV1beta1NamespacedStatefulSetListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchAppsV1beta1NamespacedStatefulSetListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -86530,14 +86530,14 @@ export type WatchAppsV1beta1NamespacedStatefulSetListResponse = Iok8sapimachiner
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchAppsV1beta1NamespacedStatefulSet operation.
  */
-export type WatchAppsV1beta1NamespacedStatefulSetResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchAppsV1beta1NamespacedStatefulSetResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -86549,14 +86549,14 @@ export type WatchAppsV1beta1NamespacedStatefulSetResponse = Iok8sapimachinerypkg
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchAppsV1beta1StatefulSetListForAllNamespaces operation.
  */
-export type WatchAppsV1beta1StatefulSetListForAllNamespacesResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchAppsV1beta1StatefulSetListForAllNamespacesResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -86568,14 +86568,14 @@ export type WatchAppsV1beta1StatefulSetListForAllNamespacesResponse = Iok8sapima
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the getAppsV1beta2APIResources operation.
  */
-export type GetAppsV1beta2APIResourcesResponse = Iok8sapimachinerypkgapismetav1APIResourceList & {
+export type GetAppsV1beta2APIResourcesResponse = V1APIResourceList & {
   /**
    * The underlying HTTP response.
    */
@@ -86587,14 +86587,14 @@ export type GetAppsV1beta2APIResourcesResponse = Iok8sapimachinerypkgapismetav1A
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1APIResourceList;
+      parsedBody: V1APIResourceList;
     };
 };
 
 /**
  * Contains response data for the listAppsV1beta2ControllerRevisionForAllNamespaces operation.
  */
-export type ListAppsV1beta2ControllerRevisionForAllNamespacesResponse = Iok8sapiappsv1beta2ControllerRevisionList & {
+export type ListAppsV1beta2ControllerRevisionForAllNamespacesResponse = V1beta2ControllerRevisionList & {
   /**
    * The underlying HTTP response.
    */
@@ -86606,14 +86606,14 @@ export type ListAppsV1beta2ControllerRevisionForAllNamespacesResponse = Iok8sapi
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta2ControllerRevisionList;
+      parsedBody: V1beta2ControllerRevisionList;
     };
 };
 
 /**
  * Contains response data for the listAppsV1beta2DaemonSetForAllNamespaces operation.
  */
-export type ListAppsV1beta2DaemonSetForAllNamespacesResponse = Iok8sapiappsv1beta2DaemonSetList & {
+export type ListAppsV1beta2DaemonSetForAllNamespacesResponse = V1beta2DaemonSetList & {
   /**
    * The underlying HTTP response.
    */
@@ -86625,14 +86625,14 @@ export type ListAppsV1beta2DaemonSetForAllNamespacesResponse = Iok8sapiappsv1bet
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta2DaemonSetList;
+      parsedBody: V1beta2DaemonSetList;
     };
 };
 
 /**
  * Contains response data for the listAppsV1beta2DeploymentForAllNamespaces operation.
  */
-export type ListAppsV1beta2DeploymentForAllNamespacesResponse = Iok8sapiappsv1beta2DeploymentList & {
+export type ListAppsV1beta2DeploymentForAllNamespacesResponse = V1beta2DeploymentList & {
   /**
    * The underlying HTTP response.
    */
@@ -86644,14 +86644,14 @@ export type ListAppsV1beta2DeploymentForAllNamespacesResponse = Iok8sapiappsv1be
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta2DeploymentList;
+      parsedBody: V1beta2DeploymentList;
     };
 };
 
 /**
  * Contains response data for the listAppsV1beta2NamespacedControllerRevision operation.
  */
-export type ListAppsV1beta2NamespacedControllerRevisionResponse = Iok8sapiappsv1beta2ControllerRevisionList & {
+export type ListAppsV1beta2NamespacedControllerRevisionResponse = V1beta2ControllerRevisionList & {
   /**
    * The underlying HTTP response.
    */
@@ -86663,14 +86663,14 @@ export type ListAppsV1beta2NamespacedControllerRevisionResponse = Iok8sapiappsv1
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta2ControllerRevisionList;
+      parsedBody: V1beta2ControllerRevisionList;
     };
 };
 
 /**
  * Contains response data for the createAppsV1beta2NamespacedControllerRevision operation.
  */
-export type CreateAppsV1beta2NamespacedControllerRevisionResponse = Iok8sapiappsv1beta2ControllerRevision & {
+export type CreateAppsV1beta2NamespacedControllerRevisionResponse = V1beta2ControllerRevision & {
   /**
    * The underlying HTTP response.
    */
@@ -86682,7 +86682,7 @@ export type CreateAppsV1beta2NamespacedControllerRevisionResponse = Iok8sapiapps
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta2ControllerRevision;
+      parsedBody: V1beta2ControllerRevision;
     };
 };
 
@@ -86690,7 +86690,7 @@ export type CreateAppsV1beta2NamespacedControllerRevisionResponse = Iok8sapiapps
  * Contains response data for the deleteAppsV1beta2CollectionNamespacedControllerRevision
  * operation.
  */
-export type DeleteAppsV1beta2CollectionNamespacedControllerRevisionResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteAppsV1beta2CollectionNamespacedControllerRevisionResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -86702,14 +86702,14 @@ export type DeleteAppsV1beta2CollectionNamespacedControllerRevisionResponse = Io
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
 /**
  * Contains response data for the readAppsV1beta2NamespacedControllerRevision operation.
  */
-export type ReadAppsV1beta2NamespacedControllerRevisionResponse = Iok8sapiappsv1beta2ControllerRevision & {
+export type ReadAppsV1beta2NamespacedControllerRevisionResponse = V1beta2ControllerRevision & {
   /**
    * The underlying HTTP response.
    */
@@ -86721,14 +86721,14 @@ export type ReadAppsV1beta2NamespacedControllerRevisionResponse = Iok8sapiappsv1
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta2ControllerRevision;
+      parsedBody: V1beta2ControllerRevision;
     };
 };
 
 /**
  * Contains response data for the replaceAppsV1beta2NamespacedControllerRevision operation.
  */
-export type ReplaceAppsV1beta2NamespacedControllerRevisionResponse = Iok8sapiappsv1beta2ControllerRevision & {
+export type ReplaceAppsV1beta2NamespacedControllerRevisionResponse = V1beta2ControllerRevision & {
   /**
    * The underlying HTTP response.
    */
@@ -86740,14 +86740,14 @@ export type ReplaceAppsV1beta2NamespacedControllerRevisionResponse = Iok8sapiapp
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta2ControllerRevision;
+      parsedBody: V1beta2ControllerRevision;
     };
 };
 
 /**
  * Contains response data for the deleteAppsV1beta2NamespacedControllerRevision operation.
  */
-export type DeleteAppsV1beta2NamespacedControllerRevisionResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteAppsV1beta2NamespacedControllerRevisionResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -86759,14 +86759,14 @@ export type DeleteAppsV1beta2NamespacedControllerRevisionResponse = Iok8sapimach
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
 /**
  * Contains response data for the patchAppsV1beta2NamespacedControllerRevision operation.
  */
-export type PatchAppsV1beta2NamespacedControllerRevisionResponse = Iok8sapiappsv1beta2ControllerRevision & {
+export type PatchAppsV1beta2NamespacedControllerRevisionResponse = V1beta2ControllerRevision & {
   /**
    * The underlying HTTP response.
    */
@@ -86778,14 +86778,14 @@ export type PatchAppsV1beta2NamespacedControllerRevisionResponse = Iok8sapiappsv
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta2ControllerRevision;
+      parsedBody: V1beta2ControllerRevision;
     };
 };
 
 /**
  * Contains response data for the listAppsV1beta2NamespacedDaemonSet operation.
  */
-export type ListAppsV1beta2NamespacedDaemonSetResponse = Iok8sapiappsv1beta2DaemonSetList & {
+export type ListAppsV1beta2NamespacedDaemonSetResponse = V1beta2DaemonSetList & {
   /**
    * The underlying HTTP response.
    */
@@ -86797,14 +86797,14 @@ export type ListAppsV1beta2NamespacedDaemonSetResponse = Iok8sapiappsv1beta2Daem
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta2DaemonSetList;
+      parsedBody: V1beta2DaemonSetList;
     };
 };
 
 /**
  * Contains response data for the createAppsV1beta2NamespacedDaemonSet operation.
  */
-export type CreateAppsV1beta2NamespacedDaemonSetResponse = Iok8sapiappsv1beta2DaemonSet & {
+export type CreateAppsV1beta2NamespacedDaemonSetResponse = V1beta2DaemonSet & {
   /**
    * The underlying HTTP response.
    */
@@ -86816,14 +86816,14 @@ export type CreateAppsV1beta2NamespacedDaemonSetResponse = Iok8sapiappsv1beta2Da
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta2DaemonSet;
+      parsedBody: V1beta2DaemonSet;
     };
 };
 
 /**
  * Contains response data for the deleteAppsV1beta2CollectionNamespacedDaemonSet operation.
  */
-export type DeleteAppsV1beta2CollectionNamespacedDaemonSetResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteAppsV1beta2CollectionNamespacedDaemonSetResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -86835,14 +86835,14 @@ export type DeleteAppsV1beta2CollectionNamespacedDaemonSetResponse = Iok8sapimac
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
 /**
  * Contains response data for the readAppsV1beta2NamespacedDaemonSet operation.
  */
-export type ReadAppsV1beta2NamespacedDaemonSetResponse = Iok8sapiappsv1beta2DaemonSet & {
+export type ReadAppsV1beta2NamespacedDaemonSetResponse = V1beta2DaemonSet & {
   /**
    * The underlying HTTP response.
    */
@@ -86854,14 +86854,14 @@ export type ReadAppsV1beta2NamespacedDaemonSetResponse = Iok8sapiappsv1beta2Daem
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta2DaemonSet;
+      parsedBody: V1beta2DaemonSet;
     };
 };
 
 /**
  * Contains response data for the replaceAppsV1beta2NamespacedDaemonSet operation.
  */
-export type ReplaceAppsV1beta2NamespacedDaemonSetResponse = Iok8sapiappsv1beta2DaemonSet & {
+export type ReplaceAppsV1beta2NamespacedDaemonSetResponse = V1beta2DaemonSet & {
   /**
    * The underlying HTTP response.
    */
@@ -86873,14 +86873,14 @@ export type ReplaceAppsV1beta2NamespacedDaemonSetResponse = Iok8sapiappsv1beta2D
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta2DaemonSet;
+      parsedBody: V1beta2DaemonSet;
     };
 };
 
 /**
  * Contains response data for the deleteAppsV1beta2NamespacedDaemonSet operation.
  */
-export type DeleteAppsV1beta2NamespacedDaemonSetResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteAppsV1beta2NamespacedDaemonSetResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -86892,14 +86892,14 @@ export type DeleteAppsV1beta2NamespacedDaemonSetResponse = Iok8sapimachinerypkga
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
 /**
  * Contains response data for the patchAppsV1beta2NamespacedDaemonSet operation.
  */
-export type PatchAppsV1beta2NamespacedDaemonSetResponse = Iok8sapiappsv1beta2DaemonSet & {
+export type PatchAppsV1beta2NamespacedDaemonSetResponse = V1beta2DaemonSet & {
   /**
    * The underlying HTTP response.
    */
@@ -86911,14 +86911,14 @@ export type PatchAppsV1beta2NamespacedDaemonSetResponse = Iok8sapiappsv1beta2Dae
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta2DaemonSet;
+      parsedBody: V1beta2DaemonSet;
     };
 };
 
 /**
  * Contains response data for the readAppsV1beta2NamespacedDaemonSetStatus operation.
  */
-export type ReadAppsV1beta2NamespacedDaemonSetStatusResponse = Iok8sapiappsv1beta2DaemonSet & {
+export type ReadAppsV1beta2NamespacedDaemonSetStatusResponse = V1beta2DaemonSet & {
   /**
    * The underlying HTTP response.
    */
@@ -86930,14 +86930,14 @@ export type ReadAppsV1beta2NamespacedDaemonSetStatusResponse = Iok8sapiappsv1bet
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta2DaemonSet;
+      parsedBody: V1beta2DaemonSet;
     };
 };
 
 /**
  * Contains response data for the replaceAppsV1beta2NamespacedDaemonSetStatus operation.
  */
-export type ReplaceAppsV1beta2NamespacedDaemonSetStatusResponse = Iok8sapiappsv1beta2DaemonSet & {
+export type ReplaceAppsV1beta2NamespacedDaemonSetStatusResponse = V1beta2DaemonSet & {
   /**
    * The underlying HTTP response.
    */
@@ -86949,14 +86949,14 @@ export type ReplaceAppsV1beta2NamespacedDaemonSetStatusResponse = Iok8sapiappsv1
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta2DaemonSet;
+      parsedBody: V1beta2DaemonSet;
     };
 };
 
 /**
  * Contains response data for the patchAppsV1beta2NamespacedDaemonSetStatus operation.
  */
-export type PatchAppsV1beta2NamespacedDaemonSetStatusResponse = Iok8sapiappsv1beta2DaemonSet & {
+export type PatchAppsV1beta2NamespacedDaemonSetStatusResponse = V1beta2DaemonSet & {
   /**
    * The underlying HTTP response.
    */
@@ -86968,14 +86968,14 @@ export type PatchAppsV1beta2NamespacedDaemonSetStatusResponse = Iok8sapiappsv1be
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta2DaemonSet;
+      parsedBody: V1beta2DaemonSet;
     };
 };
 
 /**
  * Contains response data for the listAppsV1beta2NamespacedDeployment operation.
  */
-export type ListAppsV1beta2NamespacedDeploymentResponse = Iok8sapiappsv1beta2DeploymentList & {
+export type ListAppsV1beta2NamespacedDeploymentResponse = V1beta2DeploymentList & {
   /**
    * The underlying HTTP response.
    */
@@ -86987,14 +86987,14 @@ export type ListAppsV1beta2NamespacedDeploymentResponse = Iok8sapiappsv1beta2Dep
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta2DeploymentList;
+      parsedBody: V1beta2DeploymentList;
     };
 };
 
 /**
  * Contains response data for the createAppsV1beta2NamespacedDeployment operation.
  */
-export type CreateAppsV1beta2NamespacedDeploymentResponse = Iok8sapiappsv1beta2Deployment & {
+export type CreateAppsV1beta2NamespacedDeploymentResponse = V1beta2Deployment & {
   /**
    * The underlying HTTP response.
    */
@@ -87006,14 +87006,14 @@ export type CreateAppsV1beta2NamespacedDeploymentResponse = Iok8sapiappsv1beta2D
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta2Deployment;
+      parsedBody: V1beta2Deployment;
     };
 };
 
 /**
  * Contains response data for the deleteAppsV1beta2CollectionNamespacedDeployment operation.
  */
-export type DeleteAppsV1beta2CollectionNamespacedDeploymentResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteAppsV1beta2CollectionNamespacedDeploymentResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -87025,14 +87025,14 @@ export type DeleteAppsV1beta2CollectionNamespacedDeploymentResponse = Iok8sapima
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
 /**
  * Contains response data for the readAppsV1beta2NamespacedDeployment operation.
  */
-export type ReadAppsV1beta2NamespacedDeploymentResponse = Iok8sapiappsv1beta2Deployment & {
+export type ReadAppsV1beta2NamespacedDeploymentResponse = V1beta2Deployment & {
   /**
    * The underlying HTTP response.
    */
@@ -87044,14 +87044,14 @@ export type ReadAppsV1beta2NamespacedDeploymentResponse = Iok8sapiappsv1beta2Dep
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta2Deployment;
+      parsedBody: V1beta2Deployment;
     };
 };
 
 /**
  * Contains response data for the replaceAppsV1beta2NamespacedDeployment operation.
  */
-export type ReplaceAppsV1beta2NamespacedDeploymentResponse = Iok8sapiappsv1beta2Deployment & {
+export type ReplaceAppsV1beta2NamespacedDeploymentResponse = V1beta2Deployment & {
   /**
    * The underlying HTTP response.
    */
@@ -87063,14 +87063,14 @@ export type ReplaceAppsV1beta2NamespacedDeploymentResponse = Iok8sapiappsv1beta2
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta2Deployment;
+      parsedBody: V1beta2Deployment;
     };
 };
 
 /**
  * Contains response data for the deleteAppsV1beta2NamespacedDeployment operation.
  */
-export type DeleteAppsV1beta2NamespacedDeploymentResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteAppsV1beta2NamespacedDeploymentResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -87082,14 +87082,14 @@ export type DeleteAppsV1beta2NamespacedDeploymentResponse = Iok8sapimachinerypkg
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
 /**
  * Contains response data for the patchAppsV1beta2NamespacedDeployment operation.
  */
-export type PatchAppsV1beta2NamespacedDeploymentResponse = Iok8sapiappsv1beta2Deployment & {
+export type PatchAppsV1beta2NamespacedDeploymentResponse = V1beta2Deployment & {
   /**
    * The underlying HTTP response.
    */
@@ -87101,14 +87101,14 @@ export type PatchAppsV1beta2NamespacedDeploymentResponse = Iok8sapiappsv1beta2De
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta2Deployment;
+      parsedBody: V1beta2Deployment;
     };
 };
 
 /**
  * Contains response data for the readAppsV1beta2NamespacedDeploymentScale operation.
  */
-export type ReadAppsV1beta2NamespacedDeploymentScaleResponse = Iok8sapiappsv1beta2Scale & {
+export type ReadAppsV1beta2NamespacedDeploymentScaleResponse = V1beta2Scale & {
   /**
    * The underlying HTTP response.
    */
@@ -87120,14 +87120,14 @@ export type ReadAppsV1beta2NamespacedDeploymentScaleResponse = Iok8sapiappsv1bet
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta2Scale;
+      parsedBody: V1beta2Scale;
     };
 };
 
 /**
  * Contains response data for the replaceAppsV1beta2NamespacedDeploymentScale operation.
  */
-export type ReplaceAppsV1beta2NamespacedDeploymentScaleResponse = Iok8sapiappsv1beta2Scale & {
+export type ReplaceAppsV1beta2NamespacedDeploymentScaleResponse = V1beta2Scale & {
   /**
    * The underlying HTTP response.
    */
@@ -87139,14 +87139,14 @@ export type ReplaceAppsV1beta2NamespacedDeploymentScaleResponse = Iok8sapiappsv1
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta2Scale;
+      parsedBody: V1beta2Scale;
     };
 };
 
 /**
  * Contains response data for the patchAppsV1beta2NamespacedDeploymentScale operation.
  */
-export type PatchAppsV1beta2NamespacedDeploymentScaleResponse = Iok8sapiappsv1beta2Scale & {
+export type PatchAppsV1beta2NamespacedDeploymentScaleResponse = V1beta2Scale & {
   /**
    * The underlying HTTP response.
    */
@@ -87158,14 +87158,14 @@ export type PatchAppsV1beta2NamespacedDeploymentScaleResponse = Iok8sapiappsv1be
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta2Scale;
+      parsedBody: V1beta2Scale;
     };
 };
 
 /**
  * Contains response data for the readAppsV1beta2NamespacedDeploymentStatus operation.
  */
-export type ReadAppsV1beta2NamespacedDeploymentStatusResponse = Iok8sapiappsv1beta2Deployment & {
+export type ReadAppsV1beta2NamespacedDeploymentStatusResponse = V1beta2Deployment & {
   /**
    * The underlying HTTP response.
    */
@@ -87177,14 +87177,14 @@ export type ReadAppsV1beta2NamespacedDeploymentStatusResponse = Iok8sapiappsv1be
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta2Deployment;
+      parsedBody: V1beta2Deployment;
     };
 };
 
 /**
  * Contains response data for the replaceAppsV1beta2NamespacedDeploymentStatus operation.
  */
-export type ReplaceAppsV1beta2NamespacedDeploymentStatusResponse = Iok8sapiappsv1beta2Deployment & {
+export type ReplaceAppsV1beta2NamespacedDeploymentStatusResponse = V1beta2Deployment & {
   /**
    * The underlying HTTP response.
    */
@@ -87196,14 +87196,14 @@ export type ReplaceAppsV1beta2NamespacedDeploymentStatusResponse = Iok8sapiappsv
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta2Deployment;
+      parsedBody: V1beta2Deployment;
     };
 };
 
 /**
  * Contains response data for the patchAppsV1beta2NamespacedDeploymentStatus operation.
  */
-export type PatchAppsV1beta2NamespacedDeploymentStatusResponse = Iok8sapiappsv1beta2Deployment & {
+export type PatchAppsV1beta2NamespacedDeploymentStatusResponse = V1beta2Deployment & {
   /**
    * The underlying HTTP response.
    */
@@ -87215,14 +87215,14 @@ export type PatchAppsV1beta2NamespacedDeploymentStatusResponse = Iok8sapiappsv1b
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta2Deployment;
+      parsedBody: V1beta2Deployment;
     };
 };
 
 /**
  * Contains response data for the listAppsV1beta2NamespacedReplicaSet operation.
  */
-export type ListAppsV1beta2NamespacedReplicaSetResponse = Iok8sapiappsv1beta2ReplicaSetList & {
+export type ListAppsV1beta2NamespacedReplicaSetResponse = V1beta2ReplicaSetList & {
   /**
    * The underlying HTTP response.
    */
@@ -87234,14 +87234,14 @@ export type ListAppsV1beta2NamespacedReplicaSetResponse = Iok8sapiappsv1beta2Rep
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta2ReplicaSetList;
+      parsedBody: V1beta2ReplicaSetList;
     };
 };
 
 /**
  * Contains response data for the createAppsV1beta2NamespacedReplicaSet operation.
  */
-export type CreateAppsV1beta2NamespacedReplicaSetResponse = Iok8sapiappsv1beta2ReplicaSet & {
+export type CreateAppsV1beta2NamespacedReplicaSetResponse = V1beta2ReplicaSet & {
   /**
    * The underlying HTTP response.
    */
@@ -87253,14 +87253,14 @@ export type CreateAppsV1beta2NamespacedReplicaSetResponse = Iok8sapiappsv1beta2R
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta2ReplicaSet;
+      parsedBody: V1beta2ReplicaSet;
     };
 };
 
 /**
  * Contains response data for the deleteAppsV1beta2CollectionNamespacedReplicaSet operation.
  */
-export type DeleteAppsV1beta2CollectionNamespacedReplicaSetResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteAppsV1beta2CollectionNamespacedReplicaSetResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -87272,14 +87272,14 @@ export type DeleteAppsV1beta2CollectionNamespacedReplicaSetResponse = Iok8sapima
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
 /**
  * Contains response data for the readAppsV1beta2NamespacedReplicaSet operation.
  */
-export type ReadAppsV1beta2NamespacedReplicaSetResponse = Iok8sapiappsv1beta2ReplicaSet & {
+export type ReadAppsV1beta2NamespacedReplicaSetResponse = V1beta2ReplicaSet & {
   /**
    * The underlying HTTP response.
    */
@@ -87291,14 +87291,14 @@ export type ReadAppsV1beta2NamespacedReplicaSetResponse = Iok8sapiappsv1beta2Rep
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta2ReplicaSet;
+      parsedBody: V1beta2ReplicaSet;
     };
 };
 
 /**
  * Contains response data for the replaceAppsV1beta2NamespacedReplicaSet operation.
  */
-export type ReplaceAppsV1beta2NamespacedReplicaSetResponse = Iok8sapiappsv1beta2ReplicaSet & {
+export type ReplaceAppsV1beta2NamespacedReplicaSetResponse = V1beta2ReplicaSet & {
   /**
    * The underlying HTTP response.
    */
@@ -87310,14 +87310,14 @@ export type ReplaceAppsV1beta2NamespacedReplicaSetResponse = Iok8sapiappsv1beta2
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta2ReplicaSet;
+      parsedBody: V1beta2ReplicaSet;
     };
 };
 
 /**
  * Contains response data for the deleteAppsV1beta2NamespacedReplicaSet operation.
  */
-export type DeleteAppsV1beta2NamespacedReplicaSetResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteAppsV1beta2NamespacedReplicaSetResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -87329,14 +87329,14 @@ export type DeleteAppsV1beta2NamespacedReplicaSetResponse = Iok8sapimachinerypkg
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
 /**
  * Contains response data for the patchAppsV1beta2NamespacedReplicaSet operation.
  */
-export type PatchAppsV1beta2NamespacedReplicaSetResponse = Iok8sapiappsv1beta2ReplicaSet & {
+export type PatchAppsV1beta2NamespacedReplicaSetResponse = V1beta2ReplicaSet & {
   /**
    * The underlying HTTP response.
    */
@@ -87348,14 +87348,14 @@ export type PatchAppsV1beta2NamespacedReplicaSetResponse = Iok8sapiappsv1beta2Re
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta2ReplicaSet;
+      parsedBody: V1beta2ReplicaSet;
     };
 };
 
 /**
  * Contains response data for the readAppsV1beta2NamespacedReplicaSetScale operation.
  */
-export type ReadAppsV1beta2NamespacedReplicaSetScaleResponse = Iok8sapiappsv1beta2Scale & {
+export type ReadAppsV1beta2NamespacedReplicaSetScaleResponse = V1beta2Scale & {
   /**
    * The underlying HTTP response.
    */
@@ -87367,14 +87367,14 @@ export type ReadAppsV1beta2NamespacedReplicaSetScaleResponse = Iok8sapiappsv1bet
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta2Scale;
+      parsedBody: V1beta2Scale;
     };
 };
 
 /**
  * Contains response data for the replaceAppsV1beta2NamespacedReplicaSetScale operation.
  */
-export type ReplaceAppsV1beta2NamespacedReplicaSetScaleResponse = Iok8sapiappsv1beta2Scale & {
+export type ReplaceAppsV1beta2NamespacedReplicaSetScaleResponse = V1beta2Scale & {
   /**
    * The underlying HTTP response.
    */
@@ -87386,14 +87386,14 @@ export type ReplaceAppsV1beta2NamespacedReplicaSetScaleResponse = Iok8sapiappsv1
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta2Scale;
+      parsedBody: V1beta2Scale;
     };
 };
 
 /**
  * Contains response data for the patchAppsV1beta2NamespacedReplicaSetScale operation.
  */
-export type PatchAppsV1beta2NamespacedReplicaSetScaleResponse = Iok8sapiappsv1beta2Scale & {
+export type PatchAppsV1beta2NamespacedReplicaSetScaleResponse = V1beta2Scale & {
   /**
    * The underlying HTTP response.
    */
@@ -87405,14 +87405,14 @@ export type PatchAppsV1beta2NamespacedReplicaSetScaleResponse = Iok8sapiappsv1be
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta2Scale;
+      parsedBody: V1beta2Scale;
     };
 };
 
 /**
  * Contains response data for the readAppsV1beta2NamespacedReplicaSetStatus operation.
  */
-export type ReadAppsV1beta2NamespacedReplicaSetStatusResponse = Iok8sapiappsv1beta2ReplicaSet & {
+export type ReadAppsV1beta2NamespacedReplicaSetStatusResponse = V1beta2ReplicaSet & {
   /**
    * The underlying HTTP response.
    */
@@ -87424,14 +87424,14 @@ export type ReadAppsV1beta2NamespacedReplicaSetStatusResponse = Iok8sapiappsv1be
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta2ReplicaSet;
+      parsedBody: V1beta2ReplicaSet;
     };
 };
 
 /**
  * Contains response data for the replaceAppsV1beta2NamespacedReplicaSetStatus operation.
  */
-export type ReplaceAppsV1beta2NamespacedReplicaSetStatusResponse = Iok8sapiappsv1beta2ReplicaSet & {
+export type ReplaceAppsV1beta2NamespacedReplicaSetStatusResponse = V1beta2ReplicaSet & {
   /**
    * The underlying HTTP response.
    */
@@ -87443,14 +87443,14 @@ export type ReplaceAppsV1beta2NamespacedReplicaSetStatusResponse = Iok8sapiappsv
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta2ReplicaSet;
+      parsedBody: V1beta2ReplicaSet;
     };
 };
 
 /**
  * Contains response data for the patchAppsV1beta2NamespacedReplicaSetStatus operation.
  */
-export type PatchAppsV1beta2NamespacedReplicaSetStatusResponse = Iok8sapiappsv1beta2ReplicaSet & {
+export type PatchAppsV1beta2NamespacedReplicaSetStatusResponse = V1beta2ReplicaSet & {
   /**
    * The underlying HTTP response.
    */
@@ -87462,14 +87462,14 @@ export type PatchAppsV1beta2NamespacedReplicaSetStatusResponse = Iok8sapiappsv1b
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta2ReplicaSet;
+      parsedBody: V1beta2ReplicaSet;
     };
 };
 
 /**
  * Contains response data for the listAppsV1beta2NamespacedStatefulSet operation.
  */
-export type ListAppsV1beta2NamespacedStatefulSetResponse = Iok8sapiappsv1beta2StatefulSetList & {
+export type ListAppsV1beta2NamespacedStatefulSetResponse = V1beta2StatefulSetList & {
   /**
    * The underlying HTTP response.
    */
@@ -87481,14 +87481,14 @@ export type ListAppsV1beta2NamespacedStatefulSetResponse = Iok8sapiappsv1beta2St
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta2StatefulSetList;
+      parsedBody: V1beta2StatefulSetList;
     };
 };
 
 /**
  * Contains response data for the createAppsV1beta2NamespacedStatefulSet operation.
  */
-export type CreateAppsV1beta2NamespacedStatefulSetResponse = Iok8sapiappsv1beta2StatefulSet & {
+export type CreateAppsV1beta2NamespacedStatefulSetResponse = V1beta2StatefulSet & {
   /**
    * The underlying HTTP response.
    */
@@ -87500,14 +87500,14 @@ export type CreateAppsV1beta2NamespacedStatefulSetResponse = Iok8sapiappsv1beta2
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta2StatefulSet;
+      parsedBody: V1beta2StatefulSet;
     };
 };
 
 /**
  * Contains response data for the deleteAppsV1beta2CollectionNamespacedStatefulSet operation.
  */
-export type DeleteAppsV1beta2CollectionNamespacedStatefulSetResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteAppsV1beta2CollectionNamespacedStatefulSetResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -87519,14 +87519,14 @@ export type DeleteAppsV1beta2CollectionNamespacedStatefulSetResponse = Iok8sapim
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
 /**
  * Contains response data for the readAppsV1beta2NamespacedStatefulSet operation.
  */
-export type ReadAppsV1beta2NamespacedStatefulSetResponse = Iok8sapiappsv1beta2StatefulSet & {
+export type ReadAppsV1beta2NamespacedStatefulSetResponse = V1beta2StatefulSet & {
   /**
    * The underlying HTTP response.
    */
@@ -87538,14 +87538,14 @@ export type ReadAppsV1beta2NamespacedStatefulSetResponse = Iok8sapiappsv1beta2St
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta2StatefulSet;
+      parsedBody: V1beta2StatefulSet;
     };
 };
 
 /**
  * Contains response data for the replaceAppsV1beta2NamespacedStatefulSet operation.
  */
-export type ReplaceAppsV1beta2NamespacedStatefulSetResponse = Iok8sapiappsv1beta2StatefulSet & {
+export type ReplaceAppsV1beta2NamespacedStatefulSetResponse = V1beta2StatefulSet & {
   /**
    * The underlying HTTP response.
    */
@@ -87557,14 +87557,14 @@ export type ReplaceAppsV1beta2NamespacedStatefulSetResponse = Iok8sapiappsv1beta
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta2StatefulSet;
+      parsedBody: V1beta2StatefulSet;
     };
 };
 
 /**
  * Contains response data for the deleteAppsV1beta2NamespacedStatefulSet operation.
  */
-export type DeleteAppsV1beta2NamespacedStatefulSetResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteAppsV1beta2NamespacedStatefulSetResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -87576,14 +87576,14 @@ export type DeleteAppsV1beta2NamespacedStatefulSetResponse = Iok8sapimachinerypk
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
 /**
  * Contains response data for the patchAppsV1beta2NamespacedStatefulSet operation.
  */
-export type PatchAppsV1beta2NamespacedStatefulSetResponse = Iok8sapiappsv1beta2StatefulSet & {
+export type PatchAppsV1beta2NamespacedStatefulSetResponse = V1beta2StatefulSet & {
   /**
    * The underlying HTTP response.
    */
@@ -87595,14 +87595,14 @@ export type PatchAppsV1beta2NamespacedStatefulSetResponse = Iok8sapiappsv1beta2S
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta2StatefulSet;
+      parsedBody: V1beta2StatefulSet;
     };
 };
 
 /**
  * Contains response data for the readAppsV1beta2NamespacedStatefulSetScale operation.
  */
-export type ReadAppsV1beta2NamespacedStatefulSetScaleResponse = Iok8sapiappsv1beta2Scale & {
+export type ReadAppsV1beta2NamespacedStatefulSetScaleResponse = V1beta2Scale & {
   /**
    * The underlying HTTP response.
    */
@@ -87614,14 +87614,14 @@ export type ReadAppsV1beta2NamespacedStatefulSetScaleResponse = Iok8sapiappsv1be
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta2Scale;
+      parsedBody: V1beta2Scale;
     };
 };
 
 /**
  * Contains response data for the replaceAppsV1beta2NamespacedStatefulSetScale operation.
  */
-export type ReplaceAppsV1beta2NamespacedStatefulSetScaleResponse = Iok8sapiappsv1beta2Scale & {
+export type ReplaceAppsV1beta2NamespacedStatefulSetScaleResponse = V1beta2Scale & {
   /**
    * The underlying HTTP response.
    */
@@ -87633,14 +87633,14 @@ export type ReplaceAppsV1beta2NamespacedStatefulSetScaleResponse = Iok8sapiappsv
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta2Scale;
+      parsedBody: V1beta2Scale;
     };
 };
 
 /**
  * Contains response data for the patchAppsV1beta2NamespacedStatefulSetScale operation.
  */
-export type PatchAppsV1beta2NamespacedStatefulSetScaleResponse = Iok8sapiappsv1beta2Scale & {
+export type PatchAppsV1beta2NamespacedStatefulSetScaleResponse = V1beta2Scale & {
   /**
    * The underlying HTTP response.
    */
@@ -87652,14 +87652,14 @@ export type PatchAppsV1beta2NamespacedStatefulSetScaleResponse = Iok8sapiappsv1b
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta2Scale;
+      parsedBody: V1beta2Scale;
     };
 };
 
 /**
  * Contains response data for the readAppsV1beta2NamespacedStatefulSetStatus operation.
  */
-export type ReadAppsV1beta2NamespacedStatefulSetStatusResponse = Iok8sapiappsv1beta2StatefulSet & {
+export type ReadAppsV1beta2NamespacedStatefulSetStatusResponse = V1beta2StatefulSet & {
   /**
    * The underlying HTTP response.
    */
@@ -87671,14 +87671,14 @@ export type ReadAppsV1beta2NamespacedStatefulSetStatusResponse = Iok8sapiappsv1b
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta2StatefulSet;
+      parsedBody: V1beta2StatefulSet;
     };
 };
 
 /**
  * Contains response data for the replaceAppsV1beta2NamespacedStatefulSetStatus operation.
  */
-export type ReplaceAppsV1beta2NamespacedStatefulSetStatusResponse = Iok8sapiappsv1beta2StatefulSet & {
+export type ReplaceAppsV1beta2NamespacedStatefulSetStatusResponse = V1beta2StatefulSet & {
   /**
    * The underlying HTTP response.
    */
@@ -87690,14 +87690,14 @@ export type ReplaceAppsV1beta2NamespacedStatefulSetStatusResponse = Iok8sapiapps
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta2StatefulSet;
+      parsedBody: V1beta2StatefulSet;
     };
 };
 
 /**
  * Contains response data for the patchAppsV1beta2NamespacedStatefulSetStatus operation.
  */
-export type PatchAppsV1beta2NamespacedStatefulSetStatusResponse = Iok8sapiappsv1beta2StatefulSet & {
+export type PatchAppsV1beta2NamespacedStatefulSetStatusResponse = V1beta2StatefulSet & {
   /**
    * The underlying HTTP response.
    */
@@ -87709,14 +87709,14 @@ export type PatchAppsV1beta2NamespacedStatefulSetStatusResponse = Iok8sapiappsv1
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta2StatefulSet;
+      parsedBody: V1beta2StatefulSet;
     };
 };
 
 /**
  * Contains response data for the listAppsV1beta2ReplicaSetForAllNamespaces operation.
  */
-export type ListAppsV1beta2ReplicaSetForAllNamespacesResponse = Iok8sapiappsv1beta2ReplicaSetList & {
+export type ListAppsV1beta2ReplicaSetForAllNamespacesResponse = V1beta2ReplicaSetList & {
   /**
    * The underlying HTTP response.
    */
@@ -87728,14 +87728,14 @@ export type ListAppsV1beta2ReplicaSetForAllNamespacesResponse = Iok8sapiappsv1be
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta2ReplicaSetList;
+      parsedBody: V1beta2ReplicaSetList;
     };
 };
 
 /**
  * Contains response data for the listAppsV1beta2StatefulSetForAllNamespaces operation.
  */
-export type ListAppsV1beta2StatefulSetForAllNamespacesResponse = Iok8sapiappsv1beta2StatefulSetList & {
+export type ListAppsV1beta2StatefulSetForAllNamespacesResponse = V1beta2StatefulSetList & {
   /**
    * The underlying HTTP response.
    */
@@ -87747,14 +87747,14 @@ export type ListAppsV1beta2StatefulSetForAllNamespacesResponse = Iok8sapiappsv1b
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiappsv1beta2StatefulSetList;
+      parsedBody: V1beta2StatefulSetList;
     };
 };
 
 /**
  * Contains response data for the watchAppsV1beta2ControllerRevisionListForAllNamespaces operation.
  */
-export type WatchAppsV1beta2ControllerRevisionListForAllNamespacesResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchAppsV1beta2ControllerRevisionListForAllNamespacesResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -87766,14 +87766,14 @@ export type WatchAppsV1beta2ControllerRevisionListForAllNamespacesResponse = Iok
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchAppsV1beta2DaemonSetListForAllNamespaces operation.
  */
-export type WatchAppsV1beta2DaemonSetListForAllNamespacesResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchAppsV1beta2DaemonSetListForAllNamespacesResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -87785,14 +87785,14 @@ export type WatchAppsV1beta2DaemonSetListForAllNamespacesResponse = Iok8sapimach
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchAppsV1beta2DeploymentListForAllNamespaces operation.
  */
-export type WatchAppsV1beta2DeploymentListForAllNamespacesResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchAppsV1beta2DeploymentListForAllNamespacesResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -87804,14 +87804,14 @@ export type WatchAppsV1beta2DeploymentListForAllNamespacesResponse = Iok8sapimac
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchAppsV1beta2NamespacedControllerRevisionList operation.
  */
-export type WatchAppsV1beta2NamespacedControllerRevisionListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchAppsV1beta2NamespacedControllerRevisionListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -87823,14 +87823,14 @@ export type WatchAppsV1beta2NamespacedControllerRevisionListResponse = Iok8sapim
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchAppsV1beta2NamespacedControllerRevision operation.
  */
-export type WatchAppsV1beta2NamespacedControllerRevisionResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchAppsV1beta2NamespacedControllerRevisionResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -87842,14 +87842,14 @@ export type WatchAppsV1beta2NamespacedControllerRevisionResponse = Iok8sapimachi
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchAppsV1beta2NamespacedDaemonSetList operation.
  */
-export type WatchAppsV1beta2NamespacedDaemonSetListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchAppsV1beta2NamespacedDaemonSetListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -87861,14 +87861,14 @@ export type WatchAppsV1beta2NamespacedDaemonSetListResponse = Iok8sapimachineryp
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchAppsV1beta2NamespacedDaemonSet operation.
  */
-export type WatchAppsV1beta2NamespacedDaemonSetResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchAppsV1beta2NamespacedDaemonSetResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -87880,14 +87880,14 @@ export type WatchAppsV1beta2NamespacedDaemonSetResponse = Iok8sapimachinerypkgap
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchAppsV1beta2NamespacedDeploymentList operation.
  */
-export type WatchAppsV1beta2NamespacedDeploymentListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchAppsV1beta2NamespacedDeploymentListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -87899,14 +87899,14 @@ export type WatchAppsV1beta2NamespacedDeploymentListResponse = Iok8sapimachinery
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchAppsV1beta2NamespacedDeployment operation.
  */
-export type WatchAppsV1beta2NamespacedDeploymentResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchAppsV1beta2NamespacedDeploymentResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -87918,14 +87918,14 @@ export type WatchAppsV1beta2NamespacedDeploymentResponse = Iok8sapimachinerypkga
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchAppsV1beta2NamespacedReplicaSetList operation.
  */
-export type WatchAppsV1beta2NamespacedReplicaSetListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchAppsV1beta2NamespacedReplicaSetListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -87937,14 +87937,14 @@ export type WatchAppsV1beta2NamespacedReplicaSetListResponse = Iok8sapimachinery
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchAppsV1beta2NamespacedReplicaSet operation.
  */
-export type WatchAppsV1beta2NamespacedReplicaSetResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchAppsV1beta2NamespacedReplicaSetResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -87956,14 +87956,14 @@ export type WatchAppsV1beta2NamespacedReplicaSetResponse = Iok8sapimachinerypkga
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchAppsV1beta2NamespacedStatefulSetList operation.
  */
-export type WatchAppsV1beta2NamespacedStatefulSetListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchAppsV1beta2NamespacedStatefulSetListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -87975,14 +87975,14 @@ export type WatchAppsV1beta2NamespacedStatefulSetListResponse = Iok8sapimachiner
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchAppsV1beta2NamespacedStatefulSet operation.
  */
-export type WatchAppsV1beta2NamespacedStatefulSetResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchAppsV1beta2NamespacedStatefulSetResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -87994,14 +87994,14 @@ export type WatchAppsV1beta2NamespacedStatefulSetResponse = Iok8sapimachinerypkg
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchAppsV1beta2ReplicaSetListForAllNamespaces operation.
  */
-export type WatchAppsV1beta2ReplicaSetListForAllNamespacesResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchAppsV1beta2ReplicaSetListForAllNamespacesResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -88013,14 +88013,14 @@ export type WatchAppsV1beta2ReplicaSetListForAllNamespacesResponse = Iok8sapimac
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchAppsV1beta2StatefulSetListForAllNamespaces operation.
  */
-export type WatchAppsV1beta2StatefulSetListForAllNamespacesResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchAppsV1beta2StatefulSetListForAllNamespacesResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -88032,14 +88032,14 @@ export type WatchAppsV1beta2StatefulSetListForAllNamespacesResponse = Iok8sapima
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the getAuthenticationAPIGroup operation.
  */
-export type GetAuthenticationAPIGroupResponse = Iok8sapimachinerypkgapismetav1APIGroup & {
+export type GetAuthenticationAPIGroupResponse = V1APIGroup & {
   /**
    * The underlying HTTP response.
    */
@@ -88051,14 +88051,14 @@ export type GetAuthenticationAPIGroupResponse = Iok8sapimachinerypkgapismetav1AP
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1APIGroup;
+      parsedBody: V1APIGroup;
     };
 };
 
 /**
  * Contains response data for the getAuthenticationV1APIResources operation.
  */
-export type GetAuthenticationV1APIResourcesResponse = Iok8sapimachinerypkgapismetav1APIResourceList & {
+export type GetAuthenticationV1APIResourcesResponse = V1APIResourceList & {
   /**
    * The underlying HTTP response.
    */
@@ -88070,14 +88070,14 @@ export type GetAuthenticationV1APIResourcesResponse = Iok8sapimachinerypkgapisme
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1APIResourceList;
+      parsedBody: V1APIResourceList;
     };
 };
 
 /**
  * Contains response data for the createAuthenticationV1TokenReview operation.
  */
-export type CreateAuthenticationV1TokenReviewResponse = Iok8sapiauthenticationv1TokenReview & {
+export type CreateAuthenticationV1TokenReviewResponse = V1TokenReview & {
   /**
    * The underlying HTTP response.
    */
@@ -88089,14 +88089,14 @@ export type CreateAuthenticationV1TokenReviewResponse = Iok8sapiauthenticationv1
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiauthenticationv1TokenReview;
+      parsedBody: V1TokenReview;
     };
 };
 
 /**
  * Contains response data for the getAuthenticationV1beta1APIResources operation.
  */
-export type GetAuthenticationV1beta1APIResourcesResponse = Iok8sapimachinerypkgapismetav1APIResourceList & {
+export type GetAuthenticationV1beta1APIResourcesResponse = V1APIResourceList & {
   /**
    * The underlying HTTP response.
    */
@@ -88108,14 +88108,14 @@ export type GetAuthenticationV1beta1APIResourcesResponse = Iok8sapimachinerypkga
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1APIResourceList;
+      parsedBody: V1APIResourceList;
     };
 };
 
 /**
  * Contains response data for the createAuthenticationV1beta1TokenReview operation.
  */
-export type CreateAuthenticationV1beta1TokenReviewResponse = Iok8sapiauthenticationv1beta1TokenReview & {
+export type CreateAuthenticationV1beta1TokenReviewResponse = V1beta1TokenReview & {
   /**
    * The underlying HTTP response.
    */
@@ -88127,14 +88127,14 @@ export type CreateAuthenticationV1beta1TokenReviewResponse = Iok8sapiauthenticat
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiauthenticationv1beta1TokenReview;
+      parsedBody: V1beta1TokenReview;
     };
 };
 
 /**
  * Contains response data for the getAuthorizationAPIGroup operation.
  */
-export type GetAuthorizationAPIGroupResponse = Iok8sapimachinerypkgapismetav1APIGroup & {
+export type GetAuthorizationAPIGroupResponse = V1APIGroup & {
   /**
    * The underlying HTTP response.
    */
@@ -88146,14 +88146,14 @@ export type GetAuthorizationAPIGroupResponse = Iok8sapimachinerypkgapismetav1API
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1APIGroup;
+      parsedBody: V1APIGroup;
     };
 };
 
 /**
  * Contains response data for the getAuthorizationV1APIResources operation.
  */
-export type GetAuthorizationV1APIResourcesResponse = Iok8sapimachinerypkgapismetav1APIResourceList & {
+export type GetAuthorizationV1APIResourcesResponse = V1APIResourceList & {
   /**
    * The underlying HTTP response.
    */
@@ -88165,7 +88165,7 @@ export type GetAuthorizationV1APIResourcesResponse = Iok8sapimachinerypkgapismet
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1APIResourceList;
+      parsedBody: V1APIResourceList;
     };
 };
 
@@ -88173,7 +88173,7 @@ export type GetAuthorizationV1APIResourcesResponse = Iok8sapimachinerypkgapismet
  * Contains response data for the createAuthorizationV1NamespacedLocalSubjectAccessReview
  * operation.
  */
-export type CreateAuthorizationV1NamespacedLocalSubjectAccessReviewResponse = Iok8sapiauthorizationv1LocalSubjectAccessReview & {
+export type CreateAuthorizationV1NamespacedLocalSubjectAccessReviewResponse = V1LocalSubjectAccessReview & {
   /**
    * The underlying HTTP response.
    */
@@ -88185,14 +88185,14 @@ export type CreateAuthorizationV1NamespacedLocalSubjectAccessReviewResponse = Io
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiauthorizationv1LocalSubjectAccessReview;
+      parsedBody: V1LocalSubjectAccessReview;
     };
 };
 
 /**
  * Contains response data for the createAuthorizationV1SelfSubjectAccessReview operation.
  */
-export type CreateAuthorizationV1SelfSubjectAccessReviewResponse = Iok8sapiauthorizationv1SelfSubjectAccessReview & {
+export type CreateAuthorizationV1SelfSubjectAccessReviewResponse = V1SelfSubjectAccessReview & {
   /**
    * The underlying HTTP response.
    */
@@ -88204,14 +88204,14 @@ export type CreateAuthorizationV1SelfSubjectAccessReviewResponse = Iok8sapiautho
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiauthorizationv1SelfSubjectAccessReview;
+      parsedBody: V1SelfSubjectAccessReview;
     };
 };
 
 /**
  * Contains response data for the createAuthorizationV1SelfSubjectRulesReview operation.
  */
-export type CreateAuthorizationV1SelfSubjectRulesReviewResponse = Iok8sapiauthorizationv1SelfSubjectRulesReview & {
+export type CreateAuthorizationV1SelfSubjectRulesReviewResponse = V1SelfSubjectRulesReview & {
   /**
    * The underlying HTTP response.
    */
@@ -88223,14 +88223,14 @@ export type CreateAuthorizationV1SelfSubjectRulesReviewResponse = Iok8sapiauthor
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiauthorizationv1SelfSubjectRulesReview;
+      parsedBody: V1SelfSubjectRulesReview;
     };
 };
 
 /**
  * Contains response data for the createAuthorizationV1SubjectAccessReview operation.
  */
-export type CreateAuthorizationV1SubjectAccessReviewResponse = Iok8sapiauthorizationv1SubjectAccessReview & {
+export type CreateAuthorizationV1SubjectAccessReviewResponse = V1SubjectAccessReview & {
   /**
    * The underlying HTTP response.
    */
@@ -88242,14 +88242,14 @@ export type CreateAuthorizationV1SubjectAccessReviewResponse = Iok8sapiauthoriza
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiauthorizationv1SubjectAccessReview;
+      parsedBody: V1SubjectAccessReview;
     };
 };
 
 /**
  * Contains response data for the getAuthorizationV1beta1APIResources operation.
  */
-export type GetAuthorizationV1beta1APIResourcesResponse = Iok8sapimachinerypkgapismetav1APIResourceList & {
+export type GetAuthorizationV1beta1APIResourcesResponse = V1APIResourceList & {
   /**
    * The underlying HTTP response.
    */
@@ -88261,7 +88261,7 @@ export type GetAuthorizationV1beta1APIResourcesResponse = Iok8sapimachinerypkgap
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1APIResourceList;
+      parsedBody: V1APIResourceList;
     };
 };
 
@@ -88269,7 +88269,7 @@ export type GetAuthorizationV1beta1APIResourcesResponse = Iok8sapimachinerypkgap
  * Contains response data for the createAuthorizationV1beta1NamespacedLocalSubjectAccessReview
  * operation.
  */
-export type CreateAuthorizationV1beta1NamespacedLocalSubjectAccessReviewResponse = Iok8sapiauthorizationv1beta1LocalSubjectAccessReview & {
+export type CreateAuthorizationV1beta1NamespacedLocalSubjectAccessReviewResponse = V1beta1LocalSubjectAccessReview & {
   /**
    * The underlying HTTP response.
    */
@@ -88281,14 +88281,14 @@ export type CreateAuthorizationV1beta1NamespacedLocalSubjectAccessReviewResponse
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiauthorizationv1beta1LocalSubjectAccessReview;
+      parsedBody: V1beta1LocalSubjectAccessReview;
     };
 };
 
 /**
  * Contains response data for the createAuthorizationV1beta1SelfSubjectAccessReview operation.
  */
-export type CreateAuthorizationV1beta1SelfSubjectAccessReviewResponse = Iok8sapiauthorizationv1beta1SelfSubjectAccessReview & {
+export type CreateAuthorizationV1beta1SelfSubjectAccessReviewResponse = V1beta1SelfSubjectAccessReview & {
   /**
    * The underlying HTTP response.
    */
@@ -88300,14 +88300,14 @@ export type CreateAuthorizationV1beta1SelfSubjectAccessReviewResponse = Iok8sapi
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiauthorizationv1beta1SelfSubjectAccessReview;
+      parsedBody: V1beta1SelfSubjectAccessReview;
     };
 };
 
 /**
  * Contains response data for the createAuthorizationV1beta1SelfSubjectRulesReview operation.
  */
-export type CreateAuthorizationV1beta1SelfSubjectRulesReviewResponse = Iok8sapiauthorizationv1beta1SelfSubjectRulesReview & {
+export type CreateAuthorizationV1beta1SelfSubjectRulesReviewResponse = V1beta1SelfSubjectRulesReview & {
   /**
    * The underlying HTTP response.
    */
@@ -88319,14 +88319,14 @@ export type CreateAuthorizationV1beta1SelfSubjectRulesReviewResponse = Iok8sapia
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiauthorizationv1beta1SelfSubjectRulesReview;
+      parsedBody: V1beta1SelfSubjectRulesReview;
     };
 };
 
 /**
  * Contains response data for the createAuthorizationV1beta1SubjectAccessReview operation.
  */
-export type CreateAuthorizationV1beta1SubjectAccessReviewResponse = Iok8sapiauthorizationv1beta1SubjectAccessReview & {
+export type CreateAuthorizationV1beta1SubjectAccessReviewResponse = V1beta1SubjectAccessReview & {
   /**
    * The underlying HTTP response.
    */
@@ -88338,14 +88338,14 @@ export type CreateAuthorizationV1beta1SubjectAccessReviewResponse = Iok8sapiauth
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiauthorizationv1beta1SubjectAccessReview;
+      parsedBody: V1beta1SubjectAccessReview;
     };
 };
 
 /**
  * Contains response data for the getAuthorizationOpenshiftIoAPIGroup operation.
  */
-export type GetAuthorizationOpenshiftIoAPIGroupResponse = Iok8sapimachinerypkgapismetav1APIGroup & {
+export type GetAuthorizationOpenshiftIoAPIGroupResponse = V1APIGroup & {
   /**
    * The underlying HTTP response.
    */
@@ -88357,14 +88357,14 @@ export type GetAuthorizationOpenshiftIoAPIGroupResponse = Iok8sapimachinerypkgap
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1APIGroup;
+      parsedBody: V1APIGroup;
     };
 };
 
 /**
  * Contains response data for the getAuthorizationOpenshiftIoV1APIResources operation.
  */
-export type GetAuthorizationOpenshiftIoV1APIResourcesResponse = Iok8sapimachinerypkgapismetav1APIResourceList & {
+export type GetAuthorizationOpenshiftIoV1APIResourcesResponse = V1APIResourceList & {
   /**
    * The underlying HTTP response.
    */
@@ -88376,7 +88376,7 @@ export type GetAuthorizationOpenshiftIoV1APIResourcesResponse = Iok8sapimachiner
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1APIResourceList;
+      parsedBody: V1APIResourceList;
     };
 };
 
@@ -88459,7 +88459,7 @@ export type ReplaceAuthorizationOpenshiftIoV1ClusterRoleBindingResponse = Comgit
 /**
  * Contains response data for the deleteAuthorizationOpenshiftIoV1ClusterRoleBinding operation.
  */
-export type DeleteAuthorizationOpenshiftIoV1ClusterRoleBindingResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteAuthorizationOpenshiftIoV1ClusterRoleBindingResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -88471,7 +88471,7 @@ export type DeleteAuthorizationOpenshiftIoV1ClusterRoleBindingResponse = Iok8sap
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -88573,7 +88573,7 @@ export type ReplaceAuthorizationOpenshiftIoV1ClusterRoleResponse = Comgithubopen
 /**
  * Contains response data for the deleteAuthorizationOpenshiftIoV1ClusterRole operation.
  */
-export type DeleteAuthorizationOpenshiftIoV1ClusterRoleResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteAuthorizationOpenshiftIoV1ClusterRoleResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -88585,7 +88585,7 @@ export type DeleteAuthorizationOpenshiftIoV1ClusterRoleResponse = Iok8sapimachin
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -88692,7 +88692,7 @@ export type CreateAuthorizationOpenshiftIoV1NamespacedRoleBindingRestrictionResp
  * Contains response data for the
  * deleteAuthorizationOpenshiftIoV1CollectionNamespacedRoleBindingRestriction operation.
  */
-export type DeleteAuthorizationOpenshiftIoV1CollectionNamespacedRoleBindingRestrictionResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteAuthorizationOpenshiftIoV1CollectionNamespacedRoleBindingRestrictionResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -88704,7 +88704,7 @@ export type DeleteAuthorizationOpenshiftIoV1CollectionNamespacedRoleBindingRestr
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -88752,7 +88752,7 @@ export type ReplaceAuthorizationOpenshiftIoV1NamespacedRoleBindingRestrictionRes
  * Contains response data for the deleteAuthorizationOpenshiftIoV1NamespacedRoleBindingRestriction
  * operation.
  */
-export type DeleteAuthorizationOpenshiftIoV1NamespacedRoleBindingRestrictionResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteAuthorizationOpenshiftIoV1NamespacedRoleBindingRestrictionResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -88764,7 +88764,7 @@ export type DeleteAuthorizationOpenshiftIoV1NamespacedRoleBindingRestrictionResp
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -88867,7 +88867,7 @@ export type ReplaceAuthorizationOpenshiftIoV1NamespacedRoleBindingResponse = Com
 /**
  * Contains response data for the deleteAuthorizationOpenshiftIoV1NamespacedRoleBinding operation.
  */
-export type DeleteAuthorizationOpenshiftIoV1NamespacedRoleBindingResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteAuthorizationOpenshiftIoV1NamespacedRoleBindingResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -88879,7 +88879,7 @@ export type DeleteAuthorizationOpenshiftIoV1NamespacedRoleBindingResponse = Iok8
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -88981,7 +88981,7 @@ export type ReplaceAuthorizationOpenshiftIoV1NamespacedRoleResponse = Comgithubo
 /**
  * Contains response data for the deleteAuthorizationOpenshiftIoV1NamespacedRole operation.
  */
-export type DeleteAuthorizationOpenshiftIoV1NamespacedRoleResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteAuthorizationOpenshiftIoV1NamespacedRoleResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -88993,7 +88993,7 @@ export type DeleteAuthorizationOpenshiftIoV1NamespacedRoleResponse = Iok8sapimac
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -89157,7 +89157,7 @@ export type CreateAuthorizationOpenshiftIoV1SubjectAccessReviewResponse = Comgit
  * Contains response data for the
  * watchAuthorizationOpenshiftIoV1NamespacedRoleBindingRestrictionList operation.
  */
-export type WatchAuthorizationOpenshiftIoV1NamespacedRoleBindingRestrictionListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchAuthorizationOpenshiftIoV1NamespacedRoleBindingRestrictionListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -89169,7 +89169,7 @@ export type WatchAuthorizationOpenshiftIoV1NamespacedRoleBindingRestrictionListR
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
@@ -89177,7 +89177,7 @@ export type WatchAuthorizationOpenshiftIoV1NamespacedRoleBindingRestrictionListR
  * Contains response data for the watchAuthorizationOpenshiftIoV1NamespacedRoleBindingRestriction
  * operation.
  */
-export type WatchAuthorizationOpenshiftIoV1NamespacedRoleBindingRestrictionResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchAuthorizationOpenshiftIoV1NamespacedRoleBindingRestrictionResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -89189,7 +89189,7 @@ export type WatchAuthorizationOpenshiftIoV1NamespacedRoleBindingRestrictionRespo
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
@@ -89197,7 +89197,7 @@ export type WatchAuthorizationOpenshiftIoV1NamespacedRoleBindingRestrictionRespo
  * Contains response data for the
  * watchAuthorizationOpenshiftIoV1RoleBindingRestrictionListForAllNamespaces operation.
  */
-export type WatchAuthorizationOpenshiftIoV1RoleBindingRestrictionListForAllNamespacesResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchAuthorizationOpenshiftIoV1RoleBindingRestrictionListForAllNamespacesResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -89209,14 +89209,14 @@ export type WatchAuthorizationOpenshiftIoV1RoleBindingRestrictionListForAllNames
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the getAutoscalingAPIGroup operation.
  */
-export type GetAutoscalingAPIGroupResponse = Iok8sapimachinerypkgapismetav1APIGroup & {
+export type GetAutoscalingAPIGroupResponse = V1APIGroup & {
   /**
    * The underlying HTTP response.
    */
@@ -89228,14 +89228,14 @@ export type GetAutoscalingAPIGroupResponse = Iok8sapimachinerypkgapismetav1APIGr
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1APIGroup;
+      parsedBody: V1APIGroup;
     };
 };
 
 /**
  * Contains response data for the getAutoscalingV1APIResources operation.
  */
-export type GetAutoscalingV1APIResourcesResponse = Iok8sapimachinerypkgapismetav1APIResourceList & {
+export type GetAutoscalingV1APIResourcesResponse = V1APIResourceList & {
   /**
    * The underlying HTTP response.
    */
@@ -89247,7 +89247,7 @@ export type GetAutoscalingV1APIResourcesResponse = Iok8sapimachinerypkgapismetav
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1APIResourceList;
+      parsedBody: V1APIResourceList;
     };
 };
 
@@ -89255,7 +89255,7 @@ export type GetAutoscalingV1APIResourcesResponse = Iok8sapimachinerypkgapismetav
  * Contains response data for the listAutoscalingV1HorizontalPodAutoscalerForAllNamespaces
  * operation.
  */
-export type ListAutoscalingV1HorizontalPodAutoscalerForAllNamespacesResponse = Iok8sapiautoscalingv1HorizontalPodAutoscalerList & {
+export type ListAutoscalingV1HorizontalPodAutoscalerForAllNamespacesResponse = V1HorizontalPodAutoscalerList & {
   /**
    * The underlying HTTP response.
    */
@@ -89267,14 +89267,14 @@ export type ListAutoscalingV1HorizontalPodAutoscalerForAllNamespacesResponse = I
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiautoscalingv1HorizontalPodAutoscalerList;
+      parsedBody: V1HorizontalPodAutoscalerList;
     };
 };
 
 /**
  * Contains response data for the listAutoscalingV1NamespacedHorizontalPodAutoscaler operation.
  */
-export type ListAutoscalingV1NamespacedHorizontalPodAutoscalerResponse = Iok8sapiautoscalingv1HorizontalPodAutoscalerList & {
+export type ListAutoscalingV1NamespacedHorizontalPodAutoscalerResponse = V1HorizontalPodAutoscalerList & {
   /**
    * The underlying HTTP response.
    */
@@ -89286,14 +89286,14 @@ export type ListAutoscalingV1NamespacedHorizontalPodAutoscalerResponse = Iok8sap
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiautoscalingv1HorizontalPodAutoscalerList;
+      parsedBody: V1HorizontalPodAutoscalerList;
     };
 };
 
 /**
  * Contains response data for the createAutoscalingV1NamespacedHorizontalPodAutoscaler operation.
  */
-export type CreateAutoscalingV1NamespacedHorizontalPodAutoscalerResponse = Iok8sapiautoscalingv1HorizontalPodAutoscaler & {
+export type CreateAutoscalingV1NamespacedHorizontalPodAutoscalerResponse = V1HorizontalPodAutoscaler & {
   /**
    * The underlying HTTP response.
    */
@@ -89305,7 +89305,7 @@ export type CreateAutoscalingV1NamespacedHorizontalPodAutoscalerResponse = Iok8s
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiautoscalingv1HorizontalPodAutoscaler;
+      parsedBody: V1HorizontalPodAutoscaler;
     };
 };
 
@@ -89313,7 +89313,7 @@ export type CreateAutoscalingV1NamespacedHorizontalPodAutoscalerResponse = Iok8s
  * Contains response data for the deleteAutoscalingV1CollectionNamespacedHorizontalPodAutoscaler
  * operation.
  */
-export type DeleteAutoscalingV1CollectionNamespacedHorizontalPodAutoscalerResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteAutoscalingV1CollectionNamespacedHorizontalPodAutoscalerResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -89325,14 +89325,14 @@ export type DeleteAutoscalingV1CollectionNamespacedHorizontalPodAutoscalerRespon
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
 /**
  * Contains response data for the readAutoscalingV1NamespacedHorizontalPodAutoscaler operation.
  */
-export type ReadAutoscalingV1NamespacedHorizontalPodAutoscalerResponse = Iok8sapiautoscalingv1HorizontalPodAutoscaler & {
+export type ReadAutoscalingV1NamespacedHorizontalPodAutoscalerResponse = V1HorizontalPodAutoscaler & {
   /**
    * The underlying HTTP response.
    */
@@ -89344,14 +89344,14 @@ export type ReadAutoscalingV1NamespacedHorizontalPodAutoscalerResponse = Iok8sap
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiautoscalingv1HorizontalPodAutoscaler;
+      parsedBody: V1HorizontalPodAutoscaler;
     };
 };
 
 /**
  * Contains response data for the replaceAutoscalingV1NamespacedHorizontalPodAutoscaler operation.
  */
-export type ReplaceAutoscalingV1NamespacedHorizontalPodAutoscalerResponse = Iok8sapiautoscalingv1HorizontalPodAutoscaler & {
+export type ReplaceAutoscalingV1NamespacedHorizontalPodAutoscalerResponse = V1HorizontalPodAutoscaler & {
   /**
    * The underlying HTTP response.
    */
@@ -89363,14 +89363,14 @@ export type ReplaceAutoscalingV1NamespacedHorizontalPodAutoscalerResponse = Iok8
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiautoscalingv1HorizontalPodAutoscaler;
+      parsedBody: V1HorizontalPodAutoscaler;
     };
 };
 
 /**
  * Contains response data for the deleteAutoscalingV1NamespacedHorizontalPodAutoscaler operation.
  */
-export type DeleteAutoscalingV1NamespacedHorizontalPodAutoscalerResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteAutoscalingV1NamespacedHorizontalPodAutoscalerResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -89382,14 +89382,14 @@ export type DeleteAutoscalingV1NamespacedHorizontalPodAutoscalerResponse = Iok8s
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
 /**
  * Contains response data for the patchAutoscalingV1NamespacedHorizontalPodAutoscaler operation.
  */
-export type PatchAutoscalingV1NamespacedHorizontalPodAutoscalerResponse = Iok8sapiautoscalingv1HorizontalPodAutoscaler & {
+export type PatchAutoscalingV1NamespacedHorizontalPodAutoscalerResponse = V1HorizontalPodAutoscaler & {
   /**
    * The underlying HTTP response.
    */
@@ -89401,7 +89401,7 @@ export type PatchAutoscalingV1NamespacedHorizontalPodAutoscalerResponse = Iok8sa
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiautoscalingv1HorizontalPodAutoscaler;
+      parsedBody: V1HorizontalPodAutoscaler;
     };
 };
 
@@ -89409,7 +89409,7 @@ export type PatchAutoscalingV1NamespacedHorizontalPodAutoscalerResponse = Iok8sa
  * Contains response data for the readAutoscalingV1NamespacedHorizontalPodAutoscalerStatus
  * operation.
  */
-export type ReadAutoscalingV1NamespacedHorizontalPodAutoscalerStatusResponse = Iok8sapiautoscalingv1HorizontalPodAutoscaler & {
+export type ReadAutoscalingV1NamespacedHorizontalPodAutoscalerStatusResponse = V1HorizontalPodAutoscaler & {
   /**
    * The underlying HTTP response.
    */
@@ -89421,7 +89421,7 @@ export type ReadAutoscalingV1NamespacedHorizontalPodAutoscalerStatusResponse = I
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiautoscalingv1HorizontalPodAutoscaler;
+      parsedBody: V1HorizontalPodAutoscaler;
     };
 };
 
@@ -89429,7 +89429,7 @@ export type ReadAutoscalingV1NamespacedHorizontalPodAutoscalerStatusResponse = I
  * Contains response data for the replaceAutoscalingV1NamespacedHorizontalPodAutoscalerStatus
  * operation.
  */
-export type ReplaceAutoscalingV1NamespacedHorizontalPodAutoscalerStatusResponse = Iok8sapiautoscalingv1HorizontalPodAutoscaler & {
+export type ReplaceAutoscalingV1NamespacedHorizontalPodAutoscalerStatusResponse = V1HorizontalPodAutoscaler & {
   /**
    * The underlying HTTP response.
    */
@@ -89441,7 +89441,7 @@ export type ReplaceAutoscalingV1NamespacedHorizontalPodAutoscalerStatusResponse 
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiautoscalingv1HorizontalPodAutoscaler;
+      parsedBody: V1HorizontalPodAutoscaler;
     };
 };
 
@@ -89449,7 +89449,7 @@ export type ReplaceAutoscalingV1NamespacedHorizontalPodAutoscalerStatusResponse 
  * Contains response data for the patchAutoscalingV1NamespacedHorizontalPodAutoscalerStatus
  * operation.
  */
-export type PatchAutoscalingV1NamespacedHorizontalPodAutoscalerStatusResponse = Iok8sapiautoscalingv1HorizontalPodAutoscaler & {
+export type PatchAutoscalingV1NamespacedHorizontalPodAutoscalerStatusResponse = V1HorizontalPodAutoscaler & {
   /**
    * The underlying HTTP response.
    */
@@ -89461,7 +89461,7 @@ export type PatchAutoscalingV1NamespacedHorizontalPodAutoscalerStatusResponse = 
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiautoscalingv1HorizontalPodAutoscaler;
+      parsedBody: V1HorizontalPodAutoscaler;
     };
 };
 
@@ -89469,7 +89469,7 @@ export type PatchAutoscalingV1NamespacedHorizontalPodAutoscalerStatusResponse = 
  * Contains response data for the watchAutoscalingV1HorizontalPodAutoscalerListForAllNamespaces
  * operation.
  */
-export type WatchAutoscalingV1HorizontalPodAutoscalerListForAllNamespacesResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchAutoscalingV1HorizontalPodAutoscalerListForAllNamespacesResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -89481,7 +89481,7 @@ export type WatchAutoscalingV1HorizontalPodAutoscalerListForAllNamespacesRespons
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
@@ -89489,7 +89489,7 @@ export type WatchAutoscalingV1HorizontalPodAutoscalerListForAllNamespacesRespons
  * Contains response data for the watchAutoscalingV1NamespacedHorizontalPodAutoscalerList
  * operation.
  */
-export type WatchAutoscalingV1NamespacedHorizontalPodAutoscalerListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchAutoscalingV1NamespacedHorizontalPodAutoscalerListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -89501,14 +89501,14 @@ export type WatchAutoscalingV1NamespacedHorizontalPodAutoscalerListResponse = Io
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchAutoscalingV1NamespacedHorizontalPodAutoscaler operation.
  */
-export type WatchAutoscalingV1NamespacedHorizontalPodAutoscalerResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchAutoscalingV1NamespacedHorizontalPodAutoscalerResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -89520,14 +89520,14 @@ export type WatchAutoscalingV1NamespacedHorizontalPodAutoscalerResponse = Iok8sa
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the getAutoscalingV2beta1APIResources operation.
  */
-export type GetAutoscalingV2beta1APIResourcesResponse = Iok8sapimachinerypkgapismetav1APIResourceList & {
+export type GetAutoscalingV2beta1APIResourcesResponse = V1APIResourceList & {
   /**
    * The underlying HTTP response.
    */
@@ -89539,7 +89539,7 @@ export type GetAutoscalingV2beta1APIResourcesResponse = Iok8sapimachinerypkgapis
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1APIResourceList;
+      parsedBody: V1APIResourceList;
     };
 };
 
@@ -89547,7 +89547,7 @@ export type GetAutoscalingV2beta1APIResourcesResponse = Iok8sapimachinerypkgapis
  * Contains response data for the listAutoscalingV2beta1HorizontalPodAutoscalerForAllNamespaces
  * operation.
  */
-export type ListAutoscalingV2beta1HorizontalPodAutoscalerForAllNamespacesResponse = Iok8sapiautoscalingv2beta1HorizontalPodAutoscalerList & {
+export type ListAutoscalingV2beta1HorizontalPodAutoscalerForAllNamespacesResponse = V2beta1HorizontalPodAutoscalerList & {
   /**
    * The underlying HTTP response.
    */
@@ -89559,7 +89559,7 @@ export type ListAutoscalingV2beta1HorizontalPodAutoscalerForAllNamespacesRespons
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiautoscalingv2beta1HorizontalPodAutoscalerList;
+      parsedBody: V2beta1HorizontalPodAutoscalerList;
     };
 };
 
@@ -89567,7 +89567,7 @@ export type ListAutoscalingV2beta1HorizontalPodAutoscalerForAllNamespacesRespons
  * Contains response data for the listAutoscalingV2beta1NamespacedHorizontalPodAutoscaler
  * operation.
  */
-export type ListAutoscalingV2beta1NamespacedHorizontalPodAutoscalerResponse = Iok8sapiautoscalingv2beta1HorizontalPodAutoscalerList & {
+export type ListAutoscalingV2beta1NamespacedHorizontalPodAutoscalerResponse = V2beta1HorizontalPodAutoscalerList & {
   /**
    * The underlying HTTP response.
    */
@@ -89579,7 +89579,7 @@ export type ListAutoscalingV2beta1NamespacedHorizontalPodAutoscalerResponse = Io
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiautoscalingv2beta1HorizontalPodAutoscalerList;
+      parsedBody: V2beta1HorizontalPodAutoscalerList;
     };
 };
 
@@ -89587,7 +89587,7 @@ export type ListAutoscalingV2beta1NamespacedHorizontalPodAutoscalerResponse = Io
  * Contains response data for the createAutoscalingV2beta1NamespacedHorizontalPodAutoscaler
  * operation.
  */
-export type CreateAutoscalingV2beta1NamespacedHorizontalPodAutoscalerResponse = Iok8sapiautoscalingv2beta1HorizontalPodAutoscaler & {
+export type CreateAutoscalingV2beta1NamespacedHorizontalPodAutoscalerResponse = V2beta1HorizontalPodAutoscaler & {
   /**
    * The underlying HTTP response.
    */
@@ -89599,7 +89599,7 @@ export type CreateAutoscalingV2beta1NamespacedHorizontalPodAutoscalerResponse = 
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiautoscalingv2beta1HorizontalPodAutoscaler;
+      parsedBody: V2beta1HorizontalPodAutoscaler;
     };
 };
 
@@ -89607,7 +89607,7 @@ export type CreateAutoscalingV2beta1NamespacedHorizontalPodAutoscalerResponse = 
  * Contains response data for the
  * deleteAutoscalingV2beta1CollectionNamespacedHorizontalPodAutoscaler operation.
  */
-export type DeleteAutoscalingV2beta1CollectionNamespacedHorizontalPodAutoscalerResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteAutoscalingV2beta1CollectionNamespacedHorizontalPodAutoscalerResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -89619,7 +89619,7 @@ export type DeleteAutoscalingV2beta1CollectionNamespacedHorizontalPodAutoscalerR
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -89627,7 +89627,7 @@ export type DeleteAutoscalingV2beta1CollectionNamespacedHorizontalPodAutoscalerR
  * Contains response data for the readAutoscalingV2beta1NamespacedHorizontalPodAutoscaler
  * operation.
  */
-export type ReadAutoscalingV2beta1NamespacedHorizontalPodAutoscalerResponse = Iok8sapiautoscalingv2beta1HorizontalPodAutoscaler & {
+export type ReadAutoscalingV2beta1NamespacedHorizontalPodAutoscalerResponse = V2beta1HorizontalPodAutoscaler & {
   /**
    * The underlying HTTP response.
    */
@@ -89639,7 +89639,7 @@ export type ReadAutoscalingV2beta1NamespacedHorizontalPodAutoscalerResponse = Io
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiautoscalingv2beta1HorizontalPodAutoscaler;
+      parsedBody: V2beta1HorizontalPodAutoscaler;
     };
 };
 
@@ -89647,7 +89647,7 @@ export type ReadAutoscalingV2beta1NamespacedHorizontalPodAutoscalerResponse = Io
  * Contains response data for the replaceAutoscalingV2beta1NamespacedHorizontalPodAutoscaler
  * operation.
  */
-export type ReplaceAutoscalingV2beta1NamespacedHorizontalPodAutoscalerResponse = Iok8sapiautoscalingv2beta1HorizontalPodAutoscaler & {
+export type ReplaceAutoscalingV2beta1NamespacedHorizontalPodAutoscalerResponse = V2beta1HorizontalPodAutoscaler & {
   /**
    * The underlying HTTP response.
    */
@@ -89659,7 +89659,7 @@ export type ReplaceAutoscalingV2beta1NamespacedHorizontalPodAutoscalerResponse =
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiautoscalingv2beta1HorizontalPodAutoscaler;
+      parsedBody: V2beta1HorizontalPodAutoscaler;
     };
 };
 
@@ -89667,7 +89667,7 @@ export type ReplaceAutoscalingV2beta1NamespacedHorizontalPodAutoscalerResponse =
  * Contains response data for the deleteAutoscalingV2beta1NamespacedHorizontalPodAutoscaler
  * operation.
  */
-export type DeleteAutoscalingV2beta1NamespacedHorizontalPodAutoscalerResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteAutoscalingV2beta1NamespacedHorizontalPodAutoscalerResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -89679,7 +89679,7 @@ export type DeleteAutoscalingV2beta1NamespacedHorizontalPodAutoscalerResponse = 
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -89687,7 +89687,7 @@ export type DeleteAutoscalingV2beta1NamespacedHorizontalPodAutoscalerResponse = 
  * Contains response data for the patchAutoscalingV2beta1NamespacedHorizontalPodAutoscaler
  * operation.
  */
-export type PatchAutoscalingV2beta1NamespacedHorizontalPodAutoscalerResponse = Iok8sapiautoscalingv2beta1HorizontalPodAutoscaler & {
+export type PatchAutoscalingV2beta1NamespacedHorizontalPodAutoscalerResponse = V2beta1HorizontalPodAutoscaler & {
   /**
    * The underlying HTTP response.
    */
@@ -89699,7 +89699,7 @@ export type PatchAutoscalingV2beta1NamespacedHorizontalPodAutoscalerResponse = I
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiautoscalingv2beta1HorizontalPodAutoscaler;
+      parsedBody: V2beta1HorizontalPodAutoscaler;
     };
 };
 
@@ -89707,7 +89707,7 @@ export type PatchAutoscalingV2beta1NamespacedHorizontalPodAutoscalerResponse = I
  * Contains response data for the readAutoscalingV2beta1NamespacedHorizontalPodAutoscalerStatus
  * operation.
  */
-export type ReadAutoscalingV2beta1NamespacedHorizontalPodAutoscalerStatusResponse = Iok8sapiautoscalingv2beta1HorizontalPodAutoscaler & {
+export type ReadAutoscalingV2beta1NamespacedHorizontalPodAutoscalerStatusResponse = V2beta1HorizontalPodAutoscaler & {
   /**
    * The underlying HTTP response.
    */
@@ -89719,7 +89719,7 @@ export type ReadAutoscalingV2beta1NamespacedHorizontalPodAutoscalerStatusRespons
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiautoscalingv2beta1HorizontalPodAutoscaler;
+      parsedBody: V2beta1HorizontalPodAutoscaler;
     };
 };
 
@@ -89727,7 +89727,7 @@ export type ReadAutoscalingV2beta1NamespacedHorizontalPodAutoscalerStatusRespons
  * Contains response data for the replaceAutoscalingV2beta1NamespacedHorizontalPodAutoscalerStatus
  * operation.
  */
-export type ReplaceAutoscalingV2beta1NamespacedHorizontalPodAutoscalerStatusResponse = Iok8sapiautoscalingv2beta1HorizontalPodAutoscaler & {
+export type ReplaceAutoscalingV2beta1NamespacedHorizontalPodAutoscalerStatusResponse = V2beta1HorizontalPodAutoscaler & {
   /**
    * The underlying HTTP response.
    */
@@ -89739,7 +89739,7 @@ export type ReplaceAutoscalingV2beta1NamespacedHorizontalPodAutoscalerStatusResp
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiautoscalingv2beta1HorizontalPodAutoscaler;
+      parsedBody: V2beta1HorizontalPodAutoscaler;
     };
 };
 
@@ -89747,7 +89747,7 @@ export type ReplaceAutoscalingV2beta1NamespacedHorizontalPodAutoscalerStatusResp
  * Contains response data for the patchAutoscalingV2beta1NamespacedHorizontalPodAutoscalerStatus
  * operation.
  */
-export type PatchAutoscalingV2beta1NamespacedHorizontalPodAutoscalerStatusResponse = Iok8sapiautoscalingv2beta1HorizontalPodAutoscaler & {
+export type PatchAutoscalingV2beta1NamespacedHorizontalPodAutoscalerStatusResponse = V2beta1HorizontalPodAutoscaler & {
   /**
    * The underlying HTTP response.
    */
@@ -89759,7 +89759,7 @@ export type PatchAutoscalingV2beta1NamespacedHorizontalPodAutoscalerStatusRespon
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapiautoscalingv2beta1HorizontalPodAutoscaler;
+      parsedBody: V2beta1HorizontalPodAutoscaler;
     };
 };
 
@@ -89767,7 +89767,7 @@ export type PatchAutoscalingV2beta1NamespacedHorizontalPodAutoscalerStatusRespon
  * Contains response data for the
  * watchAutoscalingV2beta1HorizontalPodAutoscalerListForAllNamespaces operation.
  */
-export type WatchAutoscalingV2beta1HorizontalPodAutoscalerListForAllNamespacesResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchAutoscalingV2beta1HorizontalPodAutoscalerListForAllNamespacesResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -89779,7 +89779,7 @@ export type WatchAutoscalingV2beta1HorizontalPodAutoscalerListForAllNamespacesRe
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
@@ -89787,7 +89787,7 @@ export type WatchAutoscalingV2beta1HorizontalPodAutoscalerListForAllNamespacesRe
  * Contains response data for the watchAutoscalingV2beta1NamespacedHorizontalPodAutoscalerList
  * operation.
  */
-export type WatchAutoscalingV2beta1NamespacedHorizontalPodAutoscalerListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchAutoscalingV2beta1NamespacedHorizontalPodAutoscalerListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -89799,7 +89799,7 @@ export type WatchAutoscalingV2beta1NamespacedHorizontalPodAutoscalerListResponse
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
@@ -89807,7 +89807,7 @@ export type WatchAutoscalingV2beta1NamespacedHorizontalPodAutoscalerListResponse
  * Contains response data for the watchAutoscalingV2beta1NamespacedHorizontalPodAutoscaler
  * operation.
  */
-export type WatchAutoscalingV2beta1NamespacedHorizontalPodAutoscalerResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchAutoscalingV2beta1NamespacedHorizontalPodAutoscalerResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -89819,14 +89819,14 @@ export type WatchAutoscalingV2beta1NamespacedHorizontalPodAutoscalerResponse = I
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the getBatchAPIGroup operation.
  */
-export type GetBatchAPIGroupResponse = Iok8sapimachinerypkgapismetav1APIGroup & {
+export type GetBatchAPIGroupResponse = V1APIGroup & {
   /**
    * The underlying HTTP response.
    */
@@ -89838,14 +89838,14 @@ export type GetBatchAPIGroupResponse = Iok8sapimachinerypkgapismetav1APIGroup & 
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1APIGroup;
+      parsedBody: V1APIGroup;
     };
 };
 
 /**
  * Contains response data for the getBatchV1APIResources operation.
  */
-export type GetBatchV1APIResourcesResponse = Iok8sapimachinerypkgapismetav1APIResourceList & {
+export type GetBatchV1APIResourcesResponse = V1APIResourceList & {
   /**
    * The underlying HTTP response.
    */
@@ -89857,14 +89857,14 @@ export type GetBatchV1APIResourcesResponse = Iok8sapimachinerypkgapismetav1APIRe
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1APIResourceList;
+      parsedBody: V1APIResourceList;
     };
 };
 
 /**
  * Contains response data for the listBatchV1JobForAllNamespaces operation.
  */
-export type ListBatchV1JobForAllNamespacesResponse = Iok8sapibatchv1JobList & {
+export type ListBatchV1JobForAllNamespacesResponse = V1JobList & {
   /**
    * The underlying HTTP response.
    */
@@ -89876,14 +89876,14 @@ export type ListBatchV1JobForAllNamespacesResponse = Iok8sapibatchv1JobList & {
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapibatchv1JobList;
+      parsedBody: V1JobList;
     };
 };
 
 /**
  * Contains response data for the listBatchV1NamespacedJob operation.
  */
-export type ListBatchV1NamespacedJobResponse = Iok8sapibatchv1JobList & {
+export type ListBatchV1NamespacedJobResponse = V1JobList & {
   /**
    * The underlying HTTP response.
    */
@@ -89895,14 +89895,14 @@ export type ListBatchV1NamespacedJobResponse = Iok8sapibatchv1JobList & {
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapibatchv1JobList;
+      parsedBody: V1JobList;
     };
 };
 
 /**
  * Contains response data for the createBatchV1NamespacedJob operation.
  */
-export type CreateBatchV1NamespacedJobResponse = Iok8sapibatchv1Job & {
+export type CreateBatchV1NamespacedJobResponse = V1Job & {
   /**
    * The underlying HTTP response.
    */
@@ -89914,14 +89914,14 @@ export type CreateBatchV1NamespacedJobResponse = Iok8sapibatchv1Job & {
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapibatchv1Job;
+      parsedBody: V1Job;
     };
 };
 
 /**
  * Contains response data for the deleteBatchV1CollectionNamespacedJob operation.
  */
-export type DeleteBatchV1CollectionNamespacedJobResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteBatchV1CollectionNamespacedJobResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -89933,14 +89933,14 @@ export type DeleteBatchV1CollectionNamespacedJobResponse = Iok8sapimachinerypkga
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
 /**
  * Contains response data for the readBatchV1NamespacedJob operation.
  */
-export type ReadBatchV1NamespacedJobResponse = Iok8sapibatchv1Job & {
+export type ReadBatchV1NamespacedJobResponse = V1Job & {
   /**
    * The underlying HTTP response.
    */
@@ -89952,14 +89952,14 @@ export type ReadBatchV1NamespacedJobResponse = Iok8sapibatchv1Job & {
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapibatchv1Job;
+      parsedBody: V1Job;
     };
 };
 
 /**
  * Contains response data for the replaceBatchV1NamespacedJob operation.
  */
-export type ReplaceBatchV1NamespacedJobResponse = Iok8sapibatchv1Job & {
+export type ReplaceBatchV1NamespacedJobResponse = V1Job & {
   /**
    * The underlying HTTP response.
    */
@@ -89971,14 +89971,14 @@ export type ReplaceBatchV1NamespacedJobResponse = Iok8sapibatchv1Job & {
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapibatchv1Job;
+      parsedBody: V1Job;
     };
 };
 
 /**
  * Contains response data for the deleteBatchV1NamespacedJob operation.
  */
-export type DeleteBatchV1NamespacedJobResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteBatchV1NamespacedJobResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -89990,14 +89990,14 @@ export type DeleteBatchV1NamespacedJobResponse = Iok8sapimachinerypkgapismetav1S
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
 /**
  * Contains response data for the patchBatchV1NamespacedJob operation.
  */
-export type PatchBatchV1NamespacedJobResponse = Iok8sapibatchv1Job & {
+export type PatchBatchV1NamespacedJobResponse = V1Job & {
   /**
    * The underlying HTTP response.
    */
@@ -90009,14 +90009,14 @@ export type PatchBatchV1NamespacedJobResponse = Iok8sapibatchv1Job & {
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapibatchv1Job;
+      parsedBody: V1Job;
     };
 };
 
 /**
  * Contains response data for the readBatchV1NamespacedJobStatus operation.
  */
-export type ReadBatchV1NamespacedJobStatusResponse = Iok8sapibatchv1Job & {
+export type ReadBatchV1NamespacedJobStatusResponse = V1Job & {
   /**
    * The underlying HTTP response.
    */
@@ -90028,14 +90028,14 @@ export type ReadBatchV1NamespacedJobStatusResponse = Iok8sapibatchv1Job & {
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapibatchv1Job;
+      parsedBody: V1Job;
     };
 };
 
 /**
  * Contains response data for the replaceBatchV1NamespacedJobStatus operation.
  */
-export type ReplaceBatchV1NamespacedJobStatusResponse = Iok8sapibatchv1Job & {
+export type ReplaceBatchV1NamespacedJobStatusResponse = V1Job & {
   /**
    * The underlying HTTP response.
    */
@@ -90047,14 +90047,14 @@ export type ReplaceBatchV1NamespacedJobStatusResponse = Iok8sapibatchv1Job & {
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapibatchv1Job;
+      parsedBody: V1Job;
     };
 };
 
 /**
  * Contains response data for the patchBatchV1NamespacedJobStatus operation.
  */
-export type PatchBatchV1NamespacedJobStatusResponse = Iok8sapibatchv1Job & {
+export type PatchBatchV1NamespacedJobStatusResponse = V1Job & {
   /**
    * The underlying HTTP response.
    */
@@ -90066,14 +90066,14 @@ export type PatchBatchV1NamespacedJobStatusResponse = Iok8sapibatchv1Job & {
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapibatchv1Job;
+      parsedBody: V1Job;
     };
 };
 
 /**
  * Contains response data for the watchBatchV1JobListForAllNamespaces operation.
  */
-export type WatchBatchV1JobListForAllNamespacesResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchBatchV1JobListForAllNamespacesResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -90085,14 +90085,14 @@ export type WatchBatchV1JobListForAllNamespacesResponse = Iok8sapimachinerypkgap
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchBatchV1NamespacedJobList operation.
  */
-export type WatchBatchV1NamespacedJobListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchBatchV1NamespacedJobListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -90104,14 +90104,14 @@ export type WatchBatchV1NamespacedJobListResponse = Iok8sapimachinerypkgapismeta
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchBatchV1NamespacedJob operation.
  */
-export type WatchBatchV1NamespacedJobResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchBatchV1NamespacedJobResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -90123,14 +90123,14 @@ export type WatchBatchV1NamespacedJobResponse = Iok8sapimachinerypkgapismetav1Wa
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the getBatchV1beta1APIResources operation.
  */
-export type GetBatchV1beta1APIResourcesResponse = Iok8sapimachinerypkgapismetav1APIResourceList & {
+export type GetBatchV1beta1APIResourcesResponse = V1APIResourceList & {
   /**
    * The underlying HTTP response.
    */
@@ -90142,14 +90142,14 @@ export type GetBatchV1beta1APIResourcesResponse = Iok8sapimachinerypkgapismetav1
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1APIResourceList;
+      parsedBody: V1APIResourceList;
     };
 };
 
 /**
  * Contains response data for the listBatchV1beta1CronJobForAllNamespaces operation.
  */
-export type ListBatchV1beta1CronJobForAllNamespacesResponse = Iok8sapibatchv1beta1CronJobList & {
+export type ListBatchV1beta1CronJobForAllNamespacesResponse = V1beta1CronJobList & {
   /**
    * The underlying HTTP response.
    */
@@ -90161,14 +90161,14 @@ export type ListBatchV1beta1CronJobForAllNamespacesResponse = Iok8sapibatchv1bet
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapibatchv1beta1CronJobList;
+      parsedBody: V1beta1CronJobList;
     };
 };
 
 /**
  * Contains response data for the listBatchV1beta1NamespacedCronJob operation.
  */
-export type ListBatchV1beta1NamespacedCronJobResponse = Iok8sapibatchv1beta1CronJobList & {
+export type ListBatchV1beta1NamespacedCronJobResponse = V1beta1CronJobList & {
   /**
    * The underlying HTTP response.
    */
@@ -90180,14 +90180,14 @@ export type ListBatchV1beta1NamespacedCronJobResponse = Iok8sapibatchv1beta1Cron
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapibatchv1beta1CronJobList;
+      parsedBody: V1beta1CronJobList;
     };
 };
 
 /**
  * Contains response data for the createBatchV1beta1NamespacedCronJob operation.
  */
-export type CreateBatchV1beta1NamespacedCronJobResponse = Iok8sapibatchv1beta1CronJob & {
+export type CreateBatchV1beta1NamespacedCronJobResponse = V1beta1CronJob & {
   /**
    * The underlying HTTP response.
    */
@@ -90199,14 +90199,14 @@ export type CreateBatchV1beta1NamespacedCronJobResponse = Iok8sapibatchv1beta1Cr
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapibatchv1beta1CronJob;
+      parsedBody: V1beta1CronJob;
     };
 };
 
 /**
  * Contains response data for the deleteBatchV1beta1CollectionNamespacedCronJob operation.
  */
-export type DeleteBatchV1beta1CollectionNamespacedCronJobResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteBatchV1beta1CollectionNamespacedCronJobResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -90218,14 +90218,14 @@ export type DeleteBatchV1beta1CollectionNamespacedCronJobResponse = Iok8sapimach
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
 /**
  * Contains response data for the readBatchV1beta1NamespacedCronJob operation.
  */
-export type ReadBatchV1beta1NamespacedCronJobResponse = Iok8sapibatchv1beta1CronJob & {
+export type ReadBatchV1beta1NamespacedCronJobResponse = V1beta1CronJob & {
   /**
    * The underlying HTTP response.
    */
@@ -90237,14 +90237,14 @@ export type ReadBatchV1beta1NamespacedCronJobResponse = Iok8sapibatchv1beta1Cron
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapibatchv1beta1CronJob;
+      parsedBody: V1beta1CronJob;
     };
 };
 
 /**
  * Contains response data for the replaceBatchV1beta1NamespacedCronJob operation.
  */
-export type ReplaceBatchV1beta1NamespacedCronJobResponse = Iok8sapibatchv1beta1CronJob & {
+export type ReplaceBatchV1beta1NamespacedCronJobResponse = V1beta1CronJob & {
   /**
    * The underlying HTTP response.
    */
@@ -90256,14 +90256,14 @@ export type ReplaceBatchV1beta1NamespacedCronJobResponse = Iok8sapibatchv1beta1C
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapibatchv1beta1CronJob;
+      parsedBody: V1beta1CronJob;
     };
 };
 
 /**
  * Contains response data for the deleteBatchV1beta1NamespacedCronJob operation.
  */
-export type DeleteBatchV1beta1NamespacedCronJobResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteBatchV1beta1NamespacedCronJobResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -90275,14 +90275,14 @@ export type DeleteBatchV1beta1NamespacedCronJobResponse = Iok8sapimachinerypkgap
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
 /**
  * Contains response data for the patchBatchV1beta1NamespacedCronJob operation.
  */
-export type PatchBatchV1beta1NamespacedCronJobResponse = Iok8sapibatchv1beta1CronJob & {
+export type PatchBatchV1beta1NamespacedCronJobResponse = V1beta1CronJob & {
   /**
    * The underlying HTTP response.
    */
@@ -90294,14 +90294,14 @@ export type PatchBatchV1beta1NamespacedCronJobResponse = Iok8sapibatchv1beta1Cro
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapibatchv1beta1CronJob;
+      parsedBody: V1beta1CronJob;
     };
 };
 
 /**
  * Contains response data for the readBatchV1beta1NamespacedCronJobStatus operation.
  */
-export type ReadBatchV1beta1NamespacedCronJobStatusResponse = Iok8sapibatchv1beta1CronJob & {
+export type ReadBatchV1beta1NamespacedCronJobStatusResponse = V1beta1CronJob & {
   /**
    * The underlying HTTP response.
    */
@@ -90313,14 +90313,14 @@ export type ReadBatchV1beta1NamespacedCronJobStatusResponse = Iok8sapibatchv1bet
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapibatchv1beta1CronJob;
+      parsedBody: V1beta1CronJob;
     };
 };
 
 /**
  * Contains response data for the replaceBatchV1beta1NamespacedCronJobStatus operation.
  */
-export type ReplaceBatchV1beta1NamespacedCronJobStatusResponse = Iok8sapibatchv1beta1CronJob & {
+export type ReplaceBatchV1beta1NamespacedCronJobStatusResponse = V1beta1CronJob & {
   /**
    * The underlying HTTP response.
    */
@@ -90332,14 +90332,14 @@ export type ReplaceBatchV1beta1NamespacedCronJobStatusResponse = Iok8sapibatchv1
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapibatchv1beta1CronJob;
+      parsedBody: V1beta1CronJob;
     };
 };
 
 /**
  * Contains response data for the patchBatchV1beta1NamespacedCronJobStatus operation.
  */
-export type PatchBatchV1beta1NamespacedCronJobStatusResponse = Iok8sapibatchv1beta1CronJob & {
+export type PatchBatchV1beta1NamespacedCronJobStatusResponse = V1beta1CronJob & {
   /**
    * The underlying HTTP response.
    */
@@ -90351,14 +90351,14 @@ export type PatchBatchV1beta1NamespacedCronJobStatusResponse = Iok8sapibatchv1be
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapibatchv1beta1CronJob;
+      parsedBody: V1beta1CronJob;
     };
 };
 
 /**
  * Contains response data for the watchBatchV1beta1CronJobListForAllNamespaces operation.
  */
-export type WatchBatchV1beta1CronJobListForAllNamespacesResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchBatchV1beta1CronJobListForAllNamespacesResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -90370,14 +90370,14 @@ export type WatchBatchV1beta1CronJobListForAllNamespacesResponse = Iok8sapimachi
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchBatchV1beta1NamespacedCronJobList operation.
  */
-export type WatchBatchV1beta1NamespacedCronJobListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchBatchV1beta1NamespacedCronJobListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -90389,14 +90389,14 @@ export type WatchBatchV1beta1NamespacedCronJobListResponse = Iok8sapimachinerypk
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchBatchV1beta1NamespacedCronJob operation.
  */
-export type WatchBatchV1beta1NamespacedCronJobResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchBatchV1beta1NamespacedCronJobResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -90408,14 +90408,14 @@ export type WatchBatchV1beta1NamespacedCronJobResponse = Iok8sapimachinerypkgapi
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the getBuildOpenshiftIoAPIGroup operation.
  */
-export type GetBuildOpenshiftIoAPIGroupResponse = Iok8sapimachinerypkgapismetav1APIGroup & {
+export type GetBuildOpenshiftIoAPIGroupResponse = V1APIGroup & {
   /**
    * The underlying HTTP response.
    */
@@ -90427,14 +90427,14 @@ export type GetBuildOpenshiftIoAPIGroupResponse = Iok8sapimachinerypkgapismetav1
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1APIGroup;
+      parsedBody: V1APIGroup;
     };
 };
 
 /**
  * Contains response data for the getBuildOpenshiftIoV1APIResources operation.
  */
-export type GetBuildOpenshiftIoV1APIResourcesResponse = Iok8sapimachinerypkgapismetav1APIResourceList & {
+export type GetBuildOpenshiftIoV1APIResourcesResponse = V1APIResourceList & {
   /**
    * The underlying HTTP response.
    */
@@ -90446,7 +90446,7 @@ export type GetBuildOpenshiftIoV1APIResourcesResponse = Iok8sapimachinerypkgapis
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1APIResourceList;
+      parsedBody: V1APIResourceList;
     };
 };
 
@@ -90530,7 +90530,7 @@ export type CreateBuildOpenshiftIoV1NamespacedBuildConfigResponse = Comgithubope
  * Contains response data for the deleteBuildOpenshiftIoV1CollectionNamespacedBuildConfig
  * operation.
  */
-export type DeleteBuildOpenshiftIoV1CollectionNamespacedBuildConfigResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteBuildOpenshiftIoV1CollectionNamespacedBuildConfigResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -90542,7 +90542,7 @@ export type DeleteBuildOpenshiftIoV1CollectionNamespacedBuildConfigResponse = Io
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -90587,7 +90587,7 @@ export type ReplaceBuildOpenshiftIoV1NamespacedBuildConfigResponse = Comgithubop
 /**
  * Contains response data for the deleteBuildOpenshiftIoV1NamespacedBuildConfig operation.
  */
-export type DeleteBuildOpenshiftIoV1NamespacedBuildConfigResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteBuildOpenshiftIoV1NamespacedBuildConfigResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -90599,7 +90599,7 @@ export type DeleteBuildOpenshiftIoV1NamespacedBuildConfigResponse = Iok8sapimach
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -90751,7 +90751,7 @@ export type CreateBuildOpenshiftIoV1NamespacedBuildResponse = Comgithubopenshift
 /**
  * Contains response data for the deleteBuildOpenshiftIoV1CollectionNamespacedBuild operation.
  */
-export type DeleteBuildOpenshiftIoV1CollectionNamespacedBuildResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteBuildOpenshiftIoV1CollectionNamespacedBuildResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -90763,7 +90763,7 @@ export type DeleteBuildOpenshiftIoV1CollectionNamespacedBuildResponse = Iok8sapi
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -90808,7 +90808,7 @@ export type ReplaceBuildOpenshiftIoV1NamespacedBuildResponse = Comgithubopenshif
 /**
  * Contains response data for the deleteBuildOpenshiftIoV1NamespacedBuild operation.
  */
-export type DeleteBuildOpenshiftIoV1NamespacedBuildResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteBuildOpenshiftIoV1NamespacedBuildResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -90820,7 +90820,7 @@ export type DeleteBuildOpenshiftIoV1NamespacedBuildResponse = Iok8sapimachineryp
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -90903,7 +90903,7 @@ export type ReadBuildOpenshiftIoV1NamespacedBuildLogResponse = Comgithubopenshif
 /**
  * Contains response data for the watchBuildOpenshiftIoV1BuildConfigListForAllNamespaces operation.
  */
-export type WatchBuildOpenshiftIoV1BuildConfigListForAllNamespacesResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchBuildOpenshiftIoV1BuildConfigListForAllNamespacesResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -90915,14 +90915,14 @@ export type WatchBuildOpenshiftIoV1BuildConfigListForAllNamespacesResponse = Iok
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchBuildOpenshiftIoV1BuildListForAllNamespaces operation.
  */
-export type WatchBuildOpenshiftIoV1BuildListForAllNamespacesResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchBuildOpenshiftIoV1BuildListForAllNamespacesResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -90934,14 +90934,14 @@ export type WatchBuildOpenshiftIoV1BuildListForAllNamespacesResponse = Iok8sapim
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchBuildOpenshiftIoV1NamespacedBuildConfigList operation.
  */
-export type WatchBuildOpenshiftIoV1NamespacedBuildConfigListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchBuildOpenshiftIoV1NamespacedBuildConfigListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -90953,14 +90953,14 @@ export type WatchBuildOpenshiftIoV1NamespacedBuildConfigListResponse = Iok8sapim
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchBuildOpenshiftIoV1NamespacedBuildConfig operation.
  */
-export type WatchBuildOpenshiftIoV1NamespacedBuildConfigResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchBuildOpenshiftIoV1NamespacedBuildConfigResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -90972,14 +90972,14 @@ export type WatchBuildOpenshiftIoV1NamespacedBuildConfigResponse = Iok8sapimachi
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchBuildOpenshiftIoV1NamespacedBuildList operation.
  */
-export type WatchBuildOpenshiftIoV1NamespacedBuildListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchBuildOpenshiftIoV1NamespacedBuildListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -90991,14 +90991,14 @@ export type WatchBuildOpenshiftIoV1NamespacedBuildListResponse = Iok8sapimachine
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchBuildOpenshiftIoV1NamespacedBuild operation.
  */
-export type WatchBuildOpenshiftIoV1NamespacedBuildResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchBuildOpenshiftIoV1NamespacedBuildResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -91010,14 +91010,14 @@ export type WatchBuildOpenshiftIoV1NamespacedBuildResponse = Iok8sapimachinerypk
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the getCertificatesAPIGroup operation.
  */
-export type GetCertificatesAPIGroupResponse = Iok8sapimachinerypkgapismetav1APIGroup & {
+export type GetCertificatesAPIGroupResponse = V1APIGroup & {
   /**
    * The underlying HTTP response.
    */
@@ -91029,14 +91029,14 @@ export type GetCertificatesAPIGroupResponse = Iok8sapimachinerypkgapismetav1APIG
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1APIGroup;
+      parsedBody: V1APIGroup;
     };
 };
 
 /**
  * Contains response data for the getCertificatesV1beta1APIResources operation.
  */
-export type GetCertificatesV1beta1APIResourcesResponse = Iok8sapimachinerypkgapismetav1APIResourceList & {
+export type GetCertificatesV1beta1APIResourcesResponse = V1APIResourceList & {
   /**
    * The underlying HTTP response.
    */
@@ -91048,14 +91048,14 @@ export type GetCertificatesV1beta1APIResourcesResponse = Iok8sapimachinerypkgapi
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1APIResourceList;
+      parsedBody: V1APIResourceList;
     };
 };
 
 /**
  * Contains response data for the listCertificatesV1beta1CertificateSigningRequest operation.
  */
-export type ListCertificatesV1beta1CertificateSigningRequestResponse = Iok8sapicertificatesv1beta1CertificateSigningRequestList & {
+export type ListCertificatesV1beta1CertificateSigningRequestResponse = V1beta1CertificateSigningRequestList & {
   /**
    * The underlying HTTP response.
    */
@@ -91067,14 +91067,14 @@ export type ListCertificatesV1beta1CertificateSigningRequestResponse = Iok8sapic
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapicertificatesv1beta1CertificateSigningRequestList;
+      parsedBody: V1beta1CertificateSigningRequestList;
     };
 };
 
 /**
  * Contains response data for the createCertificatesV1beta1CertificateSigningRequest operation.
  */
-export type CreateCertificatesV1beta1CertificateSigningRequestResponse = Iok8sapicertificatesv1beta1CertificateSigningRequest & {
+export type CreateCertificatesV1beta1CertificateSigningRequestResponse = V1beta1CertificateSigningRequest & {
   /**
    * The underlying HTTP response.
    */
@@ -91086,7 +91086,7 @@ export type CreateCertificatesV1beta1CertificateSigningRequestResponse = Iok8sap
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapicertificatesv1beta1CertificateSigningRequest;
+      parsedBody: V1beta1CertificateSigningRequest;
     };
 };
 
@@ -91094,7 +91094,7 @@ export type CreateCertificatesV1beta1CertificateSigningRequestResponse = Iok8sap
  * Contains response data for the deleteCertificatesV1beta1CollectionCertificateSigningRequest
  * operation.
  */
-export type DeleteCertificatesV1beta1CollectionCertificateSigningRequestResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteCertificatesV1beta1CollectionCertificateSigningRequestResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -91106,14 +91106,14 @@ export type DeleteCertificatesV1beta1CollectionCertificateSigningRequestResponse
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
 /**
  * Contains response data for the readCertificatesV1beta1CertificateSigningRequest operation.
  */
-export type ReadCertificatesV1beta1CertificateSigningRequestResponse = Iok8sapicertificatesv1beta1CertificateSigningRequest & {
+export type ReadCertificatesV1beta1CertificateSigningRequestResponse = V1beta1CertificateSigningRequest & {
   /**
    * The underlying HTTP response.
    */
@@ -91125,14 +91125,14 @@ export type ReadCertificatesV1beta1CertificateSigningRequestResponse = Iok8sapic
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapicertificatesv1beta1CertificateSigningRequest;
+      parsedBody: V1beta1CertificateSigningRequest;
     };
 };
 
 /**
  * Contains response data for the replaceCertificatesV1beta1CertificateSigningRequest operation.
  */
-export type ReplaceCertificatesV1beta1CertificateSigningRequestResponse = Iok8sapicertificatesv1beta1CertificateSigningRequest & {
+export type ReplaceCertificatesV1beta1CertificateSigningRequestResponse = V1beta1CertificateSigningRequest & {
   /**
    * The underlying HTTP response.
    */
@@ -91144,14 +91144,14 @@ export type ReplaceCertificatesV1beta1CertificateSigningRequestResponse = Iok8sa
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapicertificatesv1beta1CertificateSigningRequest;
+      parsedBody: V1beta1CertificateSigningRequest;
     };
 };
 
 /**
  * Contains response data for the deleteCertificatesV1beta1CertificateSigningRequest operation.
  */
-export type DeleteCertificatesV1beta1CertificateSigningRequestResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteCertificatesV1beta1CertificateSigningRequestResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -91163,14 +91163,14 @@ export type DeleteCertificatesV1beta1CertificateSigningRequestResponse = Iok8sap
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
 /**
  * Contains response data for the patchCertificatesV1beta1CertificateSigningRequest operation.
  */
-export type PatchCertificatesV1beta1CertificateSigningRequestResponse = Iok8sapicertificatesv1beta1CertificateSigningRequest & {
+export type PatchCertificatesV1beta1CertificateSigningRequestResponse = V1beta1CertificateSigningRequest & {
   /**
    * The underlying HTTP response.
    */
@@ -91182,7 +91182,7 @@ export type PatchCertificatesV1beta1CertificateSigningRequestResponse = Iok8sapi
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapicertificatesv1beta1CertificateSigningRequest;
+      parsedBody: V1beta1CertificateSigningRequest;
     };
 };
 
@@ -91190,7 +91190,7 @@ export type PatchCertificatesV1beta1CertificateSigningRequestResponse = Iok8sapi
  * Contains response data for the replaceCertificatesV1beta1CertificateSigningRequestApproval
  * operation.
  */
-export type ReplaceCertificatesV1beta1CertificateSigningRequestApprovalResponse = Iok8sapicertificatesv1beta1CertificateSigningRequest & {
+export type ReplaceCertificatesV1beta1CertificateSigningRequestApprovalResponse = V1beta1CertificateSigningRequest & {
   /**
    * The underlying HTTP response.
    */
@@ -91202,14 +91202,14 @@ export type ReplaceCertificatesV1beta1CertificateSigningRequestApprovalResponse 
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapicertificatesv1beta1CertificateSigningRequest;
+      parsedBody: V1beta1CertificateSigningRequest;
     };
 };
 
 /**
  * Contains response data for the readCertificatesV1beta1CertificateSigningRequestStatus operation.
  */
-export type ReadCertificatesV1beta1CertificateSigningRequestStatusResponse = Iok8sapicertificatesv1beta1CertificateSigningRequest & {
+export type ReadCertificatesV1beta1CertificateSigningRequestStatusResponse = V1beta1CertificateSigningRequest & {
   /**
    * The underlying HTTP response.
    */
@@ -91221,7 +91221,7 @@ export type ReadCertificatesV1beta1CertificateSigningRequestStatusResponse = Iok
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapicertificatesv1beta1CertificateSigningRequest;
+      parsedBody: V1beta1CertificateSigningRequest;
     };
 };
 
@@ -91229,7 +91229,7 @@ export type ReadCertificatesV1beta1CertificateSigningRequestStatusResponse = Iok
  * Contains response data for the replaceCertificatesV1beta1CertificateSigningRequestStatus
  * operation.
  */
-export type ReplaceCertificatesV1beta1CertificateSigningRequestStatusResponse = Iok8sapicertificatesv1beta1CertificateSigningRequest & {
+export type ReplaceCertificatesV1beta1CertificateSigningRequestStatusResponse = V1beta1CertificateSigningRequest & {
   /**
    * The underlying HTTP response.
    */
@@ -91241,7 +91241,7 @@ export type ReplaceCertificatesV1beta1CertificateSigningRequestStatusResponse = 
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapicertificatesv1beta1CertificateSigningRequest;
+      parsedBody: V1beta1CertificateSigningRequest;
     };
 };
 
@@ -91249,7 +91249,7 @@ export type ReplaceCertificatesV1beta1CertificateSigningRequestStatusResponse = 
  * Contains response data for the patchCertificatesV1beta1CertificateSigningRequestStatus
  * operation.
  */
-export type PatchCertificatesV1beta1CertificateSigningRequestStatusResponse = Iok8sapicertificatesv1beta1CertificateSigningRequest & {
+export type PatchCertificatesV1beta1CertificateSigningRequestStatusResponse = V1beta1CertificateSigningRequest & {
   /**
    * The underlying HTTP response.
    */
@@ -91261,14 +91261,14 @@ export type PatchCertificatesV1beta1CertificateSigningRequestStatusResponse = Io
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapicertificatesv1beta1CertificateSigningRequest;
+      parsedBody: V1beta1CertificateSigningRequest;
     };
 };
 
 /**
  * Contains response data for the watchCertificatesV1beta1CertificateSigningRequestList operation.
  */
-export type WatchCertificatesV1beta1CertificateSigningRequestListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchCertificatesV1beta1CertificateSigningRequestListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -91280,14 +91280,14 @@ export type WatchCertificatesV1beta1CertificateSigningRequestListResponse = Iok8
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchCertificatesV1beta1CertificateSigningRequest operation.
  */
-export type WatchCertificatesV1beta1CertificateSigningRequestResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchCertificatesV1beta1CertificateSigningRequestResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -91299,14 +91299,14 @@ export type WatchCertificatesV1beta1CertificateSigningRequestResponse = Iok8sapi
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the getEventsAPIGroup operation.
  */
-export type GetEventsAPIGroupResponse = Iok8sapimachinerypkgapismetav1APIGroup & {
+export type GetEventsAPIGroupResponse = V1APIGroup & {
   /**
    * The underlying HTTP response.
    */
@@ -91318,14 +91318,14 @@ export type GetEventsAPIGroupResponse = Iok8sapimachinerypkgapismetav1APIGroup &
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1APIGroup;
+      parsedBody: V1APIGroup;
     };
 };
 
 /**
  * Contains response data for the getEventsV1beta1APIResources operation.
  */
-export type GetEventsV1beta1APIResourcesResponse = Iok8sapimachinerypkgapismetav1APIResourceList & {
+export type GetEventsV1beta1APIResourcesResponse = V1APIResourceList & {
   /**
    * The underlying HTTP response.
    */
@@ -91337,14 +91337,14 @@ export type GetEventsV1beta1APIResourcesResponse = Iok8sapimachinerypkgapismetav
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1APIResourceList;
+      parsedBody: V1APIResourceList;
     };
 };
 
 /**
  * Contains response data for the listEventsV1beta1EventForAllNamespaces operation.
  */
-export type ListEventsV1beta1EventForAllNamespacesResponse = Iok8sapieventsv1beta1EventList & {
+export type ListEventsV1beta1EventForAllNamespacesResponse = V1beta1EventList & {
   /**
    * The underlying HTTP response.
    */
@@ -91356,14 +91356,14 @@ export type ListEventsV1beta1EventForAllNamespacesResponse = Iok8sapieventsv1bet
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapieventsv1beta1EventList;
+      parsedBody: V1beta1EventList;
     };
 };
 
 /**
  * Contains response data for the listEventsV1beta1NamespacedEvent operation.
  */
-export type ListEventsV1beta1NamespacedEventResponse = Iok8sapieventsv1beta1EventList & {
+export type ListEventsV1beta1NamespacedEventResponse = V1beta1EventList & {
   /**
    * The underlying HTTP response.
    */
@@ -91375,14 +91375,14 @@ export type ListEventsV1beta1NamespacedEventResponse = Iok8sapieventsv1beta1Even
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapieventsv1beta1EventList;
+      parsedBody: V1beta1EventList;
     };
 };
 
 /**
  * Contains response data for the createEventsV1beta1NamespacedEvent operation.
  */
-export type CreateEventsV1beta1NamespacedEventResponse = Iok8sapieventsv1beta1Event & {
+export type CreateEventsV1beta1NamespacedEventResponse = V1beta1Event & {
   /**
    * The underlying HTTP response.
    */
@@ -91394,14 +91394,14 @@ export type CreateEventsV1beta1NamespacedEventResponse = Iok8sapieventsv1beta1Ev
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapieventsv1beta1Event;
+      parsedBody: V1beta1Event;
     };
 };
 
 /**
  * Contains response data for the deleteEventsV1beta1CollectionNamespacedEvent operation.
  */
-export type DeleteEventsV1beta1CollectionNamespacedEventResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteEventsV1beta1CollectionNamespacedEventResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -91413,14 +91413,14 @@ export type DeleteEventsV1beta1CollectionNamespacedEventResponse = Iok8sapimachi
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
 /**
  * Contains response data for the readEventsV1beta1NamespacedEvent operation.
  */
-export type ReadEventsV1beta1NamespacedEventResponse = Iok8sapieventsv1beta1Event & {
+export type ReadEventsV1beta1NamespacedEventResponse = V1beta1Event & {
   /**
    * The underlying HTTP response.
    */
@@ -91432,14 +91432,14 @@ export type ReadEventsV1beta1NamespacedEventResponse = Iok8sapieventsv1beta1Even
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapieventsv1beta1Event;
+      parsedBody: V1beta1Event;
     };
 };
 
 /**
  * Contains response data for the replaceEventsV1beta1NamespacedEvent operation.
  */
-export type ReplaceEventsV1beta1NamespacedEventResponse = Iok8sapieventsv1beta1Event & {
+export type ReplaceEventsV1beta1NamespacedEventResponse = V1beta1Event & {
   /**
    * The underlying HTTP response.
    */
@@ -91451,14 +91451,14 @@ export type ReplaceEventsV1beta1NamespacedEventResponse = Iok8sapieventsv1beta1E
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapieventsv1beta1Event;
+      parsedBody: V1beta1Event;
     };
 };
 
 /**
  * Contains response data for the deleteEventsV1beta1NamespacedEvent operation.
  */
-export type DeleteEventsV1beta1NamespacedEventResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteEventsV1beta1NamespacedEventResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -91470,14 +91470,14 @@ export type DeleteEventsV1beta1NamespacedEventResponse = Iok8sapimachinerypkgapi
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
 /**
  * Contains response data for the patchEventsV1beta1NamespacedEvent operation.
  */
-export type PatchEventsV1beta1NamespacedEventResponse = Iok8sapieventsv1beta1Event & {
+export type PatchEventsV1beta1NamespacedEventResponse = V1beta1Event & {
   /**
    * The underlying HTTP response.
    */
@@ -91489,14 +91489,14 @@ export type PatchEventsV1beta1NamespacedEventResponse = Iok8sapieventsv1beta1Eve
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapieventsv1beta1Event;
+      parsedBody: V1beta1Event;
     };
 };
 
 /**
  * Contains response data for the watchEventsV1beta1EventListForAllNamespaces operation.
  */
-export type WatchEventsV1beta1EventListForAllNamespacesResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchEventsV1beta1EventListForAllNamespacesResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -91508,14 +91508,14 @@ export type WatchEventsV1beta1EventListForAllNamespacesResponse = Iok8sapimachin
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchEventsV1beta1NamespacedEventList operation.
  */
-export type WatchEventsV1beta1NamespacedEventListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchEventsV1beta1NamespacedEventListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -91527,14 +91527,14 @@ export type WatchEventsV1beta1NamespacedEventListResponse = Iok8sapimachinerypkg
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchEventsV1beta1NamespacedEvent operation.
  */
-export type WatchEventsV1beta1NamespacedEventResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchEventsV1beta1NamespacedEventResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -91546,14 +91546,14 @@ export type WatchEventsV1beta1NamespacedEventResponse = Iok8sapimachinerypkgapis
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the getExtensionsAPIGroup operation.
  */
-export type GetExtensionsAPIGroupResponse = Iok8sapimachinerypkgapismetav1APIGroup & {
+export type GetExtensionsAPIGroupResponse = V1APIGroup & {
   /**
    * The underlying HTTP response.
    */
@@ -91565,14 +91565,14 @@ export type GetExtensionsAPIGroupResponse = Iok8sapimachinerypkgapismetav1APIGro
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1APIGroup;
+      parsedBody: V1APIGroup;
     };
 };
 
 /**
  * Contains response data for the getExtensionsV1beta1APIResources operation.
  */
-export type GetExtensionsV1beta1APIResourcesResponse = Iok8sapimachinerypkgapismetav1APIResourceList & {
+export type GetExtensionsV1beta1APIResourcesResponse = V1APIResourceList & {
   /**
    * The underlying HTTP response.
    */
@@ -91584,7 +91584,7 @@ export type GetExtensionsV1beta1APIResourcesResponse = Iok8sapimachinerypkgapism
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1APIResourceList;
+      parsedBody: V1APIResourceList;
     };
 };
 
@@ -91686,7 +91686,7 @@ export type CreateExtensionsV1beta1NamespacedDaemonSetResponse = Iok8sapiextensi
 /**
  * Contains response data for the deleteExtensionsV1beta1CollectionNamespacedDaemonSet operation.
  */
-export type DeleteExtensionsV1beta1CollectionNamespacedDaemonSetResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteExtensionsV1beta1CollectionNamespacedDaemonSetResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -91698,7 +91698,7 @@ export type DeleteExtensionsV1beta1CollectionNamespacedDaemonSetResponse = Iok8s
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -91743,7 +91743,7 @@ export type ReplaceExtensionsV1beta1NamespacedDaemonSetResponse = Iok8sapiextens
 /**
  * Contains response data for the deleteExtensionsV1beta1NamespacedDaemonSet operation.
  */
-export type DeleteExtensionsV1beta1NamespacedDaemonSetResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteExtensionsV1beta1NamespacedDaemonSetResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -91755,7 +91755,7 @@ export type DeleteExtensionsV1beta1NamespacedDaemonSetResponse = Iok8sapimachine
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -91876,7 +91876,7 @@ export type CreateExtensionsV1beta1NamespacedDeploymentResponse = Iok8sapiextens
 /**
  * Contains response data for the deleteExtensionsV1beta1CollectionNamespacedDeployment operation.
  */
-export type DeleteExtensionsV1beta1CollectionNamespacedDeploymentResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteExtensionsV1beta1CollectionNamespacedDeploymentResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -91888,7 +91888,7 @@ export type DeleteExtensionsV1beta1CollectionNamespacedDeploymentResponse = Iok8
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -91933,7 +91933,7 @@ export type ReplaceExtensionsV1beta1NamespacedDeploymentResponse = Iok8sapiexten
 /**
  * Contains response data for the deleteExtensionsV1beta1NamespacedDeployment operation.
  */
-export type DeleteExtensionsV1beta1NamespacedDeploymentResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteExtensionsV1beta1NamespacedDeploymentResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -91945,7 +91945,7 @@ export type DeleteExtensionsV1beta1NamespacedDeploymentResponse = Iok8sapimachin
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -92142,7 +92142,7 @@ export type CreateExtensionsV1beta1NamespacedIngressResponse = Iok8sapiextension
 /**
  * Contains response data for the deleteExtensionsV1beta1CollectionNamespacedIngress operation.
  */
-export type DeleteExtensionsV1beta1CollectionNamespacedIngressResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteExtensionsV1beta1CollectionNamespacedIngressResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -92154,7 +92154,7 @@ export type DeleteExtensionsV1beta1CollectionNamespacedIngressResponse = Iok8sap
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -92199,7 +92199,7 @@ export type ReplaceExtensionsV1beta1NamespacedIngressResponse = Iok8sapiextensio
 /**
  * Contains response data for the deleteExtensionsV1beta1NamespacedIngress operation.
  */
-export type DeleteExtensionsV1beta1NamespacedIngressResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteExtensionsV1beta1NamespacedIngressResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -92211,7 +92211,7 @@ export type DeleteExtensionsV1beta1NamespacedIngressResponse = Iok8sapimachinery
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -92333,7 +92333,7 @@ export type CreateExtensionsV1beta1NamespacedNetworkPolicyResponse = Iok8sapiext
  * Contains response data for the deleteExtensionsV1beta1CollectionNamespacedNetworkPolicy
  * operation.
  */
-export type DeleteExtensionsV1beta1CollectionNamespacedNetworkPolicyResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteExtensionsV1beta1CollectionNamespacedNetworkPolicyResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -92345,7 +92345,7 @@ export type DeleteExtensionsV1beta1CollectionNamespacedNetworkPolicyResponse = I
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -92390,7 +92390,7 @@ export type ReplaceExtensionsV1beta1NamespacedNetworkPolicyResponse = Iok8sapiex
 /**
  * Contains response data for the deleteExtensionsV1beta1NamespacedNetworkPolicy operation.
  */
-export type DeleteExtensionsV1beta1NamespacedNetworkPolicyResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteExtensionsV1beta1NamespacedNetworkPolicyResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -92402,7 +92402,7 @@ export type DeleteExtensionsV1beta1NamespacedNetworkPolicyResponse = Iok8sapimac
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -92466,7 +92466,7 @@ export type CreateExtensionsV1beta1NamespacedReplicaSetResponse = Iok8sapiextens
 /**
  * Contains response data for the deleteExtensionsV1beta1CollectionNamespacedReplicaSet operation.
  */
-export type DeleteExtensionsV1beta1CollectionNamespacedReplicaSetResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteExtensionsV1beta1CollectionNamespacedReplicaSetResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -92478,7 +92478,7 @@ export type DeleteExtensionsV1beta1CollectionNamespacedReplicaSetResponse = Iok8
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -92523,7 +92523,7 @@ export type ReplaceExtensionsV1beta1NamespacedReplicaSetResponse = Iok8sapiexten
 /**
  * Contains response data for the deleteExtensionsV1beta1NamespacedReplicaSet operation.
  */
-export type DeleteExtensionsV1beta1NamespacedReplicaSetResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteExtensionsV1beta1NamespacedReplicaSetResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -92535,7 +92535,7 @@ export type DeleteExtensionsV1beta1NamespacedReplicaSetResponse = Iok8sapimachin
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -92792,7 +92792,7 @@ export type CreateExtensionsV1beta1PodSecurityPolicyResponse = Iok8sapiextension
 /**
  * Contains response data for the deleteExtensionsV1beta1CollectionPodSecurityPolicy operation.
  */
-export type DeleteExtensionsV1beta1CollectionPodSecurityPolicyResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteExtensionsV1beta1CollectionPodSecurityPolicyResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -92804,7 +92804,7 @@ export type DeleteExtensionsV1beta1CollectionPodSecurityPolicyResponse = Iok8sap
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -92849,7 +92849,7 @@ export type ReplaceExtensionsV1beta1PodSecurityPolicyResponse = Iok8sapiextensio
 /**
  * Contains response data for the deleteExtensionsV1beta1PodSecurityPolicy operation.
  */
-export type DeleteExtensionsV1beta1PodSecurityPolicyResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteExtensionsV1beta1PodSecurityPolicyResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -92861,7 +92861,7 @@ export type DeleteExtensionsV1beta1PodSecurityPolicyResponse = Iok8sapimachinery
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -92906,7 +92906,7 @@ export type ListExtensionsV1beta1ReplicaSetForAllNamespacesResponse = Iok8sapiex
 /**
  * Contains response data for the watchExtensionsV1beta1DaemonSetListForAllNamespaces operation.
  */
-export type WatchExtensionsV1beta1DaemonSetListForAllNamespacesResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchExtensionsV1beta1DaemonSetListForAllNamespacesResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -92918,14 +92918,14 @@ export type WatchExtensionsV1beta1DaemonSetListForAllNamespacesResponse = Iok8sa
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchExtensionsV1beta1DeploymentListForAllNamespaces operation.
  */
-export type WatchExtensionsV1beta1DeploymentListForAllNamespacesResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchExtensionsV1beta1DeploymentListForAllNamespacesResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -92937,14 +92937,14 @@ export type WatchExtensionsV1beta1DeploymentListForAllNamespacesResponse = Iok8s
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchExtensionsV1beta1IngressListForAllNamespaces operation.
  */
-export type WatchExtensionsV1beta1IngressListForAllNamespacesResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchExtensionsV1beta1IngressListForAllNamespacesResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -92956,14 +92956,14 @@ export type WatchExtensionsV1beta1IngressListForAllNamespacesResponse = Iok8sapi
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchExtensionsV1beta1NamespacedDaemonSetList operation.
  */
-export type WatchExtensionsV1beta1NamespacedDaemonSetListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchExtensionsV1beta1NamespacedDaemonSetListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -92975,14 +92975,14 @@ export type WatchExtensionsV1beta1NamespacedDaemonSetListResponse = Iok8sapimach
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchExtensionsV1beta1NamespacedDaemonSet operation.
  */
-export type WatchExtensionsV1beta1NamespacedDaemonSetResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchExtensionsV1beta1NamespacedDaemonSetResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -92994,14 +92994,14 @@ export type WatchExtensionsV1beta1NamespacedDaemonSetResponse = Iok8sapimachiner
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchExtensionsV1beta1NamespacedDeploymentList operation.
  */
-export type WatchExtensionsV1beta1NamespacedDeploymentListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchExtensionsV1beta1NamespacedDeploymentListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -93013,14 +93013,14 @@ export type WatchExtensionsV1beta1NamespacedDeploymentListResponse = Iok8sapimac
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchExtensionsV1beta1NamespacedDeployment operation.
  */
-export type WatchExtensionsV1beta1NamespacedDeploymentResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchExtensionsV1beta1NamespacedDeploymentResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -93032,14 +93032,14 @@ export type WatchExtensionsV1beta1NamespacedDeploymentResponse = Iok8sapimachine
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchExtensionsV1beta1NamespacedIngressList operation.
  */
-export type WatchExtensionsV1beta1NamespacedIngressListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchExtensionsV1beta1NamespacedIngressListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -93051,14 +93051,14 @@ export type WatchExtensionsV1beta1NamespacedIngressListResponse = Iok8sapimachin
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchExtensionsV1beta1NamespacedIngress operation.
  */
-export type WatchExtensionsV1beta1NamespacedIngressResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchExtensionsV1beta1NamespacedIngressResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -93070,14 +93070,14 @@ export type WatchExtensionsV1beta1NamespacedIngressResponse = Iok8sapimachineryp
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchExtensionsV1beta1NamespacedNetworkPolicyList operation.
  */
-export type WatchExtensionsV1beta1NamespacedNetworkPolicyListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchExtensionsV1beta1NamespacedNetworkPolicyListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -93089,14 +93089,14 @@ export type WatchExtensionsV1beta1NamespacedNetworkPolicyListResponse = Iok8sapi
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchExtensionsV1beta1NamespacedNetworkPolicy operation.
  */
-export type WatchExtensionsV1beta1NamespacedNetworkPolicyResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchExtensionsV1beta1NamespacedNetworkPolicyResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -93108,14 +93108,14 @@ export type WatchExtensionsV1beta1NamespacedNetworkPolicyResponse = Iok8sapimach
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchExtensionsV1beta1NamespacedReplicaSetList operation.
  */
-export type WatchExtensionsV1beta1NamespacedReplicaSetListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchExtensionsV1beta1NamespacedReplicaSetListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -93127,14 +93127,14 @@ export type WatchExtensionsV1beta1NamespacedReplicaSetListResponse = Iok8sapimac
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchExtensionsV1beta1NamespacedReplicaSet operation.
  */
-export type WatchExtensionsV1beta1NamespacedReplicaSetResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchExtensionsV1beta1NamespacedReplicaSetResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -93146,7 +93146,7 @@ export type WatchExtensionsV1beta1NamespacedReplicaSetResponse = Iok8sapimachine
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
@@ -93154,7 +93154,7 @@ export type WatchExtensionsV1beta1NamespacedReplicaSetResponse = Iok8sapimachine
  * Contains response data for the watchExtensionsV1beta1NetworkPolicyListForAllNamespaces
  * operation.
  */
-export type WatchExtensionsV1beta1NetworkPolicyListForAllNamespacesResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchExtensionsV1beta1NetworkPolicyListForAllNamespacesResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -93166,14 +93166,14 @@ export type WatchExtensionsV1beta1NetworkPolicyListForAllNamespacesResponse = Io
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchExtensionsV1beta1PodSecurityPolicyList operation.
  */
-export type WatchExtensionsV1beta1PodSecurityPolicyListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchExtensionsV1beta1PodSecurityPolicyListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -93185,14 +93185,14 @@ export type WatchExtensionsV1beta1PodSecurityPolicyListResponse = Iok8sapimachin
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchExtensionsV1beta1PodSecurityPolicy operation.
  */
-export type WatchExtensionsV1beta1PodSecurityPolicyResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchExtensionsV1beta1PodSecurityPolicyResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -93204,14 +93204,14 @@ export type WatchExtensionsV1beta1PodSecurityPolicyResponse = Iok8sapimachineryp
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchExtensionsV1beta1ReplicaSetListForAllNamespaces operation.
  */
-export type WatchExtensionsV1beta1ReplicaSetListForAllNamespacesResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchExtensionsV1beta1ReplicaSetListForAllNamespacesResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -93223,14 +93223,14 @@ export type WatchExtensionsV1beta1ReplicaSetListForAllNamespacesResponse = Iok8s
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the getImageOpenshiftIoAPIGroup operation.
  */
-export type GetImageOpenshiftIoAPIGroupResponse = Iok8sapimachinerypkgapismetav1APIGroup & {
+export type GetImageOpenshiftIoAPIGroupResponse = V1APIGroup & {
   /**
    * The underlying HTTP response.
    */
@@ -93242,14 +93242,14 @@ export type GetImageOpenshiftIoAPIGroupResponse = Iok8sapimachinerypkgapismetav1
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1APIGroup;
+      parsedBody: V1APIGroup;
     };
 };
 
 /**
  * Contains response data for the getImageOpenshiftIoV1APIResources operation.
  */
-export type GetImageOpenshiftIoV1APIResourcesResponse = Iok8sapimachinerypkgapismetav1APIResourceList & {
+export type GetImageOpenshiftIoV1APIResourcesResponse = V1APIResourceList & {
   /**
    * The underlying HTTP response.
    */
@@ -93261,7 +93261,7 @@ export type GetImageOpenshiftIoV1APIResourcesResponse = Iok8sapimachinerypkgapis
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1APIResourceList;
+      parsedBody: V1APIResourceList;
     };
 };
 
@@ -93306,7 +93306,7 @@ export type CreateImageOpenshiftIoV1ImageResponse = Comgithubopenshiftapiimagev1
 /**
  * Contains response data for the deleteImageOpenshiftIoV1CollectionImage operation.
  */
-export type DeleteImageOpenshiftIoV1CollectionImageResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteImageOpenshiftIoV1CollectionImageResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -93318,7 +93318,7 @@ export type DeleteImageOpenshiftIoV1CollectionImageResponse = Iok8sapimachineryp
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -93363,7 +93363,7 @@ export type ReplaceImageOpenshiftIoV1ImageResponse = Comgithubopenshiftapiimagev
 /**
  * Contains response data for the deleteImageOpenshiftIoV1Image operation.
  */
-export type DeleteImageOpenshiftIoV1ImageResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteImageOpenshiftIoV1ImageResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -93375,7 +93375,7 @@ export type DeleteImageOpenshiftIoV1ImageResponse = Iok8sapimachinerypkgapismeta
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -93420,7 +93420,7 @@ export type CreateImageOpenshiftIoV1ImageSignatureResponse = Comgithubopenshifta
 /**
  * Contains response data for the deleteImageOpenshiftIoV1ImageSignature operation.
  */
-export type DeleteImageOpenshiftIoV1ImageSignatureResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteImageOpenshiftIoV1ImageSignatureResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -93432,7 +93432,7 @@ export type DeleteImageOpenshiftIoV1ImageSignatureResponse = Iok8sapimachinerypk
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -93573,7 +93573,7 @@ export type CreateImageOpenshiftIoV1NamespacedImageStreamResponse = Comgithubope
  * Contains response data for the deleteImageOpenshiftIoV1CollectionNamespacedImageStream
  * operation.
  */
-export type DeleteImageOpenshiftIoV1CollectionNamespacedImageStreamResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteImageOpenshiftIoV1CollectionNamespacedImageStreamResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -93585,7 +93585,7 @@ export type DeleteImageOpenshiftIoV1CollectionNamespacedImageStreamResponse = Io
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -93630,7 +93630,7 @@ export type ReplaceImageOpenshiftIoV1NamespacedImageStreamResponse = Comgithubop
 /**
  * Contains response data for the deleteImageOpenshiftIoV1NamespacedImageStream operation.
  */
-export type DeleteImageOpenshiftIoV1NamespacedImageStreamResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteImageOpenshiftIoV1NamespacedImageStreamResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -93642,7 +93642,7 @@ export type DeleteImageOpenshiftIoV1NamespacedImageStreamResponse = Iok8sapimach
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -93839,7 +93839,7 @@ export type ReplaceImageOpenshiftIoV1NamespacedImageStreamTagResponse = Comgithu
 /**
  * Contains response data for the deleteImageOpenshiftIoV1NamespacedImageStreamTag operation.
  */
-export type DeleteImageOpenshiftIoV1NamespacedImageStreamTagResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteImageOpenshiftIoV1NamespacedImageStreamTagResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -93851,7 +93851,7 @@ export type DeleteImageOpenshiftIoV1NamespacedImageStreamTagResponse = Iok8sapim
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -93877,7 +93877,7 @@ export type PatchImageOpenshiftIoV1NamespacedImageStreamTagResponse = Comgithubo
 /**
  * Contains response data for the watchImageOpenshiftIoV1ImageList operation.
  */
-export type WatchImageOpenshiftIoV1ImageListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchImageOpenshiftIoV1ImageListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -93889,14 +93889,14 @@ export type WatchImageOpenshiftIoV1ImageListResponse = Iok8sapimachinerypkgapism
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchImageOpenshiftIoV1Image operation.
  */
-export type WatchImageOpenshiftIoV1ImageResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchImageOpenshiftIoV1ImageResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -93908,14 +93908,14 @@ export type WatchImageOpenshiftIoV1ImageResponse = Iok8sapimachinerypkgapismetav
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchImageOpenshiftIoV1ImageStreamListForAllNamespaces operation.
  */
-export type WatchImageOpenshiftIoV1ImageStreamListForAllNamespacesResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchImageOpenshiftIoV1ImageStreamListForAllNamespacesResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -93927,14 +93927,14 @@ export type WatchImageOpenshiftIoV1ImageStreamListForAllNamespacesResponse = Iok
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchImageOpenshiftIoV1NamespacedImageStreamList operation.
  */
-export type WatchImageOpenshiftIoV1NamespacedImageStreamListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchImageOpenshiftIoV1NamespacedImageStreamListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -93946,14 +93946,14 @@ export type WatchImageOpenshiftIoV1NamespacedImageStreamListResponse = Iok8sapim
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchImageOpenshiftIoV1NamespacedImageStream operation.
  */
-export type WatchImageOpenshiftIoV1NamespacedImageStreamResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchImageOpenshiftIoV1NamespacedImageStreamResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -93965,14 +93965,14 @@ export type WatchImageOpenshiftIoV1NamespacedImageStreamResponse = Iok8sapimachi
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the getNetworkOpenshiftIoAPIGroup operation.
  */
-export type GetNetworkOpenshiftIoAPIGroupResponse = Iok8sapimachinerypkgapismetav1APIGroup & {
+export type GetNetworkOpenshiftIoAPIGroupResponse = V1APIGroup & {
   /**
    * The underlying HTTP response.
    */
@@ -93984,14 +93984,14 @@ export type GetNetworkOpenshiftIoAPIGroupResponse = Iok8sapimachinerypkgapismeta
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1APIGroup;
+      parsedBody: V1APIGroup;
     };
 };
 
 /**
  * Contains response data for the getNetworkOpenshiftIoV1APIResources operation.
  */
-export type GetNetworkOpenshiftIoV1APIResourcesResponse = Iok8sapimachinerypkgapismetav1APIResourceList & {
+export type GetNetworkOpenshiftIoV1APIResourcesResponse = V1APIResourceList & {
   /**
    * The underlying HTTP response.
    */
@@ -94003,7 +94003,7 @@ export type GetNetworkOpenshiftIoV1APIResourcesResponse = Iok8sapimachinerypkgap
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1APIResourceList;
+      parsedBody: V1APIResourceList;
     };
 };
 
@@ -94048,7 +94048,7 @@ export type CreateNetworkOpenshiftIoV1ClusterNetworkResponse = Comgithubopenshif
 /**
  * Contains response data for the deleteNetworkOpenshiftIoV1CollectionClusterNetwork operation.
  */
-export type DeleteNetworkOpenshiftIoV1CollectionClusterNetworkResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteNetworkOpenshiftIoV1CollectionClusterNetworkResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -94060,7 +94060,7 @@ export type DeleteNetworkOpenshiftIoV1CollectionClusterNetworkResponse = Iok8sap
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -94105,7 +94105,7 @@ export type ReplaceNetworkOpenshiftIoV1ClusterNetworkResponse = Comgithubopenshi
 /**
  * Contains response data for the deleteNetworkOpenshiftIoV1ClusterNetwork operation.
  */
-export type DeleteNetworkOpenshiftIoV1ClusterNetworkResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteNetworkOpenshiftIoV1ClusterNetworkResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -94117,7 +94117,7 @@ export type DeleteNetworkOpenshiftIoV1ClusterNetworkResponse = Iok8sapimachinery
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -94201,7 +94201,7 @@ export type CreateNetworkOpenshiftIoV1HostSubnetResponse = Comgithubopenshiftapi
 /**
  * Contains response data for the deleteNetworkOpenshiftIoV1CollectionHostSubnet operation.
  */
-export type DeleteNetworkOpenshiftIoV1CollectionHostSubnetResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteNetworkOpenshiftIoV1CollectionHostSubnetResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -94213,7 +94213,7 @@ export type DeleteNetworkOpenshiftIoV1CollectionHostSubnetResponse = Iok8sapimac
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -94258,7 +94258,7 @@ export type ReplaceNetworkOpenshiftIoV1HostSubnetResponse = Comgithubopenshiftap
 /**
  * Contains response data for the deleteNetworkOpenshiftIoV1HostSubnet operation.
  */
-export type DeleteNetworkOpenshiftIoV1HostSubnetResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteNetworkOpenshiftIoV1HostSubnetResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -94270,7 +94270,7 @@ export type DeleteNetworkOpenshiftIoV1HostSubnetResponse = Iok8sapimachinerypkga
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -94336,7 +94336,7 @@ export type CreateNetworkOpenshiftIoV1NamespacedEgressNetworkPolicyResponse = Co
  * Contains response data for the deleteNetworkOpenshiftIoV1CollectionNamespacedEgressNetworkPolicy
  * operation.
  */
-export type DeleteNetworkOpenshiftIoV1CollectionNamespacedEgressNetworkPolicyResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteNetworkOpenshiftIoV1CollectionNamespacedEgressNetworkPolicyResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -94348,7 +94348,7 @@ export type DeleteNetworkOpenshiftIoV1CollectionNamespacedEgressNetworkPolicyRes
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -94395,7 +94395,7 @@ export type ReplaceNetworkOpenshiftIoV1NamespacedEgressNetworkPolicyResponse = C
  * Contains response data for the deleteNetworkOpenshiftIoV1NamespacedEgressNetworkPolicy
  * operation.
  */
-export type DeleteNetworkOpenshiftIoV1NamespacedEgressNetworkPolicyResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteNetworkOpenshiftIoV1NamespacedEgressNetworkPolicyResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -94407,7 +94407,7 @@ export type DeleteNetworkOpenshiftIoV1NamespacedEgressNetworkPolicyResponse = Io
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -94471,7 +94471,7 @@ export type CreateNetworkOpenshiftIoV1NetNamespaceResponse = Comgithubopenshifta
 /**
  * Contains response data for the deleteNetworkOpenshiftIoV1CollectionNetNamespace operation.
  */
-export type DeleteNetworkOpenshiftIoV1CollectionNetNamespaceResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteNetworkOpenshiftIoV1CollectionNetNamespaceResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -94483,7 +94483,7 @@ export type DeleteNetworkOpenshiftIoV1CollectionNetNamespaceResponse = Iok8sapim
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -94528,7 +94528,7 @@ export type ReplaceNetworkOpenshiftIoV1NetNamespaceResponse = Comgithubopenshift
 /**
  * Contains response data for the deleteNetworkOpenshiftIoV1NetNamespace operation.
  */
-export type DeleteNetworkOpenshiftIoV1NetNamespaceResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteNetworkOpenshiftIoV1NetNamespaceResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -94540,7 +94540,7 @@ export type DeleteNetworkOpenshiftIoV1NetNamespaceResponse = Iok8sapimachinerypk
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -94566,7 +94566,7 @@ export type PatchNetworkOpenshiftIoV1NetNamespaceResponse = Comgithubopenshiftap
 /**
  * Contains response data for the watchNetworkOpenshiftIoV1ClusterNetworkList operation.
  */
-export type WatchNetworkOpenshiftIoV1ClusterNetworkListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchNetworkOpenshiftIoV1ClusterNetworkListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -94578,14 +94578,14 @@ export type WatchNetworkOpenshiftIoV1ClusterNetworkListResponse = Iok8sapimachin
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchNetworkOpenshiftIoV1ClusterNetwork operation.
  */
-export type WatchNetworkOpenshiftIoV1ClusterNetworkResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchNetworkOpenshiftIoV1ClusterNetworkResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -94597,7 +94597,7 @@ export type WatchNetworkOpenshiftIoV1ClusterNetworkResponse = Iok8sapimachineryp
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
@@ -94605,7 +94605,7 @@ export type WatchNetworkOpenshiftIoV1ClusterNetworkResponse = Iok8sapimachineryp
  * Contains response data for the watchNetworkOpenshiftIoV1EgressNetworkPolicyListForAllNamespaces
  * operation.
  */
-export type WatchNetworkOpenshiftIoV1EgressNetworkPolicyListForAllNamespacesResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchNetworkOpenshiftIoV1EgressNetworkPolicyListForAllNamespacesResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -94617,14 +94617,14 @@ export type WatchNetworkOpenshiftIoV1EgressNetworkPolicyListForAllNamespacesResp
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchNetworkOpenshiftIoV1HostSubnetList operation.
  */
-export type WatchNetworkOpenshiftIoV1HostSubnetListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchNetworkOpenshiftIoV1HostSubnetListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -94636,14 +94636,14 @@ export type WatchNetworkOpenshiftIoV1HostSubnetListResponse = Iok8sapimachineryp
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchNetworkOpenshiftIoV1HostSubnet operation.
  */
-export type WatchNetworkOpenshiftIoV1HostSubnetResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchNetworkOpenshiftIoV1HostSubnetResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -94655,7 +94655,7 @@ export type WatchNetworkOpenshiftIoV1HostSubnetResponse = Iok8sapimachinerypkgap
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
@@ -94663,7 +94663,7 @@ export type WatchNetworkOpenshiftIoV1HostSubnetResponse = Iok8sapimachinerypkgap
  * Contains response data for the watchNetworkOpenshiftIoV1NamespacedEgressNetworkPolicyList
  * operation.
  */
-export type WatchNetworkOpenshiftIoV1NamespacedEgressNetworkPolicyListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchNetworkOpenshiftIoV1NamespacedEgressNetworkPolicyListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -94675,14 +94675,14 @@ export type WatchNetworkOpenshiftIoV1NamespacedEgressNetworkPolicyListResponse =
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchNetworkOpenshiftIoV1NamespacedEgressNetworkPolicy operation.
  */
-export type WatchNetworkOpenshiftIoV1NamespacedEgressNetworkPolicyResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchNetworkOpenshiftIoV1NamespacedEgressNetworkPolicyResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -94694,14 +94694,14 @@ export type WatchNetworkOpenshiftIoV1NamespacedEgressNetworkPolicyResponse = Iok
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchNetworkOpenshiftIoV1NetNamespaceList operation.
  */
-export type WatchNetworkOpenshiftIoV1NetNamespaceListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchNetworkOpenshiftIoV1NetNamespaceListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -94713,14 +94713,14 @@ export type WatchNetworkOpenshiftIoV1NetNamespaceListResponse = Iok8sapimachiner
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchNetworkOpenshiftIoV1NetNamespace operation.
  */
-export type WatchNetworkOpenshiftIoV1NetNamespaceResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchNetworkOpenshiftIoV1NetNamespaceResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -94732,14 +94732,14 @@ export type WatchNetworkOpenshiftIoV1NetNamespaceResponse = Iok8sapimachinerypkg
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the getNetworkingAPIGroup operation.
  */
-export type GetNetworkingAPIGroupResponse = Iok8sapimachinerypkgapismetav1APIGroup & {
+export type GetNetworkingAPIGroupResponse = V1APIGroup & {
   /**
    * The underlying HTTP response.
    */
@@ -94751,14 +94751,14 @@ export type GetNetworkingAPIGroupResponse = Iok8sapimachinerypkgapismetav1APIGro
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1APIGroup;
+      parsedBody: V1APIGroup;
     };
 };
 
 /**
  * Contains response data for the getNetworkingV1APIResources operation.
  */
-export type GetNetworkingV1APIResourcesResponse = Iok8sapimachinerypkgapismetav1APIResourceList & {
+export type GetNetworkingV1APIResourcesResponse = V1APIResourceList & {
   /**
    * The underlying HTTP response.
    */
@@ -94770,14 +94770,14 @@ export type GetNetworkingV1APIResourcesResponse = Iok8sapimachinerypkgapismetav1
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1APIResourceList;
+      parsedBody: V1APIResourceList;
     };
 };
 
 /**
  * Contains response data for the listNetworkingV1NamespacedNetworkPolicy operation.
  */
-export type ListNetworkingV1NamespacedNetworkPolicyResponse = Iok8sapinetworkingv1NetworkPolicyList & {
+export type ListNetworkingV1NamespacedNetworkPolicyResponse = V1NetworkPolicyList & {
   /**
    * The underlying HTTP response.
    */
@@ -94789,14 +94789,14 @@ export type ListNetworkingV1NamespacedNetworkPolicyResponse = Iok8sapinetworking
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapinetworkingv1NetworkPolicyList;
+      parsedBody: V1NetworkPolicyList;
     };
 };
 
 /**
  * Contains response data for the createNetworkingV1NamespacedNetworkPolicy operation.
  */
-export type CreateNetworkingV1NamespacedNetworkPolicyResponse = Iok8sapinetworkingv1NetworkPolicy & {
+export type CreateNetworkingV1NamespacedNetworkPolicyResponse = V1NetworkPolicy & {
   /**
    * The underlying HTTP response.
    */
@@ -94808,14 +94808,14 @@ export type CreateNetworkingV1NamespacedNetworkPolicyResponse = Iok8sapinetworki
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapinetworkingv1NetworkPolicy;
+      parsedBody: V1NetworkPolicy;
     };
 };
 
 /**
  * Contains response data for the deleteNetworkingV1CollectionNamespacedNetworkPolicy operation.
  */
-export type DeleteNetworkingV1CollectionNamespacedNetworkPolicyResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteNetworkingV1CollectionNamespacedNetworkPolicyResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -94827,14 +94827,14 @@ export type DeleteNetworkingV1CollectionNamespacedNetworkPolicyResponse = Iok8sa
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
 /**
  * Contains response data for the readNetworkingV1NamespacedNetworkPolicy operation.
  */
-export type ReadNetworkingV1NamespacedNetworkPolicyResponse = Iok8sapinetworkingv1NetworkPolicy & {
+export type ReadNetworkingV1NamespacedNetworkPolicyResponse = V1NetworkPolicy & {
   /**
    * The underlying HTTP response.
    */
@@ -94846,14 +94846,14 @@ export type ReadNetworkingV1NamespacedNetworkPolicyResponse = Iok8sapinetworking
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapinetworkingv1NetworkPolicy;
+      parsedBody: V1NetworkPolicy;
     };
 };
 
 /**
  * Contains response data for the replaceNetworkingV1NamespacedNetworkPolicy operation.
  */
-export type ReplaceNetworkingV1NamespacedNetworkPolicyResponse = Iok8sapinetworkingv1NetworkPolicy & {
+export type ReplaceNetworkingV1NamespacedNetworkPolicyResponse = V1NetworkPolicy & {
   /**
    * The underlying HTTP response.
    */
@@ -94865,14 +94865,14 @@ export type ReplaceNetworkingV1NamespacedNetworkPolicyResponse = Iok8sapinetwork
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapinetworkingv1NetworkPolicy;
+      parsedBody: V1NetworkPolicy;
     };
 };
 
 /**
  * Contains response data for the deleteNetworkingV1NamespacedNetworkPolicy operation.
  */
-export type DeleteNetworkingV1NamespacedNetworkPolicyResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteNetworkingV1NamespacedNetworkPolicyResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -94884,14 +94884,14 @@ export type DeleteNetworkingV1NamespacedNetworkPolicyResponse = Iok8sapimachiner
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
 /**
  * Contains response data for the patchNetworkingV1NamespacedNetworkPolicy operation.
  */
-export type PatchNetworkingV1NamespacedNetworkPolicyResponse = Iok8sapinetworkingv1NetworkPolicy & {
+export type PatchNetworkingV1NamespacedNetworkPolicyResponse = V1NetworkPolicy & {
   /**
    * The underlying HTTP response.
    */
@@ -94903,14 +94903,14 @@ export type PatchNetworkingV1NamespacedNetworkPolicyResponse = Iok8sapinetworkin
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapinetworkingv1NetworkPolicy;
+      parsedBody: V1NetworkPolicy;
     };
 };
 
 /**
  * Contains response data for the listNetworkingV1NetworkPolicyForAllNamespaces operation.
  */
-export type ListNetworkingV1NetworkPolicyForAllNamespacesResponse = Iok8sapinetworkingv1NetworkPolicyList & {
+export type ListNetworkingV1NetworkPolicyForAllNamespacesResponse = V1NetworkPolicyList & {
   /**
    * The underlying HTTP response.
    */
@@ -94922,14 +94922,14 @@ export type ListNetworkingV1NetworkPolicyForAllNamespacesResponse = Iok8sapinetw
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapinetworkingv1NetworkPolicyList;
+      parsedBody: V1NetworkPolicyList;
     };
 };
 
 /**
  * Contains response data for the watchNetworkingV1NamespacedNetworkPolicyList operation.
  */
-export type WatchNetworkingV1NamespacedNetworkPolicyListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchNetworkingV1NamespacedNetworkPolicyListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -94941,14 +94941,14 @@ export type WatchNetworkingV1NamespacedNetworkPolicyListResponse = Iok8sapimachi
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchNetworkingV1NamespacedNetworkPolicy operation.
  */
-export type WatchNetworkingV1NamespacedNetworkPolicyResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchNetworkingV1NamespacedNetworkPolicyResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -94960,14 +94960,14 @@ export type WatchNetworkingV1NamespacedNetworkPolicyResponse = Iok8sapimachinery
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchNetworkingV1NetworkPolicyListForAllNamespaces operation.
  */
-export type WatchNetworkingV1NetworkPolicyListForAllNamespacesResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchNetworkingV1NetworkPolicyListForAllNamespacesResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -94979,14 +94979,14 @@ export type WatchNetworkingV1NetworkPolicyListForAllNamespacesResponse = Iok8sap
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the getOauthOpenshiftIoAPIGroup operation.
  */
-export type GetOauthOpenshiftIoAPIGroupResponse = Iok8sapimachinerypkgapismetav1APIGroup & {
+export type GetOauthOpenshiftIoAPIGroupResponse = V1APIGroup & {
   /**
    * The underlying HTTP response.
    */
@@ -94998,14 +94998,14 @@ export type GetOauthOpenshiftIoAPIGroupResponse = Iok8sapimachinerypkgapismetav1
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1APIGroup;
+      parsedBody: V1APIGroup;
     };
 };
 
 /**
  * Contains response data for the getOauthOpenshiftIoV1APIResources operation.
  */
-export type GetOauthOpenshiftIoV1APIResourcesResponse = Iok8sapimachinerypkgapismetav1APIResourceList & {
+export type GetOauthOpenshiftIoV1APIResourcesResponse = V1APIResourceList & {
   /**
    * The underlying HTTP response.
    */
@@ -95017,7 +95017,7 @@ export type GetOauthOpenshiftIoV1APIResourcesResponse = Iok8sapimachinerypkgapis
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1APIResourceList;
+      parsedBody: V1APIResourceList;
     };
 };
 
@@ -95062,7 +95062,7 @@ export type CreateOauthOpenshiftIoV1OAuthAccessTokenResponse = Comgithubopenshif
 /**
  * Contains response data for the deleteOauthOpenshiftIoV1CollectionOAuthAccessToken operation.
  */
-export type DeleteOauthOpenshiftIoV1CollectionOAuthAccessTokenResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteOauthOpenshiftIoV1CollectionOAuthAccessTokenResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -95074,7 +95074,7 @@ export type DeleteOauthOpenshiftIoV1CollectionOAuthAccessTokenResponse = Iok8sap
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -95119,7 +95119,7 @@ export type ReplaceOauthOpenshiftIoV1OAuthAccessTokenResponse = Comgithubopenshi
 /**
  * Contains response data for the deleteOauthOpenshiftIoV1OAuthAccessToken operation.
  */
-export type DeleteOauthOpenshiftIoV1OAuthAccessTokenResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteOauthOpenshiftIoV1OAuthAccessTokenResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -95131,7 +95131,7 @@ export type DeleteOauthOpenshiftIoV1OAuthAccessTokenResponse = Iok8sapimachinery
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -95195,7 +95195,7 @@ export type CreateOauthOpenshiftIoV1OAuthAuthorizeTokenResponse = Comgithubopens
 /**
  * Contains response data for the deleteOauthOpenshiftIoV1CollectionOAuthAuthorizeToken operation.
  */
-export type DeleteOauthOpenshiftIoV1CollectionOAuthAuthorizeTokenResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteOauthOpenshiftIoV1CollectionOAuthAuthorizeTokenResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -95207,7 +95207,7 @@ export type DeleteOauthOpenshiftIoV1CollectionOAuthAuthorizeTokenResponse = Iok8
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -95252,7 +95252,7 @@ export type ReplaceOauthOpenshiftIoV1OAuthAuthorizeTokenResponse = Comgithubopen
 /**
  * Contains response data for the deleteOauthOpenshiftIoV1OAuthAuthorizeToken operation.
  */
-export type DeleteOauthOpenshiftIoV1OAuthAuthorizeTokenResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteOauthOpenshiftIoV1OAuthAuthorizeTokenResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -95264,7 +95264,7 @@ export type DeleteOauthOpenshiftIoV1OAuthAuthorizeTokenResponse = Iok8sapimachin
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -95329,7 +95329,7 @@ export type CreateOauthOpenshiftIoV1OAuthClientAuthorizationResponse = Comgithub
  * Contains response data for the deleteOauthOpenshiftIoV1CollectionOAuthClientAuthorization
  * operation.
  */
-export type DeleteOauthOpenshiftIoV1CollectionOAuthClientAuthorizationResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteOauthOpenshiftIoV1CollectionOAuthClientAuthorizationResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -95341,7 +95341,7 @@ export type DeleteOauthOpenshiftIoV1CollectionOAuthClientAuthorizationResponse =
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -95386,7 +95386,7 @@ export type ReplaceOauthOpenshiftIoV1OAuthClientAuthorizationResponse = Comgithu
 /**
  * Contains response data for the deleteOauthOpenshiftIoV1OAuthClientAuthorization operation.
  */
-export type DeleteOauthOpenshiftIoV1OAuthClientAuthorizationResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteOauthOpenshiftIoV1OAuthClientAuthorizationResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -95398,7 +95398,7 @@ export type DeleteOauthOpenshiftIoV1OAuthClientAuthorizationResponse = Iok8sapim
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -95462,7 +95462,7 @@ export type CreateOauthOpenshiftIoV1OAuthClientResponse = Comgithubopenshiftapio
 /**
  * Contains response data for the deleteOauthOpenshiftIoV1CollectionOAuthClient operation.
  */
-export type DeleteOauthOpenshiftIoV1CollectionOAuthClientResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteOauthOpenshiftIoV1CollectionOAuthClientResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -95474,7 +95474,7 @@ export type DeleteOauthOpenshiftIoV1CollectionOAuthClientResponse = Iok8sapimach
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -95519,7 +95519,7 @@ export type ReplaceOauthOpenshiftIoV1OAuthClientResponse = Comgithubopenshiftapi
 /**
  * Contains response data for the deleteOauthOpenshiftIoV1OAuthClient operation.
  */
-export type DeleteOauthOpenshiftIoV1OAuthClientResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteOauthOpenshiftIoV1OAuthClientResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -95531,7 +95531,7 @@ export type DeleteOauthOpenshiftIoV1OAuthClientResponse = Iok8sapimachinerypkgap
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -95557,7 +95557,7 @@ export type PatchOauthOpenshiftIoV1OAuthClientResponse = Comgithubopenshiftapioa
 /**
  * Contains response data for the watchOauthOpenshiftIoV1OAuthAccessTokenList operation.
  */
-export type WatchOauthOpenshiftIoV1OAuthAccessTokenListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchOauthOpenshiftIoV1OAuthAccessTokenListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -95569,14 +95569,14 @@ export type WatchOauthOpenshiftIoV1OAuthAccessTokenListResponse = Iok8sapimachin
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchOauthOpenshiftIoV1OAuthAccessToken operation.
  */
-export type WatchOauthOpenshiftIoV1OAuthAccessTokenResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchOauthOpenshiftIoV1OAuthAccessTokenResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -95588,14 +95588,14 @@ export type WatchOauthOpenshiftIoV1OAuthAccessTokenResponse = Iok8sapimachineryp
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchOauthOpenshiftIoV1OAuthAuthorizeTokenList operation.
  */
-export type WatchOauthOpenshiftIoV1OAuthAuthorizeTokenListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchOauthOpenshiftIoV1OAuthAuthorizeTokenListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -95607,14 +95607,14 @@ export type WatchOauthOpenshiftIoV1OAuthAuthorizeTokenListResponse = Iok8sapimac
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchOauthOpenshiftIoV1OAuthAuthorizeToken operation.
  */
-export type WatchOauthOpenshiftIoV1OAuthAuthorizeTokenResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchOauthOpenshiftIoV1OAuthAuthorizeTokenResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -95626,14 +95626,14 @@ export type WatchOauthOpenshiftIoV1OAuthAuthorizeTokenResponse = Iok8sapimachine
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchOauthOpenshiftIoV1OAuthClientAuthorizationList operation.
  */
-export type WatchOauthOpenshiftIoV1OAuthClientAuthorizationListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchOauthOpenshiftIoV1OAuthClientAuthorizationListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -95645,14 +95645,14 @@ export type WatchOauthOpenshiftIoV1OAuthClientAuthorizationListResponse = Iok8sa
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchOauthOpenshiftIoV1OAuthClientAuthorization operation.
  */
-export type WatchOauthOpenshiftIoV1OAuthClientAuthorizationResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchOauthOpenshiftIoV1OAuthClientAuthorizationResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -95664,14 +95664,14 @@ export type WatchOauthOpenshiftIoV1OAuthClientAuthorizationResponse = Iok8sapima
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchOauthOpenshiftIoV1OAuthClientList operation.
  */
-export type WatchOauthOpenshiftIoV1OAuthClientListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchOauthOpenshiftIoV1OAuthClientListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -95683,14 +95683,14 @@ export type WatchOauthOpenshiftIoV1OAuthClientListResponse = Iok8sapimachinerypk
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchOauthOpenshiftIoV1OAuthClient operation.
  */
-export type WatchOauthOpenshiftIoV1OAuthClientResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchOauthOpenshiftIoV1OAuthClientResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -95702,14 +95702,14 @@ export type WatchOauthOpenshiftIoV1OAuthClientResponse = Iok8sapimachinerypkgapi
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the getPolicyAPIGroup operation.
  */
-export type GetPolicyAPIGroupResponse = Iok8sapimachinerypkgapismetav1APIGroup & {
+export type GetPolicyAPIGroupResponse = V1APIGroup & {
   /**
    * The underlying HTTP response.
    */
@@ -95721,14 +95721,14 @@ export type GetPolicyAPIGroupResponse = Iok8sapimachinerypkgapismetav1APIGroup &
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1APIGroup;
+      parsedBody: V1APIGroup;
     };
 };
 
 /**
  * Contains response data for the getPolicyV1beta1APIResources operation.
  */
-export type GetPolicyV1beta1APIResourcesResponse = Iok8sapimachinerypkgapismetav1APIResourceList & {
+export type GetPolicyV1beta1APIResourcesResponse = V1APIResourceList & {
   /**
    * The underlying HTTP response.
    */
@@ -95740,14 +95740,14 @@ export type GetPolicyV1beta1APIResourcesResponse = Iok8sapimachinerypkgapismetav
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1APIResourceList;
+      parsedBody: V1APIResourceList;
     };
 };
 
 /**
  * Contains response data for the listPolicyV1beta1NamespacedPodDisruptionBudget operation.
  */
-export type ListPolicyV1beta1NamespacedPodDisruptionBudgetResponse = Iok8sapipolicyv1beta1PodDisruptionBudgetList & {
+export type ListPolicyV1beta1NamespacedPodDisruptionBudgetResponse = V1beta1PodDisruptionBudgetList & {
   /**
    * The underlying HTTP response.
    */
@@ -95759,14 +95759,14 @@ export type ListPolicyV1beta1NamespacedPodDisruptionBudgetResponse = Iok8sapipol
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapipolicyv1beta1PodDisruptionBudgetList;
+      parsedBody: V1beta1PodDisruptionBudgetList;
     };
 };
 
 /**
  * Contains response data for the createPolicyV1beta1NamespacedPodDisruptionBudget operation.
  */
-export type CreatePolicyV1beta1NamespacedPodDisruptionBudgetResponse = Iok8sapipolicyv1beta1PodDisruptionBudget & {
+export type CreatePolicyV1beta1NamespacedPodDisruptionBudgetResponse = V1beta1PodDisruptionBudget & {
   /**
    * The underlying HTTP response.
    */
@@ -95778,7 +95778,7 @@ export type CreatePolicyV1beta1NamespacedPodDisruptionBudgetResponse = Iok8sapip
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapipolicyv1beta1PodDisruptionBudget;
+      parsedBody: V1beta1PodDisruptionBudget;
     };
 };
 
@@ -95786,7 +95786,7 @@ export type CreatePolicyV1beta1NamespacedPodDisruptionBudgetResponse = Iok8sapip
  * Contains response data for the deletePolicyV1beta1CollectionNamespacedPodDisruptionBudget
  * operation.
  */
-export type DeletePolicyV1beta1CollectionNamespacedPodDisruptionBudgetResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeletePolicyV1beta1CollectionNamespacedPodDisruptionBudgetResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -95798,14 +95798,14 @@ export type DeletePolicyV1beta1CollectionNamespacedPodDisruptionBudgetResponse =
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
 /**
  * Contains response data for the readPolicyV1beta1NamespacedPodDisruptionBudget operation.
  */
-export type ReadPolicyV1beta1NamespacedPodDisruptionBudgetResponse = Iok8sapipolicyv1beta1PodDisruptionBudget & {
+export type ReadPolicyV1beta1NamespacedPodDisruptionBudgetResponse = V1beta1PodDisruptionBudget & {
   /**
    * The underlying HTTP response.
    */
@@ -95817,14 +95817,14 @@ export type ReadPolicyV1beta1NamespacedPodDisruptionBudgetResponse = Iok8sapipol
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapipolicyv1beta1PodDisruptionBudget;
+      parsedBody: V1beta1PodDisruptionBudget;
     };
 };
 
 /**
  * Contains response data for the replacePolicyV1beta1NamespacedPodDisruptionBudget operation.
  */
-export type ReplacePolicyV1beta1NamespacedPodDisruptionBudgetResponse = Iok8sapipolicyv1beta1PodDisruptionBudget & {
+export type ReplacePolicyV1beta1NamespacedPodDisruptionBudgetResponse = V1beta1PodDisruptionBudget & {
   /**
    * The underlying HTTP response.
    */
@@ -95836,14 +95836,14 @@ export type ReplacePolicyV1beta1NamespacedPodDisruptionBudgetResponse = Iok8sapi
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapipolicyv1beta1PodDisruptionBudget;
+      parsedBody: V1beta1PodDisruptionBudget;
     };
 };
 
 /**
  * Contains response data for the deletePolicyV1beta1NamespacedPodDisruptionBudget operation.
  */
-export type DeletePolicyV1beta1NamespacedPodDisruptionBudgetResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeletePolicyV1beta1NamespacedPodDisruptionBudgetResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -95855,14 +95855,14 @@ export type DeletePolicyV1beta1NamespacedPodDisruptionBudgetResponse = Iok8sapim
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
 /**
  * Contains response data for the patchPolicyV1beta1NamespacedPodDisruptionBudget operation.
  */
-export type PatchPolicyV1beta1NamespacedPodDisruptionBudgetResponse = Iok8sapipolicyv1beta1PodDisruptionBudget & {
+export type PatchPolicyV1beta1NamespacedPodDisruptionBudgetResponse = V1beta1PodDisruptionBudget & {
   /**
    * The underlying HTTP response.
    */
@@ -95874,14 +95874,14 @@ export type PatchPolicyV1beta1NamespacedPodDisruptionBudgetResponse = Iok8sapipo
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapipolicyv1beta1PodDisruptionBudget;
+      parsedBody: V1beta1PodDisruptionBudget;
     };
 };
 
 /**
  * Contains response data for the readPolicyV1beta1NamespacedPodDisruptionBudgetStatus operation.
  */
-export type ReadPolicyV1beta1NamespacedPodDisruptionBudgetStatusResponse = Iok8sapipolicyv1beta1PodDisruptionBudget & {
+export type ReadPolicyV1beta1NamespacedPodDisruptionBudgetStatusResponse = V1beta1PodDisruptionBudget & {
   /**
    * The underlying HTTP response.
    */
@@ -95893,7 +95893,7 @@ export type ReadPolicyV1beta1NamespacedPodDisruptionBudgetStatusResponse = Iok8s
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapipolicyv1beta1PodDisruptionBudget;
+      parsedBody: V1beta1PodDisruptionBudget;
     };
 };
 
@@ -95901,7 +95901,7 @@ export type ReadPolicyV1beta1NamespacedPodDisruptionBudgetStatusResponse = Iok8s
  * Contains response data for the replacePolicyV1beta1NamespacedPodDisruptionBudgetStatus
  * operation.
  */
-export type ReplacePolicyV1beta1NamespacedPodDisruptionBudgetStatusResponse = Iok8sapipolicyv1beta1PodDisruptionBudget & {
+export type ReplacePolicyV1beta1NamespacedPodDisruptionBudgetStatusResponse = V1beta1PodDisruptionBudget & {
   /**
    * The underlying HTTP response.
    */
@@ -95913,14 +95913,14 @@ export type ReplacePolicyV1beta1NamespacedPodDisruptionBudgetStatusResponse = Io
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapipolicyv1beta1PodDisruptionBudget;
+      parsedBody: V1beta1PodDisruptionBudget;
     };
 };
 
 /**
  * Contains response data for the patchPolicyV1beta1NamespacedPodDisruptionBudgetStatus operation.
  */
-export type PatchPolicyV1beta1NamespacedPodDisruptionBudgetStatusResponse = Iok8sapipolicyv1beta1PodDisruptionBudget & {
+export type PatchPolicyV1beta1NamespacedPodDisruptionBudgetStatusResponse = V1beta1PodDisruptionBudget & {
   /**
    * The underlying HTTP response.
    */
@@ -95932,14 +95932,14 @@ export type PatchPolicyV1beta1NamespacedPodDisruptionBudgetStatusResponse = Iok8
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapipolicyv1beta1PodDisruptionBudget;
+      parsedBody: V1beta1PodDisruptionBudget;
     };
 };
 
 /**
  * Contains response data for the listPolicyV1beta1PodDisruptionBudgetForAllNamespaces operation.
  */
-export type ListPolicyV1beta1PodDisruptionBudgetForAllNamespacesResponse = Iok8sapipolicyv1beta1PodDisruptionBudgetList & {
+export type ListPolicyV1beta1PodDisruptionBudgetForAllNamespacesResponse = V1beta1PodDisruptionBudgetList & {
   /**
    * The underlying HTTP response.
    */
@@ -95951,14 +95951,14 @@ export type ListPolicyV1beta1PodDisruptionBudgetForAllNamespacesResponse = Iok8s
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapipolicyv1beta1PodDisruptionBudgetList;
+      parsedBody: V1beta1PodDisruptionBudgetList;
     };
 };
 
 /**
  * Contains response data for the listPolicyV1beta1PodSecurityPolicy operation.
  */
-export type ListPolicyV1beta1PodSecurityPolicyResponse = Iok8sapipolicyv1beta1PodSecurityPolicyList & {
+export type ListPolicyV1beta1PodSecurityPolicyResponse = V1beta1PodSecurityPolicyList & {
   /**
    * The underlying HTTP response.
    */
@@ -95970,14 +95970,14 @@ export type ListPolicyV1beta1PodSecurityPolicyResponse = Iok8sapipolicyv1beta1Po
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapipolicyv1beta1PodSecurityPolicyList;
+      parsedBody: V1beta1PodSecurityPolicyList;
     };
 };
 
 /**
  * Contains response data for the createPolicyV1beta1PodSecurityPolicy operation.
  */
-export type CreatePolicyV1beta1PodSecurityPolicyResponse = Iok8sapipolicyv1beta1PodSecurityPolicy & {
+export type CreatePolicyV1beta1PodSecurityPolicyResponse = V1beta1PodSecurityPolicy & {
   /**
    * The underlying HTTP response.
    */
@@ -95989,14 +95989,14 @@ export type CreatePolicyV1beta1PodSecurityPolicyResponse = Iok8sapipolicyv1beta1
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapipolicyv1beta1PodSecurityPolicy;
+      parsedBody: V1beta1PodSecurityPolicy;
     };
 };
 
 /**
  * Contains response data for the deletePolicyV1beta1CollectionPodSecurityPolicy operation.
  */
-export type DeletePolicyV1beta1CollectionPodSecurityPolicyResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeletePolicyV1beta1CollectionPodSecurityPolicyResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -96008,14 +96008,14 @@ export type DeletePolicyV1beta1CollectionPodSecurityPolicyResponse = Iok8sapimac
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
 /**
  * Contains response data for the readPolicyV1beta1PodSecurityPolicy operation.
  */
-export type ReadPolicyV1beta1PodSecurityPolicyResponse = Iok8sapipolicyv1beta1PodSecurityPolicy & {
+export type ReadPolicyV1beta1PodSecurityPolicyResponse = V1beta1PodSecurityPolicy & {
   /**
    * The underlying HTTP response.
    */
@@ -96027,14 +96027,14 @@ export type ReadPolicyV1beta1PodSecurityPolicyResponse = Iok8sapipolicyv1beta1Po
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapipolicyv1beta1PodSecurityPolicy;
+      parsedBody: V1beta1PodSecurityPolicy;
     };
 };
 
 /**
  * Contains response data for the replacePolicyV1beta1PodSecurityPolicy operation.
  */
-export type ReplacePolicyV1beta1PodSecurityPolicyResponse = Iok8sapipolicyv1beta1PodSecurityPolicy & {
+export type ReplacePolicyV1beta1PodSecurityPolicyResponse = V1beta1PodSecurityPolicy & {
   /**
    * The underlying HTTP response.
    */
@@ -96046,14 +96046,14 @@ export type ReplacePolicyV1beta1PodSecurityPolicyResponse = Iok8sapipolicyv1beta
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapipolicyv1beta1PodSecurityPolicy;
+      parsedBody: V1beta1PodSecurityPolicy;
     };
 };
 
 /**
  * Contains response data for the deletePolicyV1beta1PodSecurityPolicy operation.
  */
-export type DeletePolicyV1beta1PodSecurityPolicyResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeletePolicyV1beta1PodSecurityPolicyResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -96065,14 +96065,14 @@ export type DeletePolicyV1beta1PodSecurityPolicyResponse = Iok8sapimachinerypkga
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
 /**
  * Contains response data for the patchPolicyV1beta1PodSecurityPolicy operation.
  */
-export type PatchPolicyV1beta1PodSecurityPolicyResponse = Iok8sapipolicyv1beta1PodSecurityPolicy & {
+export type PatchPolicyV1beta1PodSecurityPolicyResponse = V1beta1PodSecurityPolicy & {
   /**
    * The underlying HTTP response.
    */
@@ -96084,14 +96084,14 @@ export type PatchPolicyV1beta1PodSecurityPolicyResponse = Iok8sapipolicyv1beta1P
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapipolicyv1beta1PodSecurityPolicy;
+      parsedBody: V1beta1PodSecurityPolicy;
     };
 };
 
 /**
  * Contains response data for the watchPolicyV1beta1NamespacedPodDisruptionBudgetList operation.
  */
-export type WatchPolicyV1beta1NamespacedPodDisruptionBudgetListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchPolicyV1beta1NamespacedPodDisruptionBudgetListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -96103,14 +96103,14 @@ export type WatchPolicyV1beta1NamespacedPodDisruptionBudgetListResponse = Iok8sa
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchPolicyV1beta1NamespacedPodDisruptionBudget operation.
  */
-export type WatchPolicyV1beta1NamespacedPodDisruptionBudgetResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchPolicyV1beta1NamespacedPodDisruptionBudgetResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -96122,7 +96122,7 @@ export type WatchPolicyV1beta1NamespacedPodDisruptionBudgetResponse = Iok8sapima
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
@@ -96130,7 +96130,7 @@ export type WatchPolicyV1beta1NamespacedPodDisruptionBudgetResponse = Iok8sapima
  * Contains response data for the watchPolicyV1beta1PodDisruptionBudgetListForAllNamespaces
  * operation.
  */
-export type WatchPolicyV1beta1PodDisruptionBudgetListForAllNamespacesResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchPolicyV1beta1PodDisruptionBudgetListForAllNamespacesResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -96142,14 +96142,14 @@ export type WatchPolicyV1beta1PodDisruptionBudgetListForAllNamespacesResponse = 
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchPolicyV1beta1PodSecurityPolicyList operation.
  */
-export type WatchPolicyV1beta1PodSecurityPolicyListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchPolicyV1beta1PodSecurityPolicyListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -96161,14 +96161,14 @@ export type WatchPolicyV1beta1PodSecurityPolicyListResponse = Iok8sapimachineryp
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchPolicyV1beta1PodSecurityPolicy operation.
  */
-export type WatchPolicyV1beta1PodSecurityPolicyResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchPolicyV1beta1PodSecurityPolicyResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -96180,14 +96180,14 @@ export type WatchPolicyV1beta1PodSecurityPolicyResponse = Iok8sapimachinerypkgap
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the getProjectOpenshiftIoAPIGroup operation.
  */
-export type GetProjectOpenshiftIoAPIGroupResponse = Iok8sapimachinerypkgapismetav1APIGroup & {
+export type GetProjectOpenshiftIoAPIGroupResponse = V1APIGroup & {
   /**
    * The underlying HTTP response.
    */
@@ -96199,14 +96199,14 @@ export type GetProjectOpenshiftIoAPIGroupResponse = Iok8sapimachinerypkgapismeta
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1APIGroup;
+      parsedBody: V1APIGroup;
     };
 };
 
 /**
  * Contains response data for the getProjectOpenshiftIoV1APIResources operation.
  */
-export type GetProjectOpenshiftIoV1APIResourcesResponse = Iok8sapimachinerypkgapismetav1APIResourceList & {
+export type GetProjectOpenshiftIoV1APIResourcesResponse = V1APIResourceList & {
   /**
    * The underlying HTTP response.
    */
@@ -96218,14 +96218,14 @@ export type GetProjectOpenshiftIoV1APIResourcesResponse = Iok8sapimachinerypkgap
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1APIResourceList;
+      parsedBody: V1APIResourceList;
     };
 };
 
 /**
  * Contains response data for the listProjectOpenshiftIoV1ProjectRequest operation.
  */
-export type ListProjectOpenshiftIoV1ProjectRequestResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type ListProjectOpenshiftIoV1ProjectRequestResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -96237,7 +96237,7 @@ export type ListProjectOpenshiftIoV1ProjectRequestResponse = Iok8sapimachinerypk
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -96339,7 +96339,7 @@ export type ReplaceProjectOpenshiftIoV1ProjectResponse = Comgithubopenshiftapipr
 /**
  * Contains response data for the deleteProjectOpenshiftIoV1Project operation.
  */
-export type DeleteProjectOpenshiftIoV1ProjectResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteProjectOpenshiftIoV1ProjectResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -96351,7 +96351,7 @@ export type DeleteProjectOpenshiftIoV1ProjectResponse = Iok8sapimachinerypkgapis
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -96377,7 +96377,7 @@ export type PatchProjectOpenshiftIoV1ProjectResponse = Comgithubopenshiftapiproj
 /**
  * Contains response data for the watchProjectOpenshiftIoV1ProjectList operation.
  */
-export type WatchProjectOpenshiftIoV1ProjectListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchProjectOpenshiftIoV1ProjectListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -96389,14 +96389,14 @@ export type WatchProjectOpenshiftIoV1ProjectListResponse = Iok8sapimachinerypkga
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchProjectOpenshiftIoV1Project operation.
  */
-export type WatchProjectOpenshiftIoV1ProjectResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchProjectOpenshiftIoV1ProjectResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -96408,14 +96408,14 @@ export type WatchProjectOpenshiftIoV1ProjectResponse = Iok8sapimachinerypkgapism
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the getQuotaOpenshiftIoAPIGroup operation.
  */
-export type GetQuotaOpenshiftIoAPIGroupResponse = Iok8sapimachinerypkgapismetav1APIGroup & {
+export type GetQuotaOpenshiftIoAPIGroupResponse = V1APIGroup & {
   /**
    * The underlying HTTP response.
    */
@@ -96427,14 +96427,14 @@ export type GetQuotaOpenshiftIoAPIGroupResponse = Iok8sapimachinerypkgapismetav1
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1APIGroup;
+      parsedBody: V1APIGroup;
     };
 };
 
 /**
  * Contains response data for the getQuotaOpenshiftIoV1APIResources operation.
  */
-export type GetQuotaOpenshiftIoV1APIResourcesResponse = Iok8sapimachinerypkgapismetav1APIResourceList & {
+export type GetQuotaOpenshiftIoV1APIResourcesResponse = V1APIResourceList & {
   /**
    * The underlying HTTP response.
    */
@@ -96446,7 +96446,7 @@ export type GetQuotaOpenshiftIoV1APIResourcesResponse = Iok8sapimachinerypkgapis
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1APIResourceList;
+      parsedBody: V1APIResourceList;
     };
 };
 
@@ -96511,7 +96511,7 @@ export type CreateQuotaOpenshiftIoV1ClusterResourceQuotaResponse = Comgithubopen
 /**
  * Contains response data for the deleteQuotaOpenshiftIoV1CollectionClusterResourceQuota operation.
  */
-export type DeleteQuotaOpenshiftIoV1CollectionClusterResourceQuotaResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteQuotaOpenshiftIoV1CollectionClusterResourceQuotaResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -96523,7 +96523,7 @@ export type DeleteQuotaOpenshiftIoV1CollectionClusterResourceQuotaResponse = Iok
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -96568,7 +96568,7 @@ export type ReplaceQuotaOpenshiftIoV1ClusterResourceQuotaResponse = Comgithubope
 /**
  * Contains response data for the deleteQuotaOpenshiftIoV1ClusterResourceQuota operation.
  */
-export type DeleteQuotaOpenshiftIoV1ClusterResourceQuotaResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteQuotaOpenshiftIoV1ClusterResourceQuotaResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -96580,7 +96580,7 @@ export type DeleteQuotaOpenshiftIoV1ClusterResourceQuotaResponse = Iok8sapimachi
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -96703,7 +96703,7 @@ export type ReadQuotaOpenshiftIoV1NamespacedAppliedClusterResourceQuotaResponse 
 /**
  * Contains response data for the watchQuotaOpenshiftIoV1ClusterResourceQuotaList operation.
  */
-export type WatchQuotaOpenshiftIoV1ClusterResourceQuotaListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchQuotaOpenshiftIoV1ClusterResourceQuotaListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -96715,14 +96715,14 @@ export type WatchQuotaOpenshiftIoV1ClusterResourceQuotaListResponse = Iok8sapima
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchQuotaOpenshiftIoV1ClusterResourceQuota operation.
  */
-export type WatchQuotaOpenshiftIoV1ClusterResourceQuotaResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchQuotaOpenshiftIoV1ClusterResourceQuotaResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -96734,14 +96734,14 @@ export type WatchQuotaOpenshiftIoV1ClusterResourceQuotaResponse = Iok8sapimachin
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the getRbacAuthorizationAPIGroup operation.
  */
-export type GetRbacAuthorizationAPIGroupResponse = Iok8sapimachinerypkgapismetav1APIGroup & {
+export type GetRbacAuthorizationAPIGroupResponse = V1APIGroup & {
   /**
    * The underlying HTTP response.
    */
@@ -96753,14 +96753,14 @@ export type GetRbacAuthorizationAPIGroupResponse = Iok8sapimachinerypkgapismetav
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1APIGroup;
+      parsedBody: V1APIGroup;
     };
 };
 
 /**
  * Contains response data for the getRbacAuthorizationV1APIResources operation.
  */
-export type GetRbacAuthorizationV1APIResourcesResponse = Iok8sapimachinerypkgapismetav1APIResourceList & {
+export type GetRbacAuthorizationV1APIResourcesResponse = V1APIResourceList & {
   /**
    * The underlying HTTP response.
    */
@@ -96772,14 +96772,14 @@ export type GetRbacAuthorizationV1APIResourcesResponse = Iok8sapimachinerypkgapi
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1APIResourceList;
+      parsedBody: V1APIResourceList;
     };
 };
 
 /**
  * Contains response data for the listRbacAuthorizationV1ClusterRoleBinding operation.
  */
-export type ListRbacAuthorizationV1ClusterRoleBindingResponse = Iok8sapirbacv1ClusterRoleBindingList & {
+export type ListRbacAuthorizationV1ClusterRoleBindingResponse = V1ClusterRoleBindingList & {
   /**
    * The underlying HTTP response.
    */
@@ -96791,14 +96791,14 @@ export type ListRbacAuthorizationV1ClusterRoleBindingResponse = Iok8sapirbacv1Cl
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapirbacv1ClusterRoleBindingList;
+      parsedBody: V1ClusterRoleBindingList;
     };
 };
 
 /**
  * Contains response data for the createRbacAuthorizationV1ClusterRoleBinding operation.
  */
-export type CreateRbacAuthorizationV1ClusterRoleBindingResponse = Iok8sapirbacv1ClusterRoleBinding & {
+export type CreateRbacAuthorizationV1ClusterRoleBindingResponse = V1ClusterRoleBinding & {
   /**
    * The underlying HTTP response.
    */
@@ -96810,14 +96810,14 @@ export type CreateRbacAuthorizationV1ClusterRoleBindingResponse = Iok8sapirbacv1
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapirbacv1ClusterRoleBinding;
+      parsedBody: V1ClusterRoleBinding;
     };
 };
 
 /**
  * Contains response data for the deleteRbacAuthorizationV1CollectionClusterRoleBinding operation.
  */
-export type DeleteRbacAuthorizationV1CollectionClusterRoleBindingResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteRbacAuthorizationV1CollectionClusterRoleBindingResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -96829,14 +96829,14 @@ export type DeleteRbacAuthorizationV1CollectionClusterRoleBindingResponse = Iok8
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
 /**
  * Contains response data for the readRbacAuthorizationV1ClusterRoleBinding operation.
  */
-export type ReadRbacAuthorizationV1ClusterRoleBindingResponse = Iok8sapirbacv1ClusterRoleBinding & {
+export type ReadRbacAuthorizationV1ClusterRoleBindingResponse = V1ClusterRoleBinding & {
   /**
    * The underlying HTTP response.
    */
@@ -96848,14 +96848,14 @@ export type ReadRbacAuthorizationV1ClusterRoleBindingResponse = Iok8sapirbacv1Cl
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapirbacv1ClusterRoleBinding;
+      parsedBody: V1ClusterRoleBinding;
     };
 };
 
 /**
  * Contains response data for the replaceRbacAuthorizationV1ClusterRoleBinding operation.
  */
-export type ReplaceRbacAuthorizationV1ClusterRoleBindingResponse = Iok8sapirbacv1ClusterRoleBinding & {
+export type ReplaceRbacAuthorizationV1ClusterRoleBindingResponse = V1ClusterRoleBinding & {
   /**
    * The underlying HTTP response.
    */
@@ -96867,14 +96867,14 @@ export type ReplaceRbacAuthorizationV1ClusterRoleBindingResponse = Iok8sapirbacv
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapirbacv1ClusterRoleBinding;
+      parsedBody: V1ClusterRoleBinding;
     };
 };
 
 /**
  * Contains response data for the deleteRbacAuthorizationV1ClusterRoleBinding operation.
  */
-export type DeleteRbacAuthorizationV1ClusterRoleBindingResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteRbacAuthorizationV1ClusterRoleBindingResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -96886,14 +96886,14 @@ export type DeleteRbacAuthorizationV1ClusterRoleBindingResponse = Iok8sapimachin
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
 /**
  * Contains response data for the patchRbacAuthorizationV1ClusterRoleBinding operation.
  */
-export type PatchRbacAuthorizationV1ClusterRoleBindingResponse = Iok8sapirbacv1ClusterRoleBinding & {
+export type PatchRbacAuthorizationV1ClusterRoleBindingResponse = V1ClusterRoleBinding & {
   /**
    * The underlying HTTP response.
    */
@@ -96905,14 +96905,14 @@ export type PatchRbacAuthorizationV1ClusterRoleBindingResponse = Iok8sapirbacv1C
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapirbacv1ClusterRoleBinding;
+      parsedBody: V1ClusterRoleBinding;
     };
 };
 
 /**
  * Contains response data for the listRbacAuthorizationV1ClusterRole operation.
  */
-export type ListRbacAuthorizationV1ClusterRoleResponse = Iok8sapirbacv1ClusterRoleList & {
+export type ListRbacAuthorizationV1ClusterRoleResponse = V1ClusterRoleList & {
   /**
    * The underlying HTTP response.
    */
@@ -96924,14 +96924,14 @@ export type ListRbacAuthorizationV1ClusterRoleResponse = Iok8sapirbacv1ClusterRo
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapirbacv1ClusterRoleList;
+      parsedBody: V1ClusterRoleList;
     };
 };
 
 /**
  * Contains response data for the createRbacAuthorizationV1ClusterRole operation.
  */
-export type CreateRbacAuthorizationV1ClusterRoleResponse = Iok8sapirbacv1ClusterRole & {
+export type CreateRbacAuthorizationV1ClusterRoleResponse = V1ClusterRole & {
   /**
    * The underlying HTTP response.
    */
@@ -96943,14 +96943,14 @@ export type CreateRbacAuthorizationV1ClusterRoleResponse = Iok8sapirbacv1Cluster
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapirbacv1ClusterRole;
+      parsedBody: V1ClusterRole;
     };
 };
 
 /**
  * Contains response data for the deleteRbacAuthorizationV1CollectionClusterRole operation.
  */
-export type DeleteRbacAuthorizationV1CollectionClusterRoleResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteRbacAuthorizationV1CollectionClusterRoleResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -96962,14 +96962,14 @@ export type DeleteRbacAuthorizationV1CollectionClusterRoleResponse = Iok8sapimac
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
 /**
  * Contains response data for the readRbacAuthorizationV1ClusterRole operation.
  */
-export type ReadRbacAuthorizationV1ClusterRoleResponse = Iok8sapirbacv1ClusterRole & {
+export type ReadRbacAuthorizationV1ClusterRoleResponse = V1ClusterRole & {
   /**
    * The underlying HTTP response.
    */
@@ -96981,14 +96981,14 @@ export type ReadRbacAuthorizationV1ClusterRoleResponse = Iok8sapirbacv1ClusterRo
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapirbacv1ClusterRole;
+      parsedBody: V1ClusterRole;
     };
 };
 
 /**
  * Contains response data for the replaceRbacAuthorizationV1ClusterRole operation.
  */
-export type ReplaceRbacAuthorizationV1ClusterRoleResponse = Iok8sapirbacv1ClusterRole & {
+export type ReplaceRbacAuthorizationV1ClusterRoleResponse = V1ClusterRole & {
   /**
    * The underlying HTTP response.
    */
@@ -97000,14 +97000,14 @@ export type ReplaceRbacAuthorizationV1ClusterRoleResponse = Iok8sapirbacv1Cluste
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapirbacv1ClusterRole;
+      parsedBody: V1ClusterRole;
     };
 };
 
 /**
  * Contains response data for the deleteRbacAuthorizationV1ClusterRole operation.
  */
-export type DeleteRbacAuthorizationV1ClusterRoleResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteRbacAuthorizationV1ClusterRoleResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -97019,14 +97019,14 @@ export type DeleteRbacAuthorizationV1ClusterRoleResponse = Iok8sapimachinerypkga
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
 /**
  * Contains response data for the patchRbacAuthorizationV1ClusterRole operation.
  */
-export type PatchRbacAuthorizationV1ClusterRoleResponse = Iok8sapirbacv1ClusterRole & {
+export type PatchRbacAuthorizationV1ClusterRoleResponse = V1ClusterRole & {
   /**
    * The underlying HTTP response.
    */
@@ -97038,14 +97038,14 @@ export type PatchRbacAuthorizationV1ClusterRoleResponse = Iok8sapirbacv1ClusterR
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapirbacv1ClusterRole;
+      parsedBody: V1ClusterRole;
     };
 };
 
 /**
  * Contains response data for the listRbacAuthorizationV1NamespacedRoleBinding operation.
  */
-export type ListRbacAuthorizationV1NamespacedRoleBindingResponse = Iok8sapirbacv1RoleBindingList & {
+export type ListRbacAuthorizationV1NamespacedRoleBindingResponse = V1RoleBindingList & {
   /**
    * The underlying HTTP response.
    */
@@ -97057,14 +97057,14 @@ export type ListRbacAuthorizationV1NamespacedRoleBindingResponse = Iok8sapirbacv
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapirbacv1RoleBindingList;
+      parsedBody: V1RoleBindingList;
     };
 };
 
 /**
  * Contains response data for the createRbacAuthorizationV1NamespacedRoleBinding operation.
  */
-export type CreateRbacAuthorizationV1NamespacedRoleBindingResponse = Iok8sapirbacv1RoleBinding & {
+export type CreateRbacAuthorizationV1NamespacedRoleBindingResponse = V1RoleBinding & {
   /**
    * The underlying HTTP response.
    */
@@ -97076,7 +97076,7 @@ export type CreateRbacAuthorizationV1NamespacedRoleBindingResponse = Iok8sapirba
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapirbacv1RoleBinding;
+      parsedBody: V1RoleBinding;
     };
 };
 
@@ -97084,7 +97084,7 @@ export type CreateRbacAuthorizationV1NamespacedRoleBindingResponse = Iok8sapirba
  * Contains response data for the deleteRbacAuthorizationV1CollectionNamespacedRoleBinding
  * operation.
  */
-export type DeleteRbacAuthorizationV1CollectionNamespacedRoleBindingResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteRbacAuthorizationV1CollectionNamespacedRoleBindingResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -97096,14 +97096,14 @@ export type DeleteRbacAuthorizationV1CollectionNamespacedRoleBindingResponse = I
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
 /**
  * Contains response data for the readRbacAuthorizationV1NamespacedRoleBinding operation.
  */
-export type ReadRbacAuthorizationV1NamespacedRoleBindingResponse = Iok8sapirbacv1RoleBinding & {
+export type ReadRbacAuthorizationV1NamespacedRoleBindingResponse = V1RoleBinding & {
   /**
    * The underlying HTTP response.
    */
@@ -97115,14 +97115,14 @@ export type ReadRbacAuthorizationV1NamespacedRoleBindingResponse = Iok8sapirbacv
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapirbacv1RoleBinding;
+      parsedBody: V1RoleBinding;
     };
 };
 
 /**
  * Contains response data for the replaceRbacAuthorizationV1NamespacedRoleBinding operation.
  */
-export type ReplaceRbacAuthorizationV1NamespacedRoleBindingResponse = Iok8sapirbacv1RoleBinding & {
+export type ReplaceRbacAuthorizationV1NamespacedRoleBindingResponse = V1RoleBinding & {
   /**
    * The underlying HTTP response.
    */
@@ -97134,14 +97134,14 @@ export type ReplaceRbacAuthorizationV1NamespacedRoleBindingResponse = Iok8sapirb
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapirbacv1RoleBinding;
+      parsedBody: V1RoleBinding;
     };
 };
 
 /**
  * Contains response data for the deleteRbacAuthorizationV1NamespacedRoleBinding operation.
  */
-export type DeleteRbacAuthorizationV1NamespacedRoleBindingResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteRbacAuthorizationV1NamespacedRoleBindingResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -97153,14 +97153,14 @@ export type DeleteRbacAuthorizationV1NamespacedRoleBindingResponse = Iok8sapimac
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
 /**
  * Contains response data for the patchRbacAuthorizationV1NamespacedRoleBinding operation.
  */
-export type PatchRbacAuthorizationV1NamespacedRoleBindingResponse = Iok8sapirbacv1RoleBinding & {
+export type PatchRbacAuthorizationV1NamespacedRoleBindingResponse = V1RoleBinding & {
   /**
    * The underlying HTTP response.
    */
@@ -97172,14 +97172,14 @@ export type PatchRbacAuthorizationV1NamespacedRoleBindingResponse = Iok8sapirbac
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapirbacv1RoleBinding;
+      parsedBody: V1RoleBinding;
     };
 };
 
 /**
  * Contains response data for the listRbacAuthorizationV1NamespacedRole operation.
  */
-export type ListRbacAuthorizationV1NamespacedRoleResponse = Iok8sapirbacv1RoleList & {
+export type ListRbacAuthorizationV1NamespacedRoleResponse = V1RoleList & {
   /**
    * The underlying HTTP response.
    */
@@ -97191,14 +97191,14 @@ export type ListRbacAuthorizationV1NamespacedRoleResponse = Iok8sapirbacv1RoleLi
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapirbacv1RoleList;
+      parsedBody: V1RoleList;
     };
 };
 
 /**
  * Contains response data for the createRbacAuthorizationV1NamespacedRole operation.
  */
-export type CreateRbacAuthorizationV1NamespacedRoleResponse = Iok8sapirbacv1Role & {
+export type CreateRbacAuthorizationV1NamespacedRoleResponse = V1Role & {
   /**
    * The underlying HTTP response.
    */
@@ -97210,14 +97210,14 @@ export type CreateRbacAuthorizationV1NamespacedRoleResponse = Iok8sapirbacv1Role
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapirbacv1Role;
+      parsedBody: V1Role;
     };
 };
 
 /**
  * Contains response data for the deleteRbacAuthorizationV1CollectionNamespacedRole operation.
  */
-export type DeleteRbacAuthorizationV1CollectionNamespacedRoleResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteRbacAuthorizationV1CollectionNamespacedRoleResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -97229,14 +97229,14 @@ export type DeleteRbacAuthorizationV1CollectionNamespacedRoleResponse = Iok8sapi
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
 /**
  * Contains response data for the readRbacAuthorizationV1NamespacedRole operation.
  */
-export type ReadRbacAuthorizationV1NamespacedRoleResponse = Iok8sapirbacv1Role & {
+export type ReadRbacAuthorizationV1NamespacedRoleResponse = V1Role & {
   /**
    * The underlying HTTP response.
    */
@@ -97248,14 +97248,14 @@ export type ReadRbacAuthorizationV1NamespacedRoleResponse = Iok8sapirbacv1Role &
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapirbacv1Role;
+      parsedBody: V1Role;
     };
 };
 
 /**
  * Contains response data for the replaceRbacAuthorizationV1NamespacedRole operation.
  */
-export type ReplaceRbacAuthorizationV1NamespacedRoleResponse = Iok8sapirbacv1Role & {
+export type ReplaceRbacAuthorizationV1NamespacedRoleResponse = V1Role & {
   /**
    * The underlying HTTP response.
    */
@@ -97267,14 +97267,14 @@ export type ReplaceRbacAuthorizationV1NamespacedRoleResponse = Iok8sapirbacv1Rol
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapirbacv1Role;
+      parsedBody: V1Role;
     };
 };
 
 /**
  * Contains response data for the deleteRbacAuthorizationV1NamespacedRole operation.
  */
-export type DeleteRbacAuthorizationV1NamespacedRoleResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteRbacAuthorizationV1NamespacedRoleResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -97286,14 +97286,14 @@ export type DeleteRbacAuthorizationV1NamespacedRoleResponse = Iok8sapimachineryp
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
 /**
  * Contains response data for the patchRbacAuthorizationV1NamespacedRole operation.
  */
-export type PatchRbacAuthorizationV1NamespacedRoleResponse = Iok8sapirbacv1Role & {
+export type PatchRbacAuthorizationV1NamespacedRoleResponse = V1Role & {
   /**
    * The underlying HTTP response.
    */
@@ -97305,14 +97305,14 @@ export type PatchRbacAuthorizationV1NamespacedRoleResponse = Iok8sapirbacv1Role 
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapirbacv1Role;
+      parsedBody: V1Role;
     };
 };
 
 /**
  * Contains response data for the listRbacAuthorizationV1RoleBindingForAllNamespaces operation.
  */
-export type ListRbacAuthorizationV1RoleBindingForAllNamespacesResponse = Iok8sapirbacv1RoleBindingList & {
+export type ListRbacAuthorizationV1RoleBindingForAllNamespacesResponse = V1RoleBindingList & {
   /**
    * The underlying HTTP response.
    */
@@ -97324,14 +97324,14 @@ export type ListRbacAuthorizationV1RoleBindingForAllNamespacesResponse = Iok8sap
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapirbacv1RoleBindingList;
+      parsedBody: V1RoleBindingList;
     };
 };
 
 /**
  * Contains response data for the listRbacAuthorizationV1RoleForAllNamespaces operation.
  */
-export type ListRbacAuthorizationV1RoleForAllNamespacesResponse = Iok8sapirbacv1RoleList & {
+export type ListRbacAuthorizationV1RoleForAllNamespacesResponse = V1RoleList & {
   /**
    * The underlying HTTP response.
    */
@@ -97343,14 +97343,14 @@ export type ListRbacAuthorizationV1RoleForAllNamespacesResponse = Iok8sapirbacv1
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapirbacv1RoleList;
+      parsedBody: V1RoleList;
     };
 };
 
 /**
  * Contains response data for the watchRbacAuthorizationV1ClusterRoleBindingList operation.
  */
-export type WatchRbacAuthorizationV1ClusterRoleBindingListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchRbacAuthorizationV1ClusterRoleBindingListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -97362,14 +97362,14 @@ export type WatchRbacAuthorizationV1ClusterRoleBindingListResponse = Iok8sapimac
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchRbacAuthorizationV1ClusterRoleBinding operation.
  */
-export type WatchRbacAuthorizationV1ClusterRoleBindingResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchRbacAuthorizationV1ClusterRoleBindingResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -97381,14 +97381,14 @@ export type WatchRbacAuthorizationV1ClusterRoleBindingResponse = Iok8sapimachine
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchRbacAuthorizationV1ClusterRoleList operation.
  */
-export type WatchRbacAuthorizationV1ClusterRoleListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchRbacAuthorizationV1ClusterRoleListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -97400,14 +97400,14 @@ export type WatchRbacAuthorizationV1ClusterRoleListResponse = Iok8sapimachineryp
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchRbacAuthorizationV1ClusterRole operation.
  */
-export type WatchRbacAuthorizationV1ClusterRoleResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchRbacAuthorizationV1ClusterRoleResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -97419,14 +97419,14 @@ export type WatchRbacAuthorizationV1ClusterRoleResponse = Iok8sapimachinerypkgap
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchRbacAuthorizationV1NamespacedRoleBindingList operation.
  */
-export type WatchRbacAuthorizationV1NamespacedRoleBindingListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchRbacAuthorizationV1NamespacedRoleBindingListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -97438,14 +97438,14 @@ export type WatchRbacAuthorizationV1NamespacedRoleBindingListResponse = Iok8sapi
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchRbacAuthorizationV1NamespacedRoleBinding operation.
  */
-export type WatchRbacAuthorizationV1NamespacedRoleBindingResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchRbacAuthorizationV1NamespacedRoleBindingResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -97457,14 +97457,14 @@ export type WatchRbacAuthorizationV1NamespacedRoleBindingResponse = Iok8sapimach
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchRbacAuthorizationV1NamespacedRoleList operation.
  */
-export type WatchRbacAuthorizationV1NamespacedRoleListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchRbacAuthorizationV1NamespacedRoleListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -97476,14 +97476,14 @@ export type WatchRbacAuthorizationV1NamespacedRoleListResponse = Iok8sapimachine
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchRbacAuthorizationV1NamespacedRole operation.
  */
-export type WatchRbacAuthorizationV1NamespacedRoleResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchRbacAuthorizationV1NamespacedRoleResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -97495,7 +97495,7 @@ export type WatchRbacAuthorizationV1NamespacedRoleResponse = Iok8sapimachinerypk
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
@@ -97503,7 +97503,7 @@ export type WatchRbacAuthorizationV1NamespacedRoleResponse = Iok8sapimachinerypk
  * Contains response data for the watchRbacAuthorizationV1RoleBindingListForAllNamespaces
  * operation.
  */
-export type WatchRbacAuthorizationV1RoleBindingListForAllNamespacesResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchRbacAuthorizationV1RoleBindingListForAllNamespacesResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -97515,14 +97515,14 @@ export type WatchRbacAuthorizationV1RoleBindingListForAllNamespacesResponse = Io
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchRbacAuthorizationV1RoleListForAllNamespaces operation.
  */
-export type WatchRbacAuthorizationV1RoleListForAllNamespacesResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchRbacAuthorizationV1RoleListForAllNamespacesResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -97534,14 +97534,14 @@ export type WatchRbacAuthorizationV1RoleListForAllNamespacesResponse = Iok8sapim
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the getRbacAuthorizationV1beta1APIResources operation.
  */
-export type GetRbacAuthorizationV1beta1APIResourcesResponse = Iok8sapimachinerypkgapismetav1APIResourceList & {
+export type GetRbacAuthorizationV1beta1APIResourcesResponse = V1APIResourceList & {
   /**
    * The underlying HTTP response.
    */
@@ -97553,14 +97553,14 @@ export type GetRbacAuthorizationV1beta1APIResourcesResponse = Iok8sapimachineryp
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1APIResourceList;
+      parsedBody: V1APIResourceList;
     };
 };
 
 /**
  * Contains response data for the listRbacAuthorizationV1beta1ClusterRoleBinding operation.
  */
-export type ListRbacAuthorizationV1beta1ClusterRoleBindingResponse = Iok8sapirbacv1beta1ClusterRoleBindingList & {
+export type ListRbacAuthorizationV1beta1ClusterRoleBindingResponse = V1beta1ClusterRoleBindingList & {
   /**
    * The underlying HTTP response.
    */
@@ -97572,14 +97572,14 @@ export type ListRbacAuthorizationV1beta1ClusterRoleBindingResponse = Iok8sapirba
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapirbacv1beta1ClusterRoleBindingList;
+      parsedBody: V1beta1ClusterRoleBindingList;
     };
 };
 
 /**
  * Contains response data for the createRbacAuthorizationV1beta1ClusterRoleBinding operation.
  */
-export type CreateRbacAuthorizationV1beta1ClusterRoleBindingResponse = Iok8sapirbacv1beta1ClusterRoleBinding & {
+export type CreateRbacAuthorizationV1beta1ClusterRoleBindingResponse = V1beta1ClusterRoleBinding & {
   /**
    * The underlying HTTP response.
    */
@@ -97591,7 +97591,7 @@ export type CreateRbacAuthorizationV1beta1ClusterRoleBindingResponse = Iok8sapir
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapirbacv1beta1ClusterRoleBinding;
+      parsedBody: V1beta1ClusterRoleBinding;
     };
 };
 
@@ -97599,7 +97599,7 @@ export type CreateRbacAuthorizationV1beta1ClusterRoleBindingResponse = Iok8sapir
  * Contains response data for the deleteRbacAuthorizationV1beta1CollectionClusterRoleBinding
  * operation.
  */
-export type DeleteRbacAuthorizationV1beta1CollectionClusterRoleBindingResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteRbacAuthorizationV1beta1CollectionClusterRoleBindingResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -97611,14 +97611,14 @@ export type DeleteRbacAuthorizationV1beta1CollectionClusterRoleBindingResponse =
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
 /**
  * Contains response data for the readRbacAuthorizationV1beta1ClusterRoleBinding operation.
  */
-export type ReadRbacAuthorizationV1beta1ClusterRoleBindingResponse = Iok8sapirbacv1beta1ClusterRoleBinding & {
+export type ReadRbacAuthorizationV1beta1ClusterRoleBindingResponse = V1beta1ClusterRoleBinding & {
   /**
    * The underlying HTTP response.
    */
@@ -97630,14 +97630,14 @@ export type ReadRbacAuthorizationV1beta1ClusterRoleBindingResponse = Iok8sapirba
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapirbacv1beta1ClusterRoleBinding;
+      parsedBody: V1beta1ClusterRoleBinding;
     };
 };
 
 /**
  * Contains response data for the replaceRbacAuthorizationV1beta1ClusterRoleBinding operation.
  */
-export type ReplaceRbacAuthorizationV1beta1ClusterRoleBindingResponse = Iok8sapirbacv1beta1ClusterRoleBinding & {
+export type ReplaceRbacAuthorizationV1beta1ClusterRoleBindingResponse = V1beta1ClusterRoleBinding & {
   /**
    * The underlying HTTP response.
    */
@@ -97649,14 +97649,14 @@ export type ReplaceRbacAuthorizationV1beta1ClusterRoleBindingResponse = Iok8sapi
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapirbacv1beta1ClusterRoleBinding;
+      parsedBody: V1beta1ClusterRoleBinding;
     };
 };
 
 /**
  * Contains response data for the deleteRbacAuthorizationV1beta1ClusterRoleBinding operation.
  */
-export type DeleteRbacAuthorizationV1beta1ClusterRoleBindingResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteRbacAuthorizationV1beta1ClusterRoleBindingResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -97668,14 +97668,14 @@ export type DeleteRbacAuthorizationV1beta1ClusterRoleBindingResponse = Iok8sapim
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
 /**
  * Contains response data for the patchRbacAuthorizationV1beta1ClusterRoleBinding operation.
  */
-export type PatchRbacAuthorizationV1beta1ClusterRoleBindingResponse = Iok8sapirbacv1beta1ClusterRoleBinding & {
+export type PatchRbacAuthorizationV1beta1ClusterRoleBindingResponse = V1beta1ClusterRoleBinding & {
   /**
    * The underlying HTTP response.
    */
@@ -97687,14 +97687,14 @@ export type PatchRbacAuthorizationV1beta1ClusterRoleBindingResponse = Iok8sapirb
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapirbacv1beta1ClusterRoleBinding;
+      parsedBody: V1beta1ClusterRoleBinding;
     };
 };
 
 /**
  * Contains response data for the listRbacAuthorizationV1beta1ClusterRole operation.
  */
-export type ListRbacAuthorizationV1beta1ClusterRoleResponse = Iok8sapirbacv1beta1ClusterRoleList & {
+export type ListRbacAuthorizationV1beta1ClusterRoleResponse = V1beta1ClusterRoleList & {
   /**
    * The underlying HTTP response.
    */
@@ -97706,14 +97706,14 @@ export type ListRbacAuthorizationV1beta1ClusterRoleResponse = Iok8sapirbacv1beta
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapirbacv1beta1ClusterRoleList;
+      parsedBody: V1beta1ClusterRoleList;
     };
 };
 
 /**
  * Contains response data for the createRbacAuthorizationV1beta1ClusterRole operation.
  */
-export type CreateRbacAuthorizationV1beta1ClusterRoleResponse = Iok8sapirbacv1beta1ClusterRole & {
+export type CreateRbacAuthorizationV1beta1ClusterRoleResponse = V1beta1ClusterRole & {
   /**
    * The underlying HTTP response.
    */
@@ -97725,14 +97725,14 @@ export type CreateRbacAuthorizationV1beta1ClusterRoleResponse = Iok8sapirbacv1be
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapirbacv1beta1ClusterRole;
+      parsedBody: V1beta1ClusterRole;
     };
 };
 
 /**
  * Contains response data for the deleteRbacAuthorizationV1beta1CollectionClusterRole operation.
  */
-export type DeleteRbacAuthorizationV1beta1CollectionClusterRoleResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteRbacAuthorizationV1beta1CollectionClusterRoleResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -97744,14 +97744,14 @@ export type DeleteRbacAuthorizationV1beta1CollectionClusterRoleResponse = Iok8sa
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
 /**
  * Contains response data for the readRbacAuthorizationV1beta1ClusterRole operation.
  */
-export type ReadRbacAuthorizationV1beta1ClusterRoleResponse = Iok8sapirbacv1beta1ClusterRole & {
+export type ReadRbacAuthorizationV1beta1ClusterRoleResponse = V1beta1ClusterRole & {
   /**
    * The underlying HTTP response.
    */
@@ -97763,14 +97763,14 @@ export type ReadRbacAuthorizationV1beta1ClusterRoleResponse = Iok8sapirbacv1beta
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapirbacv1beta1ClusterRole;
+      parsedBody: V1beta1ClusterRole;
     };
 };
 
 /**
  * Contains response data for the replaceRbacAuthorizationV1beta1ClusterRole operation.
  */
-export type ReplaceRbacAuthorizationV1beta1ClusterRoleResponse = Iok8sapirbacv1beta1ClusterRole & {
+export type ReplaceRbacAuthorizationV1beta1ClusterRoleResponse = V1beta1ClusterRole & {
   /**
    * The underlying HTTP response.
    */
@@ -97782,14 +97782,14 @@ export type ReplaceRbacAuthorizationV1beta1ClusterRoleResponse = Iok8sapirbacv1b
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapirbacv1beta1ClusterRole;
+      parsedBody: V1beta1ClusterRole;
     };
 };
 
 /**
  * Contains response data for the deleteRbacAuthorizationV1beta1ClusterRole operation.
  */
-export type DeleteRbacAuthorizationV1beta1ClusterRoleResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteRbacAuthorizationV1beta1ClusterRoleResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -97801,14 +97801,14 @@ export type DeleteRbacAuthorizationV1beta1ClusterRoleResponse = Iok8sapimachiner
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
 /**
  * Contains response data for the patchRbacAuthorizationV1beta1ClusterRole operation.
  */
-export type PatchRbacAuthorizationV1beta1ClusterRoleResponse = Iok8sapirbacv1beta1ClusterRole & {
+export type PatchRbacAuthorizationV1beta1ClusterRoleResponse = V1beta1ClusterRole & {
   /**
    * The underlying HTTP response.
    */
@@ -97820,14 +97820,14 @@ export type PatchRbacAuthorizationV1beta1ClusterRoleResponse = Iok8sapirbacv1bet
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapirbacv1beta1ClusterRole;
+      parsedBody: V1beta1ClusterRole;
     };
 };
 
 /**
  * Contains response data for the listRbacAuthorizationV1beta1NamespacedRoleBinding operation.
  */
-export type ListRbacAuthorizationV1beta1NamespacedRoleBindingResponse = Iok8sapirbacv1beta1RoleBindingList & {
+export type ListRbacAuthorizationV1beta1NamespacedRoleBindingResponse = V1beta1RoleBindingList & {
   /**
    * The underlying HTTP response.
    */
@@ -97839,14 +97839,14 @@ export type ListRbacAuthorizationV1beta1NamespacedRoleBindingResponse = Iok8sapi
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapirbacv1beta1RoleBindingList;
+      parsedBody: V1beta1RoleBindingList;
     };
 };
 
 /**
  * Contains response data for the createRbacAuthorizationV1beta1NamespacedRoleBinding operation.
  */
-export type CreateRbacAuthorizationV1beta1NamespacedRoleBindingResponse = Iok8sapirbacv1beta1RoleBinding & {
+export type CreateRbacAuthorizationV1beta1NamespacedRoleBindingResponse = V1beta1RoleBinding & {
   /**
    * The underlying HTTP response.
    */
@@ -97858,7 +97858,7 @@ export type CreateRbacAuthorizationV1beta1NamespacedRoleBindingResponse = Iok8sa
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapirbacv1beta1RoleBinding;
+      parsedBody: V1beta1RoleBinding;
     };
 };
 
@@ -97866,7 +97866,7 @@ export type CreateRbacAuthorizationV1beta1NamespacedRoleBindingResponse = Iok8sa
  * Contains response data for the deleteRbacAuthorizationV1beta1CollectionNamespacedRoleBinding
  * operation.
  */
-export type DeleteRbacAuthorizationV1beta1CollectionNamespacedRoleBindingResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteRbacAuthorizationV1beta1CollectionNamespacedRoleBindingResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -97878,14 +97878,14 @@ export type DeleteRbacAuthorizationV1beta1CollectionNamespacedRoleBindingRespons
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
 /**
  * Contains response data for the readRbacAuthorizationV1beta1NamespacedRoleBinding operation.
  */
-export type ReadRbacAuthorizationV1beta1NamespacedRoleBindingResponse = Iok8sapirbacv1beta1RoleBinding & {
+export type ReadRbacAuthorizationV1beta1NamespacedRoleBindingResponse = V1beta1RoleBinding & {
   /**
    * The underlying HTTP response.
    */
@@ -97897,14 +97897,14 @@ export type ReadRbacAuthorizationV1beta1NamespacedRoleBindingResponse = Iok8sapi
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapirbacv1beta1RoleBinding;
+      parsedBody: V1beta1RoleBinding;
     };
 };
 
 /**
  * Contains response data for the replaceRbacAuthorizationV1beta1NamespacedRoleBinding operation.
  */
-export type ReplaceRbacAuthorizationV1beta1NamespacedRoleBindingResponse = Iok8sapirbacv1beta1RoleBinding & {
+export type ReplaceRbacAuthorizationV1beta1NamespacedRoleBindingResponse = V1beta1RoleBinding & {
   /**
    * The underlying HTTP response.
    */
@@ -97916,14 +97916,14 @@ export type ReplaceRbacAuthorizationV1beta1NamespacedRoleBindingResponse = Iok8s
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapirbacv1beta1RoleBinding;
+      parsedBody: V1beta1RoleBinding;
     };
 };
 
 /**
  * Contains response data for the deleteRbacAuthorizationV1beta1NamespacedRoleBinding operation.
  */
-export type DeleteRbacAuthorizationV1beta1NamespacedRoleBindingResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteRbacAuthorizationV1beta1NamespacedRoleBindingResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -97935,14 +97935,14 @@ export type DeleteRbacAuthorizationV1beta1NamespacedRoleBindingResponse = Iok8sa
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
 /**
  * Contains response data for the patchRbacAuthorizationV1beta1NamespacedRoleBinding operation.
  */
-export type PatchRbacAuthorizationV1beta1NamespacedRoleBindingResponse = Iok8sapirbacv1beta1RoleBinding & {
+export type PatchRbacAuthorizationV1beta1NamespacedRoleBindingResponse = V1beta1RoleBinding & {
   /**
    * The underlying HTTP response.
    */
@@ -97954,14 +97954,14 @@ export type PatchRbacAuthorizationV1beta1NamespacedRoleBindingResponse = Iok8sap
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapirbacv1beta1RoleBinding;
+      parsedBody: V1beta1RoleBinding;
     };
 };
 
 /**
  * Contains response data for the listRbacAuthorizationV1beta1NamespacedRole operation.
  */
-export type ListRbacAuthorizationV1beta1NamespacedRoleResponse = Iok8sapirbacv1beta1RoleList & {
+export type ListRbacAuthorizationV1beta1NamespacedRoleResponse = V1beta1RoleList & {
   /**
    * The underlying HTTP response.
    */
@@ -97973,14 +97973,14 @@ export type ListRbacAuthorizationV1beta1NamespacedRoleResponse = Iok8sapirbacv1b
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapirbacv1beta1RoleList;
+      parsedBody: V1beta1RoleList;
     };
 };
 
 /**
  * Contains response data for the createRbacAuthorizationV1beta1NamespacedRole operation.
  */
-export type CreateRbacAuthorizationV1beta1NamespacedRoleResponse = Iok8sapirbacv1beta1Role & {
+export type CreateRbacAuthorizationV1beta1NamespacedRoleResponse = V1beta1Role & {
   /**
    * The underlying HTTP response.
    */
@@ -97992,14 +97992,14 @@ export type CreateRbacAuthorizationV1beta1NamespacedRoleResponse = Iok8sapirbacv
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapirbacv1beta1Role;
+      parsedBody: V1beta1Role;
     };
 };
 
 /**
  * Contains response data for the deleteRbacAuthorizationV1beta1CollectionNamespacedRole operation.
  */
-export type DeleteRbacAuthorizationV1beta1CollectionNamespacedRoleResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteRbacAuthorizationV1beta1CollectionNamespacedRoleResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -98011,14 +98011,14 @@ export type DeleteRbacAuthorizationV1beta1CollectionNamespacedRoleResponse = Iok
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
 /**
  * Contains response data for the readRbacAuthorizationV1beta1NamespacedRole operation.
  */
-export type ReadRbacAuthorizationV1beta1NamespacedRoleResponse = Iok8sapirbacv1beta1Role & {
+export type ReadRbacAuthorizationV1beta1NamespacedRoleResponse = V1beta1Role & {
   /**
    * The underlying HTTP response.
    */
@@ -98030,14 +98030,14 @@ export type ReadRbacAuthorizationV1beta1NamespacedRoleResponse = Iok8sapirbacv1b
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapirbacv1beta1Role;
+      parsedBody: V1beta1Role;
     };
 };
 
 /**
  * Contains response data for the replaceRbacAuthorizationV1beta1NamespacedRole operation.
  */
-export type ReplaceRbacAuthorizationV1beta1NamespacedRoleResponse = Iok8sapirbacv1beta1Role & {
+export type ReplaceRbacAuthorizationV1beta1NamespacedRoleResponse = V1beta1Role & {
   /**
    * The underlying HTTP response.
    */
@@ -98049,14 +98049,14 @@ export type ReplaceRbacAuthorizationV1beta1NamespacedRoleResponse = Iok8sapirbac
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapirbacv1beta1Role;
+      parsedBody: V1beta1Role;
     };
 };
 
 /**
  * Contains response data for the deleteRbacAuthorizationV1beta1NamespacedRole operation.
  */
-export type DeleteRbacAuthorizationV1beta1NamespacedRoleResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteRbacAuthorizationV1beta1NamespacedRoleResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -98068,14 +98068,14 @@ export type DeleteRbacAuthorizationV1beta1NamespacedRoleResponse = Iok8sapimachi
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
 /**
  * Contains response data for the patchRbacAuthorizationV1beta1NamespacedRole operation.
  */
-export type PatchRbacAuthorizationV1beta1NamespacedRoleResponse = Iok8sapirbacv1beta1Role & {
+export type PatchRbacAuthorizationV1beta1NamespacedRoleResponse = V1beta1Role & {
   /**
    * The underlying HTTP response.
    */
@@ -98087,7 +98087,7 @@ export type PatchRbacAuthorizationV1beta1NamespacedRoleResponse = Iok8sapirbacv1
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapirbacv1beta1Role;
+      parsedBody: V1beta1Role;
     };
 };
 
@@ -98095,7 +98095,7 @@ export type PatchRbacAuthorizationV1beta1NamespacedRoleResponse = Iok8sapirbacv1
  * Contains response data for the listRbacAuthorizationV1beta1RoleBindingForAllNamespaces
  * operation.
  */
-export type ListRbacAuthorizationV1beta1RoleBindingForAllNamespacesResponse = Iok8sapirbacv1beta1RoleBindingList & {
+export type ListRbacAuthorizationV1beta1RoleBindingForAllNamespacesResponse = V1beta1RoleBindingList & {
   /**
    * The underlying HTTP response.
    */
@@ -98107,14 +98107,14 @@ export type ListRbacAuthorizationV1beta1RoleBindingForAllNamespacesResponse = Io
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapirbacv1beta1RoleBindingList;
+      parsedBody: V1beta1RoleBindingList;
     };
 };
 
 /**
  * Contains response data for the listRbacAuthorizationV1beta1RoleForAllNamespaces operation.
  */
-export type ListRbacAuthorizationV1beta1RoleForAllNamespacesResponse = Iok8sapirbacv1beta1RoleList & {
+export type ListRbacAuthorizationV1beta1RoleForAllNamespacesResponse = V1beta1RoleList & {
   /**
    * The underlying HTTP response.
    */
@@ -98126,14 +98126,14 @@ export type ListRbacAuthorizationV1beta1RoleForAllNamespacesResponse = Iok8sapir
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapirbacv1beta1RoleList;
+      parsedBody: V1beta1RoleList;
     };
 };
 
 /**
  * Contains response data for the watchRbacAuthorizationV1beta1ClusterRoleBindingList operation.
  */
-export type WatchRbacAuthorizationV1beta1ClusterRoleBindingListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchRbacAuthorizationV1beta1ClusterRoleBindingListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -98145,14 +98145,14 @@ export type WatchRbacAuthorizationV1beta1ClusterRoleBindingListResponse = Iok8sa
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchRbacAuthorizationV1beta1ClusterRoleBinding operation.
  */
-export type WatchRbacAuthorizationV1beta1ClusterRoleBindingResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchRbacAuthorizationV1beta1ClusterRoleBindingResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -98164,14 +98164,14 @@ export type WatchRbacAuthorizationV1beta1ClusterRoleBindingResponse = Iok8sapima
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchRbacAuthorizationV1beta1ClusterRoleList operation.
  */
-export type WatchRbacAuthorizationV1beta1ClusterRoleListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchRbacAuthorizationV1beta1ClusterRoleListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -98183,14 +98183,14 @@ export type WatchRbacAuthorizationV1beta1ClusterRoleListResponse = Iok8sapimachi
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchRbacAuthorizationV1beta1ClusterRole operation.
  */
-export type WatchRbacAuthorizationV1beta1ClusterRoleResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchRbacAuthorizationV1beta1ClusterRoleResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -98202,14 +98202,14 @@ export type WatchRbacAuthorizationV1beta1ClusterRoleResponse = Iok8sapimachinery
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchRbacAuthorizationV1beta1NamespacedRoleBindingList operation.
  */
-export type WatchRbacAuthorizationV1beta1NamespacedRoleBindingListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchRbacAuthorizationV1beta1NamespacedRoleBindingListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -98221,14 +98221,14 @@ export type WatchRbacAuthorizationV1beta1NamespacedRoleBindingListResponse = Iok
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchRbacAuthorizationV1beta1NamespacedRoleBinding operation.
  */
-export type WatchRbacAuthorizationV1beta1NamespacedRoleBindingResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchRbacAuthorizationV1beta1NamespacedRoleBindingResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -98240,14 +98240,14 @@ export type WatchRbacAuthorizationV1beta1NamespacedRoleBindingResponse = Iok8sap
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchRbacAuthorizationV1beta1NamespacedRoleList operation.
  */
-export type WatchRbacAuthorizationV1beta1NamespacedRoleListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchRbacAuthorizationV1beta1NamespacedRoleListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -98259,14 +98259,14 @@ export type WatchRbacAuthorizationV1beta1NamespacedRoleListResponse = Iok8sapima
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchRbacAuthorizationV1beta1NamespacedRole operation.
  */
-export type WatchRbacAuthorizationV1beta1NamespacedRoleResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchRbacAuthorizationV1beta1NamespacedRoleResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -98278,7 +98278,7 @@ export type WatchRbacAuthorizationV1beta1NamespacedRoleResponse = Iok8sapimachin
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
@@ -98286,7 +98286,7 @@ export type WatchRbacAuthorizationV1beta1NamespacedRoleResponse = Iok8sapimachin
  * Contains response data for the watchRbacAuthorizationV1beta1RoleBindingListForAllNamespaces
  * operation.
  */
-export type WatchRbacAuthorizationV1beta1RoleBindingListForAllNamespacesResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchRbacAuthorizationV1beta1RoleBindingListForAllNamespacesResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -98298,14 +98298,14 @@ export type WatchRbacAuthorizationV1beta1RoleBindingListForAllNamespacesResponse
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchRbacAuthorizationV1beta1RoleListForAllNamespaces operation.
  */
-export type WatchRbacAuthorizationV1beta1RoleListForAllNamespacesResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchRbacAuthorizationV1beta1RoleListForAllNamespacesResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -98317,14 +98317,14 @@ export type WatchRbacAuthorizationV1beta1RoleListForAllNamespacesResponse = Iok8
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the getRouteOpenshiftIoAPIGroup operation.
  */
-export type GetRouteOpenshiftIoAPIGroupResponse = Iok8sapimachinerypkgapismetav1APIGroup & {
+export type GetRouteOpenshiftIoAPIGroupResponse = V1APIGroup & {
   /**
    * The underlying HTTP response.
    */
@@ -98336,14 +98336,14 @@ export type GetRouteOpenshiftIoAPIGroupResponse = Iok8sapimachinerypkgapismetav1
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1APIGroup;
+      parsedBody: V1APIGroup;
     };
 };
 
 /**
  * Contains response data for the getRouteOpenshiftIoV1APIResources operation.
  */
-export type GetRouteOpenshiftIoV1APIResourcesResponse = Iok8sapimachinerypkgapismetav1APIResourceList & {
+export type GetRouteOpenshiftIoV1APIResourcesResponse = V1APIResourceList & {
   /**
    * The underlying HTTP response.
    */
@@ -98355,7 +98355,7 @@ export type GetRouteOpenshiftIoV1APIResourcesResponse = Iok8sapimachinerypkgapis
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1APIResourceList;
+      parsedBody: V1APIResourceList;
     };
 };
 
@@ -98400,7 +98400,7 @@ export type CreateRouteOpenshiftIoV1NamespacedRouteResponse = Comgithubopenshift
 /**
  * Contains response data for the deleteRouteOpenshiftIoV1CollectionNamespacedRoute operation.
  */
-export type DeleteRouteOpenshiftIoV1CollectionNamespacedRouteResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteRouteOpenshiftIoV1CollectionNamespacedRouteResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -98412,7 +98412,7 @@ export type DeleteRouteOpenshiftIoV1CollectionNamespacedRouteResponse = Iok8sapi
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -98457,7 +98457,7 @@ export type ReplaceRouteOpenshiftIoV1NamespacedRouteResponse = Comgithubopenshif
 /**
  * Contains response data for the deleteRouteOpenshiftIoV1NamespacedRoute operation.
  */
-export type DeleteRouteOpenshiftIoV1NamespacedRouteResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteRouteOpenshiftIoV1NamespacedRouteResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -98469,7 +98469,7 @@ export type DeleteRouteOpenshiftIoV1NamespacedRouteResponse = Iok8sapimachineryp
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -98571,7 +98571,7 @@ export type ListRouteOpenshiftIoV1RouteForAllNamespacesResponse = Comgithubopens
 /**
  * Contains response data for the watchRouteOpenshiftIoV1NamespacedRouteList operation.
  */
-export type WatchRouteOpenshiftIoV1NamespacedRouteListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchRouteOpenshiftIoV1NamespacedRouteListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -98583,14 +98583,14 @@ export type WatchRouteOpenshiftIoV1NamespacedRouteListResponse = Iok8sapimachine
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchRouteOpenshiftIoV1NamespacedRoute operation.
  */
-export type WatchRouteOpenshiftIoV1NamespacedRouteResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchRouteOpenshiftIoV1NamespacedRouteResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -98602,14 +98602,14 @@ export type WatchRouteOpenshiftIoV1NamespacedRouteResponse = Iok8sapimachinerypk
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchRouteOpenshiftIoV1RouteListForAllNamespaces operation.
  */
-export type WatchRouteOpenshiftIoV1RouteListForAllNamespacesResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchRouteOpenshiftIoV1RouteListForAllNamespacesResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -98621,14 +98621,14 @@ export type WatchRouteOpenshiftIoV1RouteListForAllNamespacesResponse = Iok8sapim
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the getSchedulingAPIGroup operation.
  */
-export type GetSchedulingAPIGroupResponse = Iok8sapimachinerypkgapismetav1APIGroup & {
+export type GetSchedulingAPIGroupResponse = V1APIGroup & {
   /**
    * The underlying HTTP response.
    */
@@ -98640,14 +98640,14 @@ export type GetSchedulingAPIGroupResponse = Iok8sapimachinerypkgapismetav1APIGro
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1APIGroup;
+      parsedBody: V1APIGroup;
     };
 };
 
 /**
  * Contains response data for the getSchedulingV1beta1APIResources operation.
  */
-export type GetSchedulingV1beta1APIResourcesResponse = Iok8sapimachinerypkgapismetav1APIResourceList & {
+export type GetSchedulingV1beta1APIResourcesResponse = V1APIResourceList & {
   /**
    * The underlying HTTP response.
    */
@@ -98659,14 +98659,14 @@ export type GetSchedulingV1beta1APIResourcesResponse = Iok8sapimachinerypkgapism
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1APIResourceList;
+      parsedBody: V1APIResourceList;
     };
 };
 
 /**
  * Contains response data for the listSchedulingV1beta1PriorityClass operation.
  */
-export type ListSchedulingV1beta1PriorityClassResponse = Iok8sapischedulingv1beta1PriorityClassList & {
+export type ListSchedulingV1beta1PriorityClassResponse = V1beta1PriorityClassList & {
   /**
    * The underlying HTTP response.
    */
@@ -98678,14 +98678,14 @@ export type ListSchedulingV1beta1PriorityClassResponse = Iok8sapischedulingv1bet
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapischedulingv1beta1PriorityClassList;
+      parsedBody: V1beta1PriorityClassList;
     };
 };
 
 /**
  * Contains response data for the createSchedulingV1beta1PriorityClass operation.
  */
-export type CreateSchedulingV1beta1PriorityClassResponse = Iok8sapischedulingv1beta1PriorityClass & {
+export type CreateSchedulingV1beta1PriorityClassResponse = V1beta1PriorityClass & {
   /**
    * The underlying HTTP response.
    */
@@ -98697,14 +98697,14 @@ export type CreateSchedulingV1beta1PriorityClassResponse = Iok8sapischedulingv1b
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapischedulingv1beta1PriorityClass;
+      parsedBody: V1beta1PriorityClass;
     };
 };
 
 /**
  * Contains response data for the deleteSchedulingV1beta1CollectionPriorityClass operation.
  */
-export type DeleteSchedulingV1beta1CollectionPriorityClassResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteSchedulingV1beta1CollectionPriorityClassResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -98716,14 +98716,14 @@ export type DeleteSchedulingV1beta1CollectionPriorityClassResponse = Iok8sapimac
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
 /**
  * Contains response data for the readSchedulingV1beta1PriorityClass operation.
  */
-export type ReadSchedulingV1beta1PriorityClassResponse = Iok8sapischedulingv1beta1PriorityClass & {
+export type ReadSchedulingV1beta1PriorityClassResponse = V1beta1PriorityClass & {
   /**
    * The underlying HTTP response.
    */
@@ -98735,14 +98735,14 @@ export type ReadSchedulingV1beta1PriorityClassResponse = Iok8sapischedulingv1bet
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapischedulingv1beta1PriorityClass;
+      parsedBody: V1beta1PriorityClass;
     };
 };
 
 /**
  * Contains response data for the replaceSchedulingV1beta1PriorityClass operation.
  */
-export type ReplaceSchedulingV1beta1PriorityClassResponse = Iok8sapischedulingv1beta1PriorityClass & {
+export type ReplaceSchedulingV1beta1PriorityClassResponse = V1beta1PriorityClass & {
   /**
    * The underlying HTTP response.
    */
@@ -98754,14 +98754,14 @@ export type ReplaceSchedulingV1beta1PriorityClassResponse = Iok8sapischedulingv1
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapischedulingv1beta1PriorityClass;
+      parsedBody: V1beta1PriorityClass;
     };
 };
 
 /**
  * Contains response data for the deleteSchedulingV1beta1PriorityClass operation.
  */
-export type DeleteSchedulingV1beta1PriorityClassResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteSchedulingV1beta1PriorityClassResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -98773,14 +98773,14 @@ export type DeleteSchedulingV1beta1PriorityClassResponse = Iok8sapimachinerypkga
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
 /**
  * Contains response data for the patchSchedulingV1beta1PriorityClass operation.
  */
-export type PatchSchedulingV1beta1PriorityClassResponse = Iok8sapischedulingv1beta1PriorityClass & {
+export type PatchSchedulingV1beta1PriorityClassResponse = V1beta1PriorityClass & {
   /**
    * The underlying HTTP response.
    */
@@ -98792,14 +98792,14 @@ export type PatchSchedulingV1beta1PriorityClassResponse = Iok8sapischedulingv1be
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapischedulingv1beta1PriorityClass;
+      parsedBody: V1beta1PriorityClass;
     };
 };
 
 /**
  * Contains response data for the watchSchedulingV1beta1PriorityClassList operation.
  */
-export type WatchSchedulingV1beta1PriorityClassListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchSchedulingV1beta1PriorityClassListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -98811,14 +98811,14 @@ export type WatchSchedulingV1beta1PriorityClassListResponse = Iok8sapimachineryp
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchSchedulingV1beta1PriorityClass operation.
  */
-export type WatchSchedulingV1beta1PriorityClassResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchSchedulingV1beta1PriorityClassResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -98830,14 +98830,14 @@ export type WatchSchedulingV1beta1PriorityClassResponse = Iok8sapimachinerypkgap
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the getSecurityOpenshiftIoAPIGroup operation.
  */
-export type GetSecurityOpenshiftIoAPIGroupResponse = Iok8sapimachinerypkgapismetav1APIGroup & {
+export type GetSecurityOpenshiftIoAPIGroupResponse = V1APIGroup & {
   /**
    * The underlying HTTP response.
    */
@@ -98849,14 +98849,14 @@ export type GetSecurityOpenshiftIoAPIGroupResponse = Iok8sapimachinerypkgapismet
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1APIGroup;
+      parsedBody: V1APIGroup;
     };
 };
 
 /**
  * Contains response data for the getSecurityOpenshiftIoV1APIResources operation.
  */
-export type GetSecurityOpenshiftIoV1APIResourcesResponse = Iok8sapimachinerypkgapismetav1APIResourceList & {
+export type GetSecurityOpenshiftIoV1APIResourcesResponse = V1APIResourceList & {
   /**
    * The underlying HTTP response.
    */
@@ -98868,7 +98868,7 @@ export type GetSecurityOpenshiftIoV1APIResourcesResponse = Iok8sapimachinerypkga
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1APIResourceList;
+      parsedBody: V1APIResourceList;
     };
 };
 
@@ -98973,7 +98973,7 @@ export type CreateSecurityOpenshiftIoV1RangeAllocationResponse = Comgithubopensh
 /**
  * Contains response data for the deleteSecurityOpenshiftIoV1CollectionRangeAllocation operation.
  */
-export type DeleteSecurityOpenshiftIoV1CollectionRangeAllocationResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteSecurityOpenshiftIoV1CollectionRangeAllocationResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -98985,7 +98985,7 @@ export type DeleteSecurityOpenshiftIoV1CollectionRangeAllocationResponse = Iok8s
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -99030,7 +99030,7 @@ export type ReplaceSecurityOpenshiftIoV1RangeAllocationResponse = Comgithubopens
 /**
  * Contains response data for the deleteSecurityOpenshiftIoV1RangeAllocation operation.
  */
-export type DeleteSecurityOpenshiftIoV1RangeAllocationResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteSecurityOpenshiftIoV1RangeAllocationResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -99042,7 +99042,7 @@ export type DeleteSecurityOpenshiftIoV1RangeAllocationResponse = Iok8sapimachine
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -99107,7 +99107,7 @@ export type CreateSecurityOpenshiftIoV1SecurityContextConstraintsResponse = Comg
  * Contains response data for the deleteSecurityOpenshiftIoV1CollectionSecurityContextConstraints
  * operation.
  */
-export type DeleteSecurityOpenshiftIoV1CollectionSecurityContextConstraintsResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteSecurityOpenshiftIoV1CollectionSecurityContextConstraintsResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -99119,7 +99119,7 @@ export type DeleteSecurityOpenshiftIoV1CollectionSecurityContextConstraintsRespo
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -99164,7 +99164,7 @@ export type ReplaceSecurityOpenshiftIoV1SecurityContextConstraintsResponse = Com
 /**
  * Contains response data for the deleteSecurityOpenshiftIoV1SecurityContextConstraints operation.
  */
-export type DeleteSecurityOpenshiftIoV1SecurityContextConstraintsResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteSecurityOpenshiftIoV1SecurityContextConstraintsResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -99176,7 +99176,7 @@ export type DeleteSecurityOpenshiftIoV1SecurityContextConstraintsResponse = Iok8
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -99202,7 +99202,7 @@ export type PatchSecurityOpenshiftIoV1SecurityContextConstraintsResponse = Comgi
 /**
  * Contains response data for the watchSecurityOpenshiftIoV1RangeAllocationList operation.
  */
-export type WatchSecurityOpenshiftIoV1RangeAllocationListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchSecurityOpenshiftIoV1RangeAllocationListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -99214,14 +99214,14 @@ export type WatchSecurityOpenshiftIoV1RangeAllocationListResponse = Iok8sapimach
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchSecurityOpenshiftIoV1RangeAllocation operation.
  */
-export type WatchSecurityOpenshiftIoV1RangeAllocationResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchSecurityOpenshiftIoV1RangeAllocationResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -99233,7 +99233,7 @@ export type WatchSecurityOpenshiftIoV1RangeAllocationResponse = Iok8sapimachiner
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
@@ -99241,7 +99241,7 @@ export type WatchSecurityOpenshiftIoV1RangeAllocationResponse = Iok8sapimachiner
  * Contains response data for the watchSecurityOpenshiftIoV1SecurityContextConstraintsList
  * operation.
  */
-export type WatchSecurityOpenshiftIoV1SecurityContextConstraintsListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchSecurityOpenshiftIoV1SecurityContextConstraintsListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -99253,14 +99253,14 @@ export type WatchSecurityOpenshiftIoV1SecurityContextConstraintsListResponse = I
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchSecurityOpenshiftIoV1SecurityContextConstraints operation.
  */
-export type WatchSecurityOpenshiftIoV1SecurityContextConstraintsResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchSecurityOpenshiftIoV1SecurityContextConstraintsResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -99272,14 +99272,14 @@ export type WatchSecurityOpenshiftIoV1SecurityContextConstraintsResponse = Iok8s
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the getStorageAPIGroup operation.
  */
-export type GetStorageAPIGroupResponse = Iok8sapimachinerypkgapismetav1APIGroup & {
+export type GetStorageAPIGroupResponse = V1APIGroup & {
   /**
    * The underlying HTTP response.
    */
@@ -99291,14 +99291,14 @@ export type GetStorageAPIGroupResponse = Iok8sapimachinerypkgapismetav1APIGroup 
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1APIGroup;
+      parsedBody: V1APIGroup;
     };
 };
 
 /**
  * Contains response data for the getStorageV1APIResources operation.
  */
-export type GetStorageV1APIResourcesResponse = Iok8sapimachinerypkgapismetav1APIResourceList & {
+export type GetStorageV1APIResourcesResponse = V1APIResourceList & {
   /**
    * The underlying HTTP response.
    */
@@ -99310,14 +99310,14 @@ export type GetStorageV1APIResourcesResponse = Iok8sapimachinerypkgapismetav1API
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1APIResourceList;
+      parsedBody: V1APIResourceList;
     };
 };
 
 /**
  * Contains response data for the listStorageV1StorageClass operation.
  */
-export type ListStorageV1StorageClassResponse = Iok8sapistoragev1StorageClassList & {
+export type ListStorageV1StorageClassResponse = V1StorageClassList & {
   /**
    * The underlying HTTP response.
    */
@@ -99329,14 +99329,14 @@ export type ListStorageV1StorageClassResponse = Iok8sapistoragev1StorageClassLis
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapistoragev1StorageClassList;
+      parsedBody: V1StorageClassList;
     };
 };
 
 /**
  * Contains response data for the createStorageV1StorageClass operation.
  */
-export type CreateStorageV1StorageClassResponse = Iok8sapistoragev1StorageClass & {
+export type CreateStorageV1StorageClassResponse = V1StorageClass & {
   /**
    * The underlying HTTP response.
    */
@@ -99348,14 +99348,14 @@ export type CreateStorageV1StorageClassResponse = Iok8sapistoragev1StorageClass 
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapistoragev1StorageClass;
+      parsedBody: V1StorageClass;
     };
 };
 
 /**
  * Contains response data for the deleteStorageV1CollectionStorageClass operation.
  */
-export type DeleteStorageV1CollectionStorageClassResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteStorageV1CollectionStorageClassResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -99367,14 +99367,14 @@ export type DeleteStorageV1CollectionStorageClassResponse = Iok8sapimachinerypkg
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
 /**
  * Contains response data for the readStorageV1StorageClass operation.
  */
-export type ReadStorageV1StorageClassResponse = Iok8sapistoragev1StorageClass & {
+export type ReadStorageV1StorageClassResponse = V1StorageClass & {
   /**
    * The underlying HTTP response.
    */
@@ -99386,14 +99386,14 @@ export type ReadStorageV1StorageClassResponse = Iok8sapistoragev1StorageClass & 
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapistoragev1StorageClass;
+      parsedBody: V1StorageClass;
     };
 };
 
 /**
  * Contains response data for the replaceStorageV1StorageClass operation.
  */
-export type ReplaceStorageV1StorageClassResponse = Iok8sapistoragev1StorageClass & {
+export type ReplaceStorageV1StorageClassResponse = V1StorageClass & {
   /**
    * The underlying HTTP response.
    */
@@ -99405,14 +99405,14 @@ export type ReplaceStorageV1StorageClassResponse = Iok8sapistoragev1StorageClass
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapistoragev1StorageClass;
+      parsedBody: V1StorageClass;
     };
 };
 
 /**
  * Contains response data for the deleteStorageV1StorageClass operation.
  */
-export type DeleteStorageV1StorageClassResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteStorageV1StorageClassResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -99424,14 +99424,14 @@ export type DeleteStorageV1StorageClassResponse = Iok8sapimachinerypkgapismetav1
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
 /**
  * Contains response data for the patchStorageV1StorageClass operation.
  */
-export type PatchStorageV1StorageClassResponse = Iok8sapistoragev1StorageClass & {
+export type PatchStorageV1StorageClassResponse = V1StorageClass & {
   /**
    * The underlying HTTP response.
    */
@@ -99443,14 +99443,14 @@ export type PatchStorageV1StorageClassResponse = Iok8sapistoragev1StorageClass &
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapistoragev1StorageClass;
+      parsedBody: V1StorageClass;
     };
 };
 
 /**
  * Contains response data for the watchStorageV1StorageClassList operation.
  */
-export type WatchStorageV1StorageClassListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchStorageV1StorageClassListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -99462,14 +99462,14 @@ export type WatchStorageV1StorageClassListResponse = Iok8sapimachinerypkgapismet
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchStorageV1StorageClass operation.
  */
-export type WatchStorageV1StorageClassResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchStorageV1StorageClassResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -99481,14 +99481,14 @@ export type WatchStorageV1StorageClassResponse = Iok8sapimachinerypkgapismetav1W
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the getStorageV1beta1APIResources operation.
  */
-export type GetStorageV1beta1APIResourcesResponse = Iok8sapimachinerypkgapismetav1APIResourceList & {
+export type GetStorageV1beta1APIResourcesResponse = V1APIResourceList & {
   /**
    * The underlying HTTP response.
    */
@@ -99500,14 +99500,14 @@ export type GetStorageV1beta1APIResourcesResponse = Iok8sapimachinerypkgapismeta
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1APIResourceList;
+      parsedBody: V1APIResourceList;
     };
 };
 
 /**
  * Contains response data for the listStorageV1beta1StorageClass operation.
  */
-export type ListStorageV1beta1StorageClassResponse = Iok8sapistoragev1beta1StorageClassList & {
+export type ListStorageV1beta1StorageClassResponse = V1beta1StorageClassList & {
   /**
    * The underlying HTTP response.
    */
@@ -99519,14 +99519,14 @@ export type ListStorageV1beta1StorageClassResponse = Iok8sapistoragev1beta1Stora
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapistoragev1beta1StorageClassList;
+      parsedBody: V1beta1StorageClassList;
     };
 };
 
 /**
  * Contains response data for the createStorageV1beta1StorageClass operation.
  */
-export type CreateStorageV1beta1StorageClassResponse = Iok8sapistoragev1beta1StorageClass & {
+export type CreateStorageV1beta1StorageClassResponse = V1beta1StorageClass & {
   /**
    * The underlying HTTP response.
    */
@@ -99538,14 +99538,14 @@ export type CreateStorageV1beta1StorageClassResponse = Iok8sapistoragev1beta1Sto
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapistoragev1beta1StorageClass;
+      parsedBody: V1beta1StorageClass;
     };
 };
 
 /**
  * Contains response data for the deleteStorageV1beta1CollectionStorageClass operation.
  */
-export type DeleteStorageV1beta1CollectionStorageClassResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteStorageV1beta1CollectionStorageClassResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -99557,14 +99557,14 @@ export type DeleteStorageV1beta1CollectionStorageClassResponse = Iok8sapimachine
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
 /**
  * Contains response data for the readStorageV1beta1StorageClass operation.
  */
-export type ReadStorageV1beta1StorageClassResponse = Iok8sapistoragev1beta1StorageClass & {
+export type ReadStorageV1beta1StorageClassResponse = V1beta1StorageClass & {
   /**
    * The underlying HTTP response.
    */
@@ -99576,14 +99576,14 @@ export type ReadStorageV1beta1StorageClassResponse = Iok8sapistoragev1beta1Stora
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapistoragev1beta1StorageClass;
+      parsedBody: V1beta1StorageClass;
     };
 };
 
 /**
  * Contains response data for the replaceStorageV1beta1StorageClass operation.
  */
-export type ReplaceStorageV1beta1StorageClassResponse = Iok8sapistoragev1beta1StorageClass & {
+export type ReplaceStorageV1beta1StorageClassResponse = V1beta1StorageClass & {
   /**
    * The underlying HTTP response.
    */
@@ -99595,14 +99595,14 @@ export type ReplaceStorageV1beta1StorageClassResponse = Iok8sapistoragev1beta1St
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapistoragev1beta1StorageClass;
+      parsedBody: V1beta1StorageClass;
     };
 };
 
 /**
  * Contains response data for the deleteStorageV1beta1StorageClass operation.
  */
-export type DeleteStorageV1beta1StorageClassResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteStorageV1beta1StorageClassResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -99614,14 +99614,14 @@ export type DeleteStorageV1beta1StorageClassResponse = Iok8sapimachinerypkgapism
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
 /**
  * Contains response data for the patchStorageV1beta1StorageClass operation.
  */
-export type PatchStorageV1beta1StorageClassResponse = Iok8sapistoragev1beta1StorageClass & {
+export type PatchStorageV1beta1StorageClassResponse = V1beta1StorageClass & {
   /**
    * The underlying HTTP response.
    */
@@ -99633,14 +99633,14 @@ export type PatchStorageV1beta1StorageClassResponse = Iok8sapistoragev1beta1Stor
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapistoragev1beta1StorageClass;
+      parsedBody: V1beta1StorageClass;
     };
 };
 
 /**
  * Contains response data for the listStorageV1beta1VolumeAttachment operation.
  */
-export type ListStorageV1beta1VolumeAttachmentResponse = Iok8sapistoragev1beta1VolumeAttachmentList & {
+export type ListStorageV1beta1VolumeAttachmentResponse = V1beta1VolumeAttachmentList & {
   /**
    * The underlying HTTP response.
    */
@@ -99652,14 +99652,14 @@ export type ListStorageV1beta1VolumeAttachmentResponse = Iok8sapistoragev1beta1V
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapistoragev1beta1VolumeAttachmentList;
+      parsedBody: V1beta1VolumeAttachmentList;
     };
 };
 
 /**
  * Contains response data for the createStorageV1beta1VolumeAttachment operation.
  */
-export type CreateStorageV1beta1VolumeAttachmentResponse = Iok8sapistoragev1beta1VolumeAttachment & {
+export type CreateStorageV1beta1VolumeAttachmentResponse = V1beta1VolumeAttachment & {
   /**
    * The underlying HTTP response.
    */
@@ -99671,14 +99671,14 @@ export type CreateStorageV1beta1VolumeAttachmentResponse = Iok8sapistoragev1beta
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapistoragev1beta1VolumeAttachment;
+      parsedBody: V1beta1VolumeAttachment;
     };
 };
 
 /**
  * Contains response data for the deleteStorageV1beta1CollectionVolumeAttachment operation.
  */
-export type DeleteStorageV1beta1CollectionVolumeAttachmentResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteStorageV1beta1CollectionVolumeAttachmentResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -99690,14 +99690,14 @@ export type DeleteStorageV1beta1CollectionVolumeAttachmentResponse = Iok8sapimac
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
 /**
  * Contains response data for the readStorageV1beta1VolumeAttachment operation.
  */
-export type ReadStorageV1beta1VolumeAttachmentResponse = Iok8sapistoragev1beta1VolumeAttachment & {
+export type ReadStorageV1beta1VolumeAttachmentResponse = V1beta1VolumeAttachment & {
   /**
    * The underlying HTTP response.
    */
@@ -99709,14 +99709,14 @@ export type ReadStorageV1beta1VolumeAttachmentResponse = Iok8sapistoragev1beta1V
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapistoragev1beta1VolumeAttachment;
+      parsedBody: V1beta1VolumeAttachment;
     };
 };
 
 /**
  * Contains response data for the replaceStorageV1beta1VolumeAttachment operation.
  */
-export type ReplaceStorageV1beta1VolumeAttachmentResponse = Iok8sapistoragev1beta1VolumeAttachment & {
+export type ReplaceStorageV1beta1VolumeAttachmentResponse = V1beta1VolumeAttachment & {
   /**
    * The underlying HTTP response.
    */
@@ -99728,14 +99728,14 @@ export type ReplaceStorageV1beta1VolumeAttachmentResponse = Iok8sapistoragev1bet
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapistoragev1beta1VolumeAttachment;
+      parsedBody: V1beta1VolumeAttachment;
     };
 };
 
 /**
  * Contains response data for the deleteStorageV1beta1VolumeAttachment operation.
  */
-export type DeleteStorageV1beta1VolumeAttachmentResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteStorageV1beta1VolumeAttachmentResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -99747,14 +99747,14 @@ export type DeleteStorageV1beta1VolumeAttachmentResponse = Iok8sapimachinerypkga
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
 /**
  * Contains response data for the patchStorageV1beta1VolumeAttachment operation.
  */
-export type PatchStorageV1beta1VolumeAttachmentResponse = Iok8sapistoragev1beta1VolumeAttachment & {
+export type PatchStorageV1beta1VolumeAttachmentResponse = V1beta1VolumeAttachment & {
   /**
    * The underlying HTTP response.
    */
@@ -99766,14 +99766,14 @@ export type PatchStorageV1beta1VolumeAttachmentResponse = Iok8sapistoragev1beta1
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapistoragev1beta1VolumeAttachment;
+      parsedBody: V1beta1VolumeAttachment;
     };
 };
 
 /**
  * Contains response data for the watchStorageV1beta1StorageClassList operation.
  */
-export type WatchStorageV1beta1StorageClassListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchStorageV1beta1StorageClassListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -99785,14 +99785,14 @@ export type WatchStorageV1beta1StorageClassListResponse = Iok8sapimachinerypkgap
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchStorageV1beta1StorageClass operation.
  */
-export type WatchStorageV1beta1StorageClassResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchStorageV1beta1StorageClassResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -99804,14 +99804,14 @@ export type WatchStorageV1beta1StorageClassResponse = Iok8sapimachinerypkgapisme
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchStorageV1beta1VolumeAttachmentList operation.
  */
-export type WatchStorageV1beta1VolumeAttachmentListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchStorageV1beta1VolumeAttachmentListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -99823,14 +99823,14 @@ export type WatchStorageV1beta1VolumeAttachmentListResponse = Iok8sapimachineryp
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchStorageV1beta1VolumeAttachment operation.
  */
-export type WatchStorageV1beta1VolumeAttachmentResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchStorageV1beta1VolumeAttachmentResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -99842,14 +99842,14 @@ export type WatchStorageV1beta1VolumeAttachmentResponse = Iok8sapimachinerypkgap
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the getTemplateOpenshiftIoAPIGroup operation.
  */
-export type GetTemplateOpenshiftIoAPIGroupResponse = Iok8sapimachinerypkgapismetav1APIGroup & {
+export type GetTemplateOpenshiftIoAPIGroupResponse = V1APIGroup & {
   /**
    * The underlying HTTP response.
    */
@@ -99861,14 +99861,14 @@ export type GetTemplateOpenshiftIoAPIGroupResponse = Iok8sapimachinerypkgapismet
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1APIGroup;
+      parsedBody: V1APIGroup;
     };
 };
 
 /**
  * Contains response data for the getTemplateOpenshiftIoV1APIResources operation.
  */
-export type GetTemplateOpenshiftIoV1APIResourcesResponse = Iok8sapimachinerypkgapismetav1APIResourceList & {
+export type GetTemplateOpenshiftIoV1APIResourcesResponse = V1APIResourceList & {
   /**
    * The underlying HTTP response.
    */
@@ -99880,7 +99880,7 @@ export type GetTemplateOpenshiftIoV1APIResourcesResponse = Iok8sapimachinerypkga
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1APIResourceList;
+      parsedBody: V1APIResourceList;
     };
 };
 
@@ -99926,7 +99926,7 @@ export type CreateTemplateOpenshiftIoV1BrokerTemplateInstanceResponse = Comgithu
  * Contains response data for the deleteTemplateOpenshiftIoV1CollectionBrokerTemplateInstance
  * operation.
  */
-export type DeleteTemplateOpenshiftIoV1CollectionBrokerTemplateInstanceResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteTemplateOpenshiftIoV1CollectionBrokerTemplateInstanceResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -99938,7 +99938,7 @@ export type DeleteTemplateOpenshiftIoV1CollectionBrokerTemplateInstanceResponse 
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -99983,7 +99983,7 @@ export type ReplaceTemplateOpenshiftIoV1BrokerTemplateInstanceResponse = Comgith
 /**
  * Contains response data for the deleteTemplateOpenshiftIoV1BrokerTemplateInstance operation.
  */
-export type DeleteTemplateOpenshiftIoV1BrokerTemplateInstanceResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteTemplateOpenshiftIoV1BrokerTemplateInstanceResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -99995,7 +99995,7 @@ export type DeleteTemplateOpenshiftIoV1BrokerTemplateInstanceResponse = Iok8sapi
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -100079,7 +100079,7 @@ export type CreateTemplateOpenshiftIoV1NamespacedTemplateInstanceResponse = Comg
  * Contains response data for the deleteTemplateOpenshiftIoV1CollectionNamespacedTemplateInstance
  * operation.
  */
-export type DeleteTemplateOpenshiftIoV1CollectionNamespacedTemplateInstanceResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteTemplateOpenshiftIoV1CollectionNamespacedTemplateInstanceResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -100091,7 +100091,7 @@ export type DeleteTemplateOpenshiftIoV1CollectionNamespacedTemplateInstanceRespo
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -100136,7 +100136,7 @@ export type ReplaceTemplateOpenshiftIoV1NamespacedTemplateInstanceResponse = Com
 /**
  * Contains response data for the deleteTemplateOpenshiftIoV1NamespacedTemplateInstance operation.
  */
-export type DeleteTemplateOpenshiftIoV1NamespacedTemplateInstanceResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteTemplateOpenshiftIoV1NamespacedTemplateInstanceResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -100148,7 +100148,7 @@ export type DeleteTemplateOpenshiftIoV1NamespacedTemplateInstanceResponse = Iok8
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -100273,7 +100273,7 @@ export type CreateTemplateOpenshiftIoV1NamespacedTemplateResponse = Comgithubope
  * Contains response data for the deleteTemplateOpenshiftIoV1CollectionNamespacedTemplate
  * operation.
  */
-export type DeleteTemplateOpenshiftIoV1CollectionNamespacedTemplateResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteTemplateOpenshiftIoV1CollectionNamespacedTemplateResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -100285,7 +100285,7 @@ export type DeleteTemplateOpenshiftIoV1CollectionNamespacedTemplateResponse = Io
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -100330,7 +100330,7 @@ export type ReplaceTemplateOpenshiftIoV1NamespacedTemplateResponse = Comgithubop
 /**
  * Contains response data for the deleteTemplateOpenshiftIoV1NamespacedTemplate operation.
  */
-export type DeleteTemplateOpenshiftIoV1NamespacedTemplateResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteTemplateOpenshiftIoV1NamespacedTemplateResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -100342,7 +100342,7 @@ export type DeleteTemplateOpenshiftIoV1NamespacedTemplateResponse = Iok8sapimach
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -100407,7 +100407,7 @@ export type ListTemplateOpenshiftIoV1TemplateForAllNamespacesResponse = Comgithu
 /**
  * Contains response data for the watchTemplateOpenshiftIoV1BrokerTemplateInstanceList operation.
  */
-export type WatchTemplateOpenshiftIoV1BrokerTemplateInstanceListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchTemplateOpenshiftIoV1BrokerTemplateInstanceListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -100419,14 +100419,14 @@ export type WatchTemplateOpenshiftIoV1BrokerTemplateInstanceListResponse = Iok8s
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchTemplateOpenshiftIoV1BrokerTemplateInstance operation.
  */
-export type WatchTemplateOpenshiftIoV1BrokerTemplateInstanceResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchTemplateOpenshiftIoV1BrokerTemplateInstanceResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -100438,7 +100438,7 @@ export type WatchTemplateOpenshiftIoV1BrokerTemplateInstanceResponse = Iok8sapim
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
@@ -100446,7 +100446,7 @@ export type WatchTemplateOpenshiftIoV1BrokerTemplateInstanceResponse = Iok8sapim
  * Contains response data for the watchTemplateOpenshiftIoV1NamespacedTemplateInstanceList
  * operation.
  */
-export type WatchTemplateOpenshiftIoV1NamespacedTemplateInstanceListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchTemplateOpenshiftIoV1NamespacedTemplateInstanceListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -100458,14 +100458,14 @@ export type WatchTemplateOpenshiftIoV1NamespacedTemplateInstanceListResponse = I
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchTemplateOpenshiftIoV1NamespacedTemplateInstance operation.
  */
-export type WatchTemplateOpenshiftIoV1NamespacedTemplateInstanceResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchTemplateOpenshiftIoV1NamespacedTemplateInstanceResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -100477,14 +100477,14 @@ export type WatchTemplateOpenshiftIoV1NamespacedTemplateInstanceResponse = Iok8s
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchTemplateOpenshiftIoV1NamespacedTemplateList operation.
  */
-export type WatchTemplateOpenshiftIoV1NamespacedTemplateListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchTemplateOpenshiftIoV1NamespacedTemplateListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -100496,14 +100496,14 @@ export type WatchTemplateOpenshiftIoV1NamespacedTemplateListResponse = Iok8sapim
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchTemplateOpenshiftIoV1NamespacedTemplate operation.
  */
-export type WatchTemplateOpenshiftIoV1NamespacedTemplateResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchTemplateOpenshiftIoV1NamespacedTemplateResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -100515,7 +100515,7 @@ export type WatchTemplateOpenshiftIoV1NamespacedTemplateResponse = Iok8sapimachi
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
@@ -100523,7 +100523,7 @@ export type WatchTemplateOpenshiftIoV1NamespacedTemplateResponse = Iok8sapimachi
  * Contains response data for the watchTemplateOpenshiftIoV1TemplateInstanceListForAllNamespaces
  * operation.
  */
-export type WatchTemplateOpenshiftIoV1TemplateInstanceListForAllNamespacesResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchTemplateOpenshiftIoV1TemplateInstanceListForAllNamespacesResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -100535,14 +100535,14 @@ export type WatchTemplateOpenshiftIoV1TemplateInstanceListForAllNamespacesRespon
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchTemplateOpenshiftIoV1TemplateListForAllNamespaces operation.
  */
-export type WatchTemplateOpenshiftIoV1TemplateListForAllNamespacesResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchTemplateOpenshiftIoV1TemplateListForAllNamespacesResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -100554,14 +100554,14 @@ export type WatchTemplateOpenshiftIoV1TemplateListForAllNamespacesResponse = Iok
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the getUserOpenshiftIoAPIGroup operation.
  */
-export type GetUserOpenshiftIoAPIGroupResponse = Iok8sapimachinerypkgapismetav1APIGroup & {
+export type GetUserOpenshiftIoAPIGroupResponse = V1APIGroup & {
   /**
    * The underlying HTTP response.
    */
@@ -100573,14 +100573,14 @@ export type GetUserOpenshiftIoAPIGroupResponse = Iok8sapimachinerypkgapismetav1A
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1APIGroup;
+      parsedBody: V1APIGroup;
     };
 };
 
 /**
  * Contains response data for the getUserOpenshiftIoV1APIResources operation.
  */
-export type GetUserOpenshiftIoV1APIResourcesResponse = Iok8sapimachinerypkgapismetav1APIResourceList & {
+export type GetUserOpenshiftIoV1APIResourcesResponse = V1APIResourceList & {
   /**
    * The underlying HTTP response.
    */
@@ -100592,7 +100592,7 @@ export type GetUserOpenshiftIoV1APIResourcesResponse = Iok8sapimachinerypkgapism
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1APIResourceList;
+      parsedBody: V1APIResourceList;
     };
 };
 
@@ -100637,7 +100637,7 @@ export type CreateUserOpenshiftIoV1GroupResponse = Comgithubopenshiftapiuserv1Gr
 /**
  * Contains response data for the deleteUserOpenshiftIoV1CollectionGroup operation.
  */
-export type DeleteUserOpenshiftIoV1CollectionGroupResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteUserOpenshiftIoV1CollectionGroupResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -100649,7 +100649,7 @@ export type DeleteUserOpenshiftIoV1CollectionGroupResponse = Iok8sapimachinerypk
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -100694,7 +100694,7 @@ export type ReplaceUserOpenshiftIoV1GroupResponse = Comgithubopenshiftapiuserv1G
 /**
  * Contains response data for the deleteUserOpenshiftIoV1Group operation.
  */
-export type DeleteUserOpenshiftIoV1GroupResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteUserOpenshiftIoV1GroupResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -100706,7 +100706,7 @@ export type DeleteUserOpenshiftIoV1GroupResponse = Iok8sapimachinerypkgapismetav
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -100770,7 +100770,7 @@ export type CreateUserOpenshiftIoV1IdentityResponse = Comgithubopenshiftapiuserv
 /**
  * Contains response data for the deleteUserOpenshiftIoV1CollectionIdentity operation.
  */
-export type DeleteUserOpenshiftIoV1CollectionIdentityResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteUserOpenshiftIoV1CollectionIdentityResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -100782,7 +100782,7 @@ export type DeleteUserOpenshiftIoV1CollectionIdentityResponse = Iok8sapimachiner
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -100827,7 +100827,7 @@ export type ReplaceUserOpenshiftIoV1IdentityResponse = Comgithubopenshiftapiuser
 /**
  * Contains response data for the deleteUserOpenshiftIoV1Identity operation.
  */
-export type DeleteUserOpenshiftIoV1IdentityResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteUserOpenshiftIoV1IdentityResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -100839,7 +100839,7 @@ export type DeleteUserOpenshiftIoV1IdentityResponse = Iok8sapimachinerypkgapisme
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -100922,7 +100922,7 @@ export type ReplaceUserOpenshiftIoV1UserIdentityMappingResponse = Comgithubopens
 /**
  * Contains response data for the deleteUserOpenshiftIoV1UserIdentityMapping operation.
  */
-export type DeleteUserOpenshiftIoV1UserIdentityMappingResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteUserOpenshiftIoV1UserIdentityMappingResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -100934,7 +100934,7 @@ export type DeleteUserOpenshiftIoV1UserIdentityMappingResponse = Iok8sapimachine
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -100998,7 +100998,7 @@ export type CreateUserOpenshiftIoV1UserResponse = Comgithubopenshiftapiuserv1Use
 /**
  * Contains response data for the deleteUserOpenshiftIoV1CollectionUser operation.
  */
-export type DeleteUserOpenshiftIoV1CollectionUserResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteUserOpenshiftIoV1CollectionUserResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -101010,7 +101010,7 @@ export type DeleteUserOpenshiftIoV1CollectionUserResponse = Iok8sapimachinerypkg
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -101055,7 +101055,7 @@ export type ReplaceUserOpenshiftIoV1UserResponse = Comgithubopenshiftapiuserv1Us
 /**
  * Contains response data for the deleteUserOpenshiftIoV1User operation.
  */
-export type DeleteUserOpenshiftIoV1UserResponse = Iok8sapimachinerypkgapismetav1Status & {
+export type DeleteUserOpenshiftIoV1UserResponse = V1Status & {
   /**
    * The underlying HTTP response.
    */
@@ -101067,7 +101067,7 @@ export type DeleteUserOpenshiftIoV1UserResponse = Iok8sapimachinerypkgapismetav1
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1Status;
+      parsedBody: V1Status;
     };
 };
 
@@ -101093,7 +101093,7 @@ export type PatchUserOpenshiftIoV1UserResponse = Comgithubopenshiftapiuserv1User
 /**
  * Contains response data for the watchUserOpenshiftIoV1GroupList operation.
  */
-export type WatchUserOpenshiftIoV1GroupListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchUserOpenshiftIoV1GroupListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -101105,14 +101105,14 @@ export type WatchUserOpenshiftIoV1GroupListResponse = Iok8sapimachinerypkgapisme
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchUserOpenshiftIoV1Group operation.
  */
-export type WatchUserOpenshiftIoV1GroupResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchUserOpenshiftIoV1GroupResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -101124,14 +101124,14 @@ export type WatchUserOpenshiftIoV1GroupResponse = Iok8sapimachinerypkgapismetav1
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchUserOpenshiftIoV1IdentityList operation.
  */
-export type WatchUserOpenshiftIoV1IdentityListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchUserOpenshiftIoV1IdentityListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -101143,14 +101143,14 @@ export type WatchUserOpenshiftIoV1IdentityListResponse = Iok8sapimachinerypkgapi
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchUserOpenshiftIoV1Identity operation.
  */
-export type WatchUserOpenshiftIoV1IdentityResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchUserOpenshiftIoV1IdentityResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -101162,14 +101162,14 @@ export type WatchUserOpenshiftIoV1IdentityResponse = Iok8sapimachinerypkgapismet
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchUserOpenshiftIoV1UserList operation.
  */
-export type WatchUserOpenshiftIoV1UserListResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchUserOpenshiftIoV1UserListResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -101181,14 +101181,14 @@ export type WatchUserOpenshiftIoV1UserListResponse = Iok8sapimachinerypkgapismet
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
 
 /**
  * Contains response data for the watchUserOpenshiftIoV1User operation.
  */
-export type WatchUserOpenshiftIoV1UserResponse = Iok8sapimachinerypkgapismetav1WatchEvent & {
+export type WatchUserOpenshiftIoV1UserResponse = V1WatchEvent & {
   /**
    * The underlying HTTP response.
    */
@@ -101200,6 +101200,6 @@ export type WatchUserOpenshiftIoV1UserResponse = Iok8sapimachinerypkgapismetav1W
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: Iok8sapimachinerypkgapismetav1WatchEvent;
+      parsedBody: V1WatchEvent;
     };
 };
